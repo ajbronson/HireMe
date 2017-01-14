@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		21B38EFC1DCC21A4000A5CB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38EFB1DCC21A4000A5CB1 /* AppDelegate.swift */; };
-		21B38EFE1DCC21A4000A5CB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38EFD1DCC21A4000A5CB1 /* ViewController.swift */; };
 		21B38F011DCC21A4000A5CB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B38EFF1DCC21A4000A5CB1 /* Main.storyboard */; };
 		21B38F031DCC21A4000A5CB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21B38F021DCC21A4000A5CB1 /* Assets.xcassets */; };
 		21B38F061DCC21A4000A5CB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B38F041DCC21A4000A5CB1 /* LaunchScreen.storyboard */; };
 		21B38F111DCC21A4000A5CB1 /* HireMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38F101DCC21A4000A5CB1 /* HireMeTests.swift */; };
 		21B38F1C1DCC21A4000A5CB1 /* HireMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38F1B1DCC21A4000A5CB1 /* HireMeUITests.swift */; };
+		21B38F2A1DCC23E3000A5CB1 /* BidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38F291DCC23E3000A5CB1 /* BidsViewController.swift */; };
+		21B38F2C1DCC23E9000A5CB1 /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38F2B1DCC23E9000A5CB1 /* JobsViewController.swift */; };
+		21B38F2E1DCC23FE000A5CB1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38F2D1DCC23FE000A5CB1 /* SearchViewController.swift */; };
+		21B38F301DCC241F000A5CB1 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38F2F1DCC241F000A5CB1 /* AccountViewController.swift */; };
+		21B38F351DCC28F4000A5CB1 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38F341DCC28F4000A5CB1 /* CategoryViewController.swift */; };
+		21B38F371DCC2A52000A5CB1 /* NewBidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38F361DCC2A52000A5CB1 /* NewBidViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +41,6 @@
 /* Begin PBXFileReference section */
 		21B38EF81DCC21A4000A5CB1 /* HireMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HireMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B38EFB1DCC21A4000A5CB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		21B38EFD1DCC21A4000A5CB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		21B38F001DCC21A4000A5CB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		21B38F021DCC21A4000A5CB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21B38F051DCC21A4000A5CB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +51,12 @@
 		21B38F171DCC21A4000A5CB1 /* HireMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HireMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B38F1B1DCC21A4000A5CB1 /* HireMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HireMeUITests.swift; sourceTree = "<group>"; };
 		21B38F1D1DCC21A4000A5CB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21B38F291DCC23E3000A5CB1 /* BidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidsViewController.swift; sourceTree = "<group>"; };
+		21B38F2B1DCC23E9000A5CB1 /* JobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
+		21B38F2D1DCC23FE000A5CB1 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		21B38F2F1DCC241F000A5CB1 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		21B38F341DCC28F4000A5CB1 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		21B38F361DCC2A52000A5CB1 /* NewBidViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBidViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +107,10 @@
 		21B38EFA1DCC21A4000A5CB1 /* HireMe */ = {
 			isa = PBXGroup;
 			children = (
-				21B38EFB1DCC21A4000A5CB1 /* AppDelegate.swift */,
-				21B38EFD1DCC21A4000A5CB1 /* ViewController.swift */,
-				21B38EFF1DCC21A4000A5CB1 /* Main.storyboard */,
+				21B38F321DCC2512000A5CB1 /* Storyboard */,
+				21B38F331DCC251E000A5CB1 /* ViewController */,
 				21B38F021DCC21A4000A5CB1 /* Assets.xcassets */,
-				21B38F041DCC21A4000A5CB1 /* LaunchScreen.storyboard */,
-				21B38F071DCC21A4000A5CB1 /* Info.plist */,
+				21B38F311DCC2501000A5CB1 /* HelperFiles */,
 			);
 			path = HireMe;
 			sourceTree = "<group>";
@@ -123,6 +131,37 @@
 				21B38F1D1DCC21A4000A5CB1 /* Info.plist */,
 			);
 			path = HireMeUITests;
+			sourceTree = "<group>";
+		};
+		21B38F311DCC2501000A5CB1 /* HelperFiles */ = {
+			isa = PBXGroup;
+			children = (
+				21B38EFB1DCC21A4000A5CB1 /* AppDelegate.swift */,
+				21B38F041DCC21A4000A5CB1 /* LaunchScreen.storyboard */,
+				21B38F071DCC21A4000A5CB1 /* Info.plist */,
+			);
+			name = HelperFiles;
+			sourceTree = "<group>";
+		};
+		21B38F321DCC2512000A5CB1 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				21B38EFF1DCC21A4000A5CB1 /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		21B38F331DCC251E000A5CB1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				21B38F361DCC2A52000A5CB1 /* NewBidViewController.swift */,
+				21B38F341DCC28F4000A5CB1 /* CategoryViewController.swift */,
+				21B38F2F1DCC241F000A5CB1 /* AccountViewController.swift */,
+				21B38F2D1DCC23FE000A5CB1 /* SearchViewController.swift */,
+				21B38F291DCC23E3000A5CB1 /* BidsViewController.swift */,
+				21B38F2B1DCC23E9000A5CB1 /* JobsViewController.swift */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +301,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21B38EFE1DCC21A4000A5CB1 /* ViewController.swift in Sources */,
+				21B38F2A1DCC23E3000A5CB1 /* BidsViewController.swift in Sources */,
+				21B38F301DCC241F000A5CB1 /* AccountViewController.swift in Sources */,
 				21B38EFC1DCC21A4000A5CB1 /* AppDelegate.swift in Sources */,
+				21B38F371DCC2A52000A5CB1 /* NewBidViewController.swift in Sources */,
+				21B38F2E1DCC23FE000A5CB1 /* SearchViewController.swift in Sources */,
+				21B38F351DCC28F4000A5CB1 /* CategoryViewController.swift in Sources */,
+				21B38F2C1DCC23E9000A5CB1 /* JobsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
