@@ -36,8 +36,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9L-Ee-ZQr">
-                                <rect key="frame" x="163.5" y="318" width="47" height="30"/>
-                                <state key="normal" title="Sign in"/>
+                                <rect key="frame" x="166" y="377" width="42" height="30"/>
+                                <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="loginTapped:" destination="xeK-lE-v96" eventType="touchUpInside" id="tc4-Tk-zNd"/>
                                     <segue destination="suX-5s-EvX" kind="show" identifier="showTabs" id="yoR-4B-ovK"/>
@@ -50,8 +50,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPx-Vs-fkt">
-                                <rect key="frame" x="160" y="388" width="55" height="30"/>
-                                <state key="normal" title="Sign Up"/>
+                                <rect key="frame" x="124.5" y="437" width="126" height="30"/>
+                                <state key="normal" title="Create an account"/>
                                 <connections>
                                     <action selector="signUpTapped:" destination="xeK-lE-v96" eventType="touchUpInside" id="7zL-H1-s4b"/>
                                 </connections>
@@ -62,8 +62,7 @@
                             <constraint firstItem="wct-gM-STM" firstAttribute="top" secondItem="YOh-oZ-8Qw" secondAttribute="bottom" constant="35" id="2yX-BM-gGo"/>
                             <constraint firstItem="LPx-Vs-fkt" firstAttribute="centerX" secondItem="D3h-hR-XKP" secondAttribute="centerX" id="40d-Ue-k87"/>
                             <constraint firstAttribute="leadingMargin" secondItem="2F6-Y1-3eV" secondAttribute="leading" id="9VW-xr-TNh"/>
-                            <constraint firstItem="LPx-Vs-fkt" firstAttribute="top" secondItem="c9L-Ee-ZQr" secondAttribute="bottom" constant="40" id="9b3-lt-kDo"/>
-                            <constraint firstItem="loU-3K-jsS" firstAttribute="top" secondItem="LPx-Vs-fkt" secondAttribute="bottom" priority="998" constant="249" id="M0X-Z1-Ngb"/>
+                            <constraint firstItem="loU-3K-jsS" firstAttribute="top" secondItem="LPx-Vs-fkt" secondAttribute="bottom" priority="999" constant="200" id="M0X-Z1-Ngb"/>
                             <constraint firstItem="2F6-Y1-3eV" firstAttribute="top" secondItem="wct-gM-STM" secondAttribute="bottom" constant="20" id="MfC-fi-OFD"/>
                             <constraint firstItem="c9L-Ee-ZQr" firstAttribute="centerX" secondItem="D3h-hR-XKP" secondAttribute="centerX" id="NRe-hx-2J8"/>
                             <constraint firstAttribute="leadingMargin" secondItem="wct-gM-STM" secondAttribute="leading" id="QfP-d1-voH"/>
@@ -71,12 +70,15 @@
                             <constraint firstItem="YOh-oZ-8Qw" firstAttribute="centerX" secondItem="D3h-hR-XKP" secondAttribute="centerX" id="Shk-kP-Cau"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2F6-Y1-3eV" secondAttribute="trailing" id="arE-sa-mRK"/>
                             <constraint firstItem="YOh-oZ-8Qw" firstAttribute="top" secondItem="pUC-ry-YDj" secondAttribute="bottom" constant="34" id="bPe-Mm-moU"/>
-                            <constraint firstItem="c9L-Ee-ZQr" firstAttribute="top" secondItem="2F6-Y1-3eV" secondAttribute="bottom" priority="999" constant="89" id="zkB-q4-IAu"/>
+                            <constraint firstItem="LPx-Vs-fkt" firstAttribute="top" secondItem="c9L-Ee-ZQr" secondAttribute="bottom" constant="30" id="lFk-9M-uD8"/>
+                            <constraint firstItem="c9L-Ee-ZQr" firstAttribute="top" secondItem="2F6-Y1-3eV" secondAttribute="bottom" priority="998" constant="148" id="pXo-T2-RyZ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="passwordTextField" destination="2F6-Y1-3eV" id="ea6-xE-4dr"/>
+                        <outlet property="signUpBottomConstraint" destination="M0X-Z1-Ngb" id="Wzn-Ih-d5K"/>
                         <outlet property="usernameTextField" destination="wct-gM-STM" id="Yg0-4q-36e"/>
+                        <outlet property="verticalSpacingBetweenButtons" destination="lFk-9M-uD8" id="RfR-sR-Q0f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FyL-F6-Kr3" userLabel="First Responder" sceneMemberID="firstResponder"/>
