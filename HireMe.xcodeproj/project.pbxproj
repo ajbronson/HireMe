@@ -19,6 +19,7 @@
 		D08FBD8C1E2F0DD0002DF217 /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FBD861E2F0DD0002DF217 /* JobsViewController.swift */; };
 		D08FBD8D1E2F0DD0002DF217 /* NewBidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FBD871E2F0DD0002DF217 /* NewBidViewController.swift */; };
 		D08FBD8E1E2F0DD0002DF217 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FBD881E2F0DD0002DF217 /* SearchViewController.swift */; };
+		D08FBD901E2F0E3C002DF217 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FBD8F1E2F0E3C002DF217 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		D08FBD861E2F0DD0002DF217 /* JobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
 		D08FBD871E2F0DD0002DF217 /* NewBidViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBidViewController.swift; sourceTree = "<group>"; };
 		D08FBD881E2F0DD0002DF217 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		D08FBD8F1E2F0E3C002DF217 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				D08FBD841E2F0DD0002DF217 /* BidsViewController.swift */,
 				D08FBD851E2F0DD0002DF217 /* CategoryViewController.swift */,
 				D08FBD861E2F0DD0002DF217 /* JobsViewController.swift */,
+				D08FBD8F1E2F0E3C002DF217 /* LoginViewController.swift */,
 				D08FBD871E2F0DD0002DF217 /* NewBidViewController.swift */,
 				D08FBD881E2F0DD0002DF217 /* SearchViewController.swift */,
 			);
@@ -313,6 +316,7 @@
 				D08FBD8E1E2F0DD0002DF217 /* SearchViewController.swift in Sources */,
 				D08FBD891E2F0DD0002DF217 /* AccountViewController.swift in Sources */,
 				D08FBD8A1E2F0DD0002DF217 /* BidsViewController.swift in Sources */,
+				D08FBD901E2F0E3C002DF217 /* LoginViewController.swift in Sources */,
 				D08FBD8D1E2F0DD0002DF217 /* NewBidViewController.swift in Sources */,
 				D08FBD8C1E2F0DD0002DF217 /* JobsViewController.swift in Sources */,
 				21B38EFC1DCC21A4000A5CB1 /* AppDelegate.swift in Sources */,
