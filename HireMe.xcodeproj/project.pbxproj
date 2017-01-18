@@ -13,6 +13,7 @@
 		21B38F061DCC21A4000A5CB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B38F041DCC21A4000A5CB1 /* LaunchScreen.storyboard */; };
 		21B38F111DCC21A4000A5CB1 /* HireMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38F101DCC21A4000A5CB1 /* HireMeTests.swift */; };
 		21B38F1C1DCC21A4000A5CB1 /* HireMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38F1B1DCC21A4000A5CB1 /* HireMeUITests.swift */; };
+		D019B56F1E2F296D00D1E018 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019B56E1E2F296D00D1E018 /* CreateAccountViewController.swift */; };
 		D08FBD891E2F0DD0002DF217 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FBD831E2F0DD0002DF217 /* AccountViewController.swift */; };
 		D08FBD8A1E2F0DD0002DF217 /* BidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FBD841E2F0DD0002DF217 /* BidsViewController.swift */; };
 		D08FBD8B1E2F0DD0002DF217 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FBD851E2F0DD0002DF217 /* CategoryViewController.swift */; };
@@ -52,6 +53,7 @@
 		21B38F171DCC21A4000A5CB1 /* HireMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HireMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B38F1B1DCC21A4000A5CB1 /* HireMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HireMeUITests.swift; sourceTree = "<group>"; };
 		21B38F1D1DCC21A4000A5CB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D019B56E1E2F296D00D1E018 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		D08FBD831E2F0DD0002DF217 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		D08FBD841E2F0DD0002DF217 /* BidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidsViewController.swift; sourceTree = "<group>"; };
 		D08FBD851E2F0DD0002DF217 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				D08FBD8F1E2F0E3C002DF217 /* LoginViewController.swift */,
 				D08FBD871E2F0DD0002DF217 /* NewBidViewController.swift */,
 				D08FBD881E2F0DD0002DF217 /* SearchViewController.swift */,
+				D019B56E1E2F296D00D1E018 /* CreateAccountViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				D08FBD8A1E2F0DD0002DF217 /* BidsViewController.swift in Sources */,
 				D08FBD901E2F0E3C002DF217 /* LoginViewController.swift in Sources */,
 				D08FBD8D1E2F0DD0002DF217 /* NewBidViewController.swift in Sources */,
+				D019B56F1E2F296D00D1E018 /* CreateAccountViewController.swift in Sources */,
 				D08FBD8C1E2F0DD0002DF217 /* JobsViewController.swift in Sources */,
 				21B38EFC1DCC21A4000A5CB1 /* AppDelegate.swift in Sources */,
 			);

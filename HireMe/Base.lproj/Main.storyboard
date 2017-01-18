@@ -54,6 +54,7 @@
                                 <state key="normal" title="Create an account"/>
                                 <connections>
                                     <action selector="signUpTapped:" destination="xeK-lE-v96" eventType="touchUpInside" id="7zL-H1-s4b"/>
+                                    <segue destination="ims-g4-kmo" kind="show" id="uYP-aX-as2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -84,6 +85,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FyL-F6-Kr3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1567.2" y="201.94902548725639"/>
+        </scene>
+        <!--Create Account-->
+        <scene sceneID="hxD-Y6-FSF">
+            <objects>
+                <viewController id="ims-g4-kmo" customClass="CreateAccountViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nje-f3-WQg"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mv7-jB-ZlM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PcK-tt-kyZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oIe-hv-Jof">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Create Account" id="Z17-UW-fz8">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Ldn-7v-WTf">
+                                            <connections>
+                                                <action selector="cancelTapped:" destination="ims-g4-kmo" id="Ycu-9O-NJh"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PgV-9e-1SI">
+                                <rect key="frame" x="16" y="100" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ims-g4-kmo" id="sO3-qY-VbO"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ZIP Code" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="COE-E7-C4o">
+                                <rect key="frame" x="16" y="138" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ims-g4-kmo" id="pFy-Op-k1n"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PgV-9e-1SI" firstAttribute="top" secondItem="oIe-hv-Jof" secondAttribute="bottom" constant="28" id="4RD-ha-cqE"/>
+                            <constraint firstItem="PgV-9e-1SI" firstAttribute="trailing" secondItem="PcK-tt-kyZ" secondAttribute="trailingMargin" id="KXp-wj-Hle"/>
+                            <constraint firstItem="COE-E7-C4o" firstAttribute="top" secondItem="PgV-9e-1SI" secondAttribute="bottom" constant="8" id="Upb-aY-QW1"/>
+                            <constraint firstItem="oIe-hv-Jof" firstAttribute="leading" secondItem="PcK-tt-kyZ" secondAttribute="leading" id="bkH-lR-sdJ"/>
+                            <constraint firstItem="COE-E7-C4o" firstAttribute="trailing" secondItem="PgV-9e-1SI" secondAttribute="trailing" id="bmJ-Dh-IZp"/>
+                            <constraint firstItem="PgV-9e-1SI" firstAttribute="leading" secondItem="PcK-tt-kyZ" secondAttribute="leadingMargin" id="qWF-M3-naH"/>
+                            <constraint firstItem="oIe-hv-Jof" firstAttribute="top" secondItem="Nje-f3-WQg" secondAttribute="bottom" constant="8" id="rHT-4d-fB3"/>
+                            <constraint firstItem="COE-E7-C4o" firstAttribute="leading" secondItem="PgV-9e-1SI" secondAttribute="leading" id="wfc-mG-peR"/>
+                            <constraint firstAttribute="trailing" secondItem="oIe-hv-Jof" secondAttribute="trailing" id="y4F-ik-YPv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create Account" id="pJU-1c-tVp"/>
+                    <connections>
+                        <outlet property="usernameTextField" destination="PgV-9e-1SI" id="RJF-CC-UAS"/>
+                        <outlet property="zipCodeTextField" destination="COE-E7-C4o" id="wTO-V7-jwy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vmZ-LW-QLP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1567" y="912"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="RJn-HA-hrW">
@@ -357,7 +424,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIo-Hi-ETP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1425" y="563"/>
+            <point key="canvasLocation" x="2364" y="562.66866566716647"/>
         </scene>
         <!--Category-->
         <scene sceneID="zse-sQ-T8L">
@@ -405,7 +472,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDo-5i-El4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2442" y="563"/>
+            <point key="canvasLocation" x="3380" y="562.66866566716647"/>
         </scene>
         <!--Account Settings-->
         <scene sceneID="SPY-Jx-yej">
@@ -443,7 +510,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8M-jX-mb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1425" y="1451"/>
+            <point key="canvasLocation" x="2364" y="1450.5247376311845"/>
         </scene>
         <!--New Bid-->
         <scene sceneID="beE-nQ-I76">
@@ -500,7 +567,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Yh-Ka-NeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3344.8000000000002" y="562.66866566716647"/>
+            <point key="canvasLocation" x="4284" y="562.66866566716647"/>
         </scene>
         <!--My Bids-->
         <scene sceneID="XU9-aN-X7Z">
@@ -557,7 +624,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ski-V5-zzi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="294" y="563"/>
+            <point key="canvasLocation" x="1232.8" y="562.66866566716647"/>
         </scene>
         <!--My Account-->
         <scene sceneID="ABt-eK-77U">
@@ -576,7 +643,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qma-YR-uKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="294" y="1451"/>
+            <point key="canvasLocation" x="1232.8" y="1450.5247376311845"/>
         </scene>
     </scenes>
     <resources>

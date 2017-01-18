@@ -11,9 +11,9 @@ import UIKit
 class LoginViewController: UIViewController {
     
     // MARK: - Cosntants
-    let BOTTOM_SPACING_PORTRAIT: CGFloat = 200
-    let BOTTOM_SPACING_LANDSCAPE: CGFloat = 15
-    let VERTICAL_SPACING_PORTRAIT: CGFloat = 30
+    let BOTTOM_SPACING_PORTRAIT: CGFloat    = 200
+    let BOTTOM_SPACING_LANDSCAPE: CGFloat   = 15
+    let VERTICAL_SPACING_PORTRAIT: CGFloat  = 30
     let VERTICAL_SPACING_LANDSCAPE: CGFloat = 15
     
     // MARK: - Outlets
@@ -58,10 +58,10 @@ class LoginViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func loginTapped(_ sender: UIButton) {
-        print("login")
+        // Custom code
     }
     
     @IBAction func signUpTapped(_ sender: UIButton) {
-        print("sign up")
+        // Custom code
     }
 }
