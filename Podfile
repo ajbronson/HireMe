@@ -7,6 +7,8 @@ target 'HireMe' do
 
   # Pods for HireMe
 
+  pod 'FacebookLogin'
+
   target 'HireMeTests' do
     inherit! :search_paths
     # Pods for testing
