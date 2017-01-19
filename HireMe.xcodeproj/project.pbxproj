@@ -306,7 +306,7 @@
 					};
 					21B38F161DCC21A4000A5CB1 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = D8BVW7B3PF;
+						DevelopmentTeam = E5QLQ9VDQN;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 21B38EF71DCC21A4000A5CB1;
 					};
@@ -729,7 +729,7 @@
 			baseConfigurationReference = 2788E1A6E281FCD49C176023 /* Pods-HireMeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = D8BVW7B3PF;
+				DEVELOPMENT_TEAM = E5QLQ9VDQN;
 				INFOPLIST_FILE = HireMeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
@@ -745,7 +745,7 @@
 			baseConfigurationReference = C50318D16C0CDDAFFD138EDC /* Pods-HireMeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = D8BVW7B3PF;
+				DEVELOPMENT_TEAM = E5QLQ9VDQN;
 				INFOPLIST_FILE = HireMeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";

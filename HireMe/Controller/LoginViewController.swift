@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import FacebookLogin
+import FBSDKCoreKit
 
 class LoginViewController: UIViewController {
     
-    // MARK: - Cosntants
-    let BOTTOM_SPACING_PORTRAIT: CGFloat    = 200
+    // MARK: - Constants
+    
+    let BOTTOM_SPACING_PORTRAIT: CGFloat    = 190
     let BOTTOM_SPACING_LANDSCAPE: CGFloat   = 15
-    let VERTICAL_SPACING_PORTRAIT: CGFloat  = 30
+    let VERTICAL_SPACING_PORTRAIT: CGFloat  = 20
     let VERTICAL_SPACING_LANDSCAPE: CGFloat = 15
+    
     
     // MARK: - Outlets
     
@@ -23,11 +27,20 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signUpBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var verticalSpacingBetweenButtons: NSLayoutConstraint!
     
+    
     // MARK: - View controller life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let _ = FBSDKAccessToken.current() {
+            // User is logged in, do work such as go to next view controller.
+        }
+        
+        let fbLoginButton = LoginButton(readPermissions: [ .publicProfile ])
+        fbLoginButton.center = view.center
+        
+        view.addSubview(fbLoginButton)
     }
     
     //This will dismiss the keyboard and resign any UITextField as first responder when the user taps outside of the text fields
@@ -45,6 +58,7 @@ class LoginViewController: UIViewController {
             self.verticalSpacingBetweenButtons.constant = VERTICAL_SPACING_PORTRAIT
         }
     }
+    
     
     // MARK: - Navigation
     
