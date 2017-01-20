@@ -62,46 +62,45 @@
                                     <segue destination="ims-g4-kmo" kind="show" id="uYP-aX-as2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNH-WO-nO4" userLabel="FBLoginButton" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="31" y="362" width="313" height="50"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Log in with Facebook"/>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2F6-Y1-3eV">
                                 <rect key="frame" x="16" y="187" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aiq-Jc-ZRS" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="31" y="362" width="313" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.8784313725490196" green="0.96862745098039216" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="GNH-WO-nO4" firstAttribute="trailing" secondItem="c9L-Ee-ZQr" secondAttribute="trailing" id="0Eq-hY-nEc"/>
                             <constraint firstItem="wct-gM-STM" firstAttribute="top" secondItem="YOh-oZ-8Qw" secondAttribute="bottom" constant="35" id="2yX-BM-gGo"/>
                             <constraint firstItem="LPx-Vs-fkt" firstAttribute="centerX" secondItem="D3h-hR-XKP" secondAttribute="centerX" id="40d-Ue-k87"/>
+                            <constraint firstItem="Aiq-Jc-ZRS" firstAttribute="trailing" secondItem="c9L-Ee-ZQr" secondAttribute="trailing" id="8Z4-Zi-Ml3"/>
                             <constraint firstAttribute="leadingMargin" secondItem="2F6-Y1-3eV" secondAttribute="leading" id="9VW-xr-TNh"/>
-                            <constraint firstItem="GNH-WO-nO4" firstAttribute="height" secondItem="c9L-Ee-ZQr" secondAttribute="height" id="FGa-dz-0rd"/>
+                            <constraint firstItem="c9L-Ee-ZQr" firstAttribute="top" secondItem="Aiq-Jc-ZRS" secondAttribute="bottom" constant="15" id="ErR-4P-oXD"/>
                             <constraint firstAttribute="leadingMargin" secondItem="c9L-Ee-ZQr" secondAttribute="leading" constant="-15" id="GDo-fd-uYu"/>
                             <constraint firstItem="LPx-Vs-fkt" firstAttribute="top" secondItem="c9L-Ee-ZQr" secondAttribute="bottom" constant="15" id="Hw6-ux-r2a"/>
                             <constraint firstAttribute="trailingMargin" secondItem="c9L-Ee-ZQr" secondAttribute="trailing" constant="15" id="KHI-59-nSo"/>
-                            <constraint firstItem="GNH-WO-nO4" firstAttribute="top" secondItem="2F6-Y1-3eV" secondAttribute="bottom" priority="998" constant="145" id="Lo3-ji-EBA"/>
                             <constraint firstItem="loU-3K-jsS" firstAttribute="top" secondItem="LPx-Vs-fkt" secondAttribute="bottom" priority="999" constant="125" id="M0X-Z1-Ngb"/>
                             <constraint firstItem="LPx-Vs-fkt" firstAttribute="leading" secondItem="c9L-Ee-ZQr" secondAttribute="leading" id="N5s-PY-4DQ"/>
                             <constraint firstItem="c9L-Ee-ZQr" firstAttribute="centerX" secondItem="D3h-hR-XKP" secondAttribute="centerX" id="NRe-hx-2J8"/>
+                            <constraint firstItem="Aiq-Jc-ZRS" firstAttribute="top" secondItem="2F6-Y1-3eV" secondAttribute="bottom" priority="998" constant="145" id="Oh1-D8-Hhq"/>
                             <constraint firstAttribute="leadingMargin" secondItem="wct-gM-STM" secondAttribute="leading" id="QfP-d1-voH"/>
                             <constraint firstItem="c9L-Ee-ZQr" firstAttribute="height" secondItem="LPx-Vs-fkt" secondAttribute="height" id="RR8-46-Qh2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wct-gM-STM" secondAttribute="trailing" id="RwA-zv-OPk"/>
                             <constraint firstItem="YOh-oZ-8Qw" firstAttribute="centerX" secondItem="D3h-hR-XKP" secondAttribute="centerX" id="Shk-kP-Cau"/>
+                            <constraint firstItem="Aiq-Jc-ZRS" firstAttribute="height" secondItem="c9L-Ee-ZQr" secondAttribute="height" id="ZoW-qh-AhP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2F6-Y1-3eV" secondAttribute="trailing" id="arE-sa-mRK"/>
                             <constraint firstItem="YOh-oZ-8Qw" firstAttribute="top" secondItem="pUC-ry-YDj" secondAttribute="bottom" constant="34" id="bPe-Mm-moU"/>
-                            <constraint firstItem="GNH-WO-nO4" firstAttribute="leading" secondItem="c9L-Ee-ZQr" secondAttribute="leading" id="iVh-aN-r4H"/>
                             <constraint firstItem="2F6-Y1-3eV" firstAttribute="top" secondItem="wct-gM-STM" secondAttribute="bottom" constant="8" id="kgt-CZ-GQk"/>
-                            <constraint firstItem="c9L-Ee-ZQr" firstAttribute="top" secondItem="GNH-WO-nO4" secondAttribute="bottom" constant="15" id="qHg-tm-tSJ"/>
+                            <constraint firstItem="Aiq-Jc-ZRS" firstAttribute="leading" secondItem="c9L-Ee-ZQr" secondAttribute="leading" id="mWR-iZ-13H"/>
                             <constraint firstItem="LPx-Vs-fkt" firstAttribute="trailing" secondItem="c9L-Ee-ZQr" secondAttribute="trailing" id="v7n-dI-qhv"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="fbLoginButton" destination="GNH-WO-nO4" id="Tai-lZ-ohG"/>
+                        <outlet property="fbLoginButton" destination="Aiq-Jc-ZRS" id="YBp-s4-TjN"/>
                         <outlet property="passwordTextField" destination="2F6-Y1-3eV" id="ea6-xE-4dr"/>
                         <outlet property="signUpBottomConstraint" destination="M0X-Z1-Ngb" id="Wzn-Ih-d5K"/>
                         <outlet property="usernameTextField" destination="wct-gM-STM" id="Yg0-4q-36e"/>
