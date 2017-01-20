@@ -33,10 +33,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let _ = FBSDKAccessToken.current() {
-            // User is logged in, do work such as go to next view controller.
-        }
-        
         let fbLoginButton = LoginButton(readPermissions: [ .publicProfile ])
         fbLoginButton.center = view.center
         

@@ -19,6 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        // Uncomment to go straight to the tab bar controller if the user is logged in
+//        if let _ = FBSDKAccessToken.current() {
+//            // User is logged in, show the tabs view controller
+//            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//            self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "tabs")
+//        }
+        
 		return true
 	}
 
