@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xeK-lE-v96">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fgt-OV-XJp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -176,6 +176,114 @@
             </objects>
             <point key="canvasLocation" x="-1567" y="912"/>
         </scene>
+        <!--Container View Controller-->
+        <scene sceneID="Mfl-d5-kW0">
+            <objects>
+                <viewController id="Fgt-OV-XJp" customClass="ContainerViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xWH-hY-98w"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ghx-W9-yKx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vDJ-pH-Wjn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Wrd-no-BSl" appends="YES" id="c2u-su-ppe"/>
+                            <outletCollection property="gestureRecognizers" destination="GEU-Vx-NYw" appends="YES" id="Bvh-6w-Ww7"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zbo-Ae-BZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="Wrd-no-BSl" userLabel="SwipeLeft">
+                    <connections>
+                        <action selector="swipeLeftWithSender:" destination="Fgt-OV-XJp" id="7Qt-og-vbe"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="GEU-Vx-NYw" userLabel="SwipeRight">
+                    <connections>
+                        <action selector="swipeRightWithSender:" destination="Fgt-OV-XJp" id="Dez-Ol-sNw"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-1159" y="-1597"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="X4p-Ro-z8D">
+            <objects>
+                <tableViewController storyboardIdentifier="MenuViewController" id="RzO-V0-GHo" customClass="MenuViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="oLm-yQ-JQp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection headerTitle="Nathan Johnson" id="UZm-s2-p2s">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="kKS-8h-J8K" style="IBUITableViewCellStyleDefault" id="TpB-Nq-vmW">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TpB-Nq-vmW" id="6c4-jy-sMh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Switch Modes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kKS-8h-J8K">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Z5c-dP-Onc" style="IBUITableViewCellStyleDefault" id="ya9-0G-2lm">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ya9-0G-2lm" id="slo-cn-gpx">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Z5c-dP-Onc">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="3IE-eY-Qzj" style="IBUITableViewCellStyleDefault" id="kpN-D0-lz9">
+                                        <rect key="frame" x="0.0" y="116" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kpN-D0-lz9" id="Le4-JK-oJB">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Log out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3IE-eY-Qzj">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="RzO-V0-GHo" id="vqE-XD-DXV"/>
+                            <outlet property="delegate" destination="RzO-V0-GHo" id="0M9-hr-R6d"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="adY-n6-Ohl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-190" y="-1649"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="RJn-HA-hrW">
             <objects>
@@ -242,7 +350,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9OR-YH-a4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1426" y="-1030"/>
+            <point key="canvasLocation" x="2980" y="-915.29235382308855"/>
         </scene>
         <!--Job-->
         <scene sceneID="XY1-Pu-RiE">
@@ -359,7 +467,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J3M-0s-62z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2381.5999999999999" y="-640.02998500749629"/>
+            <point key="canvasLocation" x="4260" y="-640.02998500749629"/>
         </scene>
         <!--My Jobs-->
         <scene sceneID="Dud-lR-byj">
@@ -407,7 +515,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uoD-0J-8wT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1426" y="-190"/>
+            <point key="canvasLocation" x="2980" y="-190.25487256371815"/>
         </scene>
         <!--Search-->
         <scene sceneID="Xjs-mO-RbY">
@@ -448,7 +556,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIo-Hi-ETP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2364" y="562.66866566716647"/>
+            <point key="canvasLocation" x="1102" y="525"/>
         </scene>
         <!--Category-->
         <scene sceneID="zse-sQ-T8L">
@@ -496,7 +604,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDo-5i-El4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3380" y="562.66866566716647"/>
+            <point key="canvasLocation" x="1966" y="525"/>
         </scene>
         <!--Account Settings-->
         <scene sceneID="SPY-Jx-yej">
@@ -534,7 +642,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8M-jX-mb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2364" y="1450.5247376311845"/>
+            <point key="canvasLocation" x="1102" y="1321"/>
         </scene>
         <!--New Bid-->
         <scene sceneID="beE-nQ-I76">
@@ -591,7 +699,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Yh-Ka-NeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4284" y="562.66866566716647"/>
+            <point key="canvasLocation" x="2866" y="525"/>
         </scene>
         <!--My Bids-->
         <scene sceneID="XU9-aN-X7Z">
@@ -610,7 +718,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VE3-ll-fE6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="294" y="-1030"/>
+            <point key="canvasLocation" x="2172" y="-915.29235382308855"/>
         </scene>
         <!--My Jobs-->
         <scene sceneID="Y8h-oY-CxD">
@@ -629,7 +737,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="69e-nt-z81" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="293.60000000000002" y="-190.25487256371815"/>
+            <point key="canvasLocation" x="2172" y="-190.25487256371815"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7TU-8O-9ro">
@@ -648,7 +756,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ski-V5-zzi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1232.8" y="562.66866566716647"/>
+            <point key="canvasLocation" x="294" y="525"/>
         </scene>
         <!--My Account-->
         <scene sceneID="ABt-eK-77U">
@@ -667,7 +775,95 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qma-YR-uKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1232.8" y="1450.5247376311845"/>
+            <point key="canvasLocation" x="294" y="1277"/>
+        </scene>
+        <!--My Bids-->
+        <scene sceneID="YVP-wz-JOJ">
+            <objects>
+                <tableViewController id="OhM-BQ-c1u" customClass="BidsViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="drG-OO-nC7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bidCell" textLabel="u2C-Kd-v2t" detailTextLabel="5KD-42-pI1" style="IBUITableViewCellStyleSubtitle" id="CRq-1Y-wgt">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CRq-1Y-wgt" id="yBx-NW-DJf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u2C-Kd-v2t">
+                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5KD-42-pI1">
+                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="OhM-BQ-c1u" id="Qpd-0X-fRc"/>
+                            <outlet property="delegate" destination="OhM-BQ-c1u" id="UwL-gh-Rlz"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="MTz-Ip-fjo"/>
+                    <navigationItem key="navigationItem" title="My Bids" id="fM0-Pz-eUq"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gFw-4P-lON" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.60000000000002" y="-822.63868065967017"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bos-xU-hsy">
+            <objects>
+                <navigationController storyboardIdentifier="ClientNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="SLt-cR-Mw2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nAV-Pz-gUY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3n1-P2-8Ky" kind="relationship" relationship="rootViewController" id="Mnx-SZ-OJE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0dM-ho-mo1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1130.4000000000001" y="-823.53823088455783"/>
+        </scene>
+        <!--Client Tab Bar Controller-->
+        <scene sceneID="gTy-0e-v8c">
+            <objects>
+                <tabBarController storyboardIdentifier="ClientTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="3n1-P2-8Ky" customClass="ClientTabBarController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="X2t-6e-Kyu">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="l7Y-7c-yNb">
+                            <connections>
+                                <action selector="menuTapped:" destination="3n1-P2-8Ky" id="fDn-OP-XQr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="oJ5-yf-I1a">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="OhM-BQ-c1u" kind="relationship" relationship="viewControllers" id="yCS-tb-TPz"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kqD-Pm-HGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-189.59999999999999" y="-822.63868065967017"/>
         </scene>
     </scenes>
     <resources>
@@ -678,6 +874,6 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <image name="Star" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="69p-7s-MLs"/>
+        <segue reference="Dmr-IU-JyO"/>
     </inferredMetricsTieBreakers>
 </document>
