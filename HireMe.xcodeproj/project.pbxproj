@@ -309,7 +309,7 @@
 					};
 					21B38F0B1DCC21A4000A5CB1 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = D8BVW7B3PF;
+						DevelopmentTeam = E5QLQ9VDQN;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 21B38EF71DCC21A4000A5CB1;
 					};
@@ -708,10 +708,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = D8BVW7B3PF;
+				DEVELOPMENT_TEAM = E5QLQ9VDQN;
 				INFOPLIST_FILE = HireMeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.precisioncodes.HireMeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -725,10 +725,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = D8BVW7B3PF;
+				DEVELOPMENT_TEAM = E5QLQ9VDQN;
 				INFOPLIST_FILE = HireMeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.precisioncodes.HireMeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -744,7 +744,7 @@
 				DEVELOPMENT_TEAM = E5QLQ9VDQN;
 				INFOPLIST_FILE = HireMeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.precisioncodes.HireMeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -760,7 +760,7 @@
 				DEVELOPMENT_TEAM = E5QLQ9VDQN;
 				INFOPLIST_FILE = HireMeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.precisioncodes.HireMeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
