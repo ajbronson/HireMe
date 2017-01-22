@@ -176,39 +176,6 @@
             </objects>
             <point key="canvasLocation" x="-1567" y="912"/>
         </scene>
-        <!--Container View Controller-->
-        <scene sceneID="Mfl-d5-kW0">
-            <objects>
-                <viewController id="Fgt-OV-XJp" customClass="ContainerViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xWH-hY-98w"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ghx-W9-yKx"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vDJ-pH-Wjn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="Wrd-no-BSl" appends="YES" id="c2u-su-ppe"/>
-                            <outletCollection property="gestureRecognizers" destination="GEU-Vx-NYw" appends="YES" id="Bvh-6w-Ww7"/>
-                        </connections>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zbo-Ae-BZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="Wrd-no-BSl" userLabel="SwipeLeft">
-                    <connections>
-                        <action selector="swipeLeftWithSender:" destination="Fgt-OV-XJp" id="7Qt-og-vbe"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="GEU-Vx-NYw" userLabel="SwipeRight">
-                    <connections>
-                        <action selector="swipeRightWithSender:" destination="Fgt-OV-XJp" id="Dez-Ol-sNw"/>
-                    </connections>
-                </swipeGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="-1159" y="-1597"/>
-        </scene>
         <!--Menu View Controller-->
         <scene sceneID="X4p-Ro-z8D">
             <objects>
