@@ -6,12 +6,14 @@
 //  Copyright © 2017 AJ Bronson. All rights reserved.
 //
 
-import UIKit
+import SideMenu
 
 class ClientTabBarController: UITabBarController {
-
-    @IBAction func menuTapped(_ sender: UIBarButtonItem) {
-        print("Menu please!")
-    }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Customize side menu
+        SideMenuManager.menuPresentMode = .menuSlideIn
+    }
 }
