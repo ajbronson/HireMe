@@ -185,10 +185,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
-                            <tableViewSection headerTitle="Nathan Johnson" id="UZm-s2-p2s">
+                            <tableViewSection id="UZm-s2-p2s">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="kKS-8h-J8K" style="IBUITableViewCellStyleDefault" id="TpB-Nq-vmW">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TpB-Nq-vmW" id="6c4-jy-sMh">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -204,8 +204,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Z5c-dP-Onc" style="IBUITableViewCellStyleDefault" id="ya9-0G-2lm">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="settings" textLabel="Z5c-dP-Onc" style="IBUITableViewCellStyleDefault" id="ya9-0G-2lm" userLabel="Settings">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ya9-0G-2lm" id="slo-cn-gpx">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -220,23 +220,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="3IE-eY-Qzj" style="IBUITableViewCellStyleDefault" id="kpN-D0-lz9">
-                                        <rect key="frame" x="0.0" y="116" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kpN-D0-lz9" id="Le4-JK-oJB">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Log out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3IE-eY-Qzj">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="e7k-BD-Med" kind="show" identifier="showSettings" id="a2e-5Z-krV"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -250,7 +236,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adY-n6-Ohl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="118" y="-826"/>
+            <point key="canvasLocation" x="118" y="-1238"/>
         </scene>
         <!--My Bids-->
         <scene sceneID="1rS-Nw-ECK">
@@ -299,7 +285,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9OR-YH-a4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1102" y="-826"/>
+            <point key="canvasLocation" x="1001" y="-511"/>
         </scene>
         <!--Job-->
         <scene sceneID="XY1-Pu-RiE">
@@ -416,7 +402,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J3M-0s-62z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2126" y="-487"/>
+            <point key="canvasLocation" x="1905" y="-133"/>
         </scene>
         <!--My Jobs-->
         <scene sceneID="Dud-lR-byj">
@@ -465,7 +451,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uoD-0J-8wT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1102" y="-102"/>
+            <point key="canvasLocation" x="1001" y="202"/>
         </scene>
         <!--Search-->
         <scene sceneID="Xjs-mO-RbY">
@@ -507,7 +493,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIo-Hi-ETP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1102" y="608"/>
+            <point key="canvasLocation" x="118" y="979"/>
         </scene>
         <!--Category-->
         <scene sceneID="zse-sQ-T8L">
@@ -555,29 +541,46 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDo-5i-El4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1905" y="608"/>
+            <point key="canvasLocation" x="1001" y="978"/>
         </scene>
-        <!--Account Settings-->
+        <!--Settings-->
         <scene sceneID="SPY-Jx-yej">
             <objects>
                 <tableViewController id="e7k-BD-Med" customClass="AccountViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1sT-cV-lVj">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="1sT-cV-lVj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="accountCell" textLabel="6fU-3k-67W" style="IBUITableViewCellStyleDefault" id="MeU-un-TFd">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MeU-un-TFd" id="9HE-T0-b7O">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6fU-3k-67W">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="logOutCell" textLabel="Izx-VB-Qob" style="IBUITableViewCellStyleDefault" id="ie4-jJ-8gt">
+                                <rect key="frame" x="0.0" y="100" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ie4-jJ-8gt" id="GvX-Fu-MYB">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Log Out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Izx-VB-Qob">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -590,11 +593,14 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="My Account" image="Account" id="VdV-u6-N5o"/>
-                    <navigationItem key="navigationItem" title="Account Settings" id="zbI-63-1h0"/>
+                    <navigationItem key="navigationItem" title="Settings" id="zbI-63-1h0"/>
+                    <connections>
+                        <segue destination="xeK-lE-v96" kind="show" identifier="showLogin" id="4v7-LZ-CO5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8M-jX-mb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1102" y="1339"/>
+            <point key="canvasLocation" x="1001" y="-1238"/>
         </scene>
         <!--New Bid-->
         <scene sceneID="beE-nQ-I76">
@@ -651,7 +657,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Yh-Ka-NeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2746" y="608"/>
+            <point key="canvasLocation" x="1905" y="978"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="bNt-zT-iQe">
@@ -676,7 +682,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5r-T6-MOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-706" y="-826"/>
+            <point key="canvasLocation" x="-706" y="-1238"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dgv-kg-usE">
@@ -705,7 +711,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                     <navigationItem key="navigationItem" id="Ol4-jw-MRx">
                         <barButtonItem key="leftBarButtonItem" image="Menu" id="C3z-9p-m09">
                             <connections>
-                                <segue destination="n3l-UV-hM1" kind="presentation" id="qj8-BT-Ixk"/>
+                                <segue destination="n3l-UV-hM1" kind="presentation" identifier="menu" id="qj8-BT-Ixk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -717,7 +723,6 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                         <segue destination="37k-us-BeE" kind="relationship" relationship="viewControllers" id="Rwo-jy-tqI"/>
                         <segue destination="4C2-Xd-SlV" kind="relationship" relationship="viewControllers" id="MnN-dY-4t4"/>
                         <segue destination="Dr3-8C-hSF" kind="relationship" relationship="viewControllers" id="PUi-p2-6CS"/>
-                        <segue destination="e7k-BD-Med" kind="relationship" relationship="viewControllers" id="Bai-gp-t2N"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRF-kt-ZLV" userLabel="First Responder" sceneMemberID="firstResponder"/>

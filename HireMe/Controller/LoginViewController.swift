@@ -27,6 +27,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var verticalSpacingBetweenButtons: NSLayoutConstraint!
     
     
+    // MARK: - Properties
+    
+    private var fbUserData: [String: Any]?
+    
+    
     // MARK: - View controller life cycle
     
     override func viewDidLoad() {
@@ -57,16 +62,22 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showTabs") {
-            print("preparing...")
+            let tabBarController = segue.destination.childViewControllers.first as! ClientTabBarController
+            tabBarController.fbUserData = self.fbUserData
         }
+    }
+    
+    @IBAction func logOut(with segue: UIStoryboardSegue) {
+        print("back to log in from log out")
     }
     
     
     // MARK: - FBSDKLoginButtonDelegate callbacks
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        // Custom code
-        print("Logged in via Facebook")
+        if (error == nil) {
+            getFBUserData()
+        }
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
@@ -83,5 +94,17 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBAction func signUpTapped(_ sender: UIButton) {
         // Custom code
+    }
+    
+    
+    // MARK: - Custom functions
+    
+    func getFBUserData() {
+        FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, picture.type(large), email"]).start { (connection, result, error) in
+            if (error == nil) {
+                self.fbUserData = result as? [String: Any]
+                self.performSegue(withIdentifier: "showTabs", sender: nil)
+            }
+        }
     }
 }
