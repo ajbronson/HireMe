@@ -706,7 +706,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 63CB25752D5FCD6D1980B106 /* Pods-HireMeTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = E5QLQ9VDQN;
 				INFOPLIST_FILE = HireMeTests/Info.plist;
@@ -723,7 +723,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 34983C9B63B372B09F18A223 /* Pods-HireMeTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = E5QLQ9VDQN;
 				INFOPLIST_FILE = HireMeTests/Info.plist;
