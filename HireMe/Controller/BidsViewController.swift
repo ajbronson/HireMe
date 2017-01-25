@@ -9,8 +9,16 @@
 import UIKit
 
 class BidsViewController: UITableViewController {
+    
+    // MARK: - View controller life cycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.navigationItem.title = "My Bids"
+    }
+    
 	
-	//MARK: - TableView Methods
+	// MARK: - UITableViewDataSource methods
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return 6

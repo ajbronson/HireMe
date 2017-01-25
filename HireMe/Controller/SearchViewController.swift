@@ -10,7 +10,15 @@ import UIKit
 
 class SearchViewController: UITableViewController {
 	
-	//MARK: - TableView Methods
+    // MARK: - View controller life cycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.navigationItem.title = "Search"
+    }
+    
+    
+    // MARK: - UITableViewDataSource methods
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return 6
