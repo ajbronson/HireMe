@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		// Override point for customization after application launch.
+		
+        UINavigationBar.appearance().barTintColor = UIColor(red:0.00, green:0.74, blue:0.83, alpha:1.0) // #00BCD4
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        // Uncomment to go straight to the tab bar controller if the user is logged in
+//        if let _ = FBSDKAccessToken.current() {
+//            // User is logged in, show the tabs view controller
+//            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//            self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "tabs")
+//        }
+        
 		return true
 	}
 
@@ -40,6 +51,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func applicationWillTerminate(_ application: UIApplication) {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
+    
+    // Needed for Facebook login
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+        
+        return handled
+    }
 
 
 }
