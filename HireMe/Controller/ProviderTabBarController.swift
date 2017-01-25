@@ -10,7 +10,7 @@ import SideMenu
 
 class ProviderTabBarController: UITabBarController {
     
-    var fbUserData: [String: Any]?
+    var fbUserProfile: [String: Any]?
     
     
     // MARK: - View controller life cycle
@@ -20,6 +20,14 @@ class ProviderTabBarController: UITabBarController {
         
         // Customize side menu
         SideMenuManager.menuPresentMode = .menuSlideIn
+        
+        if self.fbUserProfile == nil {
+            FBUserProfileController().fbGraphRequest(completionHandler: { (connection, result, error) in
+                if (error == nil) {
+                    self.fbUserProfile = result as? [String: Any]
+                }
+            })
+        }
     }
     
     
@@ -28,7 +36,7 @@ class ProviderTabBarController: UITabBarController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "menu" {
             let menuVC = segue.destination.childViewControllers.first as! MenuViewController
-            menuVC.fbUserData = self.fbUserData
+            menuVC.fbUserData = self.fbUserProfile
         }
     }
 }

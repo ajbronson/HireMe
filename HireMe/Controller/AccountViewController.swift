@@ -79,9 +79,9 @@ class AccountViewController: UITableViewController {
                 alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                 alertController.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { (action) in
                     FBSDKLoginManager().logOut()
-                    // TODO: show Log In screen
                     
-                    self.performSegue(withIdentifier: "unwindToLogin", sender: nil)
+                    // TODO: show Login screen, following doesn't work
+//                    self.performSegue(withIdentifier: "unwindToLogin", sender: nil)
                 }))
                 self.present(alertController, animated: true, completion: nil)
             }

@@ -29,7 +29,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     // MARK: - Properties
     
-    private var fbUserData: [String: Any]?
+    private var fbUserProfile: [String: Any]!
     
     
     // MARK: - View controller life cycle
@@ -63,7 +63,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showTabs") {
             let tabBarController = segue.destination.childViewControllers.first as! ProviderTabBarController
-            tabBarController.fbUserData = self.fbUserData
+            tabBarController.fbUserProfile = self.fbUserProfile
         }
     }
     
@@ -72,11 +72,16 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     
-    // MARK: - FBSDKLoginButtonDelegate callbacks
+    // MARK: - FBSDKLoginButtonDelegate methods
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         if (error == nil) {
-            getFBUserData()
+            FBUserProfileController().fbGraphRequest(completionHandler: { (connection, result, error) in
+                if error == nil {
+                    self.fbUserProfile = result as! [String: Any]
+                    self.performSegue(withIdentifier: "showTabs", sender: nil)
+                }
+            })
         }
     }
     
@@ -94,17 +99,5 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBAction func signUpTapped(_ sender: UIButton) {
         // Custom code
-    }
-    
-    
-    // MARK: - Custom functions
-    
-    func getFBUserData() {
-        FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, picture.type(large), email"]).start { (connection, result, error) in
-            if (error == nil) {
-                self.fbUserData = result as? [String: Any]
-                self.performSegue(withIdentifier: "showTabs", sender: nil)
-            }
-        }
     }
 }
