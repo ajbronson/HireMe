@@ -67,7 +67,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
-    @IBAction func logOut(with segue: UIStoryboardSegue) {
+    @IBAction func prepare(forLogOutUnwind segue: UIStoryboardSegue) {
         print("back to log in from log out")
     }
     

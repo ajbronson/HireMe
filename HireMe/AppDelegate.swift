@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        if let _ = FBSDKAccessToken.current() {
 //            // User is logged in, show the tabs view controller
 //            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//            self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "tabs")
+//            self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "providerTabsNavController")
 //        }
         
 		return true

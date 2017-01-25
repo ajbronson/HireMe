@@ -57,10 +57,7 @@ class AccountViewController: UITableViewController {
             
             return cell
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "logOutCell", for: indexPath)
-            cell.textLabel?.text = "Log Out"
-            
-            return cell
+            return tableView.dequeueReusableCell(withIdentifier: "logOutCell", for: indexPath)
         }
 	}
     
@@ -76,14 +73,15 @@ class AccountViewController: UITableViewController {
             if let _ = FBSDKAccessToken.current() {
                 // User is currently logged in with Facebook
                 
-                let title = "Logged in as \(self.name)"
-                let alertController = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
+                let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
                 alertController.popoverPresentationController?.sourceView = self.view
                 alertController.popoverPresentationController?.sourceRect = self.view.bounds;
                 alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                 alertController.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { (action) in
                     FBSDKLoginManager().logOut()
                     // TODO: show Log In screen
+                    
+                    self.performSegue(withIdentifier: "unwindToLogin", sender: nil)
                 }))
                 self.present(alertController, animated: true, completion: nil)
             }
