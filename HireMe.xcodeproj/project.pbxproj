@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21ACA9DF1E384E670066C266 /* ConsumerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21ACA9DE1E384E670066C266 /* ConsumerStoryboard.storyboard */; };
 		21B38EFC1DCC21A4000A5CB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38EFB1DCC21A4000A5CB1 /* AppDelegate.swift */; };
 		21B38F011DCC21A4000A5CB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B38EFF1DCC21A4000A5CB1 /* Main.storyboard */; };
 		21B38F031DCC21A4000A5CB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21B38F021DCC21A4000A5CB1 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		1A1925A3082FD6438C80712C /* Pods-HireMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HireMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-HireMe/Pods-HireMe.release.xcconfig"; sourceTree = "<group>"; };
+		21ACA9DE1E384E670066C266 /* ConsumerStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ConsumerStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
 		21B38EF81DCC21A4000A5CB1 /* HireMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HireMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B38EFB1DCC21A4000A5CB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21B38F001DCC21A4000A5CB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			children = (
 				21B38EFF1DCC21A4000A5CB1 /* Main.storyboard */,
 				21B38F041DCC21A4000A5CB1 /* LaunchScreen.storyboard */,
+				21ACA9DE1E384E670066C266 /* ConsumerStoryboard.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21B38F061DCC21A4000A5CB1 /* LaunchScreen.storyboard in Resources */,
+				21ACA9DF1E384E670066C266 /* ConsumerStoryboard.storyboard in Resources */,
 				21B38F031DCC21A4000A5CB1 /* Assets.xcassets in Resources */,
 				21B38F011DCC21A4000A5CB1 /* Main.storyboard in Resources */,
 			);
