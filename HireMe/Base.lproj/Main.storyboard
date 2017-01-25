@@ -704,10 +704,10 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             </objects>
             <point key="canvasLocation" x="-706" y="202"/>
         </scene>
-        <!--Client Tab Bar Controller-->
+        <!--Provider Tab Bar Controller-->
         <scene sceneID="X5Q-Bs-1qi">
             <objects>
-                <tabBarController storyboardIdentifier="providerTabs" automaticallyAdjustsScrollViewInsets="NO" id="v82-LS-TeQ" customClass="ClientTabBarController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="providerTabs" automaticallyAdjustsScrollViewInsets="NO" id="v82-LS-TeQ" customClass="ProviderTabBarController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Ol4-jw-MRx">

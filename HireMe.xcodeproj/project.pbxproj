@@ -18,7 +18,6 @@
 		D019B56F1E2F296D00D1E018 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019B56E1E2F296D00D1E018 /* CreateAccountViewController.swift */; };
 		D0716F071E385790005D571F /* ProviderTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0716F061E385790005D571F /* ProviderTabBarController.swift */; };
 		D072856C1E32D4C5006F5453 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D072856B1E32D4C5006F5453 /* MenuViewController.swift */; };
-		D072856E1E32D9E3006F5453 /* ClientTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D072856D1E32D9E3006F5453 /* ClientTabBarController.swift */; };
 		D08FBD891E2F0DD0002DF217 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FBD831E2F0DD0002DF217 /* AccountViewController.swift */; };
 		D08FBD8A1E2F0DD0002DF217 /* BidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FBD841E2F0DD0002DF217 /* BidsViewController.swift */; };
 		D08FBD8B1E2F0DD0002DF217 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FBD851E2F0DD0002DF217 /* CategoryViewController.swift */; };
@@ -69,7 +68,6 @@
 		D019B56E1E2F296D00D1E018 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		D0716F061E385790005D571F /* ProviderTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderTabBarController.swift; sourceTree = "<group>"; };
 		D072856B1E32D4C5006F5453 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		D072856D1E32D9E3006F5453 /* ClientTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientTabBarController.swift; sourceTree = "<group>"; };
 		D08FBD831E2F0DD0002DF217 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		D08FBD841E2F0DD0002DF217 /* BidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidsViewController.swift; sourceTree = "<group>"; };
 		D08FBD851E2F0DD0002DF217 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 			children = (
 				D08FBD821E2F0D81002DF217 /* View */,
 				D08FBD811E2F0D81002DF217 /* Controller */,
-				21B38F321DCC2512000A5CB1 /* Storyboard */,
 				21B38F021DCC21A4000A5CB1 /* Assets.xcassets */,
 				21B38F311DCC2501000A5CB1 /* HelperFiles */,
 			);
@@ -170,13 +167,6 @@
 			name = HelperFiles;
 			sourceTree = "<group>";
 		};
-		21B38F321DCC2512000A5CB1 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Storyboard;
-			sourceTree = "<group>";
-		};
 		A371ECBBCA8243285EDB0673 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,7 +192,6 @@
 				D08FBD881E2F0DD0002DF217 /* SearchViewController.swift */,
 				D019B56E1E2F296D00D1E018 /* CreateAccountViewController.swift */,
 				D072856B1E32D4C5006F5453 /* MenuViewController.swift */,
-				D072856D1E32D9E3006F5453 /* ClientTabBarController.swift */,
 				D0716F061E385790005D571F /* ProviderTabBarController.swift */,
 			);
 			path = Controller;
@@ -518,7 +507,6 @@
 				D08FBD891E2F0DD0002DF217 /* AccountViewController.swift in Sources */,
 				D08FBD8A1E2F0DD0002DF217 /* BidsViewController.swift in Sources */,
 				D08FBD901E2F0E3C002DF217 /* LoginViewController.swift in Sources */,
-				D072856E1E32D9E3006F5453 /* ClientTabBarController.swift in Sources */,
 				D08FBD8D1E2F0DD0002DF217 /* NewBidViewController.swift in Sources */,
 				D019B56F1E2F296D00D1E018 /* CreateAccountViewController.swift in Sources */,
 				D08FBD8C1E2F0DD0002DF217 /* JobsViewController.swift in Sources */,

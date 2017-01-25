@@ -62,7 +62,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showTabs") {
-            let tabBarController = segue.destination.childViewControllers.first as! ClientTabBarController
+            let tabBarController = segue.destination.childViewControllers.first as! ProviderTabBarController
             tabBarController.fbUserData = self.fbUserData
         }
     }
