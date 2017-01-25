@@ -16,6 +16,7 @@
 		6B9D6528207E89B71A2A96D2 /* Pods_HireMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63FA781523A1671C7EC4C65 /* Pods_HireMe.framework */; };
 		A20D39D3566CC81D2A69B0E6 /* Pods_HireMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B3B5B55512633A4F50B917 /* Pods_HireMeTests.framework */; };
 		D019B56F1E2F296D00D1E018 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019B56E1E2F296D00D1E018 /* CreateAccountViewController.swift */; };
+		D0716F071E385790005D571F /* ProviderTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0716F061E385790005D571F /* ProviderTabBarController.swift */; };
 		D072856C1E32D4C5006F5453 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D072856B1E32D4C5006F5453 /* MenuViewController.swift */; };
 		D072856E1E32D9E3006F5453 /* ClientTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D072856D1E32D9E3006F5453 /* ClientTabBarController.swift */; };
 		D08FBD891E2F0DD0002DF217 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FBD831E2F0DD0002DF217 /* AccountViewController.swift */; };
@@ -66,6 +67,7 @@
 		C50318D16C0CDDAFFD138EDC /* Pods-HireMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HireMeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HireMeUITests/Pods-HireMeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C63FA781523A1671C7EC4C65 /* Pods_HireMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HireMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D019B56E1E2F296D00D1E018 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		D0716F061E385790005D571F /* ProviderTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderTabBarController.swift; sourceTree = "<group>"; };
 		D072856B1E32D4C5006F5453 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		D072856D1E32D9E3006F5453 /* ClientTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientTabBarController.swift; sourceTree = "<group>"; };
 		D08FBD831E2F0DD0002DF217 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				D019B56E1E2F296D00D1E018 /* CreateAccountViewController.swift */,
 				D072856B1E32D4C5006F5453 /* MenuViewController.swift */,
 				D072856D1E32D9E3006F5453 /* ClientTabBarController.swift */,
+				D0716F061E385790005D571F /* ProviderTabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0716F071E385790005D571F /* ProviderTabBarController.swift in Sources */,
 				D08FBD8B1E2F0DD0002DF217 /* CategoryViewController.swift in Sources */,
 				D072856C1E32D4C5006F5453 /* MenuViewController.swift in Sources */,
 				D08FBD8E1E2F0DD0002DF217 /* SearchViewController.swift in Sources */,
