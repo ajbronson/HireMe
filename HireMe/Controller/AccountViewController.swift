@@ -19,7 +19,9 @@ class AccountViewController: UITableViewController {
 		super.viewDidLoad()
 		tableView.separatorStyle = .none
         
-        self.name = self.fbUserData!["name"] as! String
+        if let userName = self.fbUserData?["name"] as? String {
+            self.name = userName
+        }
 	}
 	
     
@@ -81,7 +83,7 @@ class AccountViewController: UITableViewController {
                     FBSDKLoginManager().logOut()
                     
                     // TODO: show Login screen, following doesn't work
-//                    self.performSegue(withIdentifier: "unwindToLogin", sender: nil)
+                    self.performSegue(withIdentifier: "unwindToLogin", sender: nil)
                 }))
                 self.present(alertController, animated: true, completion: nil)
             }

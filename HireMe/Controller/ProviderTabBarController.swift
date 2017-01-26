@@ -7,6 +7,7 @@
 //
 
 import SideMenu
+import FBSDKLoginKit
 
 class ProviderTabBarController: UITabBarController {
     
@@ -21,7 +22,7 @@ class ProviderTabBarController: UITabBarController {
         // Customize side menu
         SideMenuManager.menuPresentMode = .menuSlideIn
         
-        if self.fbUserProfile == nil {
+        if self.fbUserProfile == nil && FBSDKAccessToken.current() != nil {
             FBUserProfileController().fbGraphRequest(completionHandler: { (connection, result, error) in
                 if (error == nil) {
                     self.fbUserProfile = result as? [String: Any]
