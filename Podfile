@@ -8,6 +8,7 @@ target 'HireMe' do
   # Pods for HireMe
 
   pod 'FacebookLogin'
+  pod 'Google/SignIn'
   pod 'SideMenu', '~> 2.1'
 
   target 'HireMeTests' do
