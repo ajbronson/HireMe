@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Uncomment to go straight to the tab bar controller if the user is logged in
         if let _ = FBSDKAccessToken.current() {
             // User is logged in, show the tabs view controller
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let storyboard = UIStoryboard(name: "Provider", bundle: Bundle.main)
             self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "providerTabsNavController")
         }
         
