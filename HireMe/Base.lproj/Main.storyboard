@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -22,20 +23,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wct-gM-STM">
-                                <rect key="frame" x="16" y="193" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9L-Ee-ZQr" userLabel="LoginButton">
-                                <rect key="frame" x="31" y="427" width="313" height="50"/>
+                                <rect key="frame" x="31" y="394" width="313" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.73725490196078436" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5f2-yp-J2C"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Log In">
+                                <state key="normal" title="Sign In">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -43,14 +38,14 @@
                                     <segue destination="kbc-KI-KJO" kind="show" identifier="showTabs" id="Npl-46-vh3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="HireMe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOh-oZ-8Qw">
-                                <rect key="frame" x="109" y="98" width="157" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="HireMe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOh-oZ-8Qw">
+                                <rect key="frame" x="109" y="53" width="157" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPx-Vs-fkt" userLabel="CreateAccountButton">
-                                <rect key="frame" x="31" y="492" width="313" height="50"/>
+                                <rect key="frame" x="31" y="459" width="313" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Create an account">
@@ -61,48 +56,50 @@
                                     <segue destination="ims-g4-kmo" kind="show" id="uYP-aX-as2"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2F6-Y1-3eV">
-                                <rect key="frame" x="16" y="231" width="343" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxd-Dh-ptc">
+                                <rect key="frame" x="179.5" y="323.5" width="16" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aiq-Jc-ZRS" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="31" y="362" width="313" height="50"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Aiq-Jc-ZRS" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="31" y="228" width="313" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="gst-Wb-pBu" customClass="GIDSignInButton">
+                                <rect key="frame" x="31" y="163" width="313" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.8784313725490196" green="0.96862745098039216" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="wct-gM-STM" firstAttribute="top" secondItem="YOh-oZ-8Qw" secondAttribute="bottom" constant="35" id="2yX-BM-gGo"/>
+                            <constraint firstItem="oxd-Dh-ptc" firstAttribute="top" secondItem="Aiq-Jc-ZRS" secondAttribute="bottom" priority="999" constant="50" id="36s-x8-Ppy"/>
                             <constraint firstItem="LPx-Vs-fkt" firstAttribute="centerX" secondItem="D3h-hR-XKP" secondAttribute="centerX" id="40d-Ue-k87"/>
+                            <constraint firstItem="oxd-Dh-ptc" firstAttribute="centerX" secondItem="D3h-hR-XKP" secondAttribute="centerX" id="5Sl-Eu-4lL"/>
                             <constraint firstItem="Aiq-Jc-ZRS" firstAttribute="trailing" secondItem="c9L-Ee-ZQr" secondAttribute="trailing" id="8Z4-Zi-Ml3"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="2F6-Y1-3eV" secondAttribute="leading" id="9VW-xr-TNh"/>
-                            <constraint firstItem="c9L-Ee-ZQr" firstAttribute="top" secondItem="Aiq-Jc-ZRS" secondAttribute="bottom" constant="15" id="ErR-4P-oXD"/>
                             <constraint firstAttribute="leadingMargin" secondItem="c9L-Ee-ZQr" secondAttribute="leading" constant="-15" id="GDo-fd-uYu"/>
                             <constraint firstItem="LPx-Vs-fkt" firstAttribute="top" secondItem="c9L-Ee-ZQr" secondAttribute="bottom" constant="15" id="Hw6-ux-r2a"/>
+                            <constraint firstItem="loU-3K-jsS" firstAttribute="top" secondItem="LPx-Vs-fkt" secondAttribute="bottom" priority="998" constant="157" id="Itm-cO-cC0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="c9L-Ee-ZQr" secondAttribute="trailing" constant="15" id="KHI-59-nSo"/>
-                            <constraint firstItem="loU-3K-jsS" firstAttribute="top" secondItem="LPx-Vs-fkt" secondAttribute="bottom" priority="999" constant="125" id="M0X-Z1-Ngb"/>
+                            <constraint firstItem="gst-Wb-pBu" firstAttribute="height" secondItem="c9L-Ee-ZQr" secondAttribute="height" id="LFR-Nx-tLM"/>
                             <constraint firstItem="LPx-Vs-fkt" firstAttribute="leading" secondItem="c9L-Ee-ZQr" secondAttribute="leading" id="N5s-PY-4DQ"/>
                             <constraint firstItem="c9L-Ee-ZQr" firstAttribute="centerX" secondItem="D3h-hR-XKP" secondAttribute="centerX" id="NRe-hx-2J8"/>
-                            <constraint firstItem="Aiq-Jc-ZRS" firstAttribute="top" secondItem="2F6-Y1-3eV" secondAttribute="bottom" priority="998" constant="145" id="Oh1-D8-Hhq"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="wct-gM-STM" secondAttribute="leading" id="QfP-d1-voH"/>
                             <constraint firstItem="c9L-Ee-ZQr" firstAttribute="height" secondItem="LPx-Vs-fkt" secondAttribute="height" id="RR8-46-Qh2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wct-gM-STM" secondAttribute="trailing" id="RwA-zv-OPk"/>
+                            <constraint firstItem="gst-Wb-pBu" firstAttribute="top" secondItem="YOh-oZ-8Qw" secondAttribute="bottom" constant="50" id="SfC-Yj-vQW"/>
                             <constraint firstItem="YOh-oZ-8Qw" firstAttribute="centerX" secondItem="D3h-hR-XKP" secondAttribute="centerX" id="Shk-kP-Cau"/>
+                            <constraint firstItem="c9L-Ee-ZQr" firstAttribute="top" secondItem="oxd-Dh-ptc" secondAttribute="bottom" priority="999" constant="50" id="U4B-DV-xdK"/>
+                            <constraint firstItem="Aiq-Jc-ZRS" firstAttribute="top" secondItem="gst-Wb-pBu" secondAttribute="bottom" constant="15" id="Z7k-Y1-xxI"/>
                             <constraint firstItem="Aiq-Jc-ZRS" firstAttribute="height" secondItem="c9L-Ee-ZQr" secondAttribute="height" id="ZoW-qh-AhP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="2F6-Y1-3eV" secondAttribute="trailing" id="arE-sa-mRK"/>
-                            <constraint firstItem="YOh-oZ-8Qw" firstAttribute="top" secondItem="pUC-ry-YDj" secondAttribute="bottom" constant="34" id="bPe-Mm-moU"/>
-                            <constraint firstItem="2F6-Y1-3eV" firstAttribute="top" secondItem="wct-gM-STM" secondAttribute="bottom" constant="8" id="kgt-CZ-GQk"/>
+                            <constraint firstItem="gst-Wb-pBu" firstAttribute="trailing" secondItem="c9L-Ee-ZQr" secondAttribute="trailing" id="aQh-v7-gUY"/>
+                            <constraint firstItem="YOh-oZ-8Qw" firstAttribute="top" secondItem="pUC-ry-YDj" secondAttribute="bottom" constant="33" id="bPe-Mm-moU"/>
                             <constraint firstItem="Aiq-Jc-ZRS" firstAttribute="leading" secondItem="c9L-Ee-ZQr" secondAttribute="leading" id="mWR-iZ-13H"/>
+                            <constraint firstItem="oxd-Dh-ptc" firstAttribute="centerY" secondItem="D3h-hR-XKP" secondAttribute="centerY" id="rhl-Y4-NLc"/>
+                            <constraint firstItem="gst-Wb-pBu" firstAttribute="leading" secondItem="c9L-Ee-ZQr" secondAttribute="leading" id="sOq-ro-IjN"/>
                             <constraint firstItem="LPx-Vs-fkt" firstAttribute="trailing" secondItem="c9L-Ee-ZQr" secondAttribute="trailing" id="v7n-dI-qhv"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="fbLoginButton" destination="Aiq-Jc-ZRS" id="YBp-s4-TjN"/>
-                        <outlet property="passwordTextField" destination="2F6-Y1-3eV" id="ea6-xE-4dr"/>
-                        <outlet property="signUpBottomConstraint" destination="M0X-Z1-Ngb" id="Wzn-Ih-d5K"/>
-                        <outlet property="usernameTextField" destination="wct-gM-STM" id="Yg0-4q-36e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FyL-F6-Kr3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -190,11 +187,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TpB-Nq-vmW" id="6c4-jy-sMh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Switch Modes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kKS-8h-J8K">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -207,11 +204,11 @@
                                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ya9-0G-2lm" id="slo-cn-gpx">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Z5c-dP-Onc">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -250,18 +247,18 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pna-rH-GjE" id="Ou4-rn-GEB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DKj-2i-Zbf">
-                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ASb-GY-UmN">
-                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -416,18 +413,18 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R1b-zx-1Kw" id="vVQ-ee-6yg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3O8-G8-iKG">
-                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PxC-gK-3sk">
-                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -465,11 +462,11 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1cg-ac-Mgh" id="NR8-eh-sTs">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a3l-Vi-EEc">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -507,18 +504,18 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BQC-Gf-a3h" id="WHf-5V-2VC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="k5m-ua-P9Y">
-                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XyJ-mO-ebG">
-                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -552,14 +549,14 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="accountCell" textLabel="6fU-3k-67W" style="IBUITableViewCellStyleDefault" id="MeU-un-TFd">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MeU-un-TFd" id="9HE-T0-b7O">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6fU-3k-67W">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -569,14 +566,14 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="logOutCell" textLabel="Izx-VB-Qob" style="IBUITableViewCellStyleDefault" id="ie4-jJ-8gt">
-                                <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ie4-jJ-8gt" id="GvX-Fu-MYB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Log Out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Izx-VB-Qob">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -664,7 +661,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n3l-UV-hM1" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dDF-ZW-lfe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dDF-ZW-lfe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -689,7 +686,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <objects>
                 <navigationController storyboardIdentifier="providerTabsNavController" automaticallyAdjustsScrollViewInsets="NO" id="kbc-KI-KJO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g28-RY-2CN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="g28-RY-2CN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

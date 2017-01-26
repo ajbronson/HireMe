@@ -7,8 +7,9 @@
 //
 
 import FBSDKLoginKit
+import GoogleSignIn
 
-class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate {
     
     // MARK: - Constants
     
@@ -36,6 +37,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
+        // Uncomment to automatically sign in the user.
+        //GIDSignIn.sharedInstance().signInSilently()
         
         fbLoginButton.delegate = self
         fbLoginButton.readPermissions = ["public_profile", "email"]
