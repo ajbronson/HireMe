@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>282251686410-1imvve44tmpldtv6cqvg2peik7slchi0.apps.googleusercontent.com</string>
+	<string>319683403466-lkuse4kmqio1i9nslo2fmp0cb4vdcj3e.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.282251686410-1imvve44tmpldtv6cqvg2peik7slchi0</string>
+	<string>com.googleusercontent.apps.319683403466-lkuse4kmqio1i9nslo2fmp0cb4vdcj3e</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.precisioncodes.HireMe</string>
 	<key>PROJECT_ID</key>
-	<string>firebase-hireme</string>
+	<string>firebase-limitedhire</string>
 	<key>IS_ADS_ENABLED</key>
 	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -23,6 +23,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:282251686410:ios:d6ee47e3089a7eab</string>
+	<string>1:319683403466:ios:d6ee47e3089a7eab</string>
 </dict>
 </plist>
