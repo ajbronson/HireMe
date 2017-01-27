@@ -91,7 +91,15 @@ class AccountViewController: UITableViewController {
                     print("sign out natively")
                 }
                 
-                self.performSegue(withIdentifier: "unwindToLogin", sender: nil)
+                
+//                let storyboard = UIStoryboard(name: "Provider", bundle: Bundle.main)
+//                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                if LoginViewController().isViewLoaded {
+                    print("LoginViewController is loaded")
+                } else {
+                    print("LoginViewController is not loaded")
+                }
+//                self.performSegue(withIdentifier: "unwindToLogin", sender: nil)
             }))
             
             self.present(alertController, animated: true, completion: nil)

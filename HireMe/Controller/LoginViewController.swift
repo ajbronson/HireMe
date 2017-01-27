@@ -29,12 +29,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     @IBOutlet weak var verticalSpacingBetweenButtons: NSLayoutConstraint!
     
     
-    // MARK: - Properties
-    
-    private var fbUserProfile: [String: Any]?
-    private var googleUserProfile: [String: String]?
-    
-    
     // MARK: - View controller life cycle
     
     override func viewDidLoad() {
