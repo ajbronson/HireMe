@@ -9,6 +9,7 @@
 import FBSDKLoginKit
 import GoogleSignIn
 
+// TODO: show an alert before signing in with Google and Facebook informing the user of what data we'll be accessingf
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate {
     
     // MARK: - Constants
