@@ -8,13 +8,15 @@
 
 import SideMenu
 import FBSDKLoginKit
+import GoogleSignIn
 
 class ProviderTabBarController: UITabBarController {
     
-    var fbUserProfile: [String: Any]?
+    private var fbUserProfile: [String: Any]?
+    private var googleUserProfile: [String: String]?
     
     
-    // MARK: - View controller life cycle
+    // MARK: View controller life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,22 +24,36 @@ class ProviderTabBarController: UITabBarController {
         // Customize side menu
         SideMenuManager.menuPresentMode = .menuSlideIn
         
-        if self.fbUserProfile == nil && FBSDKAccessToken.current() != nil {
-            FBUserProfileController().fbGraphRequest(completionHandler: { (connection, result, error) in
-                if (error == nil) {
-                    self.fbUserProfile = result as? [String: Any]
-                }
-            })
+        self.initializeUserProfile()
+    }
+    
+    
+    // MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "menu" {
+            if let menuVC = segue.destination.childViewControllers.first as? MenuViewController {
+                menuVC.fbUserProfile = self.fbUserProfile
+                menuVC.googleUserProfile = self.googleUserProfile
+            }
         }
     }
     
     
-    // MARK: - Navigation
+    // MARK: Custom functions
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "menu" {
-            let menuVC = segue.destination.childViewControllers.first as! MenuViewController
-            menuVC.fbUserData = self.fbUserProfile
+    func initializeUserProfile() {
+        if FBSDKAccessToken.current() != nil {
+            // User is logged in with Facebook
+            
+            if let fbUserProfile = UserDefaults.standard.dictionary(forKey: "fbUserProfile") {
+                self.fbUserProfile = fbUserProfile
+            }
+        }
+        
+        if GIDSignIn.sharedInstance().currentUser != nil {
+            // User is logged in with Google
+            self.googleUserProfile = UserDefaults.standard.dictionary(forKey: "googleUserProfile") as? [String: String]
         }
     }
 }

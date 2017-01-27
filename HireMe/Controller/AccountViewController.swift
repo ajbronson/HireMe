@@ -7,25 +7,32 @@
 //
 
 import FBSDKLoginKit
+import GoogleSignIn
 
 class AccountViewController: UITableViewController {
 	
-    var fbUserData: [String: Any]?
-    private var name = ""
+    var fbUserProfile: [String: Any]?
+    var googleUserProfile: [String: String]?
+    private var name: String?
+    private var email: String?
     
-	//MARK: - ViewController Lifecycle
+	//MARK: View controller life cycle
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		tableView.separatorStyle = .none
         
-        if let userName = self.fbUserData?["name"] as? String {
-            self.name = userName
+        if let fbUser = self.fbUserProfile {
+            self.name = fbUser["name"] as? String
+            self.email = fbUser["email"] as? String
+        } else {
+            self.name = self.googleUserProfile?["fullName"]
+            self.email = self.googleUserProfile?["email"]
         }
 	}
 	
     
-	//MARK: - UITableViewDataSource callbacks
+	//MARK: UITableViewDataSource callbacks
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -34,7 +41,6 @@ class AccountViewController: UITableViewController {
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0: return 5
-        case 1: return 1
         default: return 1
         }
 	}
@@ -46,13 +52,13 @@ class AccountViewController: UITableViewController {
             
             switch indexPath.row {
             case 0:
-                cell.textLabel?.text = "Name: \(self.name)"
+                cell.textLabel?.text = "Name: \(self.name ?? "")"
             case 1:
                 cell.textLabel?.text = "Skills: Tech, dogs, yard"
             case 2:
                 cell.textLabel?.text = "Number: 888-888-8888"
             case 3:
-                cell.textLabel?.text = "Email: jmack@gmail.com"
+                cell.textLabel?.text = "Email: \(self.email ?? "")"
             default:
                 cell.textLabel?.text = "Change Password"
             }
@@ -72,21 +78,24 @@ class AccountViewController: UITableViewController {
         let reuseId = tableView.cellForRow(at: indexPath)?.reuseIdentifier
         
         if reuseId == "logOutCell" {
-            if let _ = FBSDKAccessToken.current() {
-                // User is currently logged in with Facebook
-                
-                let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-                alertController.popoverPresentationController?.sourceView = self.view
-                alertController.popoverPresentationController?.sourceRect = self.view.bounds;
-                alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                alertController.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { (action) in
+            let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+            alertController.popoverPresentationController?.sourceView = self.view
+            alertController.popoverPresentationController?.sourceRect = self.view.bounds;
+            alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            alertController.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { (action) in
+                if FBSDKAccessToken.current() != nil {
                     FBSDKLoginManager().logOut()
-                    
-                    // TODO: show Login screen, following doesn't work
-                    self.performSegue(withIdentifier: "unwindToLogin", sender: nil)
-                }))
-                self.present(alertController, animated: true, completion: nil)
-            }
+                } else if GIDSignIn.sharedInstance().currentUser != nil {
+                    GIDSignIn.sharedInstance().signOut()
+                } else {
+                    print("sign out natively")
+                }
+                
+                self.performSegue(withIdentifier: "unwindToLogin", sender: nil)
+            }))
+            
+            self.present(alertController, animated: true, completion: nil)
+            
         }
     }
 }

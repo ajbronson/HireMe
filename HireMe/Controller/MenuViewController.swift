@@ -10,22 +10,25 @@ import FBSDKLoginKit
 
 class MenuViewController: UITableViewController {
     
-    var fbUserData: [String: Any]?
+    var fbUserProfile: [String: Any]?
+    var googleUserProfile: [String: String]?
     
     
-    // MARK: - Navigation
+    // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSettings" {
-            let settingsVC = segue.destination as! AccountViewController
-            settingsVC.fbUserData = self.fbUserData
+            if let settingsVC = segue.destination as? AccountViewController {
+                settingsVC.fbUserProfile = self.fbUserProfile
+                settingsVC.googleUserProfile = self.googleUserProfile
+            }
         }
     }
     
     
-    // MARK: - UITableViewDataSource callbacks
+    // MARK: UITableViewDataSource callbacks
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.fbUserData?["name"] as? String
+        return self.fbUserProfile?["name"] as? String
     }
 }

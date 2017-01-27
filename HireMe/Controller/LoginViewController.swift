@@ -31,7 +31,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     
     // MARK: - Properties
     
-    private var fbUserProfile: [String: Any]!
+    private var fbUserProfile: [String: Any]?
+    private var googleUserProfile: [String: String]?
     
     
     // MARK: - View controller life cycle
@@ -69,9 +70,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showTabs") {
-            // TODO: can I force downcast here or should I use "as?"?
-            let tabBarController = segue.destination.childViewControllers.first as! ProviderTabBarController
-            tabBarController.fbUserProfile = self.fbUserProfile
+
         }
     }
     
@@ -80,13 +79,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     }
     
     
-    // MARK: - FBSDKLoginButtonDelegate methods
+    // MARK: - FBSDKLoginButtonDelegate callbacks
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         if (error == nil) {
+            // TODO: start animating spinner
             FBUserProfileController().fbGraphRequest(completionHandler: { (connection, result, error) in
                 if error == nil {
-                    self.fbUserProfile = result as! [String: Any]
+                    UserDefaults.standard.setValue(result, forKey: "fbUserProfile")
                     self.performSegue(withIdentifier: "showTabs", sender: nil)
                 }
             })
