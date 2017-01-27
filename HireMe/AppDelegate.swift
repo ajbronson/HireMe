@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         let fbHandled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
         let googleHandled = GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
         
-        return fbHandled
+        return fbHandled || googleHandled
     }
 
     

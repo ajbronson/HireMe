@@ -69,6 +69,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showTabs") {
+            // TODO: can I force downcast here or should I use "as?"?
             let tabBarController = segue.destination.childViewControllers.first as! ProviderTabBarController
             tabBarController.fbUserProfile = self.fbUserProfile
         }
