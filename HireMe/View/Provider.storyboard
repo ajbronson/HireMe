@@ -14,7 +14,7 @@
         <!--Login View Controller-->
         <scene sceneID="QyE-gh-aZX">
             <objects>
-                <viewController id="xeK-lE-v96" customClass="LoginViewController" customModule="HireMe" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="xeK-lE-v96" customClass="LoginViewController" customModule="HireMe" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pUC-ry-YDj"/>
                         <viewControllerLayoutGuide type="bottom" id="loU-3K-jsS"/>
@@ -590,12 +590,8 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                     </tableView>
                     <tabBarItem key="tabBarItem" title="My Account" image="Account" id="VdV-u6-N5o"/>
                     <navigationItem key="navigationItem" title="Settings" id="zbI-63-1h0"/>
-                    <connections>
-                        <segue destination="hGh-7h-eJn" kind="unwind" identifier="unwindToLogin" unwindAction="prepareForLogOutUnwind:" id="qMb-U8-mpH"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8M-jX-mb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="hGh-7h-eJn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1567" y="-692"/>
         </scene>
@@ -686,7 +682,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <objects>
                 <navigationController storyboardIdentifier="providerTabsNavController" automaticallyAdjustsScrollViewInsets="NO" id="kbc-KI-KJO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g28-RY-2CN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="g28-RY-2CN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

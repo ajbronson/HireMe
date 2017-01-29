@@ -97,7 +97,10 @@ class AccountViewController: UITableViewController {
                 }
                 
                 setSignInMethod(as: SignInMethod.NotSignedIn)
-                self.performSegue(withIdentifier: "unwindToLogin", sender: nil)
+                
+                if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                    self.present(appDelegate.storyboard.instantiateViewController(withIdentifier: "LoginViewController"), animated: true, completion: nil)
+                }
             }))
             
             self.present(alertController, animated: true, completion: nil)

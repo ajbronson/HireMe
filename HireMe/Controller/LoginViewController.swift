@@ -56,10 +56,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
 //        }
 //    }
     
-    @IBAction func prepare(forLogOutUnwind segue: UIStoryboardSegue) {
-        print("back to log in from log out")
-    }
-    
     
     // MARK: - FBSDKLoginButtonDelegate callbacks
     
