@@ -572,7 +572,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Log Out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Izx-VB-Qob">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Sign Out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Izx-VB-Qob">
                                             <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -591,7 +591,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                     <tabBarItem key="tabBarItem" title="My Account" image="Account" id="VdV-u6-N5o"/>
                     <navigationItem key="navigationItem" title="Settings" id="zbI-63-1h0"/>
                     <connections>
-                        <segue destination="hGh-7h-eJn" kind="unwind" identifier="unwindToLogin" unwindAction="prepareForLogOutUnwind:" id="co5-DY-dJL"/>
+                        <segue destination="hGh-7h-eJn" kind="unwind" identifier="unwindToLogin" unwindAction="prepareForLogOutUnwind:" id="qMb-U8-mpH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8M-jX-mb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -686,7 +686,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <objects>
                 <navigationController storyboardIdentifier="providerTabsNavController" automaticallyAdjustsScrollViewInsets="NO" id="kbc-KI-KJO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="g28-RY-2CN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g28-RY-2CN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
