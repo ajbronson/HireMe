@@ -25,9 +25,9 @@ class AccountViewController: UITableViewController {
         if let fbUser = self.fbUserProfile {
             self.name = fbUser["name"] as? String
             self.email = fbUser["email"] as? String
-        } else {
-            self.name = self.googleUserProfile?["fullName"]
-            self.email = self.googleUserProfile?["email"]
+        } else if let googleUser = self.googleUserProfile {
+            self.name = googleUser["fullName"]
+            self.email = googleUser["email"]
         }
 	}
 	
@@ -82,24 +82,22 @@ class AccountViewController: UITableViewController {
             alertController.popoverPresentationController?.sourceView = self.view
             alertController.popoverPresentationController?.sourceRect = self.view.bounds;
             alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            alertController.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { (action) in
-                if FBSDKAccessToken.current() != nil {
-                    FBSDKLoginManager().logOut()
-                } else if GIDSignIn.sharedInstance().currentUser != nil {
-                    GIDSignIn.sharedInstance().signOut()
-                } else {
-                    print("sign out natively")
+            alertController.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { (action) in
+                switch getSignInMethod() {
+                    case .Facebook:
+                        FBSDKLoginManager().logOut()
+                        print("Signed out from Facebook")
+                    case .Google:
+                        GIDSignIn.sharedInstance().signOut()
+                        print("Signed out from Google")
+                    case .ThisApp:
+                        print("Signed out from LimitedHire")
+                    case .NotSignedIn:
+                        print("Not signed in")
                 }
                 
-                
-//                let storyboard = UIStoryboard(name: "Provider", bundle: Bundle.main)
-//                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                if LoginViewController().isViewLoaded {
-                    print("LoginViewController is loaded")
-                } else {
-                    print("LoginViewController is not loaded")
-                }
-//                self.performSegue(withIdentifier: "unwindToLogin", sender: nil)
+                setSignInMethod(as: SignInMethod.NotSignedIn)
+                self.performSegue(withIdentifier: "unwindToLogin", sender: nil)
             }))
             
             self.present(alertController, animated: true, completion: nil)

@@ -36,9 +36,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         
         GIDSignIn.sharedInstance().uiDelegate = self
         
-        // Uncomment to automatically sign in the user.
-        //GIDSignIn.sharedInstance().signInSilently()
-        
         fbLoginButton.delegate = self
         fbLoginButton.readPermissions = ["public_profile", "email"]
     }
@@ -59,15 +56,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
 //        }
 //    }
     
-    
-    // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "showTabs") {
-
-        }
-    }
-    
     @IBAction func prepare(forLogOutUnwind segue: UIStoryboardSegue) {
         print("back to log in from log out")
     }
@@ -77,20 +65,21 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         if (error == nil) {
+            print("Signed in with Facebook")
+            
             // TODO: start animating spinner
             FBUserProfileController().fbGraphRequest(completionHandler: { (connection, result, error) in
                 if error == nil {
-                    UserDefaults.standard.setValue(result, forKey: "fbUserProfile")
+                    UserDefaults.standard.set(result, forKey: "fbUserProfile")
+                    setSignInMethod(as: SignInMethod.Facebook)
                     self.performSegue(withIdentifier: "showTabs", sender: nil)
                 }
             })
         }
     }
     
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        // Custom code
-        print("Logged out from Facebook")
-    }
+    // Required by protocol
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) { /* do nothing */ }
     
     
     // MARK: - IBActions

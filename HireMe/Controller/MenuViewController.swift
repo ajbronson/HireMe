@@ -12,6 +12,17 @@ class MenuViewController: UITableViewController {
     
     var fbUserProfile: [String: Any]?
     var googleUserProfile: [String: String]?
+    private var name: String?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let fbUser = self.fbUserProfile {
+            self.name = fbUser["name"] as? String
+        } else if let googleUser = self.googleUserProfile {
+            self.name = googleUser["fullName"]
+        }
+    }
     
     
     // MARK: Navigation
@@ -29,6 +40,6 @@ class MenuViewController: UITableViewController {
     // MARK: UITableViewDataSource callbacks
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.fbUserProfile?["name"] as? String
+        return self.name
     }
 }

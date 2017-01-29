@@ -25,6 +25,7 @@ class ProviderTabBarController: UITabBarController {
         SideMenuManager.menuPresentMode = .menuSlideIn
         
         self.initializeUserProfile()
+//        print("ProviderTabBarController did load") // DEBUG
     }
     
     
@@ -43,17 +44,15 @@ class ProviderTabBarController: UITabBarController {
     // MARK: Custom functions
     
     func initializeUserProfile() {
-        if FBSDKAccessToken.current() != nil {
-            // User is logged in with Facebook
-            
-            if let fbUserProfile = UserDefaults.standard.dictionary(forKey: "fbUserProfile") {
-                self.fbUserProfile = fbUserProfile
-            }
-        }
-        
-        if GIDSignIn.sharedInstance().currentUser != nil {
-            // User is logged in with Google
-            self.googleUserProfile = UserDefaults.standard.dictionary(forKey: "googleUserProfile") as? [String: String]
+        switch getSignInMethod() {
+            case .Facebook:
+                self.fbUserProfile = UserDefaults.standard.dictionary(forKey: "fbUserProfile")
+            case .Google:
+                self.googleUserProfile = UserDefaults.standard.dictionary(forKey: "googleUserProfile") as? [String: String]
+            case .ThisApp:
+                print("Signed in with LimitedHire")
+            case .NotSignedIn:
+                print("Not signed in")
         }
     }
 }

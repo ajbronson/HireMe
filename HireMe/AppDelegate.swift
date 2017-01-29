@@ -15,6 +15,12 @@ import GoogleSignIn
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
 	var window: UIWindow?
+    let storyboard = UIStoryboard(name: "Provider", bundle: Bundle.main)
+    
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        return true
+    }
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		
@@ -30,17 +36,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         GIDSignIn.sharedInstance().delegate = self
         
-        // Go straight to the tab bar controller if the user is logged in
-        if FBSDKAccessToken.current() != nil || GIDSignIn.sharedInstance().currentUser != nil {
-            // User is logged in, show the tabs view controller
-            let storyboard = UIStoryboard(name: "Provider", bundle: Bundle.main)
-            self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "providerTabsNavController")
+        print("Google hasAuthInKeychain: \(GIDSignIn.sharedInstance().hasAuthInKeychain())")
+        
+        if SignInMethod.NotSignedIn.rawValue != getSignInMethod().rawValue {
+            print("Already signed in")
+            self.showProviderTabBarController()
         }
         
 		return true
 	}
     
-    // Needed for Facebook and Google login
+    // Needed for Facebook and Google sign-in
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         let fbHandled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
         let googleHandled = GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
@@ -53,6 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error == nil {
+            print("Signed in with Google")
 //            let userId = user.userID                  // For client-side use only!
 //            let idToken = user.authentication.idToken // Safe to send to the server
 
@@ -64,11 +71,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             ]
             
             UserDefaults.standard.set(googleUserProfile, forKey: "googleUserProfile")
-            let storyboard = UIStoryboard(name: "Provider", bundle: Bundle.main)
-            self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "providerTabsNavController")
+            setSignInMethod(as: SignInMethod.Google)
+            self.showProviderTabBarController()
         } else {
             print("\(error.localizedDescription)")
         }
+    }
+    
+    
+    // MARK: Custom functions
+    
+    func showProviderTabBarController() {
+        self.window?.rootViewController = self.storyboard.instantiateViewController(withIdentifier: "providerTabsNavController")
     }
 }
 
