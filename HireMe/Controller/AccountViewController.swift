@@ -83,7 +83,7 @@ class AccountViewController: UITableViewController {
             alertController.popoverPresentationController?.sourceRect = self.view.bounds;
             alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             alertController.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { (action) in
-                switch getSignInMethod() {
+                switch getSignInMethod2() {
                     case .Facebook:
                         FBSDKLoginManager().logOut()
                         print("Signed out from Facebook")
@@ -96,11 +96,7 @@ class AccountViewController: UITableViewController {
                         print("Not signed in")
                 }
                 
-                setSignInMethod(as: SignInMethod.NotSignedIn)
-                
-                if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-                    self.present(appDelegate.storyboard.instantiateViewController(withIdentifier: "LoginViewController"), animated: true, completion: nil)
-                }
+                setRootViewController(with: "LoginViewController")
             }))
             
             self.present(alertController, animated: true, completion: nil)
