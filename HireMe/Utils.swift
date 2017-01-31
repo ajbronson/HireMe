@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import GoogleSignIn
+import FBSDKLoginKit
 
 let SIGN_IN_METHOD_KEY = "signInMethod"
 
@@ -29,4 +31,33 @@ func getSignInMethod() -> SignInMethod {
     }
     
     return signInMethod
+}
+
+func getSignInMethod2() -> SignInMethod {
+    if FBSDKAccessToken.current() != nil {
+        return SignInMethod.Facebook
+    } else if GIDSignIn.sharedInstance().currentUser != nil {
+        return SignInMethod.Google
+    } else {
+        return SignInMethod.NotSignedIn
+    }
+}
+
+func setRootViewController(with identifier: String) {
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    guard let window = appDelegate.window else {
+        print("Error getting window")
+        return
+    }
+    
+    UIView.transition(with: window, duration: 0.65, options: .transitionFlipFromLeft, animations: {
+        window.rootViewController = appDelegate.storyboard.instantiateViewController(withIdentifier: identifier)
+    }, completion: nil)
+}
+
+extension UIViewController {
+    var className: String {
+        return NSStringFromClass(self.classForCoder).components(separatedBy: ".").last!
+    }
 }
