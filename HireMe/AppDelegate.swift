@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
 	var window: UIWindow?
     let storyboard = UIStoryboard(name: "Provider", bundle: Bundle.main)
+    var isProviderTabsVisible: Bool = false
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         
@@ -38,8 +39,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         print("Google hasAuthInKeychain: \(GIDSignIn.sharedInstance().hasAuthInKeychain())")
         
-        if SignInMethod.NotSignedIn.rawValue != getSignInMethod().rawValue {
-            print("Already signed in")
+        if GIDSignIn.sharedInstance().hasAuthInKeychain() {
+            // Signed in with Google
+            print("Already signed in with Google")
+            GIDSignIn.sharedInstance().signInSilently()
+            self.showProviderTabBarController()
+        } else if FBSDKAccessToken.current() != nil {
+            // Signed in with Facebook
+            print("Already signed in with Facebook")
             self.showProviderTabBarController()
         }
         
@@ -47,10 +54,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 	}
     
     // Needed for Facebook and Google sign-in
+    // This is how the sign in knows to come back to the app after a successful sign in
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         let fbHandled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
         let googleHandled = GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
-        
+        print("handled")
         return fbHandled || googleHandled
     }
     
@@ -71,8 +79,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             ]
             
             UserDefaults.standard.set(googleUserProfile, forKey: "googleUserProfile")
-            setSignInMethod(as: SignInMethod.Google)
-            self.showProviderTabBarController()
+            print("rootViewController class: \(self.window?.rootViewController?.className)")
+            
+            if self.isProviderTabsVisible {
+                if let providerTabBarController = self.storyboard.instantiateViewController(withIdentifier: "ProviderTabBarController") as? ProviderTabBarController {
+                    providerTabBarController.initializeUserProfile()
+                }
+            } else {
+                // Option 1
+//                guard let window = self.window else {
+//                    print("Error getting window")
+//                    return
+//                }
+//                
+//                UIView.transition(with: window, duration: 0.5, options: .curveEaseIn, animations: {
+//                    window.rootViewController = self.storyboard.instantiateViewController(withIdentifier: "providerTabsNavController")
+//                }, completion: nil)
+                
+                // Option 2
+//                self.showProviderTabBarController()
+                
+                // Option 3
+                self.storyboard.instantiateViewController(withIdentifier: "LoginViewController").performSegue(withIdentifier: "showTabs", sender: nil)
+                
+                // Option 4
+//                let loginVC = self.storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+//                loginVC.performSegue(withIdentifier: "showTabs", sender: nil)
+            }
         } else {
             print("\(error.localizedDescription)")
         }
@@ -83,6 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     func showProviderTabBarController() {
         self.window?.rootViewController = self.storyboard.instantiateViewController(withIdentifier: "providerTabsNavController")
+        self.isProviderTabsVisible = true
     }
 }
 

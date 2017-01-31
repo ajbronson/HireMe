@@ -23,8 +23,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     // MARK: - Outlets
     
     @IBOutlet weak var fbLoginButton: FBSDKLoginButton!
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var verticalSpacingBetweenButtons: NSLayoutConstraint!
     
@@ -35,9 +33,19 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         super.viewDidLoad()
         
         GIDSignIn.sharedInstance().uiDelegate = self
+//        GIDSignIn.sharedInstance().delegate = self
         
         fbLoginButton.delegate = self
         fbLoginButton.readPermissions = ["public_profile", "email"]
+        print("viewDidLoad rootViewController class: \(UIApplication.shared.delegate?.window??.rootViewController?.className)")
+    }
+    
+    
+    // MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("preparing to show tabs")
+        print("prepareForSegue rootViewController class: \(UIApplication.shared.delegate?.window??.rootViewController?.className)")
     }
     
     //This will dismiss the keyboard and resign any UITextField as first responder when the user taps outside of the text fields
@@ -67,7 +75,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
             FBUserProfileController().fbGraphRequest(completionHandler: { (connection, result, error) in
                 if error == nil {
                     UserDefaults.standard.set(result, forKey: "fbUserProfile")
-                    setSignInMethod(as: SignInMethod.Facebook)
                     self.performSegue(withIdentifier: "showTabs", sender: nil)
                 }
             })
@@ -78,10 +85,33 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) { /* do nothing */ }
     
     
+    // MARK: GIDSignInDelegate callbacks
+    
+//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+//        if error == nil {
+//            print("Signed in with Google")
+//            //            let userId = user.userID                  // For client-side use only!
+//            //            let idToken = user.authentication.idToken // Safe to send to the server
+//            
+//            let googleUserProfile = [
+//                "fullName": user.profile.name,
+//                "givenName": user.profile.givenName,
+//                "familyName": user.profile.familyName,
+//                "email": user.profile.email
+//            ]
+//            
+//            UserDefaults.standard.set(googleUserProfile, forKey: "googleUserProfile")
+//            self.performSegue(withIdentifier: "showTabs", sender: nil)
+//        } else {
+//            print("\(error.localizedDescription)")
+//        }
+//    }
+    
+    
     // MARK: - IBActions
     
-    @IBAction func loginTapped(_ sender: UIButton) {
-        // Custom code
+    @IBAction func signInTapped(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "showTabs", sender: nil)
     }
     
     @IBAction func signUpTapped(_ sender: UIButton) {

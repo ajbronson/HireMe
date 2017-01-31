@@ -28,6 +28,12 @@ class ProviderTabBarController: UITabBarController {
 //        print("ProviderTabBarController did load") // DEBUG
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.isProviderTabsVisible = false
+    }
+    
     
     // MARK: Navigation
     
@@ -44,11 +50,14 @@ class ProviderTabBarController: UITabBarController {
     // MARK: Custom functions
     
     func initializeUserProfile() {
-        switch getSignInMethod() {
+        print("initializing user profile...")
+        switch getSignInMethod2() {
             case .Facebook:
                 self.fbUserProfile = UserDefaults.standard.dictionary(forKey: "fbUserProfile")
+                print("Facebook profile initialized")
             case .Google:
                 self.googleUserProfile = UserDefaults.standard.dictionary(forKey: "googleUserProfile") as? [String: String]
+                print("Google profile initialized")
             case .ThisApp:
                 print("Signed in with LimitedHire")
             case .NotSignedIn:
