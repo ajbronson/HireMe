@@ -34,8 +34,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginTapped:" destination="xeK-lE-v96" eventType="touchUpInside" id="tc4-Tk-zNd"/>
-                                    <segue destination="kbc-KI-KJO" kind="show" identifier="showTabs" id="Npl-46-vh3"/>
+                                    <action selector="signInTapped:" destination="xeK-lE-v96" eventType="touchUpInside" id="DRO-pb-HhB"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="HireMe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOh-oZ-8Qw">
@@ -57,7 +56,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxd-Dh-ptc">
-                                <rect key="frame" x="179.5" y="323.5" width="16" height="20.5"/>
+                                <rect key="frame" x="180" y="323" width="16" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -100,6 +99,7 @@
                     </view>
                     <connections>
                         <outlet property="fbLoginButton" destination="Aiq-Jc-ZRS" id="YBp-s4-TjN"/>
+                        <segue destination="kbc-KI-KJO" kind="show" identifier="showTabs" id="fmz-KP-A5P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FyL-F6-Kr3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -310,7 +310,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="xfY-Pk-b57">
-                                <rect key="frame" x="86" y="336" width="203" height="35"/>
+                                <rect key="frame" x="86" y="336.5" width="203" height="35"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="ZtN-lw-uSb">
                                         <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
@@ -367,7 +367,7 @@
                                 </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="u6y-Gw-K35">
-                                <rect key="frame" x="16" y="379" width="343" height="231"/>
+                                <rect key="frame" x="16" y="379.5" width="343" height="230.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Hey guys!
 
@@ -698,7 +698,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <!--Provider Tab Bar Controller-->
         <scene sceneID="X5Q-Bs-1qi">
             <objects>
-                <tabBarController storyboardIdentifier="providerTabs" automaticallyAdjustsScrollViewInsets="NO" id="v82-LS-TeQ" customClass="ProviderTabBarController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="ProviderTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="v82-LS-TeQ" customClass="ProviderTabBarController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Ol4-jw-MRx">
