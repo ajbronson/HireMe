@@ -83,24 +83,28 @@ class AccountViewController: UITableViewController {
             alertController.popoverPresentationController?.sourceRect = self.view.bounds;
             alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             alertController.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { (action) in
+                print("Signing out...") // DEBUG
                 switch getSignInMethod2() {
                     case .Facebook:
                         FBSDKLoginManager().logOut()
-                        print("Signed out from Facebook")
+                        print("Signed out from Facebook") // DEBUG
                     case .Google:
                         GIDSignIn.sharedInstance().signOut()
-                        print("Signed out from Google")
+                        print("Signed out from Google") // DEBUG
                     case .ThisApp:
-                        print("Signed out from LimitedHire")
+                        print("Signed out from LimitedHire") // DEBUG
                     case .NotSignedIn:
-                        print("Not signed in")
+                        print("Not signed in") // DEBUG
                 }
                 
-                setRootViewController(with: "LoginViewController")
+//                print("AccountViewController's parent \(self.parent?.descr)") // DEBUG
+                if let parent = self.parent as? UINavigationController {
+//                    parent.printViewControllers() // DEBUG
+                    parent.popToRootViewController(animated: true)
+                }
             }))
             
             self.present(alertController, animated: true, completion: nil)
-            
         }
     }
 }

@@ -37,16 +37,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         GIDSignIn.sharedInstance().delegate = self
         
-        print("Google hasAuthInKeychain: \(GIDSignIn.sharedInstance().hasAuthInKeychain())")
+        print("Google hasAuthInKeychain: \(GIDSignIn.sharedInstance().hasAuthInKeychain())") // DEBUG
         
         if GIDSignIn.sharedInstance().hasAuthInKeychain() {
             // Signed in with Google
-            print("Already signed in with Google")
+            print("Already signed in with Google") // DEBUG
             GIDSignIn.sharedInstance().signInSilently()
             self.showProviderTabBarController()
         } else if FBSDKAccessToken.current() != nil {
             // Signed in with Facebook
-            print("Already signed in with Facebook")
+            print("Already signed in with Facebook") // DEBUG
             self.showProviderTabBarController()
         }
         
@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         let fbHandled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
         let googleHandled = GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
-        print("handled")
+
         return fbHandled || googleHandled
     }
     
@@ -67,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error == nil {
-            print("Signed in with Google")
+            print("Signed in with Google") // DEBUG
 //            let userId = user.userID                  // For client-side use only!
 //            let idToken = user.authentication.idToken // Safe to send to the server
 
@@ -79,32 +79,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             ]
             
             UserDefaults.standard.set(googleUserProfile, forKey: "googleUserProfile")
-            print("rootViewController class: \(self.window?.rootViewController?.className)")
+            
+            print("current VC \(getCurrentViewController()?.descr)") // DEBUG
             
             if self.isProviderTabsVisible {
-                if let providerTabBarController = self.storyboard.instantiateViewController(withIdentifier: "ProviderTabBarController") as? ProviderTabBarController {
+                print("provider tabs IS visible") // DEBUG
+                let tabBarNavController = getCurrentViewController() as! UINavigationController
+                
+                if let providerTabBarController = tabBarNavController.visibleViewController as? ProviderTabBarController {
                     providerTabBarController.initializeUserProfile()
                 }
             } else {
-                // Option 1
-//                guard let window = self.window else {
-//                    print("Error getting window")
-//                    return
-//                }
-//                
-//                UIView.transition(with: window, duration: 0.5, options: .curveEaseIn, animations: {
-//                    window.rootViewController = self.storyboard.instantiateViewController(withIdentifier: "providerTabsNavController")
-//                }, completion: nil)
+                print("provider tabs IS NOT visible") // DEBUG
+                // current VC = SFSafariViewController
                 
-                // Option 2
-//                self.showProviderTabBarController()
-                
-                // Option 3
-                self.storyboard.instantiateViewController(withIdentifier: "LoginViewController").performSegue(withIdentifier: "showTabs", sender: nil)
-                
-                // Option 4
-//                let loginVC = self.storyboard.instantiateViewController(withIdentifier: "LoginViewController")
-//                loginVC.performSegue(withIdentifier: "showTabs", sender: nil)
+                if let rootNC = self.window?.rootViewController as? UINavigationController {
+                    // At this point, there is only one child view controller of RootNavigationController and it's LoginViewController
+                    if let loginVC = rootNC.viewControllers.first as? LoginViewController {
+                        loginVC.performSegue(withIdentifier: "showTabs", sender: nil)
+                    }
+                }
+
             }
         } else {
             print("\(error.localizedDescription)")
@@ -115,8 +110,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     // MARK: Custom functions
     
     func showProviderTabBarController() {
-        self.window?.rootViewController = self.storyboard.instantiateViewController(withIdentifier: "providerTabsNavController")
-        self.isProviderTabsVisible = true
+        if let rootVC = self.window?.rootViewController as? UINavigationController {
+            let providerTabBarController = self.storyboard.instantiateViewController(withIdentifier: "ProviderTabBarController") as! ProviderTabBarController
+            rootVC.pushViewController(providerTabBarController, animated: false)
+            self.isProviderTabsVisible = true
+        }
+    }
+    
+    func getCurrentViewController() -> UIViewController? {
+        guard var currentVC = self.window?.rootViewController else {
+            return nil
+        }
+        
+        while let presentedVC = currentVC.presentedViewController {
+            currentVC = presentedVC
+        }
+        
+        return currentVC
     }
 }
 

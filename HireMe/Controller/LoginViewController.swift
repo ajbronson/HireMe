@@ -14,10 +14,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     
     // MARK: - Constants
     
-    let BOTTOM_SPACING_PORTRAIT: CGFloat    = 175
-    let BOTTOM_SPACING_LANDSCAPE: CGFloat   = 15
-    let VERTICAL_SPACING_PORTRAIT: CGFloat  = 20
-    let VERTICAL_SPACING_LANDSCAPE: CGFloat = 15
+    // Used if app can go landscape
+//    let BOTTOM_SPACING_PORTRAIT: CGFloat    = 175
+//    let BOTTOM_SPACING_LANDSCAPE: CGFloat   = 15
+//    let VERTICAL_SPACING_PORTRAIT: CGFloat  = 20
+//    let VERTICAL_SPACING_LANDSCAPE: CGFloat = 15
     
     
     // MARK: - Outlets
@@ -33,27 +34,17 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         super.viewDidLoad()
         
         GIDSignIn.sharedInstance().uiDelegate = self
-//        GIDSignIn.sharedInstance().delegate = self
         
         fbLoginButton.delegate = self
         fbLoginButton.readPermissions = ["public_profile", "email"]
-        print("viewDidLoad rootViewController class: \(UIApplication.shared.delegate?.window??.rootViewController?.className)")
     }
     
-    
-    // MARK: Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("preparing to show tabs")
-        print("prepareForSegue rootViewController class: \(UIApplication.shared.delegate?.window??.rootViewController?.className)")
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    //This will dismiss the keyboard and resign any UITextField as first responder when the user taps outside of the text fields
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-        super.touchesBegan(touches, with: event)
-    }
-    
+    // Used if app can go landscape
 //    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
 //        if UIDevice.current.orientation.isLandscape {
 //            self.signUpBottomConstraint.constant = BOTTOM_SPACING_LANDSCAPE
@@ -83,29 +74,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     
     // Required by protocol
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) { /* do nothing */ }
-    
-    
-    // MARK: GIDSignInDelegate callbacks
-    
-//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-//        if error == nil {
-//            print("Signed in with Google")
-//            //            let userId = user.userID                  // For client-side use only!
-//            //            let idToken = user.authentication.idToken // Safe to send to the server
-//            
-//            let googleUserProfile = [
-//                "fullName": user.profile.name,
-//                "givenName": user.profile.givenName,
-//                "familyName": user.profile.familyName,
-//                "email": user.profile.email
-//            ]
-//            
-//            UserDefaults.standard.set(googleUserProfile, forKey: "googleUserProfile")
-//            self.performSegue(withIdentifier: "showTabs", sender: nil)
-//        } else {
-//            print("\(error.localizedDescription)")
-//        }
-//    }
     
     
     // MARK: - IBActions

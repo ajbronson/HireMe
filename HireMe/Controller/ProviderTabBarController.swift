@@ -25,7 +25,11 @@ class ProviderTabBarController: UITabBarController {
         SideMenuManager.menuPresentMode = .menuSlideIn
         
         self.initializeUserProfile()
-//        print("ProviderTabBarController did load") // DEBUG
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -50,18 +54,18 @@ class ProviderTabBarController: UITabBarController {
     // MARK: Custom functions
     
     func initializeUserProfile() {
-        print("initializing user profile...")
+        print("Initializing user profile...") // DEBUG
         switch getSignInMethod2() {
             case .Facebook:
                 self.fbUserProfile = UserDefaults.standard.dictionary(forKey: "fbUserProfile")
-                print("Facebook profile initialized")
+                print("Facebook profile initialized") // DEBUG
             case .Google:
                 self.googleUserProfile = UserDefaults.standard.dictionary(forKey: "googleUserProfile") as? [String: String]
-                print("Google profile initialized")
+                print("Google profile initialized") // DEBUG
             case .ThisApp:
-                print("Signed in with LimitedHire")
+                print("Signed in with LimitedHire") // DEBUG
             case .NotSignedIn:
-                print("Not signed in")
+                print("Not signed in") // DEBUG
         }
     }
 }

@@ -60,4 +60,25 @@ extension UIViewController {
     var className: String {
         return NSStringFromClass(self.classForCoder).components(separatedBy: ".").last!
     }
+    
+    var descr: String {
+        return "class: \(self.className), ID: \(self.restorationIdentifier)"
+    }
 }
+
+extension UINavigationController {
+    func printViewControllers() {
+        var i = 0
+        
+        for vc in self.viewControllers {
+            print("viewControllers[\(i)] \(vc.descr)")
+            i += 1
+        }
+    }
+}
+
+//This will dismiss the keyboard and resign any UITextField as first responder when the user taps outside of the text fields
+//override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//    self.view.endEditing(true)
+//    super.touchesBegan(touches, with: event)
+//}
