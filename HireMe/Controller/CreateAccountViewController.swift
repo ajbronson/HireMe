@@ -22,7 +22,16 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
     }
     
     
-    // MARK: - UITextFieldDelegate
+    // MARK: UITableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        let alert = UIAlertController(title: "Why is my ZIP code needed?", message: "We use your ZIP code to match you with providers near you.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Got it", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    // MARK: UITextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Try to find next responder
