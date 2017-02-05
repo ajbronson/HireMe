@@ -30,6 +30,7 @@
 		D08FBD8D1E2F0DD0002DF217 /* NewBidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FBD871E2F0DD0002DF217 /* NewBidViewController.swift */; };
 		D08FBD8E1E2F0DD0002DF217 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FBD881E2F0DD0002DF217 /* SearchViewController.swift */; };
 		D08FBD901E2F0E3C002DF217 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FBD8F1E2F0E3C002DF217 /* LoginViewController.swift */; };
+		D0B6C7C51E46E722000DAF39 /* NextControlTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B6C7C41E46E722000DAF39 /* NextControlTextField.swift */; };
 		D0ECA6C31E39B33C001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
 		D0ECA6C41E39B347001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
 		D0ECA6C51E39B348001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
@@ -90,6 +91,7 @@
 		D08FBD871E2F0DD0002DF217 /* NewBidViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBidViewController.swift; sourceTree = "<group>"; };
 		D08FBD881E2F0DD0002DF217 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D08FBD8F1E2F0E3C002DF217 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D0B6C7C41E46E722000DAF39 /* NextControlTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextControlTextField.swift; sourceTree = "<group>"; };
 		D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0ECA6CA1E39BECC001AB162 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0ECA6CB1E39BECC001AB162 /* Provider.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Provider.storyboard; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				D08FBD811E2F0D81002DF217 /* Controller */,
 				21B38F021DCC21A4000A5CB1 /* Assets.xcassets */,
 				21B38F311DCC2501000A5CB1 /* HelperFiles */,
+				D0B6C7C41E46E722000DAF39 /* NextControlTextField.swift */,
 			);
 			path = HireMe;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				D08FBD8D1E2F0DD0002DF217 /* NewBidViewController.swift in Sources */,
 				D019B56F1E2F296D00D1E018 /* CreateAccountViewController.swift in Sources */,
 				D08FBD8C1E2F0DD0002DF217 /* JobsViewController.swift in Sources */,
+				D0B6C7C51E46E722000DAF39 /* NextControlTextField.swift in Sources */,
 				21B38EFC1DCC21A4000A5CB1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

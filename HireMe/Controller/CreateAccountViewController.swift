@@ -9,20 +9,15 @@
 import UIKit
 
 class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var zipCodeTextField: UITextField!
     
     // MARK: - View controller life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        usernameTextField.tag = 0
-//        zipCodeTextField.tag = 1
     }
     
     
-    // MARK: UITableViewDelegate
+    // MARK: - UITableViewDelegate
     
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         let alert = UIAlertController(title: "Why is my ZIP code needed?", message: "We use your ZIP code to match you with providers near you.", preferredStyle: .alert)
@@ -31,14 +26,16 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
     }
     
     
-    // MARK: UITextFieldDelegate
+    // MARK: - UITextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // Try to find next responder
-        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
-            nextField.becomeFirstResponder()
-        } else {
-            textField.resignFirstResponder() // Not found, so remove keyboard.
+        if let txtField = textField as? NextControlTextField {
+            txtField.transferFirstResponderToNextControl(completionHandler: { (didTransfer) in
+                if !didTransfer {
+                    // User finished verifying password, go to next screen
+                    print("Next")
+                }
+            })
         }
         
         return false // Do not add a line break

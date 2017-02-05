@@ -232,7 +232,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Person" translatesAutoresizingMaskIntoConstraints="NO" id="5sY-t2-PWx">
-                                <rect key="frame" x="96" y="52" width="182" height="171"/>
+                                <rect key="frame" x="96" y="96" width="182" height="171"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="171" id="0IK-25-Q5c"/>
                                     <constraint firstAttribute="width" constant="182" id="3cY-pa-WqX"/>
@@ -240,13 +240,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Julie Harris" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hg9-jS-lYo">
-                                <rect key="frame" x="145" y="247" width="86" height="20.5"/>
+                                <rect key="frame" x="145" y="291" width="86" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="xfY-Pk-b57">
-                                <rect key="frame" x="86" y="292.5" width="203" height="35"/>
+                                <rect key="frame" x="86" y="336.5" width="203" height="35"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="ZtN-lw-uSb">
                                         <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
@@ -303,7 +303,7 @@
                                 </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="u6y-Gw-K35">
-                                <rect key="frame" x="16" y="335.5" width="343" height="274.5"/>
+                                <rect key="frame" x="16" y="379.5" width="343" height="230.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Hey guys!
 
@@ -544,13 +544,13 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oXv-n4-Fm4">
-                                <rect key="frame" x="16" y="53" width="343" height="30"/>
+                                <rect key="frame" x="16" y="97" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ra7-va-2Ji">
-                                <rect key="frame" x="16" y="91" width="343" height="519"/>
+                                <rect key="frame" x="16" y="135" width="343" height="475"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -697,11 +697,15 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ohj-k2-pTG">
-                                                    <rect key="frame" x="15" y="10.5" width="352" height="21"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ohj-k2-pTG" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="11" width="352" height="21"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="15d-bR-XhO" id="uSE-Ed-YEk"/>
+                                                        <outlet property="nextControl" destination="nFv-p8-l11" id="Fkv-9E-CMv"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -718,11 +722,15 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nFv-p8-l11">
-                                                    <rect key="frame" x="15" y="10.5" width="352" height="21"/>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nFv-p8-l11" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="11" width="352" height="21"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="15d-bR-XhO" id="cff-RB-Zcg"/>
+                                                        <outlet property="nextControl" destination="L03-b6-CaC" id="Is8-kZ-JEq"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -739,11 +747,15 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ZIP Code" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="L03-b6-CaC">
-                                                    <rect key="frame" x="15" y="10.5" width="305" height="21"/>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ZIP Code" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="L03-b6-CaC" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="11" width="305" height="21"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="15d-bR-XhO" id="fKN-vo-N18"/>
+                                                        <outlet property="nextControl" destination="Uwz-Tf-MKn" id="Glv-rf-ouc"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -760,11 +772,15 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Uwz-Tf-MKn">
-                                                    <rect key="frame" x="15" y="10.5" width="352" height="21"/>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Uwz-Tf-MKn" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="11" width="352" height="21"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="15d-bR-XhO" id="7pc-jB-EM0"/>
+                                                        <outlet property="nextControl" destination="laD-0v-TZL" id="n9x-ue-mQb"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -781,11 +797,15 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="laD-0v-TZL">
-                                                    <rect key="frame" x="15" y="10.5" width="352" height="21"/>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="laD-0v-TZL" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="11" width="352" height="21"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="15d-bR-XhO" id="9ql-Py-YdR"/>
+                                                        <outlet property="nextControl" destination="3v7-hS-dfr" id="dhJ-0x-j8k"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -802,11 +822,14 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Verify Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3v7-hS-dfr">
-                                                    <rect key="frame" x="15" y="10.5" width="352" height="21"/>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Verify Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3v7-hS-dfr" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="11" width="352" height="21"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="15d-bR-XhO" id="U2Y-8K-Min"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
