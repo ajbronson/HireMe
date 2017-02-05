@@ -620,7 +620,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Ol4-jw-MRx">
-                        <barButtonItem key="leftBarButtonItem" image="Menu-Thin" id="C3z-9p-m09">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" id="C3z-9p-m09">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="n3l-UV-hM1" kind="presentation" identifier="menu" id="qj8-BT-Ixk"/>
@@ -840,7 +840,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
     <resources>
         <image name="Account" width="22" height="22"/>
         <image name="Bid" width="22" height="22"/>
-        <image name="Menu-Thin" width="22" height="22"/>
+        <image name="Menu" width="22" height="22"/>
         <image name="Money" width="22" height="22"/>
         <image name="Person" width="256" height="256"/>
         <image name="Star" width="128" height="128"/>
