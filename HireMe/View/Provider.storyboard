@@ -593,7 +593,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n3l-UV-hM1" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dDF-ZW-lfe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dDF-ZW-lfe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -647,7 +647,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <objects>
                 <navigationController storyboardIdentifier="RootNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Z56-fk-k2l" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gEX-vB-9c5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gEX-vB-9c5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -665,7 +665,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UZx-x8-Jc0" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PVj-zD-LyC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="PVj-zD-LyC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -681,7 +681,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <!--Create Account-->
         <scene sceneID="cE4-Bh-VeG">
             <objects>
-                <tableViewController id="15d-bR-XhO" sceneMemberID="viewController">
+                <tableViewController id="15d-bR-XhO" customClass="CreateAccountViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="hgR-tA-B5K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -824,7 +824,11 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Create Account" id="wPM-ea-B8H">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="71E-3U-yFL"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="71E-3U-yFL">
+                            <connections>
+                                <action selector="cancelTapped:" destination="15d-bR-XhO" id="MIo-kE-Mmb"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="doc-NZ-aIu"/>
                     </navigationItem>
                 </tableViewController>

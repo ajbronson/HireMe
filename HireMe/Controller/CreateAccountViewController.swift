@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateAccountViewController: UIViewController, UITextFieldDelegate {
+class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var zipCodeTextField: UITextField!
     
@@ -17,14 +17,8 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        usernameTextField.tag = 0
-        zipCodeTextField.tag = 1
-    }
-    
-    //This will dismiss the keyboard and resign any UITextField as first responder when the user taps outside of the text fields
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-        super.touchesBegan(touches, with: event)
+//        usernameTextField.tag = 0
+//        zipCodeTextField.tag = 1
     }
     
     
