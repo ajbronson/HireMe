@@ -7,15 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		212F7B741E403CC8008F7A94 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212F7B731E403CC8008F7A94 /* Extensions.swift */; };
-		212F7B7B1E404417008F7A94 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212F7B7A1E404417008F7A94 /* AlertHelper.swift */; };
 		21B38EFC1DCC21A4000A5CB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38EFB1DCC21A4000A5CB1 /* AppDelegate.swift */; };
 		21B38F031DCC21A4000A5CB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21B38F021DCC21A4000A5CB1 /* Assets.xcassets */; };
 		21B38F111DCC21A4000A5CB1 /* HireMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38F101DCC21A4000A5CB1 /* HireMeTests.swift */; };
 		21B38F1C1DCC21A4000A5CB1 /* HireMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38F1B1DCC21A4000A5CB1 /* HireMeUITests.swift */; };
 		6B9D6528207E89B71A2A96D2 /* Pods_HireMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63FA781523A1671C7EC4C65 /* Pods_HireMe.framework */; };
 		A20D39D3566CC81D2A69B0E6 /* Pods_HireMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B3B5B55512633A4F50B917 /* Pods_HireMeTests.framework */; };
-		D050C12B1E3DC2C300F18D41 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D050C12A1E3DC2C300F18D41 /* Utils.swift */; };
 		D0797C951E49701A00BA7B19 /* BidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */; };
 		D0797C961E49701A00BA7B19 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */; };
 		D0797C981E49701A00BA7B19 /* FBUserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8D1E49701A00BA7B19 /* FBUserProfileController.swift */; };
@@ -47,7 +44,10 @@
 		D0797CD01E4979FC00BA7B19 /* NewJobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CC81E4979FC00BA7B19 /* NewJobTableViewController.swift */; };
 		D0797CD11E4979FC00BA7B19 /* ViewBidderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CC91E4979FC00BA7B19 /* ViewBidderTableViewController.swift */; };
 		D0797CD21E4979FC00BA7B19 /* ViewJobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CCA1E4979FC00BA7B19 /* ViewJobTableViewController.swift */; };
-		D0B6C7C51E46E722000DAF39 /* NextControlTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B6C7C41E46E722000DAF39 /* NextControlTextField.swift */; };
+		D0797CD81E497B1A00BA7B19 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CD41E497B1A00BA7B19 /* AlertHelper.swift */; };
+		D0797CD91E497B1A00BA7B19 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CD51E497B1A00BA7B19 /* Extensions.swift */; };
+		D0797CDA1E497B1A00BA7B19 /* NextControlTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CD61E497B1A00BA7B19 /* NextControlTextField.swift */; };
+		D0797CDB1E497B1A00BA7B19 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CD71E497B1A00BA7B19 /* Utils.swift */; };
 		D0ECA6C31E39B33C001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
 		D0ECA6C41E39B347001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
 		D0ECA6C51E39B348001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
@@ -74,8 +74,6 @@
 
 /* Begin PBXFileReference section */
 		1A1925A3082FD6438C80712C /* Pods-HireMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HireMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-HireMe/Pods-HireMe.release.xcconfig"; sourceTree = "<group>"; };
-		212F7B731E403CC8008F7A94 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		212F7B7A1E404417008F7A94 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		21B38EF81DCC21A4000A5CB1 /* HireMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HireMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B38EFB1DCC21A4000A5CB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21B38F021DCC21A4000A5CB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 		63CB25752D5FCD6D1980B106 /* Pods-HireMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HireMeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HireMeTests/Pods-HireMeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C50318D16C0CDDAFFD138EDC /* Pods-HireMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HireMeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HireMeUITests/Pods-HireMeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C63FA781523A1671C7EC4C65 /* Pods_HireMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HireMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D050C12A1E3DC2C300F18D41 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = HireMe/Utils.swift; sourceTree = SOURCE_ROOT; };
 		D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidsViewController.swift; sourceTree = "<group>"; };
 		D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		D0797C8D1E49701A00BA7B19 /* FBUserProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserProfileController.swift; sourceTree = "<group>"; };
@@ -124,7 +121,10 @@
 		D0797CC81E4979FC00BA7B19 /* NewJobTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewJobTableViewController.swift; sourceTree = "<group>"; };
 		D0797CC91E4979FC00BA7B19 /* ViewBidderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewBidderTableViewController.swift; sourceTree = "<group>"; };
 		D0797CCA1E4979FC00BA7B19 /* ViewJobTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewJobTableViewController.swift; sourceTree = "<group>"; };
-		D0B6C7C41E46E722000DAF39 /* NextControlTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextControlTextField.swift; sourceTree = "<group>"; };
+		D0797CD41E497B1A00BA7B19 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		D0797CD51E497B1A00BA7B19 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D0797CD61E497B1A00BA7B19 /* NextControlTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextControlTextField.swift; sourceTree = "<group>"; };
+		D0797CD71E497B1A00BA7B19 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0ECA6CA1E39BECC001AB162 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D674E8CF36C0F147120D6D4A /* Pods-HireMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HireMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HireMe/Pods-HireMe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -190,9 +190,10 @@
 				D0797CC11E4979FC00BA7B19 /* ConsumerController */,
 				D0797C881E49701A00BA7B19 /* ProviderController */,
 				D0797CA11E49778600BA7B19 /* SharedController */,
+				D0797CD31E497B1A00BA7B19 /* HelperFiles */,
 				21B38F021DCC21A4000A5CB1 /* Assets.xcassets */,
-				21B38F311DCC2501000A5CB1 /* HelperFiles */,
-				D0B6C7C41E46E722000DAF39 /* NextControlTextField.swift */,
+				21B38EFB1DCC21A4000A5CB1 /* AppDelegate.swift */,
+				21B38F071DCC21A4000A5CB1 /* Info.plist */,
 			);
 			path = HireMe;
 			sourceTree = "<group>";
@@ -213,18 +214,6 @@
 				21B38F1D1DCC21A4000A5CB1 /* Info.plist */,
 			);
 			path = HireMeUITests;
-			sourceTree = "<group>";
-		};
-		21B38F311DCC2501000A5CB1 /* HelperFiles */ = {
-			isa = PBXGroup;
-			children = (
-				21B38EFB1DCC21A4000A5CB1 /* AppDelegate.swift */,
-				21B38F071DCC21A4000A5CB1 /* Info.plist */,
-				212F7B731E403CC8008F7A94 /* Extensions.swift */,
-				212F7B7A1E404417008F7A94 /* AlertHelper.swift */,
-				D050C12A1E3DC2C300F18D41 /* Utils.swift */,
-			);
-			name = HelperFiles;
 			sourceTree = "<group>";
 		};
 		A371ECBBCA8243285EDB0673 /* Pods */ = {
@@ -302,6 +291,17 @@
 				D0797CC71E4979FC00BA7B19 /* JobInfoCell.swift */,
 			);
 			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		D0797CD31E497B1A00BA7B19 /* HelperFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D0797CD41E497B1A00BA7B19 /* AlertHelper.swift */,
+				D0797CD51E497B1A00BA7B19 /* Extensions.swift */,
+				D0797CD61E497B1A00BA7B19 /* NextControlTextField.swift */,
+				D0797CD71E497B1A00BA7B19 /* Utils.swift */,
+			);
+			path = HelperFiles;
 			sourceTree = "<group>";
 		};
 		D08FBD821E2F0D81002DF217 /* View */ = {
@@ -632,21 +632,21 @@
 				D0797CCD1E4979FC00BA7B19 /* BidderImageCell.swift in Sources */,
 				D0797CA91E49778600BA7B19 /* LoginViewController.swift in Sources */,
 				D0797CD01E4979FC00BA7B19 /* NewJobTableViewController.swift in Sources */,
+				D0797CD81E497B1A00BA7B19 /* AlertHelper.swift in Sources */,
+				D0797CD91E497B1A00BA7B19 /* Extensions.swift in Sources */,
 				D0797C991E49701A00BA7B19 /* JobsViewController.swift in Sources */,
-				D050C12B1E3DC2C300F18D41 /* Utils.swift in Sources */,
 				D0797CBD1E49796000BA7B19 /* Job.swift in Sources */,
 				D0797CBC1E49796000BA7B19 /* BidderController.swift in Sources */,
-				212F7B7B1E404417008F7A94 /* AlertHelper.swift in Sources */,
 				D0797C9D1E49701A00BA7B19 /* ProviderTabBarController.swift in Sources */,
 				D0797CA71E49778600BA7B19 /* AccountViewController.swift in Sources */,
 				D0797CCE1E4979FC00BA7B19 /* BidderInfoCell.swift in Sources */,
 				D0797CBE1E49796000BA7B19 /* JobController.swift in Sources */,
 				D0797CD11E4979FC00BA7B19 /* ViewBidderTableViewController.swift in Sources */,
-				D0B6C7C51E46E722000DAF39 /* NextControlTextField.swift in Sources */,
 				D0797C961E49701A00BA7B19 /* CategoryViewController.swift in Sources */,
+				D0797CDB1E497B1A00BA7B19 /* Utils.swift in Sources */,
 				21B38EFC1DCC21A4000A5CB1 /* AppDelegate.swift in Sources */,
+				D0797CDA1E497B1A00BA7B19 /* NextControlTextField.swift in Sources */,
 				D0797CCC1E4979FC00BA7B19 /* BidderDescriptionCell.swift in Sources */,
-				212F7B741E403CC8008F7A94 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
