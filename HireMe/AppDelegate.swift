@@ -15,7 +15,7 @@ import GoogleSignIn
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
 	var window: UIWindow?
-    let storyboard = UIStoryboard(name: "Provider", bundle: Bundle.main)
+    let storyboard = UIStoryboard(name: "ProviderStoryboard", bundle: Bundle.main)
     var isProviderTabsVisible: Bool = false
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
