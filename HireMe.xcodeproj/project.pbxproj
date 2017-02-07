@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		212F7B741E403CC8008F7A94 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212F7B731E403CC8008F7A94 /* Extensions.swift */; };
-		212F7B771E403D28008F7A94 /* ViewPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212F7B761E403D28008F7A94 /* ViewPhotosViewController.swift */; };
 		212F7B791E403D42008F7A94 /* ImageViewStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 212F7B781E403D42008F7A94 /* ImageViewStoryboard.storyboard */; };
 		212F7B7B1E404417008F7A94 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212F7B7A1E404417008F7A94 /* AlertHelper.swift */; };
 		213440751E3EC3E4000C05DD /* JobInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213440741E3EC3E4000C05DD /* JobInfoCell.swift */; };
@@ -35,18 +34,19 @@
 		6B9D6528207E89B71A2A96D2 /* Pods_HireMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63FA781523A1671C7EC4C65 /* Pods_HireMe.framework */; };
 		A20D39D3566CC81D2A69B0E6 /* Pods_HireMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B3B5B55512633A4F50B917 /* Pods_HireMeTests.framework */; };
 		D050C12B1E3DC2C300F18D41 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D050C12A1E3DC2C300F18D41 /* Utils.swift */; };
-		D0797C941E49701A00BA7B19 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C891E49701A00BA7B19 /* AccountViewController.swift */; };
 		D0797C951E49701A00BA7B19 /* BidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */; };
 		D0797C961E49701A00BA7B19 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */; };
-		D0797C971E49701A00BA7B19 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8C1E49701A00BA7B19 /* CreateAccountViewController.swift */; };
 		D0797C981E49701A00BA7B19 /* FBUserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8D1E49701A00BA7B19 /* FBUserProfileController.swift */; };
 		D0797C991E49701A00BA7B19 /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8E1E49701A00BA7B19 /* JobsViewController.swift */; };
-		D0797C9A1E49701A00BA7B19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8F1E49701A00BA7B19 /* LoginViewController.swift */; };
-		D0797C9B1E49701A00BA7B19 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C901E49701A00BA7B19 /* MenuViewController.swift */; };
 		D0797C9C1E49701A00BA7B19 /* NewBidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C911E49701A00BA7B19 /* NewBidViewController.swift */; };
 		D0797C9D1E49701A00BA7B19 /* ProviderTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C921E49701A00BA7B19 /* ProviderTabBarController.swift */; };
 		D0797C9E1E49701A00BA7B19 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C931E49701A00BA7B19 /* SearchViewController.swift */; };
 		D0797CA01E49767E00BA7B19 /* ProviderStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0797C9F1E49767E00BA7B19 /* ProviderStoryboard.storyboard */; };
+		D0797CA71E49778600BA7B19 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CA21E49778600BA7B19 /* AccountViewController.swift */; };
+		D0797CA81E49778600BA7B19 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CA31E49778600BA7B19 /* CreateAccountViewController.swift */; };
+		D0797CA91E49778600BA7B19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CA41E49778600BA7B19 /* LoginViewController.swift */; };
+		D0797CAA1E49778600BA7B19 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CA51E49778600BA7B19 /* MenuViewController.swift */; };
+		D0797CAB1E49778600BA7B19 /* ViewPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CA61E49778600BA7B19 /* ViewPhotosViewController.swift */; };
 		D0B6C7C51E46E722000DAF39 /* NextControlTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B6C7C41E46E722000DAF39 /* NextControlTextField.swift */; };
 		D0ECA6C31E39B33C001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
 		D0ECA6C41E39B347001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
@@ -75,7 +75,6 @@
 /* Begin PBXFileReference section */
 		1A1925A3082FD6438C80712C /* Pods-HireMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HireMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-HireMe/Pods-HireMe.release.xcconfig"; sourceTree = "<group>"; };
 		212F7B731E403CC8008F7A94 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		212F7B761E403D28008F7A94 /* ViewPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPhotosViewController.swift; sourceTree = "<group>"; };
 		212F7B781E403D42008F7A94 /* ImageViewStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ImageViewStoryboard.storyboard; path = HireMe/ImageViewStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
 		212F7B7A1E404417008F7A94 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		213440741E3EC3E4000C05DD /* JobInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobInfoCell.swift; sourceTree = "<group>"; };
@@ -112,18 +111,19 @@
 		C50318D16C0CDDAFFD138EDC /* Pods-HireMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HireMeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HireMeUITests/Pods-HireMeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C63FA781523A1671C7EC4C65 /* Pods_HireMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HireMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D050C12A1E3DC2C300F18D41 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = HireMe/Utils.swift; sourceTree = SOURCE_ROOT; };
-		D0797C891E49701A00BA7B19 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidsViewController.swift; sourceTree = "<group>"; };
 		D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-		D0797C8C1E49701A00BA7B19 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		D0797C8D1E49701A00BA7B19 /* FBUserProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserProfileController.swift; sourceTree = "<group>"; };
 		D0797C8E1E49701A00BA7B19 /* JobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
-		D0797C8F1E49701A00BA7B19 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		D0797C901E49701A00BA7B19 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		D0797C911E49701A00BA7B19 /* NewBidViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBidViewController.swift; sourceTree = "<group>"; };
 		D0797C921E49701A00BA7B19 /* ProviderTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderTabBarController.swift; sourceTree = "<group>"; };
 		D0797C931E49701A00BA7B19 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D0797C9F1E49767E00BA7B19 /* ProviderStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProviderStoryboard.storyboard; sourceTree = "<group>"; };
+		D0797CA21E49778600BA7B19 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		D0797CA31E49778600BA7B19 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		D0797CA41E49778600BA7B19 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D0797CA51E49778600BA7B19 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		D0797CA61E49778600BA7B19 /* ViewPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPhotosViewController.swift; sourceTree = "<group>"; };
 		D0B6C7C41E46E722000DAF39 /* NextControlTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextControlTextField.swift; sourceTree = "<group>"; };
 		D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0ECA6CA1E39BECC001AB162 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -159,14 +159,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		212F7B751E403D16008F7A94 /* SharedController */ = {
-			isa = PBXGroup;
-			children = (
-				212F7B761E403D28008F7A94 /* ViewPhotosViewController.swift */,
-			);
-			name = SharedController;
-			sourceTree = "<group>";
-		};
 		213440781E3EC801000C05DD /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,10 +223,10 @@
 		21B38EFA1DCC21A4000A5CB1 /* HireMe */ = {
 			isa = PBXGroup;
 			children = (
-				212F7B751E403D16008F7A94 /* SharedController */,
 				213440781E3EC801000C05DD /* Model */,
 				21ACA9E01E3864B10066C266 /* ConsumerController */,
 				D0797C881E49701A00BA7B19 /* ProviderController */,
+				D0797CA11E49778600BA7B19 /* SharedController */,
 				D08FBD821E2F0D81002DF217 /* View */,
 				21B38F021DCC21A4000A5CB1 /* Assets.xcassets */,
 				21B38F311DCC2501000A5CB1 /* HelperFiles */,
@@ -289,19 +281,27 @@
 		D0797C881E49701A00BA7B19 /* ProviderController */ = {
 			isa = PBXGroup;
 			children = (
-				D0797C891E49701A00BA7B19 /* AccountViewController.swift */,
 				D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */,
 				D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */,
-				D0797C8C1E49701A00BA7B19 /* CreateAccountViewController.swift */,
 				D0797C8D1E49701A00BA7B19 /* FBUserProfileController.swift */,
 				D0797C8E1E49701A00BA7B19 /* JobsViewController.swift */,
-				D0797C8F1E49701A00BA7B19 /* LoginViewController.swift */,
-				D0797C901E49701A00BA7B19 /* MenuViewController.swift */,
 				D0797C911E49701A00BA7B19 /* NewBidViewController.swift */,
 				D0797C921E49701A00BA7B19 /* ProviderTabBarController.swift */,
 				D0797C931E49701A00BA7B19 /* SearchViewController.swift */,
 			);
 			path = ProviderController;
+			sourceTree = "<group>";
+		};
+		D0797CA11E49778600BA7B19 /* SharedController */ = {
+			isa = PBXGroup;
+			children = (
+				D0797CA21E49778600BA7B19 /* AccountViewController.swift */,
+				D0797CA31E49778600BA7B19 /* CreateAccountViewController.swift */,
+				D0797CA41E49778600BA7B19 /* LoginViewController.swift */,
+				D0797CA51E49778600BA7B19 /* MenuViewController.swift */,
+				D0797CA61E49778600BA7B19 /* ViewPhotosViewController.swift */,
+			);
+			path = SharedController;
 			sourceTree = "<group>";
 		};
 		D08FBD821E2F0D81002DF217 /* View */ = {
@@ -614,21 +614,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0797CA81E49778600BA7B19 /* CreateAccountViewController.swift in Sources */,
 				D0797C9C1E49701A00BA7B19 /* NewBidViewController.swift in Sources */,
 				2134408E1E3EE807000C05DD /* BidderController.swift in Sources */,
-				D0797C9B1E49701A00BA7B19 /* MenuViewController.swift in Sources */,
 				21ACA9E61E38662E0066C266 /* ViewJobTableViewController.swift in Sources */,
-				212F7B771E403D28008F7A94 /* ViewPhotosViewController.swift in Sources */,
 				213440771E3EC3EB000C05DD /* BidderInfoCell.swift in Sources */,
 				D0797C951E49701A00BA7B19 /* BidsViewController.swift in Sources */,
-				D0797C9A1E49701A00BA7B19 /* LoginViewController.swift in Sources */,
 				213440751E3EC3E4000C05DD /* JobInfoCell.swift in Sources */,
+				D0797CAA1E49778600BA7B19 /* MenuViewController.swift in Sources */,
 				21ACA9E81E38664B0066C266 /* ViewBidderTableViewController.swift in Sources */,
 				21ACA9E41E3866120066C266 /* NewJobTableViewController.swift in Sources */,
 				213440881E3EE5D5000C05DD /* BidderDescriptionCell.swift in Sources */,
 				D0797C9E1E49701A00BA7B19 /* SearchViewController.swift in Sources */,
 				2134407C1E3ECD8C000C05DD /* JobController.swift in Sources */,
+				D0797CAB1E49778600BA7B19 /* ViewPhotosViewController.swift in Sources */,
 				D0797C981E49701A00BA7B19 /* FBUserProfileController.swift in Sources */,
+				D0797CA91E49778600BA7B19 /* LoginViewController.swift in Sources */,
 				213440821E3EE419000C05DD /* Skill.swift in Sources */,
 				D0797C991E49701A00BA7B19 /* JobsViewController.swift in Sources */,
 				D050C12B1E3DC2C300F18D41 /* Utils.swift in Sources */,
@@ -637,9 +638,8 @@
 				213440801E3ED146000C05DD /* BidController.swift in Sources */,
 				D0797C9D1E49701A00BA7B19 /* ProviderTabBarController.swift in Sources */,
 				2134407A1E3EC80A000C05DD /* Job.swift in Sources */,
+				D0797CA71E49778600BA7B19 /* AccountViewController.swift in Sources */,
 				2134407E1E3ED098000C05DD /* Bid.swift in Sources */,
-				D0797C941E49701A00BA7B19 /* AccountViewController.swift in Sources */,
-				D0797C971E49701A00BA7B19 /* CreateAccountViewController.swift in Sources */,
 				2134408C1E3EE7A0000C05DD /* Bidder.swift in Sources */,
 				D0B6C7C51E46E722000DAF39 /* NextControlTextField.swift in Sources */,
 				D0797C961E49701A00BA7B19 /* CategoryViewController.swift in Sources */,
