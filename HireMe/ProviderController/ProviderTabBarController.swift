@@ -55,7 +55,7 @@ class ProviderTabBarController: UITabBarController {
     
     func initializeUserProfile() {
         print("Initializing user profile...") // DEBUG
-        switch getSignInMethod2() {
+        switch getSignInMethod() {
             case .Facebook:
                 self.fbUserProfile = UserDefaults.standard.dictionary(forKey: "fbUserProfile")
                 print("Facebook profile initialized") // DEBUG

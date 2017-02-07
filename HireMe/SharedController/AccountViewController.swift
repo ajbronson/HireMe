@@ -84,7 +84,7 @@ class AccountViewController: UITableViewController {
             alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             alertController.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { (action) in
                 print("Signing out...") // DEBUG
-                switch getSignInMethod2() {
+                switch getSignInMethod() {
                     case .Facebook:
                         FBSDKLoginManager().logOut()
                         print("Signed out from Facebook") // DEBUG

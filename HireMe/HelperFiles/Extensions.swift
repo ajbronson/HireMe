@@ -42,3 +42,26 @@ extension Double {
 		return formatter.string(from: NSNumber(value: self))
 	}
 }
+
+// For debugging
+extension UIViewController {
+    var className: String {
+        return NSStringFromClass(self.classForCoder).components(separatedBy: ".").last!
+    }
+    
+    var descr: String {
+        return "class: \(self.className), ID: \(self.restorationIdentifier)"
+    }
+}
+
+// For debugging
+extension UINavigationController {
+    func printViewControllers() {
+        var i = 0
+        
+        for vc in self.viewControllers {
+            print("viewControllers[\(i)] \(vc.descr)")
+            i += 1
+        }
+    }
+}
