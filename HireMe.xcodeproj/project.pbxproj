@@ -15,7 +15,6 @@
 		A20D39D3566CC81D2A69B0E6 /* Pods_HireMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B3B5B55512633A4F50B917 /* Pods_HireMeTests.framework */; };
 		D0797C951E49701A00BA7B19 /* BidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */; };
 		D0797C961E49701A00BA7B19 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */; };
-		D0797C981E49701A00BA7B19 /* FBUserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8D1E49701A00BA7B19 /* FBUserProfileController.swift */; };
 		D0797C991E49701A00BA7B19 /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8E1E49701A00BA7B19 /* JobsViewController.swift */; };
 		D0797C9C1E49701A00BA7B19 /* NewBidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C911E49701A00BA7B19 /* NewBidViewController.swift */; };
 		D0797C9D1E49701A00BA7B19 /* ProviderTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C921E49701A00BA7B19 /* ProviderTabBarController.swift */; };
@@ -92,7 +91,6 @@
 		C63FA781523A1671C7EC4C65 /* Pods_HireMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HireMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidsViewController.swift; sourceTree = "<group>"; };
 		D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-		D0797C8D1E49701A00BA7B19 /* FBUserProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserProfileController.swift; sourceTree = "<group>"; };
 		D0797C8E1E49701A00BA7B19 /* JobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
 		D0797C911E49701A00BA7B19 /* NewBidViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBidViewController.swift; sourceTree = "<group>"; };
 		D0797C921E49701A00BA7B19 /* ProviderTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderTabBarController.swift; sourceTree = "<group>"; };
@@ -234,7 +232,6 @@
 			children = (
 				D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */,
 				D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */,
-				D0797C8D1E49701A00BA7B19 /* FBUserProfileController.swift */,
 				D0797C8E1E49701A00BA7B19 /* JobsViewController.swift */,
 				D0797C911E49701A00BA7B19 /* NewBidViewController.swift */,
 				D0797C921E49701A00BA7B19 /* ProviderTabBarController.swift */,
@@ -628,7 +625,6 @@
 				D0797CBA1E49796000BA7B19 /* BidController.swift in Sources */,
 				D0797C9E1E49701A00BA7B19 /* SearchViewController.swift in Sources */,
 				D0797CAB1E49778600BA7B19 /* ViewPhotosViewController.swift in Sources */,
-				D0797C981E49701A00BA7B19 /* FBUserProfileController.swift in Sources */,
 				D0797CCD1E4979FC00BA7B19 /* BidderImageCell.swift in Sources */,
 				D0797CA91E49778600BA7B19 /* LoginViewController.swift in Sources */,
 				D0797CD01E4979FC00BA7B19 /* NewJobTableViewController.swift in Sources */,

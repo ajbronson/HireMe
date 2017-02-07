@@ -63,12 +63,12 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
             print("Signed in with Facebook")
             
             // TODO: start animating spinner
-            FBUserProfileController().fbGraphRequest(completionHandler: { (connection, result, error) in
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, picture.type(large), email"]).start { (connection, result, error) in
                 if error == nil {
                     UserDefaults.standard.set(result, forKey: "fbUserProfile")
                     self.performSegue(withIdentifier: "showTabs", sender: nil)
                 }
-            })
+            }
         }
     }
     
