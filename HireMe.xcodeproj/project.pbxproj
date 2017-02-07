@@ -34,18 +34,18 @@
 		21B38F1C1DCC21A4000A5CB1 /* HireMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38F1B1DCC21A4000A5CB1 /* HireMeUITests.swift */; };
 		6B9D6528207E89B71A2A96D2 /* Pods_HireMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63FA781523A1671C7EC4C65 /* Pods_HireMe.framework */; };
 		A20D39D3566CC81D2A69B0E6 /* Pods_HireMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B3B5B55512633A4F50B917 /* Pods_HireMeTests.framework */; };
-		D019B56F1E2F296D00D1E018 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019B56E1E2F296D00D1E018 /* CreateAccountViewController.swift */; };
 		D050C12B1E3DC2C300F18D41 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D050C12A1E3DC2C300F18D41 /* Utils.swift */; };
-		D0716F071E385790005D571F /* ProviderTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0716F061E385790005D571F /* ProviderTabBarController.swift */; };
-		D0716F0C1E3869B0005D571F /* FBUserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0716F0B1E3869B0005D571F /* FBUserProfileController.swift */; };
-		D072856C1E32D4C5006F5453 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D072856B1E32D4C5006F5453 /* MenuViewController.swift */; };
-		D08FBD891E2F0DD0002DF217 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FBD831E2F0DD0002DF217 /* AccountViewController.swift */; };
-		D08FBD8A1E2F0DD0002DF217 /* BidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FBD841E2F0DD0002DF217 /* BidsViewController.swift */; };
-		D08FBD8B1E2F0DD0002DF217 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FBD851E2F0DD0002DF217 /* CategoryViewController.swift */; };
-		D08FBD8C1E2F0DD0002DF217 /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FBD861E2F0DD0002DF217 /* JobsViewController.swift */; };
-		D08FBD8D1E2F0DD0002DF217 /* NewBidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FBD871E2F0DD0002DF217 /* NewBidViewController.swift */; };
-		D08FBD8E1E2F0DD0002DF217 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FBD881E2F0DD0002DF217 /* SearchViewController.swift */; };
-		D08FBD901E2F0E3C002DF217 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FBD8F1E2F0E3C002DF217 /* LoginViewController.swift */; };
+		D0797C941E49701A00BA7B19 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C891E49701A00BA7B19 /* AccountViewController.swift */; };
+		D0797C951E49701A00BA7B19 /* BidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */; };
+		D0797C961E49701A00BA7B19 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */; };
+		D0797C971E49701A00BA7B19 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8C1E49701A00BA7B19 /* CreateAccountViewController.swift */; };
+		D0797C981E49701A00BA7B19 /* FBUserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8D1E49701A00BA7B19 /* FBUserProfileController.swift */; };
+		D0797C991E49701A00BA7B19 /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8E1E49701A00BA7B19 /* JobsViewController.swift */; };
+		D0797C9A1E49701A00BA7B19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8F1E49701A00BA7B19 /* LoginViewController.swift */; };
+		D0797C9B1E49701A00BA7B19 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C901E49701A00BA7B19 /* MenuViewController.swift */; };
+		D0797C9C1E49701A00BA7B19 /* NewBidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C911E49701A00BA7B19 /* NewBidViewController.swift */; };
+		D0797C9D1E49701A00BA7B19 /* ProviderTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C921E49701A00BA7B19 /* ProviderTabBarController.swift */; };
+		D0797C9E1E49701A00BA7B19 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C931E49701A00BA7B19 /* SearchViewController.swift */; };
 		D0B6C7C51E46E722000DAF39 /* NextControlTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B6C7C41E46E722000DAF39 /* NextControlTextField.swift */; };
 		D0ECA6C31E39B33C001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
 		D0ECA6C41E39B347001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
@@ -111,18 +111,18 @@
 		63CB25752D5FCD6D1980B106 /* Pods-HireMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HireMeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HireMeTests/Pods-HireMeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C50318D16C0CDDAFFD138EDC /* Pods-HireMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HireMeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HireMeUITests/Pods-HireMeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C63FA781523A1671C7EC4C65 /* Pods_HireMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HireMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D019B56E1E2F296D00D1E018 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		D050C12A1E3DC2C300F18D41 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = HireMe/Utils.swift; sourceTree = SOURCE_ROOT; };
-		D0716F061E385790005D571F /* ProviderTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderTabBarController.swift; sourceTree = "<group>"; };
-		D0716F0B1E3869B0005D571F /* FBUserProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserProfileController.swift; sourceTree = "<group>"; };
-		D072856B1E32D4C5006F5453 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		D08FBD831E2F0DD0002DF217 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
-		D08FBD841E2F0DD0002DF217 /* BidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidsViewController.swift; sourceTree = "<group>"; };
-		D08FBD851E2F0DD0002DF217 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-		D08FBD861E2F0DD0002DF217 /* JobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
-		D08FBD871E2F0DD0002DF217 /* NewBidViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBidViewController.swift; sourceTree = "<group>"; };
-		D08FBD881E2F0DD0002DF217 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		D08FBD8F1E2F0E3C002DF217 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D0797C891E49701A00BA7B19 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidsViewController.swift; sourceTree = "<group>"; };
+		D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		D0797C8C1E49701A00BA7B19 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		D0797C8D1E49701A00BA7B19 /* FBUserProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserProfileController.swift; sourceTree = "<group>"; };
+		D0797C8E1E49701A00BA7B19 /* JobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
+		D0797C8F1E49701A00BA7B19 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D0797C901E49701A00BA7B19 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		D0797C911E49701A00BA7B19 /* NewBidViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBidViewController.swift; sourceTree = "<group>"; };
+		D0797C921E49701A00BA7B19 /* ProviderTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderTabBarController.swift; sourceTree = "<group>"; };
+		D0797C931E49701A00BA7B19 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D0B6C7C41E46E722000DAF39 /* NextControlTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextControlTextField.swift; sourceTree = "<group>"; };
 		D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0ECA6CA1E39BECC001AB162 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -234,8 +234,8 @@
 				212F7B751E403D16008F7A94 /* SharedController */,
 				213440781E3EC801000C05DD /* Model */,
 				21ACA9E01E3864B10066C266 /* ConsumerController */,
+				D0797C881E49701A00BA7B19 /* ProviderController */,
 				D08FBD821E2F0D81002DF217 /* View */,
-				D08FBD811E2F0D81002DF217 /* Controller */,
 				21B38F021DCC21A4000A5CB1 /* Assets.xcassets */,
 				21B38F311DCC2501000A5CB1 /* HelperFiles */,
 				D0B6C7C41E46E722000DAF39 /* NextControlTextField.swift */,
@@ -268,6 +268,7 @@
 				21B38F071DCC21A4000A5CB1 /* Info.plist */,
 				212F7B731E403CC8008F7A94 /* Extensions.swift */,
 				212F7B7A1E404417008F7A94 /* AlertHelper.swift */,
+				D050C12A1E3DC2C300F18D41 /* Utils.swift */,
 			);
 			name = HelperFiles;
 			sourceTree = "<group>";
@@ -285,23 +286,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		D08FBD811E2F0D81002DF217 /* Controller */ = {
+		D0797C881E49701A00BA7B19 /* ProviderController */ = {
 			isa = PBXGroup;
 			children = (
-				D08FBD831E2F0DD0002DF217 /* AccountViewController.swift */,
-				D08FBD841E2F0DD0002DF217 /* BidsViewController.swift */,
-				D08FBD851E2F0DD0002DF217 /* CategoryViewController.swift */,
-				D08FBD861E2F0DD0002DF217 /* JobsViewController.swift */,
-				D08FBD8F1E2F0E3C002DF217 /* LoginViewController.swift */,
-				D08FBD871E2F0DD0002DF217 /* NewBidViewController.swift */,
-				D08FBD881E2F0DD0002DF217 /* SearchViewController.swift */,
-				D019B56E1E2F296D00D1E018 /* CreateAccountViewController.swift */,
-				D072856B1E32D4C5006F5453 /* MenuViewController.swift */,
-				D0716F061E385790005D571F /* ProviderTabBarController.swift */,
-				D0716F0B1E3869B0005D571F /* FBUserProfileController.swift */,
-				D050C12A1E3DC2C300F18D41 /* Utils.swift */,
+				D0797C891E49701A00BA7B19 /* AccountViewController.swift */,
+				D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */,
+				D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */,
+				D0797C8C1E49701A00BA7B19 /* CreateAccountViewController.swift */,
+				D0797C8D1E49701A00BA7B19 /* FBUserProfileController.swift */,
+				D0797C8E1E49701A00BA7B19 /* JobsViewController.swift */,
+				D0797C8F1E49701A00BA7B19 /* LoginViewController.swift */,
+				D0797C901E49701A00BA7B19 /* MenuViewController.swift */,
+				D0797C911E49701A00BA7B19 /* NewBidViewController.swift */,
+				D0797C921E49701A00BA7B19 /* ProviderTabBarController.swift */,
+				D0797C931E49701A00BA7B19 /* SearchViewController.swift */,
 			);
-			path = Controller;
+			path = ProviderController;
 			sourceTree = "<group>";
 		};
 		D08FBD821E2F0D81002DF217 /* View */ = {
@@ -445,7 +445,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				212F7B791E403D42008F7A94 /* ImageViewStoryboard.storyboard in Resources */,
-				21B38F061DCC21A4000A5CB1 /* LaunchScreen.storyboard in Resources */,
 				21ACA9DF1E384E670066C266 /* ConsumerStoryboard.storyboard in Resources */,
 				D0ECA6CC1E39BECC001AB162 /* LaunchScreen.storyboard in Resources */,
 				D0ECA6CD1E39BECC001AB162 /* Provider.storyboard in Resources */,
@@ -615,35 +614,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0716F071E385790005D571F /* ProviderTabBarController.swift in Sources */,
+				D0797C9C1E49701A00BA7B19 /* NewBidViewController.swift in Sources */,
 				2134408E1E3EE807000C05DD /* BidderController.swift in Sources */,
+				D0797C9B1E49701A00BA7B19 /* MenuViewController.swift in Sources */,
 				21ACA9E61E38662E0066C266 /* ViewJobTableViewController.swift in Sources */,
-				D08FBD8B1E2F0DD0002DF217 /* CategoryViewController.swift in Sources */,
 				212F7B771E403D28008F7A94 /* ViewPhotosViewController.swift in Sources */,
-				D072856C1E32D4C5006F5453 /* MenuViewController.swift in Sources */,
 				213440771E3EC3EB000C05DD /* BidderInfoCell.swift in Sources */,
+				D0797C951E49701A00BA7B19 /* BidsViewController.swift in Sources */,
+				D0797C9A1E49701A00BA7B19 /* LoginViewController.swift in Sources */,
 				213440751E3EC3E4000C05DD /* JobInfoCell.swift in Sources */,
 				21ACA9E81E38664B0066C266 /* ViewBidderTableViewController.swift in Sources */,
-				D08FBD8E1E2F0DD0002DF217 /* SearchViewController.swift in Sources */,
-				D0716F0C1E3869B0005D571F /* FBUserProfileController.swift in Sources */,
 				21ACA9E41E3866120066C266 /* NewJobTableViewController.swift in Sources */,
 				213440881E3EE5D5000C05DD /* BidderDescriptionCell.swift in Sources */,
+				D0797C9E1E49701A00BA7B19 /* SearchViewController.swift in Sources */,
 				2134407C1E3ECD8C000C05DD /* JobController.swift in Sources */,
+				D0797C981E49701A00BA7B19 /* FBUserProfileController.swift in Sources */,
 				213440821E3EE419000C05DD /* Skill.swift in Sources */,
-				D08FBD891E2F0DD0002DF217 /* AccountViewController.swift in Sources */,
+				D0797C991E49701A00BA7B19 /* JobsViewController.swift in Sources */,
 				D050C12B1E3DC2C300F18D41 /* Utils.swift in Sources */,
-				D08FBD8A1E2F0DD0002DF217 /* BidsViewController.swift in Sources */,
 				21ACA9E21E3864E30066C266 /* ConsumerJobsTableViewController.swift in Sources */,
-				D08FBD901E2F0E3C002DF217 /* LoginViewController.swift in Sources */,
 				212F7B7B1E404417008F7A94 /* AlertHelper.swift in Sources */,
 				213440801E3ED146000C05DD /* BidController.swift in Sources */,
+				D0797C9D1E49701A00BA7B19 /* ProviderTabBarController.swift in Sources */,
 				2134407A1E3EC80A000C05DD /* Job.swift in Sources */,
 				2134407E1E3ED098000C05DD /* Bid.swift in Sources */,
-				D08FBD8D1E2F0DD0002DF217 /* NewBidViewController.swift in Sources */,
-				D019B56F1E2F296D00D1E018 /* CreateAccountViewController.swift in Sources */,
+				D0797C941E49701A00BA7B19 /* AccountViewController.swift in Sources */,
+				D0797C971E49701A00BA7B19 /* CreateAccountViewController.swift in Sources */,
 				2134408C1E3EE7A0000C05DD /* Bidder.swift in Sources */,
-				D08FBD8C1E2F0DD0002DF217 /* JobsViewController.swift in Sources */,
 				D0B6C7C51E46E722000DAF39 /* NextControlTextField.swift in Sources */,
+				D0797C961E49701A00BA7B19 /* CategoryViewController.swift in Sources */,
 				213440861E3EE5C8000C05DD /* BidderImageCell.swift in Sources */,
 				21B38EFC1DCC21A4000A5CB1 /* AppDelegate.swift in Sources */,
 				213440841E3EE456000C05DD /* SkillController.swift in Sources */,
