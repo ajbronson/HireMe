@@ -666,7 +666,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UZx-x8-Jc0" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PVj-zD-LyC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="PVj-zD-LyC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -751,7 +751,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                     <rect key="frame" x="15" y="11" width="305" height="21"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="15d-bR-XhO" id="fKN-vo-N18"/>
                                                         <outlet property="nextControl" destination="Uwz-Tf-MKn" id="Glv-rf-ouc"/>
@@ -855,6 +855,9 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="doc-NZ-aIu"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="zipCodeTextField" destination="L03-b6-CaC" id="Lpk-A6-fwe"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iIz-k7-7G5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
