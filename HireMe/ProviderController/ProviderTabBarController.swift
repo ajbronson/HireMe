@@ -23,6 +23,7 @@ class ProviderTabBarController: UITabBarController {
         
         // Customize side menu
         SideMenuManager.menuPresentMode = .menuSlideIn
+        SideMenuManager.menuAnimationFadeStrength = 0.5
         
         self.initializeUserProfile()
     }
