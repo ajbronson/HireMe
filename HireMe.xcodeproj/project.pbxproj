@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		212F7B741E403CC8008F7A94 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212F7B731E403CC8008F7A94 /* Extensions.swift */; };
-		212F7B791E403D42008F7A94 /* ImageViewStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 212F7B781E403D42008F7A94 /* ImageViewStoryboard.storyboard */; };
 		212F7B7B1E404417008F7A94 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212F7B7A1E404417008F7A94 /* AlertHelper.swift */; };
 		213440751E3EC3E4000C05DD /* JobInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213440741E3EC3E4000C05DD /* JobInfoCell.swift */; };
 		213440771E3EC3EB000C05DD /* BidderInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213440761E3EC3EB000C05DD /* BidderInfoCell.swift */; };
@@ -22,7 +21,6 @@
 		213440881E3EE5D5000C05DD /* BidderDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213440871E3EE5D5000C05DD /* BidderDescriptionCell.swift */; };
 		2134408C1E3EE7A0000C05DD /* Bidder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2134408B1E3EE7A0000C05DD /* Bidder.swift */; };
 		2134408E1E3EE807000C05DD /* BidderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2134408D1E3EE807000C05DD /* BidderController.swift */; };
-		21ACA9DF1E384E670066C266 /* ConsumerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21ACA9DE1E384E670066C266 /* ConsumerStoryboard.storyboard */; };
 		21ACA9E21E3864E30066C266 /* ConsumerJobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ACA9E11E3864E30066C266 /* ConsumerJobsTableViewController.swift */; };
 		21ACA9E41E3866120066C266 /* NewJobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ACA9E31E3866120066C266 /* NewJobTableViewController.swift */; };
 		21ACA9E61E38662E0066C266 /* ViewJobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ACA9E51E38662E0066C266 /* ViewJobTableViewController.swift */; };
@@ -47,6 +45,8 @@
 		D0797CA91E49778600BA7B19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CA41E49778600BA7B19 /* LoginViewController.swift */; };
 		D0797CAA1E49778600BA7B19 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CA51E49778600BA7B19 /* MenuViewController.swift */; };
 		D0797CAB1E49778600BA7B19 /* ViewPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CA61E49778600BA7B19 /* ViewPhotosViewController.swift */; };
+		D0797CAE1E49787600BA7B19 /* ConsumerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0797CAC1E49787600BA7B19 /* ConsumerStoryboard.storyboard */; };
+		D0797CAF1E49787600BA7B19 /* ImageViewStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0797CAD1E49787600BA7B19 /* ImageViewStoryboard.storyboard */; };
 		D0B6C7C51E46E722000DAF39 /* NextControlTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B6C7C41E46E722000DAF39 /* NextControlTextField.swift */; };
 		D0ECA6C31E39B33C001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
 		D0ECA6C41E39B347001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
@@ -75,7 +75,6 @@
 /* Begin PBXFileReference section */
 		1A1925A3082FD6438C80712C /* Pods-HireMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HireMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-HireMe/Pods-HireMe.release.xcconfig"; sourceTree = "<group>"; };
 		212F7B731E403CC8008F7A94 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		212F7B781E403D42008F7A94 /* ImageViewStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ImageViewStoryboard.storyboard; path = HireMe/ImageViewStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
 		212F7B7A1E404417008F7A94 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		213440741E3EC3E4000C05DD /* JobInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobInfoCell.swift; sourceTree = "<group>"; };
 		213440761E3EC3EB000C05DD /* BidderInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidderInfoCell.swift; sourceTree = "<group>"; };
@@ -89,7 +88,6 @@
 		213440871E3EE5D5000C05DD /* BidderDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidderDescriptionCell.swift; sourceTree = "<group>"; };
 		2134408B1E3EE7A0000C05DD /* Bidder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bidder.swift; sourceTree = "<group>"; };
 		2134408D1E3EE807000C05DD /* BidderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidderController.swift; sourceTree = "<group>"; };
-		21ACA9DE1E384E670066C266 /* ConsumerStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ConsumerStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
 		21ACA9E11E3864E30066C266 /* ConsumerJobsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerJobsTableViewController.swift; sourceTree = "<group>"; };
 		21ACA9E31E3866120066C266 /* NewJobTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewJobTableViewController.swift; sourceTree = "<group>"; };
 		21ACA9E51E38662E0066C266 /* ViewJobTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewJobTableViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +122,8 @@
 		D0797CA41E49778600BA7B19 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D0797CA51E49778600BA7B19 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		D0797CA61E49778600BA7B19 /* ViewPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPhotosViewController.swift; sourceTree = "<group>"; };
+		D0797CAC1E49787600BA7B19 /* ConsumerStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ConsumerStoryboard.storyboard; sourceTree = "<group>"; };
+		D0797CAD1E49787600BA7B19 /* ImageViewStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ImageViewStoryboard.storyboard; sourceTree = "<group>"; };
 		D0B6C7C41E46E722000DAF39 /* NextControlTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextControlTextField.swift; sourceTree = "<group>"; };
 		D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0ECA6CA1E39BECC001AB162 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -307,10 +307,10 @@
 		D08FBD821E2F0D81002DF217 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D0797C9F1E49767E00BA7B19 /* ProviderStoryboard.storyboard */,
 				D0ECA6CA1E39BECC001AB162 /* LaunchScreen.storyboard */,
-				212F7B781E403D42008F7A94 /* ImageViewStoryboard.storyboard */,
-				21ACA9DE1E384E670066C266 /* ConsumerStoryboard.storyboard */,
+				D0797CAC1E49787600BA7B19 /* ConsumerStoryboard.storyboard */,
+				D0797C9F1E49767E00BA7B19 /* ProviderStoryboard.storyboard */,
+				D0797CAD1E49787600BA7B19 /* ImageViewStoryboard.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -444,11 +444,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				212F7B791E403D42008F7A94 /* ImageViewStoryboard.storyboard in Resources */,
-				21ACA9DF1E384E670066C266 /* ConsumerStoryboard.storyboard in Resources */,
+				D0797CAE1E49787600BA7B19 /* ConsumerStoryboard.storyboard in Resources */,
 				D0ECA6CC1E39BECC001AB162 /* LaunchScreen.storyboard in Resources */,
 				D0ECA6C31E39B33C001AB162 /* GoogleService-Info.plist in Resources */,
 				D0797CA01E49767E00BA7B19 /* ProviderStoryboard.storyboard in Resources */,
+				D0797CAF1E49787600BA7B19 /* ImageViewStoryboard.storyboard in Resources */,
 				21B38F031DCC21A4000A5CB1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
