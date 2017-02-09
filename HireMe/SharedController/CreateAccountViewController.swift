@@ -9,7 +9,13 @@
 import UIKit
 
 class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
+    @IBOutlet weak var firstNameTextField: NextControlTextField!
+    @IBOutlet weak var lastNameTextField: NextControlTextField!
+    @IBOutlet weak var phoneNumberTextField: NextControlTextField!
     @IBOutlet weak var zipCodeTextField: NextControlTextField!
+    @IBOutlet weak var emailTextField: NextControlTextField!
+    @IBOutlet weak var passwordTextField: NextControlTextField!
+    @IBOutlet weak var reEnterPasswordTextField: NextControlTextField!
     
     var keyboardIsVisible = false
     var cancelTapped = false
@@ -64,6 +70,20 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func saveTapped(_ sender: UIBarButtonItem) {
+        if self.keyboardIsVisible {
+            self.view.endEditing(true) // Hide keyboard if showing
+        }
+        
+        // TODO: create and save their account
+        print("First Name: \(self.firstNameTextField.text)")
+        print("Last Name: \(self.lastNameTextField.text)")
+        print("Phone: \(self.phoneNumberTextField.text)")
+        print("ZIP Code: \(self.zipCodeTextField.text)")
+        print("Email: \(self.emailTextField.text)")
+        print("Password: \(self.passwordTextField.text)")
+        print("Re-entered password: \(self.reEnterPasswordTextField.text)")
+    }
     
     // MARK: - Custom functions
     

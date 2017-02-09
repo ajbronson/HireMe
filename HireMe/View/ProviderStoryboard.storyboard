@@ -56,7 +56,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxd-Dh-ptc">
-                                <rect key="frame" x="180" y="323" width="16" height="21"/>
+                                <rect key="frame" x="179.5" y="323" width="16" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -232,7 +232,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Person" translatesAutoresizingMaskIntoConstraints="NO" id="5sY-t2-PWx">
-                                <rect key="frame" x="96" y="96" width="182" height="171"/>
+                                <rect key="frame" x="96.5" y="96" width="182" height="171"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="171" id="0IK-25-Q5c"/>
                                     <constraint firstAttribute="width" constant="182" id="3cY-pa-WqX"/>
@@ -240,7 +240,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Julie Harris" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hg9-jS-lYo">
-                                <rect key="frame" x="145" y="291" width="86" height="20.5"/>
+                                <rect key="frame" x="144.5" y="291" width="86" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -729,7 +729,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                     <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="15d-bR-XhO" id="cff-RB-Zcg"/>
-                                                        <outlet property="nextControl" destination="L03-b6-CaC" id="Is8-kZ-JEq"/>
+                                                        <outlet property="nextControl" destination="yje-ZC-vDE" id="xsk-sU-5mv"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -740,8 +740,33 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" id="cgi-EN-5zg">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="XhA-sX-ci8">
                                         <rect key="frame" x="0.0" y="123" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XhA-sX-ci8" id="fwN-GK-4ML">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yje-ZC-vDE" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="11" width="352" height="21"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="15d-bR-XhO" id="xKw-wc-2cU"/>
+                                                        <outlet property="nextControl" destination="L03-b6-CaC" id="CAY-IO-3EA"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="yje-ZC-vDE" secondAttribute="trailing" id="EIv-4y-bvk"/>
+                                                <constraint firstItem="yje-ZC-vDE" firstAttribute="centerY" secondItem="fwN-GK-4ML" secondAttribute="centerY" id="sGu-d4-6BY"/>
+                                                <constraint firstItem="yje-ZC-vDE" firstAttribute="leading" secondItem="fwN-GK-4ML" secondAttribute="leadingMargin" constant="7" id="wep-ma-2Fg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" id="cgi-EN-5zg">
+                                        <rect key="frame" x="0.0" y="167" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cgi-EN-5zg" id="FVE-cj-MpI">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="43"/>
@@ -766,7 +791,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gRB-lU-a8q">
-                                        <rect key="frame" x="0.0" y="167" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="211" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gRB-lU-a8q" id="pxN-IZ-h9Z">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -791,7 +816,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="WS5-qF-icY">
-                                        <rect key="frame" x="0.0" y="211" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="255" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WS5-qF-icY" id="gHu-F4-KUR">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -804,7 +829,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                     <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="15d-bR-XhO" id="9ql-Py-YdR"/>
-                                                        <outlet property="nextControl" destination="3v7-hS-dfr" id="dhJ-0x-j8k"/>
+                                                        <outlet property="nextControl" destination="3v7-hS-dfr" id="1NG-WK-PVH"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -816,13 +841,13 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="M5C-7w-hKY">
-                                        <rect key="frame" x="0.0" y="255" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="299" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M5C-7w-hKY" id="b1Q-It-3xL">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Verify Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3v7-hS-dfr" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Re-Enter Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3v7-hS-dfr" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="11" width="352" height="21"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -853,9 +878,19 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                 <action selector="cancelTapped:" destination="15d-bR-XhO" id="MIo-kE-Mmb"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="doc-NZ-aIu"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="doc-NZ-aIu">
+                            <connections>
+                                <action selector="saveTapped:" destination="15d-bR-XhO" id="Zfb-o7-26e"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emailTextField" destination="Uwz-Tf-MKn" id="n80-NQ-CV9"/>
+                        <outlet property="firstNameTextField" destination="Ohj-k2-pTG" id="4Xl-Lf-iSH"/>
+                        <outlet property="lastNameTextField" destination="nFv-p8-l11" id="gxn-rs-t18"/>
+                        <outlet property="passwordTextField" destination="laD-0v-TZL" id="X5j-te-8vd"/>
+                        <outlet property="phoneNumberTextField" destination="yje-ZC-vDE" id="RQf-sY-YQS"/>
+                        <outlet property="reEnterPasswordTextField" destination="3v7-hS-dfr" id="ble-ba-HNw"/>
                         <outlet property="zipCodeTextField" destination="L03-b6-CaC" id="Lpk-A6-fwe"/>
                     </connections>
                 </tableViewController>
