@@ -37,9 +37,9 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
     
     // MARK: - UITextFieldDelegate
     
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if textField == self.zipCodeTextField {
-            self.addNextButtonOnKeyboard()
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {        
+        if textField.keyboardType == .numberPad || textField.keyboardType == .phonePad {
+            self.addNextButtonOnKeyboard(textField)
         }
         
         return true
@@ -49,8 +49,8 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
         if let txtField = textField as? NextControlTextField {
             txtField.transferFirstResponderToNextControl(completionHandler: { (didTransfer) in
                 if !didTransfer {
-                    // User finished verifying password, go to next screen
-                    print("Next")
+                    // User finished verifying password, save account
+                    self.printAccountDetails()
                 }
             })
         }
@@ -76,13 +76,7 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
         }
         
         // TODO: create and save their account
-        print("First Name: \(self.firstNameTextField.text)")
-        print("Last Name: \(self.lastNameTextField.text)")
-        print("Phone: \(self.phoneNumberTextField.text)")
-        print("ZIP Code: \(self.zipCodeTextField.text)")
-        print("Email: \(self.emailTextField.text)")
-        print("Password: \(self.passwordTextField.text)")
-        print("Re-entered password: \(self.reEnterPasswordTextField.text)")
+        self.printAccountDetails()
     }
     
     // MARK: - Custom functions
@@ -97,7 +91,7 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
      
      Intended to be used when the keyboard is a number or phone pad with no return key.
      */
-    func addNextButtonOnKeyboard() {
+    func addNextButtonOnKeyboard(_ textField: UITextField) {
         let keyboardToolbar = UIToolbar()
         let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         let next  = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(self.keyboardNextButtonAction))
@@ -106,12 +100,16 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
         keyboardToolbar.items = [flexSpace, next] // Next button appears on far right
         keyboardToolbar.sizeToFit()
         
-        self.zipCodeTextField.inputAccessoryView = keyboardToolbar
+        textField.inputAccessoryView = keyboardToolbar
     }
     
     func keyboardNextButtonAction() {
-        self.zipCodeTextField.transferFirstResponderToNextControl { (didTransfer) in
-            // Do nothing. With how the text fields are arranged, this text field will always transfer first responder
+        if let responder = self.tableView.currentFirstResponder() {
+            if let nextControlTextField = responder as? NextControlTextField {
+                nextControlTextField.transferFirstResponderToNextControl(completionHandler: { (didTransfer) in
+                    // Do nothing. With how the text fields are arranged, this text field will always transfer first responder
+                })
+            }
         }
     }
     
@@ -125,5 +123,15 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
         if self.cancelTapped {
             self.dismiss(animated: true, completion: nil)
         }
+    }
+    
+    func printAccountDetails() {
+        print("First Name: \(self.firstNameTextField.text)")
+        print("Last Name: \(self.lastNameTextField.text)")
+        print("Phone: \(self.phoneNumberTextField.text)")
+        print("ZIP Code: \(self.zipCodeTextField.text)")
+        print("Email: \(self.emailTextField.text)")
+        print("Password: \(self.passwordTextField.text)")
+        print("Re-entered password: \(self.reEnterPasswordTextField.text)")
     }
 }
