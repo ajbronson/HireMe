@@ -9,6 +9,9 @@
 import UIKit
 
 class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
+    
+    // MARK: - Outlets
+    
     @IBOutlet weak var firstNameTextField: NextControlTextField!
     @IBOutlet weak var lastNameTextField: NextControlTextField!
     @IBOutlet weak var phoneNumberTextField: NextControlTextField!
@@ -17,8 +20,12 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: NextControlTextField!
     @IBOutlet weak var reEnterPasswordTextField: NextControlTextField!
     
+    
+    // MARK: - Properties
+    
     var keyboardIsVisible = false
     var cancelTapped = false
+    
     
     // MARK: - View controller life cycle
     
@@ -58,6 +65,7 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
         return false // Do not add a line break
     }
     
+    
     // MARK: - IBActions
     
     @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
@@ -78,6 +86,7 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
         // TODO: create and save their account
         self.printAccountDetails()
     }
+    
     
     // MARK: - Custom functions
     
