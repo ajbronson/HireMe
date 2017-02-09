@@ -14,6 +14,7 @@
 		6B9D6528207E89B71A2A96D2 /* Pods_HireMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63FA781523A1671C7EC4C65 /* Pods_HireMe.framework */; };
 		A20D39D3566CC81D2A69B0E6 /* Pods_HireMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B3B5B55512633A4F50B917 /* Pods_HireMeTests.framework */; };
 		D03EEFA31E4C28BE006D18B1 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03EEFA21E4C28BE006D18B1 /* AdSupport.framework */; };
+		D03EEFA51E4C2D8B006D18B1 /* DarkHighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03EEFA41E4C2D8B006D18B1 /* DarkHighlightButton.swift */; };
 		D0495ECB1E49804A0076A548 /* SignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0495ECA1E49804A0076A548 /* SignInHelper.swift */; };
 		D0797C951E49701A00BA7B19 /* BidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */; };
 		D0797C961E49701A00BA7B19 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */; };
@@ -91,6 +92,7 @@
 		C50318D16C0CDDAFFD138EDC /* Pods-HireMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HireMeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HireMeUITests/Pods-HireMeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C63FA781523A1671C7EC4C65 /* Pods_HireMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HireMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03EEFA21E4C28BE006D18B1 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		D03EEFA41E4C2D8B006D18B1 /* DarkHighlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkHighlightButton.swift; sourceTree = "<group>"; };
 		D0495ECA1E49804A0076A548 /* SignInHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInHelper.swift; sourceTree = "<group>"; };
 		D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidsViewController.swift; sourceTree = "<group>"; };
 		D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				D0495ECA1E49804A0076A548 /* SignInHelper.swift */,
 				D0797CD51E497B1A00BA7B19 /* Extensions.swift */,
 				D0797CD61E497B1A00BA7B19 /* NextControlTextField.swift */,
+				D03EEFA41E4C2D8B006D18B1 /* DarkHighlightButton.swift */,
 			);
 			path = HelperFiles;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				D0797C9E1E49701A00BA7B19 /* SearchViewController.swift in Sources */,
 				D0797CAB1E49778600BA7B19 /* ViewPhotosViewController.swift in Sources */,
 				D0797CCD1E4979FC00BA7B19 /* BidderImageCell.swift in Sources */,
+				D03EEFA51E4C2D8B006D18B1 /* DarkHighlightButton.swift in Sources */,
 				D0797CA91E49778600BA7B19 /* LoginViewController.swift in Sources */,
 				D0797CD01E4979FC00BA7B19 /* NewJobTableViewController.swift in Sources */,
 				D0797CD81E497B1A00BA7B19 /* AlertHelper.swift in Sources */,
