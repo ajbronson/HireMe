@@ -35,6 +35,7 @@
                                 </state>
                                 <connections>
                                     <action selector="signInTapped:" destination="xeK-lE-v96" eventType="touchUpInside" id="DRO-pb-HhB"/>
+                                    <segue destination="jAH-MM-wLU" kind="presentation" id="2pR-yT-fVu"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="HireMe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOh-oZ-8Qw">
@@ -383,7 +384,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uoD-0J-8wT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2719.1999999999998" y="687.7061469265368"/>
+            <point key="canvasLocation" x="3658.4000000000001" y="687.7061469265368"/>
         </scene>
         <!--Search-->
         <scene sceneID="Xjs-mO-RbY">
@@ -425,7 +426,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIo-Hi-ETP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="992.79999999999995" y="1405.5472263868066"/>
+            <point key="canvasLocation" x="1932" y="1405.5472263868066"/>
         </scene>
         <!--Category-->
         <scene sceneID="zse-sQ-T8L">
@@ -473,7 +474,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDo-5i-El4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1780" y="1405.5472263868066"/>
+            <point key="canvasLocation" x="2719.1999999999998" y="1405.5472263868066"/>
         </scene>
         <!--Settings-->
         <scene sceneID="SPY-Jx-yej">
@@ -586,7 +587,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Yh-Ka-NeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2560.8000000000002" y="1405.5472263868066"/>
+            <point key="canvasLocation" x="3500" y="1405.5472263868066"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="bNt-zT-iQe">
@@ -896,12 +897,114 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iIz-k7-7G5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-628" y="991.75412293853083"/>
+            <point key="canvasLocation" x="-1412" y="1659"/>
+        </scene>
+        <!--Sign In-->
+        <scene sceneID="mkp-lz-r9e">
+            <objects>
+                <viewController id="Y4Q-1r-dAW" customClass="SignInViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kg3-KJ-znY"/>
+                        <viewControllerLayoutGuide type="bottom" id="zPy-1n-Onz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fkr-gp-DJO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMM-tc-xoN">
+                                <rect key="frame" x="163" y="309" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FMM-tc-xoN" secondAttribute="height" multiplier="1:1" id="cmW-lM-tTN"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="FacebookLogo"/>
+                                <connections>
+                                    <action selector="facebookTapped:" destination="Y4Q-1r-dAW" eventType="touchUpInside" id="Dlo-Op-uSG"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="2xk-pZ-hKP">
+                                <rect key="frame" x="31" y="114" width="313" height="88"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eVu-v7-Bhe" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="RJm-kO-4re"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Y4Q-1r-dAW" id="Lwu-9I-yYc"/>
+                                            <outlet property="nextControl" destination="IV9-NZ-DdP" id="L4Z-3w-jIE"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IV9-NZ-DdP" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44" width="313" height="44"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Y4Q-1r-dAW" id="lKP-JS-lhp"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="IV9-NZ-DdP" firstAttribute="height" secondItem="eVu-v7-Bhe" secondAttribute="height" id="URP-Jk-aPg"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FMM-tc-xoN" firstAttribute="centerX" secondItem="fkr-gp-DJO" secondAttribute="centerX" id="Bkr-nf-c93"/>
+                            <constraint firstItem="2xk-pZ-hKP" firstAttribute="top" secondItem="Kg3-KJ-znY" secondAttribute="bottom" constant="50" id="Gwe-RV-h30"/>
+                            <constraint firstItem="2xk-pZ-hKP" firstAttribute="leading" secondItem="fkr-gp-DJO" secondAttribute="leadingMargin" constant="15" id="WRu-3N-0Ws"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2xk-pZ-hKP" secondAttribute="trailing" constant="15" id="sgA-ci-VFt"/>
+                            <constraint firstItem="FMM-tc-xoN" firstAttribute="centerY" secondItem="fkr-gp-DJO" secondAttribute="centerY" id="zuv-V4-oAg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sign In" id="r3s-7A-e88">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Blu-b1-IL1">
+                            <connections>
+                                <action selector="cancelTapped:" destination="Y4Q-1r-dAW" id="9gj-u3-AdR"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="FM7-aT-UfY">
+                            <connections>
+                                <action selector="submitTapped:" destination="Y4Q-1r-dAW" id="tql-Qc-Cye"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="eVu-v7-Bhe" id="8Xs-Wf-754"/>
+                        <outlet property="passwordTextField" destination="IV9-NZ-DdP" id="J6z-ZL-teO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3i1-dv-kRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-591" y="1719"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ofs-ZP-YKi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jAH-MM-wLU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mK0-Nk-XZn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y4Q-1r-dAW" kind="relationship" relationship="rootViewController" id="e3b-NI-uZr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N2A-w7-AUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-590" y="992"/>
         </scene>
     </scenes>
     <resources>
         <image name="Account" width="22" height="22"/>
         <image name="Bid" width="22" height="22"/>
+        <image name="FacebookLogo" width="50" height="50"/>
         <image name="Menu" width="22" height="22"/>
         <image name="Money" width="22" height="22"/>
         <image name="Person" width="256" height="256"/>

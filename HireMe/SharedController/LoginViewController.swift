@@ -79,7 +79,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     // MARK: - IBActions
     
     @IBAction func signInTapped(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "showTabs", sender: nil)
+//        self.performSegue(withIdentifier: "showTabs", sender: nil)
     }
     
     @IBAction func signUpTapped(_ sender: UIButton) {
