@@ -23,7 +23,11 @@ class BidderInfoCell: UITableViewCell {
 		nameLabel.text = bid.user
 
 		if let price = bid.price {
-			priceLabel.text = price.convertToCurrency()
+			priceLabel.text = price.convertToCurrency(includeDollarSign: true)
+		}
+
+		if let image = UIImage(named: bid.status) {
+			statusIndicator.image = image
 		}
 
 		for i in 1...5 {

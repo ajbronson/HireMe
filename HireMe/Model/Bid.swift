@@ -13,10 +13,12 @@ class Bid {
 	var user: String
 	var price: Double?
 	var description: String
+	var status: String
 
-	init(user: String, price: Double?, description: String) {
+	init(user: String, price: Double?, description: String, status: String = BidStatus.PendingResponse.rawValue) {
 		self.user = user
 		self.price = price
 		self.description = description
+		self.status = status
 	}
 }
