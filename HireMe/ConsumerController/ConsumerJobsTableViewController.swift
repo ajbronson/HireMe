@@ -44,6 +44,20 @@ class ConsumerJobTableViewController: UITableViewController {
 		}
 	}
 
+	//TODO: Possibly use this as a custom color
+
+//	override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//		let returnedView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 25))
+//		returnedView.backgroundColor = AppColors.lightBlueColor
+//
+//		let label = UILabel(frame: CGRect(x: 10, y: 3, width: view.frame.size.width, height: 20))
+//		label.text = "Test"
+//		label.textColor = .white
+//		returnedView.addSubview(label)
+//
+//		return returnedView
+//	}
+
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		guard let types = types else { return 0 }
 

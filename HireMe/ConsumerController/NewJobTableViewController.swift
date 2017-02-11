@@ -331,11 +331,12 @@ class NewJobTableViewController: UITableViewController, UICollectionViewDataSour
 		} else if indexPath.section == 5 {
 			return 125.0
 		} else if indexPath.section == 6 {
-			let height = UITableViewAutomaticDimension
-			return height
+			let height = imageCollectionView.collectionViewLayout.collectionViewContentSize.height
+			return height < 50 ? 50 : height + 50
 		}
 		return 0
 	}
+
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
