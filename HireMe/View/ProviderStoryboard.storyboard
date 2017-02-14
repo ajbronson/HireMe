@@ -911,16 +911,6 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMM-tc-xoN">
-                                <rect key="frame" x="163" y="309" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="FMM-tc-xoN" secondAttribute="height" multiplier="1:1" id="cmW-lM-tTN"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="FacebookLogo"/>
-                                <connections>
-                                    <action selector="facebookTapped:" destination="Y4Q-1r-dAW" eventType="touchUpInside" id="Dlo-Op-uSG"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="2xk-pZ-hKP">
                                 <rect key="frame" x="31" y="114" width="313" height="88"/>
                                 <subviews>
@@ -951,14 +941,51 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                     <constraint firstItem="IV9-NZ-DdP" firstAttribute="height" secondItem="eVu-v7-Bhe" secondAttribute="height" id="URP-Jk-aPg"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="or sign in with" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb2-gJ-jSb">
+                                <rect key="frame" x="134.5" y="323" width="106.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" distribution="equalSpacing" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="Z07-YX-IXK">
+                                <rect key="frame" x="75" y="467" width="225" height="75"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMM-tc-xoN">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="FMM-tc-xoN" secondAttribute="height" multiplier="1:1" id="cmW-lM-tTN"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="FacebookLogo"/>
+                                        <connections>
+                                            <action selector="facebookTapped:" destination="Y4Q-1r-dAW" eventType="touchUpInside" id="Dlo-Op-uSG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHS-Dp-NkW">
+                                        <rect key="frame" x="150" y="0.0" width="75" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="FHS-Dp-NkW" secondAttribute="height" multiplier="1:1" id="HNx-yM-2B0"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="GoogleButtonDarkShadowless"/>
+                                        <connections>
+                                            <action selector="googleTapped:" destination="Y4Q-1r-dAW" eventType="touchUpInside" id="S0u-Si-mcV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="vcb-of-EgD"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.87843137250000003" green="0.96862745100000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="FMM-tc-xoN" firstAttribute="centerX" secondItem="fkr-gp-DJO" secondAttribute="centerX" id="Bkr-nf-c93"/>
                             <constraint firstItem="2xk-pZ-hKP" firstAttribute="top" secondItem="Kg3-KJ-znY" secondAttribute="bottom" constant="50" id="Gwe-RV-h30"/>
+                            <constraint firstItem="Z07-YX-IXK" firstAttribute="top" secondItem="Kb2-gJ-jSb" secondAttribute="bottom" priority="999" constant="123" id="OUH-aC-iCV"/>
                             <constraint firstItem="2xk-pZ-hKP" firstAttribute="leading" secondItem="fkr-gp-DJO" secondAttribute="leadingMargin" constant="15" id="WRu-3N-0Ws"/>
+                            <constraint firstItem="Kb2-gJ-jSb" firstAttribute="centerY" secondItem="fkr-gp-DJO" secondAttribute="centerY" id="Xi6-fo-q93"/>
+                            <constraint firstItem="Kb2-gJ-jSb" firstAttribute="centerX" secondItem="fkr-gp-DJO" secondAttribute="centerX" id="eNJ-LI-yfI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2xk-pZ-hKP" secondAttribute="trailing" constant="15" id="sgA-ci-VFt"/>
-                            <constraint firstItem="FMM-tc-xoN" firstAttribute="centerY" secondItem="fkr-gp-DJO" secondAttribute="centerY" id="zuv-V4-oAg"/>
+                            <constraint firstItem="Z07-YX-IXK" firstAttribute="centerX" secondItem="fkr-gp-DJO" secondAttribute="centerX" id="v9Q-MU-kUh"/>
+                            <constraint firstItem="zPy-1n-Onz" firstAttribute="top" secondItem="Z07-YX-IXK" secondAttribute="bottom" constant="125" id="vz5-fC-ajp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign In" id="r3s-7A-e88">
@@ -975,12 +1002,13 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                     </navigationItem>
                     <connections>
                         <outlet property="emailTextField" destination="eVu-v7-Bhe" id="8Xs-Wf-754"/>
+                        <outlet property="googleButton" destination="FHS-Dp-NkW" id="AcQ-IT-06m"/>
                         <outlet property="passwordTextField" destination="IV9-NZ-DdP" id="J6z-ZL-teO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3i1-dv-kRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-591" y="1719"/>
+            <point key="canvasLocation" x="-591.20000000000005" y="1718.5907046476764"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ofs-ZP-YKi">
@@ -1004,7 +1032,8 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
     <resources>
         <image name="Account" width="22" height="22"/>
         <image name="Bid" width="22" height="22"/>
-        <image name="FacebookLogo" width="50" height="50"/>
+        <image name="FacebookLogo" width="48" height="48"/>
+        <image name="GoogleButtonDarkShadowless" width="48" height="48"/>
         <image name="Menu" width="22" height="22"/>
         <image name="Money" width="22" height="22"/>
         <image name="Person" width="256" height="256"/>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: NextControlTextField!
@@ -16,7 +17,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.emailTextField.bottomBorder()
         self.passwordTextField.bottomBorder()
     }
@@ -36,6 +37,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         print("Facebook")
     }
     
+    @IBAction func googleTapped(_ sender: UIButton) {
+        print("Google")
+    }
     
     // MARK: - UITextFieldDelegate
     

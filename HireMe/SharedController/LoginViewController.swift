@@ -12,14 +12,6 @@ import GoogleSignIn
 // TODO: show an alert before signing in with Google and Facebook informing the user of what data we'll be accessingf
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate {
     
-    // MARK: - Constants
-    
-    // Used if app can go landscape
-//    let BOTTOM_SPACING_PORTRAIT: CGFloat    = 175
-//    let BOTTOM_SPACING_LANDSCAPE: CGFloat   = 15
-//    let VERTICAL_SPACING_PORTRAIT: CGFloat  = 20
-//    let VERTICAL_SPACING_LANDSCAPE: CGFloat = 15
-    
     
     // MARK: - Outlets
     
@@ -43,17 +35,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
-    
-    // Used if app can go landscape
-//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-//        if UIDevice.current.orientation.isLandscape {
-//            self.signUpBottomConstraint.constant = BOTTOM_SPACING_LANDSCAPE
-//            self.verticalSpacingBetweenButtons.constant = VERTICAL_SPACING_LANDSCAPE
-//        } else {
-//            self.signUpBottomConstraint.constant = BOTTOM_SPACING_PORTRAIT
-//            self.verticalSpacingBetweenButtons.constant = VERTICAL_SPACING_PORTRAIT
-//        }
-//    }
     
     
     // MARK: - FBSDKLoginButtonDelegate callbacks
