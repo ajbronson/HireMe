@@ -99,6 +99,14 @@ class AccountViewController: UITableViewController {
                 
                 print("AccountViewController's parent \(self.parent?.descr)") // DEBUG
                 print("AccountViewController's parent's parent \(self.parent?.parent?.descr)") // DEBUG
+                print("presentingViewController \(self.presentingViewController?.descr)") // DEBUG
+                
+//                if let presentingVC = self.presentingViewController as? UINavigationController {
+//                    presentingVC.printViewControllers()
+//                    presentingVC.popToRootViewController(animated: true)
+//                    
+//                }
+                
                 if let parent = self.parent as? UINavigationController {
                     parent.printViewControllers() // DEBUG
                     parent.popToRootViewController(animated: true)
