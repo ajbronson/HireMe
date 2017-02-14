@@ -97,9 +97,10 @@ class AccountViewController: UITableViewController {
                         print("Not signed in") // DEBUG
                 }
                 
-//                print("AccountViewController's parent \(self.parent?.descr)") // DEBUG
+                print("AccountViewController's parent \(self.parent?.descr)") // DEBUG
+                print("AccountViewController's parent's parent \(self.parent?.parent?.descr)") // DEBUG
                 if let parent = self.parent as? UINavigationController {
-//                    parent.printViewControllers() // DEBUG
+                    parent.printViewControllers() // DEBUG
                     parent.popToRootViewController(animated: true)
                 }
             }))

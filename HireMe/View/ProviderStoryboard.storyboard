@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="HireMe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOh-oZ-8Qw">
-                                <rect key="frame" x="109" y="53" width="157" height="60"/>
+                                <rect key="frame" x="109" y="97" width="157" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -63,11 +63,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Aiq-Jc-ZRS" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="31" y="228" width="313" height="50"/>
+                                <rect key="frame" x="31" y="272" width="313" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="gst-Wb-pBu" customClass="GIDSignInButton">
-                                <rect key="frame" x="31" y="163" width="313" height="50"/>
+                                <rect key="frame" x="31" y="207" width="313" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -98,8 +98,14 @@
                             <constraint firstItem="LPx-Vs-fkt" firstAttribute="trailing" secondItem="c9L-Ee-ZQr" secondAttribute="trailing" id="v7n-dI-qhv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="naJ-Dz-0Xs"/>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationItem key="navigationItem" id="naJ-Dz-0Xs">
+                        <barButtonItem key="rightBarButtonItem" title="Skip" id="UFF-DY-U8r">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="skipTapped:" destination="xeK-lE-v96" id="AFZ-qa-Pi3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="fbLoginButton" destination="Aiq-Jc-ZRS" id="YBp-s4-TjN"/>
                         <segue destination="v82-LS-TeQ" kind="show" identifier="showTabs" id="pWc-0S-IcL"/>
@@ -592,7 +598,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <!--Side Menu Navigation Controller-->
         <scene sceneID="bNt-zT-iQe">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n3l-UV-hM1" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SideMenuNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n3l-UV-hM1" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dDF-ZW-lfe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -934,6 +940,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="Y4Q-1r-dAW" id="lKP-JS-lhp"/>
+                                            <segue destination="v82-LS-TeQ" kind="show" identifier="showTabsFromSignIn" id="m6k-K3-t69"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -1002,7 +1009,6 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                     </navigationItem>
                     <connections>
                         <outlet property="emailTextField" destination="eVu-v7-Bhe" id="8Xs-Wf-754"/>
-                        <outlet property="googleButton" destination="FHS-Dp-NkW" id="AcQ-IT-06m"/>
                         <outlet property="passwordTextField" destination="IV9-NZ-DdP" id="J6z-ZL-teO"/>
                     </connections>
                 </viewController>
@@ -1013,9 +1019,10 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <!--Navigation Controller-->
         <scene sceneID="ofs-ZP-YKi">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jAH-MM-wLU" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N2A-w7-AUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="SignInNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jAH-MM-wLU" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mK0-Nk-XZn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mK0-Nk-XZn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1024,7 +1031,6 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                         <segue destination="Y4Q-1r-dAW" kind="relationship" relationship="rootViewController" id="e3b-NI-uZr"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="N2A-w7-AUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-590" y="992"/>
         </scene>
@@ -1040,6 +1046,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <image name="Star" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="m6k-K3-t69"/>
         <segue reference="Dmr-IU-JyO"/>
     </inferredMetricsTieBreakers>
 </document>

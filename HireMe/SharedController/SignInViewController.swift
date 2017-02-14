@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleSignIn
+import FBSDKLoginKit
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: NextControlTextField!
@@ -27,6 +28,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func submitTapped(_ sender: UIBarButtonItem) {
         print("Submit")
+        self.performSegue(withIdentifier: "showTabsFromSignIn", sender: nil)
     }
 
     @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
@@ -34,11 +36,31 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func facebookTapped(_ sender: UIButton) {
-        print("Facebook")
+        FBSDKLoginManager().logIn(withReadPermissions: ["public_profile", "email"], from: self) { (loginResult, error) in
+            if let err = error {
+                print(err)
+            } else {
+                print("Signed in with Facebook")
+                guard let result = loginResult else {
+                    return
+                }
+                
+                if result.grantedPermissions != nil {
+                    FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, picture.type(large), email"]).start { (connection, result, error) in
+                        if error == nil {
+                            UserDefaults.standard.set(result, forKey: "fbUserProfile")
+//                            self.dismiss(animated: true, completion: nil)
+                            self.performSegue(withIdentifier: "showTabsFromSignIn", sender: nil)
+                        }
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func googleTapped(_ sender: UIButton) {
         print("Google")
+        GIDSignIn.sharedInstance().signIn()
     }
     
     // MARK: - UITextFieldDelegate
