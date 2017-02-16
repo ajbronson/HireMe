@@ -58,6 +58,7 @@ class ProviderTabBarController: UITabBarController {
         print("Initializing user profile...") // DEBUG
         switch getSignInMethod() {
             case .Facebook:
+                print("Facebook token: \(FBSDKAccessToken.current().tokenString)")
                 self.fbUserProfile = UserDefaults.standard.dictionary(forKey: "fbUserProfile")
                 print("Facebook profile initialized") // DEBUG
             case .Google:
