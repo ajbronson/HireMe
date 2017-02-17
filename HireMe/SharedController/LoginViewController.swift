@@ -33,33 +33,20 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.navigationController?.navigationBar.barTintColor = UIColor(red:0.88, green:0.97, blue:0.98, alpha:1.0) // #E0F7FA
         
-        // Sets background to a blank/empty image
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        
-        // Sets shadow (line below the bar) to a blank image
-        self.navigationController?.navigationBar.shadowImage = UIImage()
+        if let navBar = self.navigationController?.navigationBar {
+            navBar.hideShadowImage()
+            navBar.barTintColor = hueColor
+        }
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        
-//        // Restore background
-//        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
-//
-//        // Restore shadow (line below the bar)
-//        self.navigationController?.navigationBar.shadowImage = nil
-//    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         
-        // Restore background
-        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
-        
-        // Restore shadow (line below the bar)
-        self.navigationController?.navigationBar.shadowImage = nil
+        if let navBar = self.navigationController?.navigationBar {
+            navBar.showShadowImage()
+            navBar.barTintColor = defaultColor
+        }
     }
     
     

@@ -99,10 +99,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="naJ-Dz-0Xs">
-                        <barButtonItem key="rightBarButtonItem" title="Skip" id="UFF-DY-U8r">
-                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <barButtonItem key="rightBarButtonItem" title="Skip" id="w4u-Ky-fUI">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="skipTapped:" destination="xeK-lE-v96" id="AFZ-qa-Pi3"/>
+                                <action selector="skipTapped:" destination="xeK-lE-v96" id="UcK-Js-oYU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1019,10 +1019,9 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <!--Navigation Controller-->
         <scene sceneID="ofs-ZP-YKi">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="N2A-w7-AUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="SignInNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jAH-MM-wLU" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mK0-Nk-XZn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mK0-Nk-XZn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1031,6 +1030,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                         <segue destination="Y4Q-1r-dAW" kind="relationship" relationship="rootViewController" id="e3b-NI-uZr"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N2A-w7-AUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-590" y="992"/>
         </scene>
@@ -1046,7 +1046,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <image name="Star" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="m6k-K3-t69"/>
+        <segue reference="pWc-0S-IcL"/>
         <segue reference="Dmr-IU-JyO"/>
     </inferredMetricsTieBreakers>
 </document>

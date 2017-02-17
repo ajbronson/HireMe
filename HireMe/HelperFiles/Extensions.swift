@@ -8,6 +8,10 @@
 
 import UIKit
 
+let highlightedBackgroundColor = UIColor(hex: "#0097A7") // Cyan 700
+let defaultColor = UIColor(hex: "#00BCD4") // Cyan primary
+let hueColor = UIColor(hex: "#E0F7FA") // Cyan 50
+
 extension UIImageView
 {
 	func roundCornersForAspectFit(radius: CGFloat)
@@ -41,6 +45,70 @@ extension Double {
 		formatter.numberStyle = NumberFormatter.Style.currency
 		return formatter.string(from: NSNumber(value: self))
 	}
+}
+
+extension UIColor {
+    convenience init?(hex: String) {
+        var rgb: UInt64 = 0
+        var r: CGFloat = 0.0
+        var g: CGFloat = 0.0
+        var b: CGFloat = 0.0
+        var a: CGFloat = 1.0
+        
+        var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
+        hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")
+        
+        guard Scanner(string: hexSanitized).scanHexInt64(&rgb) else {
+            return nil
+        }
+        
+        if hexSanitized.characters.count == 6 {
+            r = CGFloat((rgb & 0xFF0000) >> 16) / 255.0
+            g = CGFloat((rgb & 0x00FF00) >> 8) / 255.0
+            b = CGFloat(rgb & 0x0000FF) / 255.0
+        } else if hexSanitized.characters.count == 8 {
+            r = CGFloat((rgb & 0xFF000000) >> 24) / 255.0
+            g = CGFloat((rgb & 0x00FF0000) >> 16) / 255.0
+            b = CGFloat((rgb & 0x0000FF00) >> 8) / 255.0
+            a = CGFloat(rgb & 0x000000FF) / 255.0
+        } else {
+            return nil
+        }
+        
+        self.init(red: r, green: g, blue: b, alpha: a)
+    }
+}
+
+extension UINavigationBar {
+    func transparent() {
+        self.setBackgroundImage(UIImage(), for: .default)
+        self.shadowImage = UIImage() // Sets shadow (line below the bar) to a blank image
+    }
+    
+    func opaque() {
+        self.setBackgroundImage(nil, for: .default) // Restore background
+        self.shadowImage = nil // Restore shadow (line below the bar)
+    }
+    
+    func hideShadowImage() {
+        self.getShadowImageView()?.isHidden = true
+    }
+    
+    func showShadowImage() {
+        self.getShadowImageView()?.isHidden = false
+    }
+    
+    private func getShadowImageView() -> UIImageView? {
+        for parent in self.subviews {
+            for childView in parent.subviews {
+                if childView is UIImageView {
+                    return (childView as! UIImageView)
+                }
+            }
+        }
+        
+        return nil
+    }
 }
 
 extension UITextField {
