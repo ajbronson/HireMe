@@ -90,14 +90,17 @@ extension UINavigationBar {
         self.shadowImage = nil // Restore shadow (line below the bar)
     }
     
+    /// Hides the navigation bar's bottom line
     func hideShadowImage() {
         self.getShadowImageView()?.isHidden = true
     }
     
+    /// Shows the navigation bar's bottom line
     func showShadowImage() {
         self.getShadowImageView()?.isHidden = false
     }
     
+    /// Gets the navigation bar's bottom line UIImageView
     private func getShadowImageView() -> UIImageView? {
         for parent in self.subviews {
             for childView in parent.subviews {
@@ -112,6 +115,7 @@ extension UINavigationBar {
 }
 
 extension UITextField {
+    /// Adds a bottom border only to the UITextField.
     func bottomBorder() {
         let border = CALayer()
         let width: CGFloat = 1.0
@@ -126,6 +130,7 @@ extension UITextField {
 }
 
 extension UIView {
+    /// Gets the current first responder (e.g., the UITextField that is being edited and showing the keyboard)
     func currentFirstResponder() -> UIResponder? {
         if self.isFirstResponder {
             return self

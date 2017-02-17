@@ -26,8 +26,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - IBActions
     
-    @IBAction func submitTapped(_ sender: UIBarButtonItem) {
-        print("Submit")
+    @IBAction func signInTapped(_ sender: UIButton) {
+        print("Signed in with LimitedHire")
         self.performSegue(withIdentifier: "showTabsFromSignIn", sender: nil)
     }
 

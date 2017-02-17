@@ -920,7 +920,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="2xk-pZ-hKP">
                                 <rect key="frame" x="31" y="114" width="313" height="88"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eVu-v7-Bhe" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eVu-v7-Bhe" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="313" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="RJm-kO-4re"/>
@@ -933,7 +933,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                             <outlet property="nextControl" destination="IV9-NZ-DdP" id="L4Z-3w-jIE"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IV9-NZ-DdP" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IV9-NZ-DdP" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44" width="313" height="44"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -948,62 +948,80 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                     <constraint firstItem="IV9-NZ-DdP" firstAttribute="height" secondItem="eVu-v7-Bhe" secondAttribute="height" id="URP-Jk-aPg"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="or sign in with" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb2-gJ-jSb">
-                                <rect key="frame" x="134.5" y="323" width="106.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" distribution="equalSpacing" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="Z07-YX-IXK">
-                                <rect key="frame" x="75" y="467" width="225" height="75"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="ljv-4b-esY">
+                                <rect key="frame" x="31" y="232" width="313" height="225.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMM-tc-xoN">
-                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTl-Gh-OG7" userLabel="LoginButton" customClass="DarkHighlightButton" customModule="HireMe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="FMM-tc-xoN" secondAttribute="height" multiplier="1:1" id="cmW-lM-tTN"/>
+                                            <constraint firstAttribute="height" constant="50" id="B7c-cS-xqc"/>
                                         </constraints>
-                                        <state key="normal" backgroundImage="FacebookLogo"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <state key="normal" title="Sign In">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
-                                            <action selector="facebookTapped:" destination="Y4Q-1r-dAW" eventType="touchUpInside" id="Dlo-Op-uSG"/>
+                                            <action selector="signInTapped:" destination="xeK-lE-v96" eventType="touchUpInside" id="JEW-Gs-JXO"/>
+                                            <action selector="signInTapped:" destination="Y4Q-1r-dAW" eventType="touchUpInside" id="ltN-VT-13t"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHS-Dp-NkW">
-                                        <rect key="frame" x="150" y="0.0" width="75" height="75"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="or sign in with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb2-gJ-jSb">
+                                        <rect key="frame" x="103.5" y="90" width="106.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" distribution="equalSpacing" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="Z07-YX-IXK">
+                                        <rect key="frame" x="44" y="150.5" width="225" height="75"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMM-tc-xoN">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="FMM-tc-xoN" secondAttribute="height" multiplier="1:1" id="cmW-lM-tTN"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="FacebookLogo"/>
+                                                <connections>
+                                                    <action selector="facebookTapped:" destination="Y4Q-1r-dAW" eventType="touchUpInside" id="Dlo-Op-uSG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHS-Dp-NkW">
+                                                <rect key="frame" x="150" y="0.0" width="75" height="75"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="FHS-Dp-NkW" secondAttribute="height" multiplier="1:1" id="HNx-yM-2B0"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="GoogleButtonDarkShadowless"/>
+                                                <connections>
+                                                    <action selector="googleTapped:" destination="Y4Q-1r-dAW" eventType="touchUpInside" id="S0u-Si-mcV"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="FHS-Dp-NkW" secondAttribute="height" multiplier="1:1" id="HNx-yM-2B0"/>
+                                            <constraint firstAttribute="height" constant="75" id="vcb-of-EgD"/>
                                         </constraints>
-                                        <state key="normal" backgroundImage="GoogleButtonDarkShadowless"/>
-                                        <connections>
-                                            <action selector="googleTapped:" destination="Y4Q-1r-dAW" eventType="touchUpInside" id="S0u-Si-mcV"/>
-                                        </connections>
-                                    </button>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="vcb-of-EgD"/>
+                                    <constraint firstItem="OTl-Gh-OG7" firstAttribute="leading" secondItem="ljv-4b-esY" secondAttribute="leading" id="H1k-hd-b9e"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.87843137250000003" green="0.96862745100000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2xk-pZ-hKP" firstAttribute="top" secondItem="Kg3-KJ-znY" secondAttribute="bottom" constant="50" id="Gwe-RV-h30"/>
-                            <constraint firstItem="Z07-YX-IXK" firstAttribute="top" secondItem="Kb2-gJ-jSb" secondAttribute="bottom" priority="999" constant="123" id="OUH-aC-iCV"/>
+                            <constraint firstItem="zPy-1n-Onz" firstAttribute="top" secondItem="ljv-4b-esY" secondAttribute="bottom" priority="999" constant="292" id="QMY-6y-YCx"/>
                             <constraint firstItem="2xk-pZ-hKP" firstAttribute="leading" secondItem="fkr-gp-DJO" secondAttribute="leadingMargin" constant="15" id="WRu-3N-0Ws"/>
-                            <constraint firstItem="Kb2-gJ-jSb" firstAttribute="centerY" secondItem="fkr-gp-DJO" secondAttribute="centerY" id="Xi6-fo-q93"/>
-                            <constraint firstItem="Kb2-gJ-jSb" firstAttribute="centerX" secondItem="fkr-gp-DJO" secondAttribute="centerX" id="eNJ-LI-yfI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ljv-4b-esY" secondAttribute="trailing" constant="15" id="nPG-9x-b1l"/>
+                            <constraint firstItem="ljv-4b-esY" firstAttribute="top" secondItem="2xk-pZ-hKP" secondAttribute="bottom" constant="30" id="nWu-uy-x7q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2xk-pZ-hKP" secondAttribute="trailing" constant="15" id="sgA-ci-VFt"/>
-                            <constraint firstItem="Z07-YX-IXK" firstAttribute="centerX" secondItem="fkr-gp-DJO" secondAttribute="centerX" id="v9Q-MU-kUh"/>
-                            <constraint firstItem="zPy-1n-Onz" firstAttribute="top" secondItem="Z07-YX-IXK" secondAttribute="bottom" constant="125" id="vz5-fC-ajp"/>
+                            <constraint firstItem="ljv-4b-esY" firstAttribute="leading" secondItem="fkr-gp-DJO" secondAttribute="leadingMargin" constant="15" id="so2-4B-0u2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign In" id="r3s-7A-e88">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Blu-b1-IL1">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                             <connections>
                                 <action selector="cancelTapped:" destination="Y4Q-1r-dAW" id="9gj-u3-AdR"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="FM7-aT-UfY">
-                            <connections>
-                                <action selector="submitTapped:" destination="Y4Q-1r-dAW" id="tql-Qc-Cye"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1046,7 +1064,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <image name="Star" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pWc-0S-IcL"/>
+        <segue reference="m6k-K3-t69"/>
         <segue reference="Dmr-IU-JyO"/>
     </inferredMetricsTieBreakers>
 </document>
