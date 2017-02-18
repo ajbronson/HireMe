@@ -114,6 +114,13 @@ extension UINavigationBar {
     }
 }
 
+extension UITableView {
+    /// Hides empty cells while still keeping the bottom border of the last non-empty cell
+    func hideEmptyCells() {
+        self.tableFooterView = UIView()
+    }
+}
+
 extension UITextField {
     /// Adds a bottom border only to the UITextField.
     func bottomBorder() {

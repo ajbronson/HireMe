@@ -14,8 +14,13 @@ class MenuViewController: UITableViewController {
     var googleUserProfile: [String: String]?
     private var name: String?
     
+    
+    // MARK: - View controller life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.hideEmptyCells()
         
         if let fbUser = self.fbUserProfile {
             self.name = fbUser["name"] as? String
@@ -25,7 +30,7 @@ class MenuViewController: UITableViewController {
     }
     
     
-    // MARK: Navigation
+    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSettings" {
@@ -37,7 +42,7 @@ class MenuViewController: UITableViewController {
     }
     
     
-    // MARK: UITableViewDataSource callbacks
+    // MARK: - UITableViewDataSource
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.name
