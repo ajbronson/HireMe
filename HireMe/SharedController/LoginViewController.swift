@@ -16,8 +16,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     // MARK: - Outlets
     
     @IBOutlet weak var fbLoginButton: FBSDKLoginButton!
-    @IBOutlet weak var signUpBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var verticalSpacingBetweenButtons: NSLayoutConstraint!
     
     
     // MARK: - View controller life cycle
@@ -33,20 +31,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if let navBar = self.navigationController?.navigationBar {
-            navBar.hideShadowImage()
-            navBar.barTintColor = hueColor
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        if let navBar = self.navigationController?.navigationBar {
-            navBar.showShadowImage()
-            navBar.barTintColor = defaultColor
-        }
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     
@@ -80,7 +65,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
         // Custom code
     }
     
-    @IBAction func skipTapped(_ sender: UIBarButtonItem) {
+    @IBAction func skipTapped(_ sender: UIButton) {
         self.performSegue(withIdentifier: "showTabs", sender: nil)
     }
 }

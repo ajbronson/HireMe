@@ -23,6 +23,13 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         self.passwordTextField.bottomBorder()
     }
     
+    // TODO: This probably won't be needed once it can actually sign in. When users sign out, they won't be directed to this screen
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.emailTextField.text = nil
+        self.passwordTextField.text = nil
+    }
+    
     
     // MARK: - IBActions
     

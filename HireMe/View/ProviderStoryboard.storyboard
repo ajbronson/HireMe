@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="HireMe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOh-oZ-8Qw">
-                                <rect key="frame" x="109" y="97" width="157" height="60"/>
+                                <rect key="frame" x="109" y="53" width="157" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -63,13 +63,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Aiq-Jc-ZRS" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="31" y="272" width="313" height="50"/>
+                                <rect key="frame" x="31" y="228" width="313" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="gst-Wb-pBu" customClass="GIDSignInButton">
-                                <rect key="frame" x="31" y="207" width="313" height="50"/>
+                                <rect key="frame" x="31" y="163" width="313" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RlJ-2B-f3v">
+                                <rect key="frame" x="325" y="28" width="34" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Skip">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipTapped:" destination="xeK-lE-v96" eventType="touchUpInside" id="HRh-4E-tvE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.8784313725490196" green="0.96862745098039216" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -92,20 +102,16 @@
                             <constraint firstItem="Aiq-Jc-ZRS" firstAttribute="height" secondItem="c9L-Ee-ZQr" secondAttribute="height" id="ZoW-qh-AhP"/>
                             <constraint firstItem="gst-Wb-pBu" firstAttribute="trailing" secondItem="c9L-Ee-ZQr" secondAttribute="trailing" id="aQh-v7-gUY"/>
                             <constraint firstItem="YOh-oZ-8Qw" firstAttribute="top" secondItem="pUC-ry-YDj" secondAttribute="bottom" constant="33" id="bPe-Mm-moU"/>
+                            <constraint firstItem="RlJ-2B-f3v" firstAttribute="top" secondItem="pUC-ry-YDj" secondAttribute="bottom" constant="8" id="kNK-jv-AgR"/>
                             <constraint firstItem="Aiq-Jc-ZRS" firstAttribute="leading" secondItem="c9L-Ee-ZQr" secondAttribute="leading" id="mWR-iZ-13H"/>
+                            <constraint firstItem="RlJ-2B-f3v" firstAttribute="trailing" secondItem="D3h-hR-XKP" secondAttribute="trailingMargin" id="nPe-8m-R3y"/>
                             <constraint firstItem="oxd-Dh-ptc" firstAttribute="centerY" secondItem="D3h-hR-XKP" secondAttribute="centerY" id="rhl-Y4-NLc"/>
                             <constraint firstItem="gst-Wb-pBu" firstAttribute="leading" secondItem="c9L-Ee-ZQr" secondAttribute="leading" id="sOq-ro-IjN"/>
                             <constraint firstItem="LPx-Vs-fkt" firstAttribute="trailing" secondItem="c9L-Ee-ZQr" secondAttribute="trailing" id="v7n-dI-qhv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="naJ-Dz-0Xs">
-                        <barButtonItem key="rightBarButtonItem" title="Skip" id="w4u-Ky-fUI">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="skipTapped:" destination="xeK-lE-v96" id="UcK-Js-oYU"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="naJ-Dz-0Xs"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="fbLoginButton" destination="Aiq-Jc-ZRS" id="YBp-s4-TjN"/>
                         <segue destination="v82-LS-TeQ" kind="show" identifier="showTabs" id="pWc-0S-IcL"/>
@@ -1064,7 +1070,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <image name="Star" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="m6k-K3-t69"/>
+        <segue reference="pWc-0S-IcL"/>
         <segue reference="Dmr-IU-JyO"/>
     </inferredMetricsTieBreakers>
 </document>
