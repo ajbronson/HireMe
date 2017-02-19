@@ -13,6 +13,7 @@ import FBSDKLoginKit
 class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: NextControlTextField!
     @IBOutlet weak var passwordTextField: NextControlTextField!
+    @IBOutlet weak var fbButton: UIButton!
 
     // MARK: - View controller life cycle
     
@@ -21,6 +22,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
         self.emailTextField.bottomBorder()
         self.passwordTextField.bottomBorder()
+        self.customizeButton()
     }
     
     // TODO: This probably won't be needed once it can actually sign in. When users sign out, they won't be directed to this screen
@@ -38,6 +40,14 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         self.performSegue(withIdentifier: "showTabsFromSignIn", sender: nil)
     }
 
+    @IBAction func changePasswordTapped(_ sender: UIButton) {
+        print("Change password")
+    }
+    
+    @IBAction func createAccountTapped(_ sender: UIButton) {
+        print("Create an account")
+    }
+    
     @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -91,14 +101,12 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - Custom functions
+    
+    func customizeButton() {
+        let inset: CGFloat = 15
+        let verticalInset: CGFloat = 10.0
+        self.fbButton.imageEdgeInsets = UIEdgeInsets(top: verticalInset, left: verticalInset, bottom: verticalInset, right: 0)
     }
-    */
 
 }
