@@ -24,7 +24,6 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - Properties
     
     var keyboardIsVisible = false
-    var cancelTapped = false
     
     
     // MARK: - View controller life cycle
@@ -67,16 +66,6 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
     
     
     // MARK: - IBActions
-    
-    @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
-        self.cancelTapped = true
-        
-        if self.keyboardIsVisible {
-            self.view.endEditing(true) // Hide keyboard if showing
-        } else {
-            self.dismiss(animated: true, completion: nil)
-        }
-    }
     
     @IBAction func saveTapped(_ sender: UIBarButtonItem) {
         if self.keyboardIsVisible {
@@ -128,10 +117,6 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
     
     func keyboardDidHide(_ notification: Notification) {
         self.keyboardIsVisible = false
-        
-        if self.cancelTapped {
-            self.dismiss(animated: true, completion: nil)
-        }
     }
     
     func printAccountDetails() {
