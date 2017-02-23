@@ -49,6 +49,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
+        self.view.endEditing(true) // Hide keyboard if showing
         self.dismiss(animated: true, completion: nil)
     }
 
@@ -104,7 +105,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Custom functions
     
     func customizeButton() {
-        let inset: CGFloat = 15
+//        let inset: CGFloat = 15
         let verticalInset: CGFloat = 10.0
         self.fbButton.imageEdgeInsets = UIEdgeInsets(top: verticalInset, left: verticalInset, bottom: verticalInset, right: 0)
     }
