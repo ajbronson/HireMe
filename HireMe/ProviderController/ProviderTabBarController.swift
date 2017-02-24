@@ -31,6 +31,11 @@ class ProviderTabBarController: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = false
+        
+        if isSignedIn() == false {
+            //show search VC and hide the rest
+            self.selectedViewController = self.viewControllers?.last
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
