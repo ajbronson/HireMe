@@ -34,10 +34,10 @@ class SettingsTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SignInOutCell", for: indexPath)
             
             if isSignedIn() {
-                cell.textLabel?.text = "Sign out"
+                cell.textLabel?.text = "Sign Out"
                 cell.textLabel?.textColor = .red
             } else {
-                cell.textLabel?.text = "Sign in"
+                cell.textLabel?.text = "Sign In"
                 cell.textLabel?.textColor = .black
             }
             
@@ -101,7 +101,7 @@ class SettingsTableViewController: UITableViewController {
                 self.present(alertController, animated: true, completion: nil)
             } else {
                 //segue to sign in screen
-                print("Segue to sign in screen")
+                self.performSegue(withIdentifier: "showSignIn", sender: nil)
             }
         }
 
@@ -114,14 +114,14 @@ class SettingsTableViewController: UITableViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    /*
+
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showSignIn",
+            let signInNavVC = segue.destination as? UINavigationController,
+            let signInVC = signInNavVC.childViewControllers.first as? SignInViewController {
+            signInVC.didSegueFromSettings = true
+        }
     }
-    */
-
 }

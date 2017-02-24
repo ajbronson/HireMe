@@ -85,11 +85,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             
             if self.isProviderTabsVisible {
                 print("provider tabs IS visible") // DEBUG
-                let tabBarNavController = getCurrentViewController() as! UINavigationController
-                
-                if let providerTabBarController = tabBarNavController.visibleViewController as? ProviderTabBarController {
-                    providerTabBarController.initializeUserProfile()
-                }
+//                let tabBarNavController = getCurrentViewController() as! UINavigationController
+//                
+//                if let providerTabBarController = tabBarNavController.visibleViewController as? ProviderTabBarController {
+//                    providerTabBarController.initializeUserProfile()
+//                }
             } else {
                 print("provider tabs IS NOT visible") // DEBUG
                 // current VC = SFSafariViewController

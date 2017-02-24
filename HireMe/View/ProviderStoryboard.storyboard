@@ -251,7 +251,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9OR-YH-a4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3658.4000000000001" y="-75.112443778110944"/>
+            <point key="canvasLocation" x="1932" y="-572"/>
         </scene>
         <!--Job-->
         <scene sceneID="XY1-Pu-RiE">
@@ -368,7 +368,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J3M-0s-62z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3500" y="253.2233883058471"/>
+            <point key="canvasLocation" x="2718" y="-226"/>
         </scene>
         <!--My Jobs-->
         <scene sceneID="Dud-lR-byj">
@@ -417,7 +417,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uoD-0J-8wT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3658.4000000000001" y="687.7061469265368"/>
+            <point key="canvasLocation" x="1932" y="202"/>
         </scene>
         <!--Search-->
         <scene sceneID="Xjs-mO-RbY">
@@ -459,7 +459,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIo-Hi-ETP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="1405.5472263868066"/>
+            <point key="canvasLocation" x="1932" y="983"/>
         </scene>
         <!--Category-->
         <scene sceneID="zse-sQ-T8L">
@@ -507,7 +507,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDo-5i-El4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2719.1999999999998" y="1405.5472263868066"/>
+            <point key="canvasLocation" x="2718" y="983"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="SPY-Jx-yej">
@@ -615,6 +615,9 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="jAH-MM-wLU" kind="presentation" identifier="showSignIn" id="n5R-AP-LLv"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgf-cM-rtw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -675,7 +678,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Yh-Ka-NeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3500" y="1405.5472263868066"/>
+            <point key="canvasLocation" x="3657" y="983"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="bNt-zT-iQe">
@@ -1080,6 +1083,9 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                 <state key="normal" title="Sign in with Facebook">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="facebookTapped:" destination="Y4Q-1r-dAW" eventType="touchUpInside" id="V80-9e-a1P"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paW-12-Npl">
                                                 <rect key="frame" x="0.0" y="65" width="327" height="50"/>
@@ -1193,6 +1199,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="m6k-K3-t69"/>
-        <segue reference="Dmr-IU-JyO"/>
+        <segue reference="n5R-AP-LLv"/>
+        <segue reference="69p-7s-MLs"/>
     </inferredMetricsTieBreakers>
 </document>

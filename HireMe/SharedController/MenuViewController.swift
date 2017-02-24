@@ -21,6 +21,12 @@ class MenuViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.hideEmptyCells()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.initializeUserProfile()
         
         if let fbUser = self.fbUserProfile {
             self.name = fbUser["name"] as? String
@@ -46,5 +52,33 @@ class MenuViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.name
+    }
+    
+    
+    // MARK: Custom functions
+    
+    private func initializeUserProfile() {
+        print("Initializing user profile...") // DEBUG
+        switch getSignInMethod() {
+        case .Facebook:
+            print("Facebook token: \(FBSDKAccessToken.current().tokenString)")
+            self.resetUserProfiles()
+            self.fbUserProfile = UserDefaults.standard.dictionary(forKey: "fbUserProfile")
+            print("Facebook profile initialized") // DEBUG
+        case .Google:
+            self.resetUserProfiles()
+            self.googleUserProfile = UserDefaults.standard.dictionary(forKey: "googleUserProfile") as? [String: String]
+            print("Google profile initialized") // DEBUG
+        case .ThisApp:
+            print("LimitedHire profile initialized") // DEBUG
+            self.resetUserProfiles()
+        case .NotSignedIn:
+            print("Not signed in") // DEBUG
+        }
+    }
+    
+    private func resetUserProfiles() {
+        self.fbUserProfile = nil
+        self.googleUserProfile = nil
     }
 }

@@ -14,11 +14,20 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: NextControlTextField!
     @IBOutlet weak var passwordTextField: NextControlTextField!
     @IBOutlet weak var fbButton: UIButton!
+    
+    
+    // MARK: - Properties
+    
+    var didSegueFromSettings = false
 
     // MARK: - View controller life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        if self.didSegueFromSettings {
+//            self.navigationItem.leftBarButtonItem = nil // Remove cancel button
+//        }
         
         self.emailTextField.bottomBorder()
         self.passwordTextField.bottomBorder()
@@ -37,7 +46,12 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func signInTapped(_ sender: UIButton) {
         print("Signed in with LimitedHire")
-        self.performSegue(withIdentifier: "showTabsFromSignIn", sender: nil)
+        
+        if self.didSegueFromSettings {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            self.performSegue(withIdentifier: "showTabsFromSignIn", sender: nil)
+        }
     }
 
     @IBAction func changePasswordTapped(_ sender: UIButton) {
@@ -67,8 +81,12 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                     FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, picture.type(large), email"]).start { (connection, result, error) in
                         if error == nil {
                             UserDefaults.standard.set(result, forKey: "fbUserProfile")
-//                            self.dismiss(animated: true, completion: nil)
-                            self.performSegue(withIdentifier: "showTabsFromSignIn", sender: nil)
+                            
+                            if self.didSegueFromSettings {
+                                self.dismiss(animated: true, completion: nil)
+                            } else {
+                                self.performSegue(withIdentifier: "showTabsFromSignIn", sender: nil)
+                            }
                         }
                     }
                 }
