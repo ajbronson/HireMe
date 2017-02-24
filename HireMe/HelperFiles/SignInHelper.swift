@@ -27,3 +27,7 @@ func getSignInMethod() -> SignInMethod {
         return SignInMethod.NotSignedIn
     }
 }
+
+func isSignedIn() -> Bool {
+    return !(getSignInMethod() == .NotSignedIn)
+}
