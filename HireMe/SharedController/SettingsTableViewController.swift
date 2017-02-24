@@ -28,15 +28,26 @@ class SettingsTableViewController: UITableViewController {
         return 1
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        switch indexPath.section {
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SignInOutCell", for: indexPath)
+            
+            if isSignedIn() {
+                cell.textLabel?.text = "Sign out"
+                cell.textLabel?.textColor = .red
+            } else {
+                cell.textLabel?.text = "Sign in"
+                cell.textLabel?.textColor = .black
+            }
+            
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath)
+            
+            return cell
+        }
     }
-    */
 
 
     /*
@@ -59,43 +70,39 @@ class SettingsTableViewController: UITableViewController {
         
         let reuseId = tableView.cellForRow(at: indexPath)?.reuseIdentifier
         
-        if reuseId == "signOutCell" {
-            let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-            alertController.popoverPresentationController?.sourceView = self.view
-            alertController.popoverPresentationController?.sourceRect = self.view.bounds;
-            alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            alertController.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { (action) in
-                print("Signing out...") // DEBUG
-                switch getSignInMethod() {
-                case .Facebook:
-                    FBSDKLoginManager().logOut()
-                    print("Signed out from Facebook") // DEBUG
-                case .Google:
-                    GIDSignIn.sharedInstance().signOut()
-                    print("Signed out from Google") // DEBUG
-                case .ThisApp:
-                    print("Signed out from LimitedHire") // DEBUG
-                case .NotSignedIn:
-                    print("Not signed in") // DEBUG
-                }
+        if reuseId == "SignInOutCell" {
+            if isSignedIn() {
+                let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+                alertController.popoverPresentationController?.sourceView = self.view
+                alertController.popoverPresentationController?.sourceRect = self.view.bounds;
+                alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                alertController.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { (action) in
+                    self.dismiss(animated: true, completion: {
+                        print("Signing out...") // DEBUG
+                        switch getSignInMethod() {
+                        case .Facebook:
+                            FBSDKLoginManager().logOut()
+                            print("Signed out from Facebook") // DEBUG
+                        case .Google:
+                            GIDSignIn.sharedInstance().signOut()
+                            print("Signed out from Google") // DEBUG
+                        case .ThisApp:
+                            print("Signed out from LimitedHire") // DEBUG
+                        case .NotSignedIn:
+                            print("Not signed in") // DEBUG
+                        }
+                        
+                        print("SettingsViewController's parent \(self.parent?.descr)") // DEBUG
+                        print("SettingsViewController's parent's parent \(self.parent?.parent?.descr)") // DEBUG
+                        print("presentingViewController \(self.presentingViewController?.descr)") // DEBUG
+                    })
+                }))
                 
-                print("SettingsViewController's parent \(self.parent?.descr)") // DEBUG
-                print("SettingsViewController's parent's parent \(self.parent?.parent?.descr)") // DEBUG
-                print("presentingViewController \(self.presentingViewController?.descr)") // DEBUG
-                
-//                if let presentingVC = self.presentingViewController as? UINavigationController {
-//                    presentingVC.printViewControllers()
-//                    presentingVC.popToRootViewController(animated: true)
-//
-//                }
-                
-                if let parent = self.parent as? UINavigationController {
-                    parent.printViewControllers() // DEBUG
-                    parent.popToRootViewController(animated: true)
-                }
-            }))
-            
-            self.present(alertController, animated: true, completion: nil)
+                self.present(alertController, animated: true, completion: nil)
+            } else {
+                //segue to sign in screen
+                print("Segue to sign in screen")
+            }
         }
 
     }
