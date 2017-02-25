@@ -91,16 +91,11 @@ class SettingsTableViewController: UITableViewController {
                         case .NotSignedIn:
                             print("Not signed in") // DEBUG
                         }
-                        
-                        print("SettingsViewController's parent \(self.parent?.descr)") // DEBUG
-                        print("SettingsViewController's parent's parent \(self.parent?.parent?.descr)") // DEBUG
-                        print("presentingViewController \(self.presentingViewController?.descr)") // DEBUG
                     })
                 }))
                 
                 self.present(alertController, animated: true, completion: nil)
             } else {
-                //segue to sign in screen
                 self.performSegue(withIdentifier: "showSignIn", sender: nil)
             }
         }
@@ -118,9 +113,7 @@ class SettingsTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showSignIn",
-            let signInNavVC = segue.destination as? UINavigationController,
-            let signInVC = signInNavVC.childViewControllers.first as? SignInViewController {
+        if segue.identifier == "showSignIn", let signInVC = segue.destination as? SignInViewController {
             signInVC.didSegueFromSettings = true
         }
     }

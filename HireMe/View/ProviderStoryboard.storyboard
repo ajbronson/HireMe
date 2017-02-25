@@ -616,7 +616,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="jAH-MM-wLU" kind="presentation" identifier="showSignIn" id="n5R-AP-LLv"/>
+                        <segue destination="Y4Q-1r-dAW" kind="show" identifier="showSignIn" id="zcv-7s-s9Y"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgf-cM-rtw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -685,7 +685,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <objects>
                 <navigationController storyboardIdentifier="SideMenuNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n3l-UV-hM1" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dDF-ZW-lfe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dDF-ZW-lfe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -740,7 +740,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <objects>
                 <navigationController storyboardIdentifier="RootNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Z56-fk-k2l" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gEX-vB-9c5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gEX-vB-9c5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -979,10 +979,10 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="2xk-pZ-hKP" userLabel="EmailPasswordStackView">
-                                <rect key="frame" x="31" y="114" width="313" height="88"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="2xk-pZ-hKP" userLabel="EmailPasswordStackView">
+                                <rect key="frame" x="31" y="94" width="313" height="88"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eVu-v7-Bhe" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eVu-v7-Bhe" userLabel="EmailTextField" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="313" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="RJm-kO-4re"/>
@@ -995,7 +995,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                             <outlet property="nextControl" destination="IV9-NZ-DdP" id="L4Z-3w-jIE"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IV9-NZ-DdP" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IV9-NZ-DdP" userLabel="PasswordTextField" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44" width="313" height="44"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1010,13 +1010,13 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                     <constraint firstItem="IV9-NZ-DdP" firstAttribute="height" secondItem="eVu-v7-Bhe" secondAttribute="height" id="URP-Jk-aPg"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ljv-4b-esY" userLabel="SignIn">
-                                <rect key="frame" x="24" y="232" width="327" height="286"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ljv-4b-esY" userLabel="SignIn">
+                                <rect key="frame" x="24" y="212" width="327" height="285.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7p2-UP-bby" userLabel="NativeChangeCreate">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7p2-UP-bby" userLabel="NativeChangeCreate">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="90"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTl-Gh-OG7" userLabel="SignInButton" customClass="DarkHighlightButton" customModule="HireMe" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTl-Gh-OG7" userLabel="SignInButton" customClass="DarkHighlightButton" customModule="HireMe" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="327" height="50"/>
                                                 <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -1031,10 +1031,10 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                     <action selector="signInTapped:" destination="Y4Q-1r-dAW" eventType="touchUpInside" id="ltN-VT-13t"/>
                                                 </connections>
                                             </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GRh-l5-Q5l" userLabel="ChangeCreate">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GRh-l5-Q5l" userLabel="ChangeCreate">
                                                 <rect key="frame" x="0.0" y="60" width="327" height="30"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="md8-JB-TDV">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="md8-JB-TDV">
                                                         <rect key="frame" x="0.0" y="0.0" width="123" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="132-N6-7FH"/>
@@ -1045,13 +1045,13 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                             <action selector="changePasswordTapped:" destination="Y4Q-1r-dAW" eventType="touchUpInside" id="ywD-Ps-Og8"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubv-Tj-Sx8" userLabel="PipeLabel">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubv-Tj-Sx8" userLabel="PipeLabel">
                                                         <rect key="frame" x="160.5" y="0.0" width="5" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nn5-4a-weR">
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nn5-4a-weR">
                                                         <rect key="frame" x="201" y="0.0" width="126" height="30"/>
                                                         <state key="normal" title="Create an account"/>
                                                         <connections>
@@ -1066,14 +1066,14 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" ambiguous="YES" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb2-gJ-jSb">
-                                        <rect key="frame" x="0.0" y="120.5" width="327" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb2-gJ-jSb">
+                                        <rect key="frame" x="0.0" y="120" width="327" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zaj-p4-wZU" userLabel="FBGoogle">
-                                        <rect key="frame" x="0.0" y="171" width="327" height="115"/>
+                                        <rect key="frame" x="0.0" y="170.5" width="327" height="115"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YK3-WS-sFi">
                                                 <rect key="frame" x="0.0" y="0.0" width="327" height="50"/>
@@ -1106,9 +1106,8 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                         </subviews>
                         <color key="backgroundColor" red="0.87843137250000003" green="0.96862745100000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="2xk-pZ-hKP" firstAttribute="top" secondItem="Kg3-KJ-znY" secondAttribute="bottom" constant="50" id="Gwe-RV-h30"/>
                             <constraint firstItem="2xk-pZ-hKP" firstAttribute="leading" secondItem="fkr-gp-DJO" secondAttribute="leadingMargin" constant="15" id="WRu-3N-0Ws"/>
-                            <constraint firstItem="zPy-1n-Onz" firstAttribute="top" secondItem="ljv-4b-esY" secondAttribute="bottom" priority="999" constant="149.5" id="eaO-Zx-f7h"/>
+                            <constraint firstItem="2xk-pZ-hKP" firstAttribute="top" secondItem="Kg3-KJ-znY" secondAttribute="bottom" constant="30" id="amC-Jk-AG8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ljv-4b-esY" secondAttribute="trailing" constant="8" id="nPG-9x-b1l"/>
                             <constraint firstItem="ljv-4b-esY" firstAttribute="top" secondItem="2xk-pZ-hKP" secondAttribute="bottom" constant="30" id="nWu-uy-x7q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2xk-pZ-hKP" secondAttribute="trailing" constant="15" id="sgA-ci-VFt"/>
@@ -1138,7 +1137,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <objects>
                 <navigationController storyboardIdentifier="SignInNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jAH-MM-wLU" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mK0-Nk-XZn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mK0-Nk-XZn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1154,9 +1153,9 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <!--Navigation Controller-->
         <scene sceneID="fZj-JC-542">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hQR-1r-AOY" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SettingsNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hQR-1r-AOY" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="I0d-XE-R7X">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="I0d-XE-R7X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1175,7 +1174,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gwk-mt-dsk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Account" image="Account" id="VdV-u6-N5o"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="9tz-z0-kKz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9tz-z0-kKz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1198,8 +1197,8 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <image name="Star" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="e3b-NI-uZr"/>
         <segue reference="m6k-K3-t69"/>
-        <segue reference="n5R-AP-LLv"/>
         <segue reference="69p-7s-MLs"/>
     </inferredMetricsTieBreakers>
 </document>

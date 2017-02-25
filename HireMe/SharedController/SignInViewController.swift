@@ -25,9 +25,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if self.didSegueFromSettings {
-//            self.navigationItem.leftBarButtonItem = nil // Remove cancel button
-//        }
+        if self.didSegueFromSettings {
+            self.navigationItem.leftBarButtonItem = nil // Remove cancel button
+        }
         
         self.emailTextField.bottomBorder()
         self.passwordTextField.bottomBorder()
@@ -39,6 +39,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         super.viewWillAppear(animated)
         self.emailTextField.text = nil
         self.passwordTextField.text = nil
+        
+        print("SignInViewController's parent \(self.parent?.descr)") // DEBUG
+        print("SignInViewController's parent's parent \(self.parent?.parent?.descr)") // DEBUG
+        print("presentingViewController \(self.presentingViewController?.descr)") // DEBUG
     }
     
     
@@ -49,6 +53,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
         if self.didSegueFromSettings {
             self.dismiss(animated: true, completion: nil)
+            // TODO: sign in natively
         } else {
             self.performSegue(withIdentifier: "showTabsFromSignIn", sender: nil)
         }
@@ -83,7 +88,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                             UserDefaults.standard.set(result, forKey: "fbUserProfile")
                             
                             if self.didSegueFromSettings {
-                                self.dismiss(animated: true, completion: nil)
+                                self.dismiss(animated: false, completion: nil)
                             } else {
                                 self.performSegue(withIdentifier: "showTabsFromSignIn", sender: nil)
                             }
