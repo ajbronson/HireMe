@@ -17,11 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 	var window: UIWindow?
     let storyboard = UIStoryboard(name: "ProviderStoryboard", bundle: Bundle.main)
     var isProviderTabsVisible: Bool = false
-    
-    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
-        
-        return true
-    }
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		
@@ -80,28 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             ]
             
             UserDefaults.standard.set(googleUserProfile, forKey: "googleUserProfile")
-            
-            print("current VC \(getCurrentViewController()?.descr)") // DEBUG
-            
-            if self.isProviderTabsVisible {
-                print("provider tabs IS visible") // DEBUG
-//                let tabBarNavController = getCurrentViewController() as! UINavigationController
-//                
-//                if let providerTabBarController = tabBarNavController.visibleViewController as? ProviderTabBarController {
-//                    providerTabBarController.initializeUserProfile()
-//                }
-            } else {
-                print("provider tabs IS NOT visible") // DEBUG
-                // current VC = SFSafariViewController
-                
-                if let rootNC = self.window?.rootViewController as? UINavigationController {
-                    // At this point, there is only one child view controller of RootNavigationController and it's LoginViewController
-                    if let loginVC = rootNC.viewControllers.first as? LoginViewController {
-                        loginVC.performSegue(withIdentifier: "showTabs", sender: nil)
-                    }
-                }
-
-            }
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationKey), object: nil)
         } else {
             print("\(error.localizedDescription)")
         }

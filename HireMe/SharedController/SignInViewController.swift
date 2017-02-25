@@ -10,7 +10,7 @@ import UIKit
 import GoogleSignIn
 import FBSDKLoginKit
 
-class SignInViewController: UIViewController, UITextFieldDelegate {
+class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
     @IBOutlet weak var emailTextField: NextControlTextField!
     @IBOutlet weak var passwordTextField: NextControlTextField!
     @IBOutlet weak var fbButton: UIButton!
@@ -25,13 +25,17 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(userDidSignInWithGoogle), name: NSNotification.Name(rawValue: notificationKey), object: nil)
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
         if self.didSegueFromSettings {
             self.navigationItem.leftBarButtonItem = nil // Remove cancel button
         }
         
         self.emailTextField.bottomBorder()
         self.passwordTextField.bottomBorder()
-        self.customizeButton()
+//        self.customizeButton()
     }
     
     // TODO: This probably won't be needed once it can actually sign in. When users sign out, they won't be directed to this screen
@@ -92,6 +96,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                             } else {
                                 self.performSegue(withIdentifier: "showTabsFromSignIn", sender: nil)
                             }
+                        } else {
+                            print("\(error?.localizedDescription)")
                         }
                     }
                 }
@@ -100,7 +106,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func googleTapped(_ sender: UIButton) {
-        print("Google")
         GIDSignIn.sharedInstance().signIn()
     }
     
@@ -117,7 +122,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
         return false
     }
+
     
+    // MARK: - UIResponder
     
     // Hides keyboard when user taps anywhere outside of keyboard
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -131,6 +138,12 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
 //        let inset: CGFloat = 15
         let verticalInset: CGFloat = 10.0
         self.fbButton.imageEdgeInsets = UIEdgeInsets(top: verticalInset, left: verticalInset, bottom: verticalInset, right: 0)
+    }
+    
+    func userDidSignInWithGoogle() {
+        if self.didSegueFromSettings {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 
 }

@@ -33,6 +33,10 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
         self.registerForKeyboardNotifications()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     
     // MARK: - UITableViewDelegate
     

@@ -7,10 +7,9 @@
 //
 
 import FBSDKLoginKit
-import GoogleSignIn
 
 // TODO: show an alert before signing in with Google and Facebook informing the user of what data we'll be accessingf
-class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate {
+class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     
     // MARK: - Outlets
@@ -22,8 +21,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        GIDSignIn.sharedInstance().uiDelegate = self
         
         fbLoginButton.delegate = self
         fbLoginButton.readPermissions = ["public_profile", "email"]
