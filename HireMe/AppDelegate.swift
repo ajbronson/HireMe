@@ -75,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             ]
             
             UserDefaults.standard.set(googleUserProfile, forKey: "googleUserProfile")
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationKey), object: nil)
+            NotificationCenter.default.post(name: gSignInNotificationName, object: nil)
         } else {
             print("\(error.localizedDescription)")
         }

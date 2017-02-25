@@ -12,7 +12,7 @@ let highlightedBackgroundColor = UIColor(hex: "#0097A7") // Cyan 700
 let defaultColor = UIColor(hex: "#00BCD4") // Cyan primary
 let hueColor = UIColor(hex: "#E0F7FA") // Cyan 50
 let fbBlue = UIColor(hex: "#4267B2")
-let notificationKey = "didSignInWithGoogle"
+let gSignInNotificationName = Notification.Name(rawValue: "didSignInWithGoogle")
 
 extension UIImageView
 {

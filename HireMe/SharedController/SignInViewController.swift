@@ -25,7 +25,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(userDidSignInWithGoogle), name: NSNotification.Name(rawValue: notificationKey), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(userDidSignInWithGoogle), name: gSignInNotificationName, object: nil)
         
         GIDSignIn.sharedInstance().uiDelegate = self
         
