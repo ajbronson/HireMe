@@ -39,10 +39,11 @@ class MenuViewController: UITableViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showSettings" {
-            if let settingsVC = segue.destination as? AccountViewController {
-                settingsVC.fbUserProfile = self.fbUserProfile
-                settingsVC.googleUserProfile = self.googleUserProfile
+        if segue.identifier == "editAccount" {
+            if let editAccountNavC = segue.destination as? UINavigationController,
+                let accountVC = editAccountNavC.childViewControllers.first as? AccountViewController {
+                accountVC.fbUserProfile = self.fbUserProfile
+                accountVC.googleUserProfile = self.googleUserProfile
             }
         }
     }

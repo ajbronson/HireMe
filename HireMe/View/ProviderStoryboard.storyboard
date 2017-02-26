@@ -140,7 +140,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Edit Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cTL-3H-CEe">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Edit Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cTL-3H-CEe">
                                                     <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -150,7 +150,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Gwk-mt-dsk" kind="presentation" id="dob-Zd-dSj"/>
+                                            <segue destination="Gwk-mt-dsk" kind="presentation" identifier="editAccount" id="dob-Zd-dSj"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="kKS-8h-J8K" style="IBUITableViewCellStyleDefault" id="TpB-Nq-vmW">
@@ -510,7 +510,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             </objects>
             <point key="canvasLocation" x="2718" y="983"/>
         </scene>
-        <!--Edit Profile-->
+        <!--Edit Account-->
         <scene sceneID="SPY-Jx-yej">
             <objects>
                 <tableViewController id="e7k-BD-Med" customClass="AccountViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -751,7 +751,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                             <outlet property="delegate" destination="e7k-BD-Med" id="8HR-V3-jSL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Edit Profile" id="zbI-63-1h0">
+                    <navigationItem key="navigationItem" title="Edit Account" id="zbI-63-1h0">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="KNs-y0-z4P">
                             <connections>
                                 <action selector="cancelTapped:" destination="e7k-BD-Med" id="JS7-4Z-mpE"/>
