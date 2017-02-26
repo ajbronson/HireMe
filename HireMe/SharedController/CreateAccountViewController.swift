@@ -12,6 +12,7 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
     
     // MARK: - Outlets
     
+    @IBOutlet weak var usernameTextField: NextControlTextField!
     @IBOutlet weak var firstNameTextField: NextControlTextField!
     @IBOutlet weak var lastNameTextField: NextControlTextField!
     @IBOutlet weak var phoneNumberTextField: NextControlTextField!
@@ -48,8 +49,8 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - UITextFieldDelegate
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {        
-        if textField.keyboardType == .numberPad || textField.keyboardType == .phonePad {
-            self.addNextButtonOnKeyboard(textField)
+        if let nextControlTextField = textField as? NextControlTextField {
+            nextControlTextField.addToolbarAboveKeyboard()
         }
         
         return true
@@ -88,33 +89,6 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector:#selector(self.keyboardDidHide(_:)), name: .UIKeyboardDidHide, object: nil)
     }
     
-    /**
-     Adds a toolbar on top of the keyboard with a Next button.
-     
-     Intended to be used when the keyboard is a number or phone pad with no return key.
-     */
-    func addNextButtonOnKeyboard(_ textField: UITextField) {
-        let keyboardToolbar = UIToolbar()
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let next  = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(self.keyboardNextButtonAction))
-        next.tintColor = UIColor.black
-        
-        keyboardToolbar.items = [flexSpace, next] // Next button appears on far right
-        keyboardToolbar.sizeToFit()
-        
-        textField.inputAccessoryView = keyboardToolbar
-    }
-    
-    func keyboardNextButtonAction() {
-        if let responder = self.tableView.currentFirstResponder() {
-            if let nextControlTextField = responder as? NextControlTextField {
-                nextControlTextField.transferFirstResponderToNextControl(completionHandler: { (didTransfer) in
-                    // Do nothing. With how the text fields are arranged, this text field will always transfer first responder
-                })
-            }
-        }
-    }
-    
     func keyboardDidShow(_ notification: Notification) {
         self.keyboardIsVisible = true
     }
@@ -124,6 +98,7 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
     }
     
     func printAccountDetails() {
+        print("Username: \(self.usernameTextField.text)")
         print("First Name: \(self.firstNameTextField.text)")
         print("Last Name: \(self.lastNameTextField.text)")
         print("Phone: \(self.phoneNumberTextField.text)")

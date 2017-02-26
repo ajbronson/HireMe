@@ -38,6 +38,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
 //        self.customizeButton()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     // TODO: This probably won't be needed once it can actually sign in. When users sign out, they won't be directed to this screen
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

@@ -57,7 +57,7 @@ class AccountViewController: UITableViewController, UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if let nextControlTextField = textField as? NextControlTextField {
-            nextControlTextField.addToolBarAboveKeyboard()
+            nextControlTextField.addToolbarAboveKeyboard()
         }
         
         return true

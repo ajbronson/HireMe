@@ -139,7 +139,7 @@ extension UITextField {
 }
 
 extension NextControlTextField {
-    func addToolBarAboveKeyboard() {
+    func addToolbarAboveKeyboard() {
         let keyboardToolbar = UIToolbar()
 
         let close = ClosureBarButtonItem(image: UIImage(named: "Close"), style: .plain) { (params) in

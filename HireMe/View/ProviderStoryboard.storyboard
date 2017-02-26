@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="wEk-fu-Jdr">
-                                <rect key="frame" x="31" y="349" width="313" height="115"/>
+                                <rect key="frame" x="31" y="348.5" width="313" height="115"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9L-Ee-ZQr" userLabel="SignInButton" customClass="DarkHighlightButton" customModule="HireMe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="313" height="50"/>
@@ -64,7 +64,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxd-Dh-ptc">
-                                <rect key="frame" x="180" y="303" width="16" height="21"/>
+                                <rect key="frame" x="180" y="303" width="16" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -275,13 +275,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Julie Harris" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hg9-jS-lYo">
-                                <rect key="frame" x="145" y="247" width="86" height="21"/>
+                                <rect key="frame" x="145" y="247" width="86" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="xfY-Pk-b57">
-                                <rect key="frame" x="86" y="293" width="203" height="35"/>
+                                <rect key="frame" x="86" y="292.5" width="203" height="35"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="ZtN-lw-uSb">
                                         <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
@@ -338,7 +338,7 @@
                                 </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="u6y-Gw-K35">
-                                <rect key="frame" x="16" y="336" width="343" height="323"/>
+                                <rect key="frame" x="16" y="335.5" width="343" height="323.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Hey guys!
 
@@ -932,7 +932,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <objects>
                 <navigationController storyboardIdentifier="SideMenuNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n3l-UV-hM1" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dDF-ZW-lfe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dDF-ZW-lfe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -987,7 +987,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <objects>
                 <navigationController storyboardIdentifier="RootNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Z56-fk-k2l" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gEX-vB-9c5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gEX-vB-9c5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1009,10 +1009,35 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection id="u6y-kY-ZDV">
+                            <tableViewSection id="u6y-kY-ZDV" userLabel="Personal Information">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VHe-nZ-ThP">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dX4-Z4-1e9" userLabel="Username">
                                         <rect key="frame" x="0.0" y="35" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dX4-Z4-1e9" id="7S3-dc-00W">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0TS-WW-JfO" userLabel="Username Text Field" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="11" width="352" height="21"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="15d-bR-XhO" id="bU2-V0-qna"/>
+                                                        <outlet property="nextControl" destination="Ohj-k2-pTG" id="U95-QB-P0T"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0TS-WW-JfO" firstAttribute="centerY" secondItem="7S3-dc-00W" secondAttribute="centerY" id="425-dQ-3Hy"/>
+                                                <constraint firstItem="0TS-WW-JfO" firstAttribute="leading" secondItem="7S3-dc-00W" secondAttribute="leadingMargin" constant="7" id="VvJ-oH-Jqx"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="0TS-WW-JfO" secondAttribute="trailing" id="heG-oq-23u"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VHe-nZ-ThP" userLabel="First Name">
+                                        <rect key="frame" x="0.0" y="79" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VHe-nZ-ThP" id="Xs3-6D-aF9">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -1026,6 +1051,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                     <connections>
                                                         <outlet property="delegate" destination="15d-bR-XhO" id="uSE-Ed-YEk"/>
                                                         <outlet property="nextControl" destination="nFv-p8-l11" id="Fkv-9E-CMv"/>
+                                                        <outlet property="prevControl" destination="0TS-WW-JfO" id="nkB-6K-rnA"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -1036,8 +1062,8 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="4QN-sb-DaK">
-                                        <rect key="frame" x="0.0" y="79" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="4QN-sb-DaK" userLabel="Last Name">
+                                        <rect key="frame" x="0.0" y="123" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4QN-sb-DaK" id="IUJ-WB-syE">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -1051,6 +1077,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                     <connections>
                                                         <outlet property="delegate" destination="15d-bR-XhO" id="cff-RB-Zcg"/>
                                                         <outlet property="nextControl" destination="yje-ZC-vDE" id="xsk-sU-5mv"/>
+                                                        <outlet property="prevControl" destination="Ohj-k2-pTG" id="cTo-QE-dRJ"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -1061,14 +1088,14 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="XhA-sX-ci8">
-                                        <rect key="frame" x="0.0" y="123" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="XhA-sX-ci8" userLabel="Phone">
+                                        <rect key="frame" x="0.0" y="167" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XhA-sX-ci8" id="fwN-GK-4ML">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yje-ZC-vDE" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yje-ZC-vDE" userLabel="Phone Text Field" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="11" width="352" height="21"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1076,6 +1103,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                     <connections>
                                                         <outlet property="delegate" destination="15d-bR-XhO" id="xKw-wc-2cU"/>
                                                         <outlet property="nextControl" destination="L03-b6-CaC" id="CAY-IO-3EA"/>
+                                                        <outlet property="prevControl" destination="nFv-p8-l11" id="FId-FC-P3n"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -1086,14 +1114,14 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" id="cgi-EN-5zg">
-                                        <rect key="frame" x="0.0" y="167" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" id="cgi-EN-5zg" userLabel="ZIP Code">
+                                        <rect key="frame" x="0.0" y="211" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cgi-EN-5zg" id="FVE-cj-MpI">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ZIP Code" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="L03-b6-CaC" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ZIP Code" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="L03-b6-CaC" userLabel="ZIP Code Text Field" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="11" width="305" height="21"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1101,6 +1129,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                     <connections>
                                                         <outlet property="delegate" destination="15d-bR-XhO" id="fKN-vo-N18"/>
                                                         <outlet property="nextControl" destination="Uwz-Tf-MKn" id="Glv-rf-ouc"/>
+                                                        <outlet property="prevControl" destination="yje-ZC-vDE" id="2OF-C7-fPR"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -1111,8 +1140,8 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gRB-lU-a8q">
-                                        <rect key="frame" x="0.0" y="211" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gRB-lU-a8q" userLabel="Email">
+                                        <rect key="frame" x="0.0" y="255" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gRB-lU-a8q" id="pxN-IZ-h9Z">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -1125,7 +1154,8 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                     <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="15d-bR-XhO" id="7pc-jB-EM0"/>
-                                                        <outlet property="nextControl" destination="laD-0v-TZL" id="n9x-ue-mQb"/>
+                                                        <outlet property="nextControl" destination="Jg6-N5-xQI" id="kJW-WN-HYp"/>
+                                                        <outlet property="prevControl" destination="L03-b6-CaC" id="r0W-tO-IPU"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -1136,52 +1166,58 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="WS5-qF-icY">
-                                        <rect key="frame" x="0.0" y="255" width="375" height="44"/>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="iEU-Vd-yS5" userLabel="Password">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sln-4r-yV1" userLabel="Password">
+                                        <rect key="frame" x="0.0" y="335" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WS5-qF-icY" id="gHu-F4-KUR">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sln-4r-yV1" id="N8B-h4-vPI">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="laD-0v-TZL" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Jg6-N5-xQI" userLabel="Password Text Field" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="11" width="352" height="21"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                                                     <connections>
-                                                        <outlet property="delegate" destination="15d-bR-XhO" id="9ql-Py-YdR"/>
-                                                        <outlet property="nextControl" destination="3v7-hS-dfr" id="1NG-WK-PVH"/>
+                                                        <outlet property="delegate" destination="15d-bR-XhO" id="LC6-h1-nYO"/>
+                                                        <outlet property="nextControl" destination="Gpa-jG-cwI" id="O0N-2m-6Iw"/>
+                                                        <outlet property="prevControl" destination="Uwz-Tf-MKn" id="mjE-x8-ydp"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="laD-0v-TZL" secondAttribute="trailing" id="9AF-Mg-Y4p"/>
-                                                <constraint firstItem="laD-0v-TZL" firstAttribute="leading" secondItem="gHu-F4-KUR" secondAttribute="leadingMargin" constant="7" id="HV6-aK-iUP"/>
-                                                <constraint firstItem="laD-0v-TZL" firstAttribute="centerY" secondItem="gHu-F4-KUR" secondAttribute="centerY" id="VY0-cf-JJn"/>
+                                                <constraint firstItem="Jg6-N5-xQI" firstAttribute="centerY" secondItem="N8B-h4-vPI" secondAttribute="centerY" id="BrX-iq-LpY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Jg6-N5-xQI" secondAttribute="trailing" id="LbA-aa-SLM"/>
+                                                <constraint firstItem="Jg6-N5-xQI" firstAttribute="leading" secondItem="N8B-h4-vPI" secondAttribute="leadingMargin" constant="7" id="aNU-Tb-58Z"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="M5C-7w-hKY">
-                                        <rect key="frame" x="0.0" y="299" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7nO-s7-iMl" userLabel="Re-Enter Password">
+                                        <rect key="frame" x="0.0" y="379" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M5C-7w-hKY" id="b1Q-It-3xL">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7nO-s7-iMl" id="2pD-Ti-H60">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Re-Enter Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3v7-hS-dfr" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Re-Enter Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Gpa-jG-cwI" userLabel="Re-Enter Password Text Field" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="11" width="352" height="21"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                                     <connections>
-                                                        <outlet property="delegate" destination="15d-bR-XhO" id="U2Y-8K-Min"/>
+                                                        <outlet property="delegate" destination="15d-bR-XhO" id="MQc-UX-F5v"/>
+                                                        <outlet property="prevControl" destination="Jg6-N5-xQI" id="kvh-jh-mW4"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="3v7-hS-dfr" firstAttribute="leading" secondItem="b1Q-It-3xL" secondAttribute="leadingMargin" constant="7" id="SiU-gT-4Mm"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="3v7-hS-dfr" secondAttribute="trailing" id="TX2-A4-ari"/>
-                                                <constraint firstItem="3v7-hS-dfr" firstAttribute="centerY" secondItem="b1Q-It-3xL" secondAttribute="centerY" id="eY6-cP-BF9"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Gpa-jG-cwI" secondAttribute="trailing" id="SeG-c4-8kU"/>
+                                                <constraint firstItem="Gpa-jG-cwI" firstAttribute="leading" secondItem="2pD-Ti-H60" secondAttribute="leadingMargin" constant="7" id="UtQ-sd-WUZ"/>
+                                                <constraint firstItem="Gpa-jG-cwI" firstAttribute="centerY" secondItem="2pD-Ti-H60" secondAttribute="centerY" id="bzt-Et-SwT"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1205,9 +1241,10 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                         <outlet property="emailTextField" destination="Uwz-Tf-MKn" id="n80-NQ-CV9"/>
                         <outlet property="firstNameTextField" destination="Ohj-k2-pTG" id="4Xl-Lf-iSH"/>
                         <outlet property="lastNameTextField" destination="nFv-p8-l11" id="gxn-rs-t18"/>
-                        <outlet property="passwordTextField" destination="laD-0v-TZL" id="X5j-te-8vd"/>
+                        <outlet property="passwordTextField" destination="Jg6-N5-xQI" id="2Wd-hb-sgm"/>
                         <outlet property="phoneNumberTextField" destination="yje-ZC-vDE" id="RQf-sY-YQS"/>
-                        <outlet property="reEnterPasswordTextField" destination="3v7-hS-dfr" id="ble-ba-HNw"/>
+                        <outlet property="reEnterPasswordTextField" destination="Gpa-jG-cwI" id="0Wk-en-xne"/>
+                        <outlet property="usernameTextField" destination="0TS-WW-JfO" id="2cY-mZ-kNC"/>
                         <outlet property="zipCodeTextField" destination="L03-b6-CaC" id="Lpk-A6-fwe"/>
                     </connections>
                 </tableViewController>
@@ -1259,7 +1296,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ljv-4b-esY" userLabel="SignIn">
-                                <rect key="frame" x="24" y="212" width="327" height="286"/>
+                                <rect key="frame" x="24" y="212" width="327" height="285.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7p2-UP-bby" userLabel="NativeChangeCreate">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="90"/>
@@ -1294,7 +1331,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubv-Tj-Sx8" userLabel="PipeLabel">
-                                                        <rect key="frame" x="160" y="0.0" width="5" height="30"/>
+                                                        <rect key="frame" x="160.5" y="0.0" width="5" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1315,13 +1352,13 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb2-gJ-jSb">
-                                        <rect key="frame" x="0.0" y="120" width="327" height="21"/>
+                                        <rect key="frame" x="0.0" y="120" width="327" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zaj-p4-wZU" userLabel="FBGoogle">
-                                        <rect key="frame" x="0.0" y="171" width="327" height="115"/>
+                                        <rect key="frame" x="0.0" y="170.5" width="327" height="115"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YK3-WS-sFi">
                                                 <rect key="frame" x="0.0" y="0.0" width="327" height="50"/>
@@ -1389,7 +1426,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <objects>
                 <navigationController storyboardIdentifier="SignInNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jAH-MM-wLU" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mK0-Nk-XZn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mK0-Nk-XZn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1407,7 +1444,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <objects>
                 <navigationController storyboardIdentifier="SettingsNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hQR-1r-AOY" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="I0d-XE-R7X">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="I0d-XE-R7X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1427,7 +1464,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gwk-mt-dsk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Account" image="Account" id="VdV-u6-N5o"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9tz-z0-kKz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="9tz-z0-kKz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
