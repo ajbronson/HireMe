@@ -138,6 +138,31 @@ extension UITextField {
     }
 }
 
+extension NextControlTextField {
+    func addToolBarAboveKeyboard() {
+        let keyboardToolbar = UIToolbar()
+
+        let close = ClosureBarButtonItem(image: UIImage(named: "Close"), style: .plain) { (params) in
+            self.resignFirstResponder()
+        }
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        
+        let up = ClosureBarButtonItem(image: UIImage(named: "UpChevron"), style: .plain) { (params) in
+            self.transferFirstResponderToPrevControl(completionHandler: nil)
+        }
+        
+        let down = ClosureBarButtonItem(image: UIImage(named: "DownChevron"), style: .plain) { (params) in
+            self.transferFirstResponderToNextControl(completionHandler: nil)
+        }
+        
+        keyboardToolbar.items = [close, flexSpace, up, down] // Next button appears on far right
+        keyboardToolbar.sizeToFit()
+        
+        self.inputAccessoryView = keyboardToolbar
+    }
+}
+
 extension UIView {
     /// Gets the current first responder (e.g., the UITextField that is being edited and showing the keyboard)
     func currentFirstResponder() -> UIResponder? {

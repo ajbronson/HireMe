@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="wEk-fu-Jdr">
-                                <rect key="frame" x="31" y="348.5" width="313" height="115"/>
+                                <rect key="frame" x="31" y="349" width="313" height="115"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9L-Ee-ZQr" userLabel="SignInButton" customClass="DarkHighlightButton" customModule="HireMe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="313" height="50"/>
@@ -64,7 +64,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxd-Dh-ptc">
-                                <rect key="frame" x="180" y="303" width="16" height="20.5"/>
+                                <rect key="frame" x="180" y="303" width="16" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -275,13 +275,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Julie Harris" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hg9-jS-lYo">
-                                <rect key="frame" x="145" y="247" width="86" height="20.5"/>
+                                <rect key="frame" x="145" y="247" width="86" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="xfY-Pk-b57">
-                                <rect key="frame" x="86" y="292.5" width="203" height="35"/>
+                                <rect key="frame" x="86" y="293" width="203" height="35"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="ZtN-lw-uSb">
                                         <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
@@ -338,7 +338,7 @@
                                 </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="u6y-Gw-K35">
-                                <rect key="frame" x="16" y="335.5" width="343" height="323.5"/>
+                                <rect key="frame" x="16" y="336" width="343" height="323"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Hey guys!
 
@@ -539,6 +539,10 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="e7k-BD-Med" id="V4U-SZ-oic"/>
+                                                        <outlet property="nextControl" destination="kmv-MD-J01" id="Zbe-GM-ukb"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -559,7 +563,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uT-Bw-Mif">
-                                                    <rect key="frame" x="15" y="11" width="86.5" height="21"/>
+                                                    <rect key="frame" x="15" y="11" width="87" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -569,6 +573,11 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="e7k-BD-Med" id="EXS-5b-VbB"/>
+                                                        <outlet property="nextControl" destination="C86-0b-I1m" id="C1p-Iz-Jax"/>
+                                                        <outlet property="prevControl" destination="0pe-3Z-iu2" id="vh0-Mo-8qd"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -599,6 +608,11 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="e7k-BD-Med" id="x8V-q0-CTZ"/>
+                                                        <outlet property="nextControl" destination="hos-6B-SB8" id="BhF-2f-MjZ"/>
+                                                        <outlet property="prevControl" destination="kmv-MD-J01" id="bpm-ZZ-ssI"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -624,11 +638,16 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="123-456-7890" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hos-6B-SB8" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="123-456-7890" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hos-6B-SB8" userLabel="Phone Text Field" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
                                                     <rect key="frame" x="133" y="7" width="234" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="e7k-BD-Med" id="EE6-WU-Pha"/>
+                                                        <outlet property="nextControl" destination="qYw-Co-aNf" id="DCj-qu-4cX"/>
+                                                        <outlet property="prevControl" destination="C86-0b-I1m" id="YGh-hQ-xWa"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -654,11 +673,16 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="98765" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qYw-Co-aNf" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="98765" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qYw-Co-aNf" userLabel="Zip Code Text Field" customClass="NextControlTextField" customModule="HireMe" customModuleProvider="target">
                                                     <rect key="frame" x="133" y="7" width="234" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="e7k-BD-Med" id="qF1-1t-16U"/>
+                                                        <outlet property="nextControl" destination="cBB-lh-TNX" id="uWz-fH-7AU"/>
+                                                        <outlet property="prevControl" destination="hos-6B-SB8" id="nkL-w4-xyd"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -688,7 +712,11 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                     <rect key="frame" x="133" y="7" width="234" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="e7k-BD-Med" id="iyQ-O8-XYQ"/>
+                                                        <outlet property="prevControl" destination="qYw-Co-aNf" id="fem-pc-21K"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -904,7 +932,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <objects>
                 <navigationController storyboardIdentifier="SideMenuNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n3l-UV-hM1" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dDF-ZW-lfe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dDF-ZW-lfe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -959,7 +987,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <objects>
                 <navigationController storyboardIdentifier="RootNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Z56-fk-k2l" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gEX-vB-9c5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gEX-vB-9c5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1231,7 +1259,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ljv-4b-esY" userLabel="SignIn">
-                                <rect key="frame" x="24" y="212" width="327" height="285.5"/>
+                                <rect key="frame" x="24" y="212" width="327" height="286"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7p2-UP-bby" userLabel="NativeChangeCreate">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="90"/>
@@ -1266,7 +1294,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubv-Tj-Sx8" userLabel="PipeLabel">
-                                                        <rect key="frame" x="160.5" y="0.0" width="5" height="30"/>
+                                                        <rect key="frame" x="160" y="0.0" width="5" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1287,13 +1315,13 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb2-gJ-jSb">
-                                        <rect key="frame" x="0.0" y="120" width="327" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="120" width="327" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zaj-p4-wZU" userLabel="FBGoogle">
-                                        <rect key="frame" x="0.0" y="170.5" width="327" height="115"/>
+                                        <rect key="frame" x="0.0" y="171" width="327" height="115"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YK3-WS-sFi">
                                                 <rect key="frame" x="0.0" y="0.0" width="327" height="50"/>
@@ -1361,7 +1389,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <objects>
                 <navigationController storyboardIdentifier="SignInNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jAH-MM-wLU" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mK0-Nk-XZn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mK0-Nk-XZn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1379,7 +1407,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <objects>
                 <navigationController storyboardIdentifier="SettingsNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hQR-1r-AOY" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="I0d-XE-R7X">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="I0d-XE-R7X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1399,7 +1427,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gwk-mt-dsk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Account" image="Account" id="VdV-u6-N5o"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="9tz-z0-kKz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9tz-z0-kKz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountViewController: UITableViewController {
+class AccountViewController: UITableViewController, UITextFieldDelegate {
 	
     // MARK: - Outlets
     
@@ -44,20 +44,31 @@ class AccountViewController: UITableViewController {
     
     // MARK: - UITableViewDelegate
     
-//    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-//        if indexPath.section == 0 {
-//            return false
-//        }
-//        
-//        return true
-//    }
-    
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         if indexPath.section == 0 {
             return nil
         }
         
         return indexPath
+    }
+    
+    
+    // MARK: - UITextFieldDelegate
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if let nextControlTextField = textField as? NextControlTextField {
+            nextControlTextField.addToolBarAboveKeyboard()
+        }
+        
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let txtField = textField as? NextControlTextField {
+            txtField.transferFirstResponderToNextControl(completionHandler: nil)
+        }
+        
+        return false // Do not add a line break
     }
     
     

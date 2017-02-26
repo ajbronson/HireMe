@@ -51,6 +51,7 @@
 		D0797CD81E497B1A00BA7B19 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CD41E497B1A00BA7B19 /* AlertHelper.swift */; };
 		D0797CD91E497B1A00BA7B19 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CD51E497B1A00BA7B19 /* Extensions.swift */; };
 		D0797CDA1E497B1A00BA7B19 /* NextControlTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CD61E497B1A00BA7B19 /* NextControlTextField.swift */; };
+		D0950D971E62C529001E6395 /* ClosureBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0950D961E62C529001E6395 /* ClosureBarButtonItem.swift */; };
 		D0ECA6C31E39B33C001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
 		D0ECA6C41E39B347001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
 		D0ECA6C51E39B348001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
@@ -131,6 +132,7 @@
 		D0797CD41E497B1A00BA7B19 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		D0797CD51E497B1A00BA7B19 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D0797CD61E497B1A00BA7B19 /* NextControlTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextControlTextField.swift; sourceTree = "<group>"; };
+		D0950D961E62C529001E6395 /* ClosureBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureBarButtonItem.swift; sourceTree = "<group>"; };
 		D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0ECA6CA1E39BECC001AB162 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D674E8CF36C0F147120D6D4A /* Pods-HireMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HireMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HireMe/Pods-HireMe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				D0797CD51E497B1A00BA7B19 /* Extensions.swift */,
 				D0797CD61E497B1A00BA7B19 /* NextControlTextField.swift */,
 				D03EEFA41E4C2D8B006D18B1 /* DarkHighlightButton.swift */,
+				D0950D961E62C529001E6395 /* ClosureBarButtonItem.swift */,
 			);
 			path = HelperFiles;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				D0797CCF1E4979FC00BA7B19 /* JobInfoCell.swift in Sources */,
 				D0797CC01E49796000BA7B19 /* SkillController.swift in Sources */,
 				D0797CAA1E49778600BA7B19 /* MenuViewController.swift in Sources */,
+				D0950D971E62C529001E6395 /* ClosureBarButtonItem.swift in Sources */,
 				D0797CCB1E4979FC00BA7B19 /* ConsumerJobsTableViewController.swift in Sources */,
 				D0797CB91E49796000BA7B19 /* Bid.swift in Sources */,
 				D0797CBA1E49796000BA7B19 /* BidController.swift in Sources */,

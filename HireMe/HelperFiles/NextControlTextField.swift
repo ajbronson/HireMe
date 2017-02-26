@@ -15,19 +15,35 @@ import UIKit
  */
 class NextControlTextField: UITextField {
     @IBOutlet weak var nextControl: UIControl?
+    @IBOutlet weak var prevControl: UIControl?
     
     /**
      The next `UIControl` becomes the first responder.
      
      - Parameter completionHandler: Closure with a `Bool` parameter of `true` if the next `UIControl` became the first responder
      */
-    func transferFirstResponderToNextControl(completionHandler: (Bool) -> Void) {
+    func transferFirstResponderToNextControl(completionHandler: ((Bool) -> Void)?) {
         if let next = self.nextControl {
             next.becomeFirstResponder() // Activate next control
-            completionHandler(true)
+            completionHandler?(true)
         } else {
             self.resignFirstResponder() // Hide keyboard
-            completionHandler(false)
+            completionHandler?(false)
+        }
+    }
+    
+    /**
+     The previous `UIControl` becomes the first responder.
+     
+     - Parameter completionHandler: Closure with a `Bool` parameter of `true` if the previous `UIControl` became the first responder
+     */
+    func transferFirstResponderToPrevControl(completionHandler: ((Bool) -> Void)?) {
+        if let prev = self.prevControl {
+            prev.becomeFirstResponder() // Activate next control
+            completionHandler?(true)
+        } else {
+            self.resignFirstResponder() // Hide keyboard
+            completionHandler?(false)
         }
     }
 
