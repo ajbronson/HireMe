@@ -11,8 +11,8 @@ import GoogleSignIn
 import FBSDKLoginKit
 
 class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
-    @IBOutlet weak var emailTextField: NextControlTextField!
-    @IBOutlet weak var passwordTextField: NextControlTextField!
+    @IBOutlet weak var emailTextField: NextPrevControlTextField!
+    @IBOutlet weak var passwordTextField: NextPrevControlTextField!
     @IBOutlet weak var fbButton: UIButton!
     
     
@@ -116,7 +116,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     // MARK: - UITextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let txtField = textField as? NextControlTextField {
+        if let txtField = textField as? NextPrevControlTextField {
             txtField.transferFirstResponderToNextControl(completionHandler: { (didTransfer) in
                 if (!didTransfer) {
                     print("Submit programmatically")

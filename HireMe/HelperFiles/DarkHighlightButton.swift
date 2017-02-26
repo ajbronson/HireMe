@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Shows a slightly darker background color when the button is highlighted
 class DarkHighlightButton: UIButton {
     override var isHighlighted: Bool {
         didSet {

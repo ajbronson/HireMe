@@ -1,5 +1,5 @@
 //
-//  NextControlTextField.swift
+//  NextPrevControlTextField.swift
 //  HireMe
 //
 //  Created by Nathan Johnson on 2/4/17.
@@ -9,11 +9,11 @@
 import UIKit
 
 /**
- Contains functionality to have its next `UIControl` become the first responder.
+ Contains functionality to have its next or previous `UIControl` become the first responder.
  
  Example: When the user taps the keyboard's return key, the next control ( `UITextField` ) will become active.
  */
-class NextControlTextField: UITextField {
+class NextPrevControlTextField: UITextField {
     @IBOutlet weak var nextControl: UIControl?
     @IBOutlet weak var prevControl: UIControl?
     

@@ -50,7 +50,7 @@
 		D0797CD21E4979FC00BA7B19 /* ViewJobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CCA1E4979FC00BA7B19 /* ViewJobTableViewController.swift */; };
 		D0797CD81E497B1A00BA7B19 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CD41E497B1A00BA7B19 /* AlertHelper.swift */; };
 		D0797CD91E497B1A00BA7B19 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CD51E497B1A00BA7B19 /* Extensions.swift */; };
-		D0797CDA1E497B1A00BA7B19 /* NextControlTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CD61E497B1A00BA7B19 /* NextControlTextField.swift */; };
+		D0797CDA1E497B1A00BA7B19 /* NextPrevControlTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CD61E497B1A00BA7B19 /* NextPrevControlTextField.swift */; };
 		D0950D971E62C529001E6395 /* ClosureBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0950D961E62C529001E6395 /* ClosureBarButtonItem.swift */; };
 		D0ECA6C31E39B33C001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
 		D0ECA6C41E39B347001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
@@ -131,7 +131,7 @@
 		D0797CCA1E4979FC00BA7B19 /* ViewJobTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewJobTableViewController.swift; sourceTree = "<group>"; };
 		D0797CD41E497B1A00BA7B19 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		D0797CD51E497B1A00BA7B19 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		D0797CD61E497B1A00BA7B19 /* NextControlTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextControlTextField.swift; sourceTree = "<group>"; };
+		D0797CD61E497B1A00BA7B19 /* NextPrevControlTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextPrevControlTextField.swift; sourceTree = "<group>"; };
 		D0950D961E62C529001E6395 /* ClosureBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureBarButtonItem.swift; sourceTree = "<group>"; };
 		D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0ECA6CA1E39BECC001AB162 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -309,7 +309,7 @@
 				D0797CD41E497B1A00BA7B19 /* AlertHelper.swift */,
 				D0495ECA1E49804A0076A548 /* SignInHelper.swift */,
 				D0797CD51E497B1A00BA7B19 /* Extensions.swift */,
-				D0797CD61E497B1A00BA7B19 /* NextControlTextField.swift */,
+				D0797CD61E497B1A00BA7B19 /* NextPrevControlTextField.swift */,
 				D03EEFA41E4C2D8B006D18B1 /* DarkHighlightButton.swift */,
 				D0950D961E62C529001E6395 /* ClosureBarButtonItem.swift */,
 			);
@@ -661,7 +661,7 @@
 				D0797CD11E4979FC00BA7B19 /* ViewBidderTableViewController.swift in Sources */,
 				D0797C961E49701A00BA7B19 /* CategoryViewController.swift in Sources */,
 				21B38EFC1DCC21A4000A5CB1 /* AppDelegate.swift in Sources */,
-				D0797CDA1E497B1A00BA7B19 /* NextControlTextField.swift in Sources */,
+				D0797CDA1E497B1A00BA7B19 /* NextPrevControlTextField.swift in Sources */,
 				D0797CCC1E4979FC00BA7B19 /* BidderDescriptionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

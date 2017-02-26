@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Allows closures to be passed as arguments instead of `Selector`s for `init` functions
 class ClosureBarButtonItem: UIBarButtonItem {
     private var actionHandler: ((Void) -> Void)?
     

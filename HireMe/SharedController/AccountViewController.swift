@@ -12,12 +12,12 @@ class AccountViewController: UITableViewController, UITextFieldDelegate {
 	
     // MARK: - Outlets
     
-    @IBOutlet weak var usernameTextField: NextControlTextField!
-    @IBOutlet weak var firstNameTextField: NextControlTextField!
-    @IBOutlet weak var lastNameTextField: NextControlTextField!
-    @IBOutlet weak var phoneTextField: NextControlTextField!
-    @IBOutlet weak var zipCodeTextField: NextControlTextField!
-    @IBOutlet weak var emailTextField: NextControlTextField!
+    @IBOutlet weak var usernameTextField: NextPrevControlTextField!
+    @IBOutlet weak var firstNameTextField: NextPrevControlTextField!
+    @IBOutlet weak var lastNameTextField: NextPrevControlTextField!
+    @IBOutlet weak var phoneTextField: NextPrevControlTextField!
+    @IBOutlet weak var zipCodeTextField: NextPrevControlTextField!
+    @IBOutlet weak var emailTextField: NextPrevControlTextField!
     
     
     // MARK: - Properties
@@ -56,15 +56,15 @@ class AccountViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - UITextFieldDelegate
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if let nextControlTextField = textField as? NextControlTextField {
-            nextControlTextField.addToolbarAboveKeyboard()
+        if let txtField = textField as? NextPrevControlTextField {
+            txtField.addToolbarAboveKeyboard()
         }
         
         return true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let txtField = textField as? NextControlTextField {
+        if let txtField = textField as? NextPrevControlTextField {
             txtField.transferFirstResponderToNextControl(completionHandler: nil)
         }
         

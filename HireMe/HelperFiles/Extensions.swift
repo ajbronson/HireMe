@@ -138,7 +138,8 @@ extension UITextField {
     }
 }
 
-extension NextControlTextField {
+extension NextPrevControlTextField {
+    /// Adds a toolbar on top of the keyboard when user is editing. Toolbar contains a close button to dismiss the keyboard and up and down buttons to "tab" between text fields
     func addToolbarAboveKeyboard() {
         let keyboardToolbar = UIToolbar()
 
@@ -186,6 +187,7 @@ extension UIViewController {
         return NSStringFromClass(self.classForCoder).components(separatedBy: ".").last!
     }
     
+    /// Prints the class name and storyboard ID
     var descr: String {
         return "class: \(self.className), ID: \(self.restorationIdentifier)"
     }
