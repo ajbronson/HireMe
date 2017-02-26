@@ -10,64 +10,84 @@ import UIKit
 
 class AccountViewController: UITableViewController {
 	
+    // MARK: - Outlets
+    
+    @IBOutlet weak var usernameTextField: NextControlTextField!
+    @IBOutlet weak var firstNameTextField: NextControlTextField!
+    @IBOutlet weak var lastNameTextField: NextControlTextField!
+    @IBOutlet weak var phoneTextField: NextControlTextField!
+    @IBOutlet weak var zipCodeTextField: NextControlTextField!
+    @IBOutlet weak var emailTextField: NextControlTextField!
+    
+    
+    // MARK: - Properties
+    
     var fbUserProfile: [String: Any]?
     var googleUserProfile: [String: String]?
-    private var name: String?
-    private var email: String?
+    
     
 	// MARK: - View controller life cycle
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		tableView.separatorStyle = .none
-        
-        if let fbUser = self.fbUserProfile {
-            self.name = fbUser["name"] as? String
-            self.email = fbUser["email"] as? String
-        } else if let googleUser = self.googleUserProfile {
-            self.name = googleUser["fullName"]
-            self.email = googleUser["email"]
-        }
+        self.populateTextFields()
 	}
-	
     
-	// MARK: - UITableViewDataSource
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let indexpath = self.tableView.indexPathForSelectedRow {
+            self.tableView.deselectRow(at: indexpath, animated: true)
+        }
     }
-	
-	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-	}
-	
-	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "accountCell", for: indexPath)
-        
-        switch indexPath.row {
-        case 0:
-            cell.textLabel?.text = "Name: \(self.name ?? "")"
-        case 1:
-            cell.textLabel?.text = "Skills: Tech, dogs, yard"
-        case 2:
-            cell.textLabel?.text = "Number: 888-888-8888"
-        case 3:
-            cell.textLabel?.text = "Email: \(self.email ?? "")"
-        default:
-            cell.textLabel?.text = "Change Password"
+    
+    
+    // MARK: - UITableViewDelegate
+    
+//    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+//        if indexPath.section == 0 {
+//            return false
+//        }
+//        
+//        return true
+//    }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if indexPath.section == 0 {
+            return nil
         }
         
-        return cell
-	}
+        return indexPath
+    }
     
     
     // MARK: - IBActions
     
     @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
+        self.view.endEditing(true) // Hide keyboard if showing
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func saveTapped(_ sender: UIBarButtonItem) {
         print("Save profile")
+    }
+    
+    
+    // MARK: - Custom functions
+    
+    private func populateTextFields() {
+        var name: String?
+        var email: String?
+        
+        if let fbUser = self.fbUserProfile {
+            name = fbUser["name"] as? String
+            email = fbUser["email"] as? String
+        } else if let googleUser = self.googleUserProfile {
+            name = googleUser["fullName"]
+            email = googleUser["email"]
+        }
+        
+        self.firstNameTextField.text = name
+        self.emailTextField.text = email
     }
 }
