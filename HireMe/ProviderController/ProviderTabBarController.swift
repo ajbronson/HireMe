@@ -8,7 +8,6 @@
 
 import SideMenu
 import FBSDKLoginKit
-import GoogleSignIn
 
 class ProviderTabBarController: UITabBarController {
     
@@ -24,49 +23,21 @@ class ProviderTabBarController: UITabBarController {
         // Customize side menu
         SideMenuManager.menuPresentMode = .menuSlideIn
         SideMenuManager.menuAnimationFadeStrength = 0.5
-        
-        self.initializeUserProfile()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.navigationBar.isHidden = false
+        
+        if isSignedIn() == false {
+            //show search VC and hide the rest
+            self.selectedViewController = self.viewControllers?.last
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.isProviderTabsVisible = false
-    }
-    
-    
-    // MARK: Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "menu" {
-            if let menuVC = segue.destination.childViewControllers.first as? MenuViewController {
-                menuVC.fbUserProfile = self.fbUserProfile
-                menuVC.googleUserProfile = self.googleUserProfile
-            }
-        }
-    }
-    
-    
-    // MARK: Custom functions
-    
-    func initializeUserProfile() {
-        print("Initializing user profile...") // DEBUG
-        switch getSignInMethod() {
-            case .Facebook:
-                self.fbUserProfile = UserDefaults.standard.dictionary(forKey: "fbUserProfile")
-                print("Facebook profile initialized") // DEBUG
-            case .Google:
-                self.googleUserProfile = UserDefaults.standard.dictionary(forKey: "googleUserProfile") as? [String: String]
-                print("Google profile initialized") // DEBUG
-            case .ThisApp:
-                print("Signed in with LimitedHire") // DEBUG
-            case .NotSignedIn:
-                print("Not signed in") // DEBUG
-        }
     }
 }

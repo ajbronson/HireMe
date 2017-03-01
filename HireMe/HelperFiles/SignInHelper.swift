@@ -17,6 +17,7 @@ enum SignInMethod: String {
     case ThisApp
 }
 
+// TODO: check if signed in with LimitedHire
 func getSignInMethod() -> SignInMethod {
     if FBSDKAccessToken.current() != nil {
         return SignInMethod.Facebook
@@ -25,4 +26,8 @@ func getSignInMethod() -> SignInMethod {
     } else {
         return SignInMethod.NotSignedIn
     }
+}
+
+func isSignedIn() -> Bool {
+    return !(getSignInMethod() == .NotSignedIn)
 }
