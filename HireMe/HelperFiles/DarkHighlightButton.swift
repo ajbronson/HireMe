@@ -8,6 +8,9 @@
 
 import UIKit
 
+let defaultColor = UIColor(hex: "#00BCD4") // Cyan primary
+let highlightedBackgroundColor = UIColor(hex: "#0097A7") // Cyan 700
+
 /// Shows a slightly darker background color when the button is highlighted
 class DarkHighlightButton: UIButton {
     override var isHighlighted: Bool {

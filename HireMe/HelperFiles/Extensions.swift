@@ -8,12 +8,6 @@
 
 import UIKit
 
-let highlightedBackgroundColor = UIColor(hex: "#0097A7") // Cyan 700
-let defaultColor = UIColor(hex: "#00BCD4") // Cyan primary
-let hueColor = UIColor(hex: "#E0F7FA") // Cyan 50
-let fbBlue = UIColor(hex: "#4267B2")
-let gSignInNotificationName = Notification.Name(rawValue: "didSignInWithGoogle")
-
 extension UIImageView
 {
 	func roundCornersForAspectFit(radius: CGFloat)
@@ -78,41 +72,6 @@ extension UIColor {
         }
         
         self.init(red: r, green: g, blue: b, alpha: a)
-    }
-}
-
-extension UINavigationBar {
-    func transparent() {
-        self.setBackgroundImage(UIImage(), for: .default)
-        self.shadowImage = UIImage() // Sets shadow (line below the bar) to a blank image
-    }
-    
-    func opaque() {
-        self.setBackgroundImage(nil, for: .default) // Restore background
-        self.shadowImage = nil // Restore shadow (line below the bar)
-    }
-    
-    /// Hides the navigation bar's bottom line
-    func hideShadowImage() {
-        self.getShadowImageView()?.isHidden = true
-    }
-    
-    /// Shows the navigation bar's bottom line
-    func showShadowImage() {
-        self.getShadowImageView()?.isHidden = false
-    }
-    
-    /// Gets the navigation bar's bottom line UIImageView
-    private func getShadowImageView() -> UIImageView? {
-        for parent in self.subviews {
-            for childView in parent.subviews {
-                if childView is UIImageView {
-                    return (childView as! UIImageView)
-                }
-            }
-        }
-        
-        return nil
     }
 }
 

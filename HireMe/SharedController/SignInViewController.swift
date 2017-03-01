@@ -10,6 +10,8 @@ import UIKit
 import GoogleSignIn
 import FBSDKLoginKit
 
+let gSignInNotificationName = Notification.Name(rawValue: "didSignInWithGoogle")
+
 class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
     
     // MARK: - Outlets
