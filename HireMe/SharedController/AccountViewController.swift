@@ -45,6 +45,7 @@ class AccountViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - UITableViewDelegate
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        // Allow user to select only the skills and change password cells
         if indexPath.section == 0 {
             return nil
         }

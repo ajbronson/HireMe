@@ -11,13 +11,6 @@ import GoogleSignIn
 
 class SettingsTableViewController: UITableViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-    }
-
     // MARK: - UITableViewDataSource
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -30,37 +23,24 @@ class SettingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
-        case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SignInOutCell", for: indexPath)
-            
-            if isSignedIn() {
-                cell.textLabel?.text = "Sign Out"
-                cell.textLabel?.textColor = .red
-            } else {
-                cell.textLabel?.text = "Sign In"
-                cell.textLabel?.textColor = .black
-            }
-            
-            return cell
-        default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath)
-            
-            return cell
+            case 1:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "SignInOutCell", for: indexPath)
+                
+                if isSignedIn() {
+                    cell.textLabel?.text = "Sign Out"
+                    cell.textLabel?.textColor = .red
+                } else {
+                    cell.textLabel?.text = "Sign In"
+                    cell.textLabel?.textColor = .black
+                }
+                
+                return cell
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath)
+                
+                return cell
         }
     }
-
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
     
     
     // MARK: - UITableViewDelegate
@@ -80,16 +60,16 @@ class SettingsTableViewController: UITableViewController {
                     self.dismiss(animated: true, completion: {
                         print("Signing out...") // DEBUG
                         switch getSignInMethod() {
-                        case .Facebook:
-                            FBSDKLoginManager().logOut()
-                            print("Signed out from Facebook") // DEBUG
-                        case .Google:
-                            GIDSignIn.sharedInstance().signOut()
-                            print("Signed out from Google") // DEBUG
-                        case .ThisApp:
-                            print("Signed out from LimitedHire") // DEBUG
-                        case .NotSignedIn:
-                            print("Not signed in") // DEBUG
+                            case .Facebook:
+                                FBSDKLoginManager().logOut()
+                                print("Signed out from Facebook") // DEBUG
+                            case .Google:
+                                GIDSignIn.sharedInstance().signOut()
+                                print("Signed out from Google") // DEBUG
+                            case .ThisApp:
+                                print("Signed out from LimitedHire") // DEBUG
+                            case .NotSignedIn:
+                                print("Not signed in") // DEBUG
                         }
                     })
                 }))

@@ -54,14 +54,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     // MARK: - IBActions
     
-    @IBAction func signInTapped(_ sender: UIButton) {
-//        self.performSegue(withIdentifier: "showTabs", sender: nil)
-    }
-    
-    @IBAction func signUpTapped(_ sender: UIButton) {
-        // Custom code
-    }
-    
     @IBAction func skipTapped(_ sender: UIButton) {
         self.performSegue(withIdentifier: "showTabs", sender: nil)
     }

@@ -37,7 +37,6 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="signInTapped:" destination="xeK-lE-v96" eventType="touchUpInside" id="DRO-pb-HhB"/>
                                             <segue destination="jAH-MM-wLU" kind="presentation" id="2pR-yT-fVu"/>
                                         </connections>
                                     </button>
@@ -48,9 +47,6 @@
                                         <state key="normal" title="Create an account">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="signUpTapped:" destination="xeK-lE-v96" eventType="touchUpInside" id="7zL-H1-s4b"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -64,7 +60,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxd-Dh-ptc">
-                                <rect key="frame" x="180" y="303" width="16" height="20.5"/>
+                                <rect key="frame" x="179.5" y="303" width="16" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -120,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FyL-F6-Kr3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-628" y="201.94902548725639"/>
+            <point key="canvasLocation" x="-569" y="202"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="X4p-Ro-z8D">
@@ -203,7 +199,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adY-n6-Ohl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2719" y="-2731"/>
+            <point key="canvasLocation" x="2374" y="-1469"/>
         </scene>
         <!--My Bids-->
         <scene sceneID="1rS-Nw-ECK">
@@ -252,7 +248,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9OR-YH-a4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="-572"/>
+            <point key="canvasLocation" x="1454" y="-596"/>
         </scene>
         <!--Job-->
         <scene sceneID="XY1-Pu-RiE">
@@ -267,7 +263,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Person" translatesAutoresizingMaskIntoConstraints="NO" id="5sY-t2-PWx">
-                                <rect key="frame" x="97" y="52" width="182" height="171"/>
+                                <rect key="frame" x="97" y="96" width="182" height="171"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="171" id="0IK-25-Q5c"/>
                                     <constraint firstAttribute="width" constant="182" id="3cY-pa-WqX"/>
@@ -275,13 +271,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Julie Harris" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hg9-jS-lYo">
-                                <rect key="frame" x="145" y="247" width="86" height="20.5"/>
+                                <rect key="frame" x="145" y="291" width="86" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="xfY-Pk-b57">
-                                <rect key="frame" x="86" y="292.5" width="203" height="35"/>
+                                <rect key="frame" x="86" y="336.5" width="203" height="35"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="ZtN-lw-uSb">
                                         <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
@@ -338,7 +334,7 @@
                                 </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="u6y-Gw-K35">
-                                <rect key="frame" x="16" y="335.5" width="343" height="323.5"/>
+                                <rect key="frame" x="16" y="379.5" width="343" height="230.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Hey guys!
 
@@ -369,7 +365,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J3M-0s-62z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2718" y="-226"/>
+            <point key="canvasLocation" x="2374" y="-215"/>
         </scene>
         <!--My Jobs-->
         <scene sceneID="Dud-lR-byj">
@@ -418,7 +414,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uoD-0J-8wT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="202"/>
+            <point key="canvasLocation" x="1455" y="202"/>
         </scene>
         <!--Search-->
         <scene sceneID="Xjs-mO-RbY">
@@ -460,7 +456,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIo-Hi-ETP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="983"/>
+            <point key="canvasLocation" x="1454" y="983"/>
         </scene>
         <!--Category-->
         <scene sceneID="zse-sQ-T8L">
@@ -508,7 +504,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDo-5i-El4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2718" y="983"/>
+            <point key="canvasLocation" x="2375" y="983"/>
         </scene>
         <!--Edit Account-->
         <scene sceneID="SPY-Jx-yej">
@@ -803,7 +799,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8M-jX-mb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4437.6000000000004" y="-3243.3283358320841"/>
+            <point key="canvasLocation" x="4193" y="-1835"/>
         </scene>
         <!--Settings-->
         <scene sceneID="L1l-Ty-xZ8">
@@ -868,7 +864,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgf-cM-rtw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4438" y="-2479"/>
+            <point key="canvasLocation" x="4193" y="-1033"/>
         </scene>
         <!--New Bid-->
         <scene sceneID="beE-nQ-I76">
@@ -883,13 +879,13 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oXv-n4-Fm4">
-                                <rect key="frame" x="16" y="53" width="343" height="30"/>
+                                <rect key="frame" x="16" y="97" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ra7-va-2Ji">
-                                <rect key="frame" x="16" y="91" width="343" height="568"/>
+                                <rect key="frame" x="16" y="135" width="343" height="475"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -925,7 +921,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Yh-Ka-NeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3657" y="983"/>
+            <point key="canvasLocation" x="3263" y="983"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="bNt-zT-iQe">
@@ -950,7 +946,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5r-T6-MOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="-2731"/>
+            <point key="canvasLocation" x="1454" y="-1469"/>
         </scene>
         <!--Provider Tab Bar Controller-->
         <scene sceneID="X5Q-Bs-1qi">
@@ -980,7 +976,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRF-kt-ZLV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="992.79999999999995" y="201.94902548725639"/>
+            <point key="canvasLocation" x="238" y="202"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="92m-jp-D2V">
@@ -1250,7 +1246,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iIz-k7-7G5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="134" y="983"/>
+            <point key="canvasLocation" x="238" y="983"/>
         </scene>
         <!--Sign In-->
         <scene sceneID="mkp-lz-r9e">
@@ -1296,7 +1292,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ljv-4b-esY" userLabel="SignIn">
-                                <rect key="frame" x="24" y="212" width="327" height="286"/>
+                                <rect key="frame" x="24" y="212" width="327" height="285.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7p2-UP-bby" userLabel="NativeChangeCreate">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="90"/>
@@ -1331,7 +1327,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubv-Tj-Sx8" userLabel="PipeLabel">
-                                                        <rect key="frame" x="160" y="0.0" width="5" height="30"/>
+                                                        <rect key="frame" x="160.5" y="0.0" width="5" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1352,13 +1348,13 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb2-gJ-jSb">
-                                        <rect key="frame" x="0.0" y="120" width="327" height="21"/>
+                                        <rect key="frame" x="0.0" y="120" width="327" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zaj-p4-wZU" userLabel="FBGoogle">
-                                        <rect key="frame" x="0.0" y="171" width="327" height="115"/>
+                                        <rect key="frame" x="0.0" y="170.5" width="327" height="115"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YK3-WS-sFi">
                                                 <rect key="frame" x="0.0" y="0.0" width="327" height="50"/>
@@ -1419,7 +1415,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3i1-dv-kRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-628" y="983"/>
+            <point key="canvasLocation" x="-570" y="983"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ofs-ZP-YKi">
@@ -1455,12 +1451,11 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFT-35-YBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3658" y="-2478"/>
+            <point key="canvasLocation" x="3262" y="-1033"/>
         </scene>
         <!--My Account-->
         <scene sceneID="x6q-SN-YtX">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o5D-UI-p2d" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gwk-mt-dsk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Account" image="Account" id="VdV-u6-N5o"/>
                     <toolbarItems/>
@@ -1473,8 +1468,9 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                         <segue destination="e7k-BD-Med" kind="relationship" relationship="rootViewController" id="4g8-AM-uMq"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o5D-UI-p2d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3658" y="-3243"/>
+            <point key="canvasLocation" x="3262" y="-1834"/>
         </scene>
     </scenes>
     <resources>
@@ -1486,8 +1482,8 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <image name="Star" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="m6k-K3-t69"/>
+        <segue reference="pWc-0S-IcL"/>
+        <segue reference="Dmr-IU-JyO"/>
         <segue reference="zcv-7s-s9Y"/>
-        <segue reference="69p-7s-MLs"/>
     </inferredMetricsTieBreakers>
 </document>

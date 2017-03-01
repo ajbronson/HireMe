@@ -11,6 +11,9 @@ import GoogleSignIn
 import FBSDKLoginKit
 
 class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
+    
+    // MARK: - Outlets
+    
     @IBOutlet weak var emailTextField: NextPrevControlTextField!
     @IBOutlet weak var passwordTextField: NextPrevControlTextField!
     @IBOutlet weak var fbButton: UIButton!
@@ -20,12 +23,13 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     
     var didSegueFromSettings = false
 
+    
     // MARK: - View controller life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(userDidSignInWithGoogle), name: gSignInNotificationName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.userDidSignInWithGoogle), name: gSignInNotificationName, object: nil)
         
         GIDSignIn.sharedInstance().uiDelegate = self
         
@@ -35,12 +39,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
         
         self.emailTextField.bottomBorder()
         self.passwordTextField.bottomBorder()
-//        self.customizeButton()
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
     
     // TODO: This probably won't be needed once it can actually sign in. When users sign out, they won't be directed to this screen
     override func viewWillAppear(_ animated: Bool) {
@@ -51,6 +51,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
         print("SignInViewController's parent \(self.parent?.descr)") // DEBUG
         print("SignInViewController's parent's parent \(self.parent?.parent?.descr)") // DEBUG
         print("presentingViewController \(self.presentingViewController?.descr)") // DEBUG
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     
@@ -113,6 +117,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
         GIDSignIn.sharedInstance().signIn()
     }
     
+    
     // MARK: - UITextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -138,8 +143,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
 
     // MARK: - Custom functions
     
-    func customizeButton() {
-//        let inset: CGFloat = 15
+    private func customizeButton() {
         let verticalInset: CGFloat = 10.0
         self.fbButton.imageEdgeInsets = UIEdgeInsets(top: verticalInset, left: verticalInset, bottom: verticalInset, right: 0)
     }

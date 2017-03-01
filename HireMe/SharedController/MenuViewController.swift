@@ -19,7 +19,6 @@ class MenuViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.tableView.hideEmptyCells()
     }
     
