@@ -20,8 +20,10 @@ class ViewJobTableViewController: UITableViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		bids = BidController.shared.bids
-		title = job?.name
+		guard let job = job else { return }
+
+		bids = BidController.shared.bids.filter {$0.job == job}
+		title = job.name
 
 		configureBottomButtons(onLoad: true)
 		navigationController?.navigationBar.tintColor = UIColor.white
@@ -66,7 +68,7 @@ class ViewJobTableViewController: UITableViewController {
 			return cell
 		} else {
 			guard let cell = tableView.dequeueReusableCell(withIdentifier: "bidderInfoCell") as? BidderInfoCell else { return UITableViewCell() }
-			cell.updateWith(bid: bids![indexPath.row], bidder: BidderController.shared.bidders[0])
+			cell.updateWith(bid: bids![indexPath.row])
 			return cell
 		}
 	}
@@ -157,9 +159,10 @@ class ViewJobTableViewController: UITableViewController {
 		let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 		let okAction = UIAlertAction(title: "Confirm", style: .default) { (action) in
 			//TODO: Confirm/Cancel/Open Job
-			self.job?.status = withStatus.rawValue
-			let indexPath = IndexPath(row: 0, section: 0)
-			self.tableView.reloadRows(at: [indexPath], with: .automatic)
+			guard let job = self.job else { return }
+			JobController.shared.updateJobStatus(job: job, status: withStatus)
+			self.tableView.reloadData()
+			//TODO: This is not working
 			self.configureBottomButtons(onLoad: false)
 		}
 		alert.addAction(cancelAction)

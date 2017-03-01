@@ -12,12 +12,14 @@ enum BidStatus: String {
 	case Selected = "greenIndicator"
 	case Rejected = "redIndicator"
 	case PendingResponse = "grayIndicator"
+	case Cancelled = "cancelIndicator"
 }
 
 enum JobStatus: String {
 	case open = "Accepting Bids"
 	case cancelled = "Cancelled"
 	case completed = "Completed"
+	case awarded = "Awarded"
 }
 
 struct AppColors {

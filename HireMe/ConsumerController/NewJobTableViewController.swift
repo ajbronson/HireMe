@@ -65,6 +65,8 @@ class NewJobTableViewController: UITableViewController, UICollectionViewDataSour
 
 		guard let job = job else { return }
 
+		self.title = "Edit Job"
+		
 		if job.timeFrameEnd != nil || job.timeFrameStart != nil {
 			timeFrameSwitch.setOn(false, animated: false)
 		} else {

@@ -18,11 +18,12 @@ class ViewBidderTableViewController: UITableViewController {
 
 	override func viewDidLoad() {
 		skills = SkillController.shared.skills
-		bidder = BidderController.shared.bidders[0]
 		self.tableView.rowHeight = UITableViewAutomaticDimension
 		descriptionHeight = nil
 		tableView.estimatedRowHeight = 44
 		self.tableView.rowHeight = UITableViewAutomaticDimension
+		bidder = bid?.bidder
+
 		if let bidder = bidder {
 			title = "\(bidder.firstName) \(bidder.lastName)"
 		}

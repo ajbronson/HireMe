@@ -79,11 +79,12 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     // MARK: - IBActions
     
     @IBAction func signInTapped(_ sender: UIButton) {
-        //self.performSegue(withIdentifier: "showTabs", sender: nil)
+        self.performSegue(withIdentifier: "showTabs", sender: nil)
 
-		let storyboard = UIStoryboard(name: "ConsumerStoryboard", bundle: nil)
-		let vc = storyboard.instantiateViewController(withIdentifier: "RootNavConsumerView") as? UINavigationController
-		UIApplication.shared.windows[0].rootViewController = vc
+		//TODO: this code sends to consumer views
+		//let storyboard = UIStoryboard(name: "ConsumerStoryboard", bundle: nil)
+		//let vc = storyboard.instantiateViewController(withIdentifier: "RootNavConsumerView") as? UINavigationController
+		//UIApplication.shared.windows[0].rootViewController = vc
     }
     
     @IBAction func signUpTapped(_ sender: UIButton) {

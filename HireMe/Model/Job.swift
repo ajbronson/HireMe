@@ -8,8 +8,9 @@
 
 import UIKit
 
-class Job {
+class Job: Equatable {
 
+	var id: Int
 	var name: String
 	var timeFrameStart: String?
 	var timeFrameEnd: String?
@@ -22,8 +23,15 @@ class Job {
 	var description: String?
 	var status: String
 	var images: [UIImage]?
+	let dateCreated: Date
+	var dateUpdated: Date
+	var dateCancelled: Date?
+	var dateCompleted: Date?
+	var reopenDate: Date?
+	var selectedBid: Bid?
 
-	init(name: String, timeFrameStart: String?, timeFrameEnd: String?, priceRangeStart: Double?, priceRangeEnd: Double?, industry: String?, locationCity: String?, locationState: String?, locationZip: String?, description: String?, status: String = JobStatus.open.rawValue, images: [UIImage]?) {
+	init(id: Int, name: String, timeFrameStart: String?, timeFrameEnd: String?, priceRangeStart: Double?, priceRangeEnd: Double?, industry: String?, locationCity: String?, locationState: String?, locationZip: String?, description: String?, status: String = JobStatus.open.rawValue, images: [UIImage]?, dateCreated: Date = Date(), dateUpdated: Date = Date()) {
+		self.id = id
 		self.name = name
 		self.timeFrameStart = timeFrameStart == "" ? nil : timeFrameStart
 		self.timeFrameEnd = timeFrameEnd == "" ? nil : timeFrameEnd
@@ -36,5 +44,15 @@ class Job {
 		self.description = description == "" ? nil : description
 		self.status = status
 		self.images = images
+		self.dateUpdated = dateUpdated
+		self.dateCreated = dateCreated
+		self.dateCancelled = nil
+		self.dateCompleted = nil
+		self.reopenDate = nil
+		self.selectedBid = nil
 	}
+}
+
+func ==(lhs: Job, rhs: Job) -> Bool {
+	return lhs.id == rhs.id
 }

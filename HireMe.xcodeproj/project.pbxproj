@@ -14,6 +14,8 @@
 		21B38F031DCC21A4000A5CB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21B38F021DCC21A4000A5CB1 /* Assets.xcassets */; };
 		21B38F111DCC21A4000A5CB1 /* HireMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38F101DCC21A4000A5CB1 /* HireMeTests.swift */; };
 		21B38F1C1DCC21A4000A5CB1 /* HireMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38F1B1DCC21A4000A5CB1 /* HireMeUITests.swift */; };
+		21C3C3331E5E940400836477 /* SelectedBid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C3C3321E5E940400836477 /* SelectedBid.swift */; };
+		21C3C3351E5E957D00836477 /* SelectedBidController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C3C3341E5E957D00836477 /* SelectedBidController.swift */; };
 		6B9D6528207E89B71A2A96D2 /* Pods_HireMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63FA781523A1671C7EC4C65 /* Pods_HireMe.framework */; };
 		A20D39D3566CC81D2A69B0E6 /* Pods_HireMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B3B5B55512633A4F50B917 /* Pods_HireMeTests.framework */; };
 		D0495ECB1E49804A0076A548 /* SignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0495ECA1E49804A0076A548 /* SignInHelper.swift */; };
@@ -89,6 +91,8 @@
 		21B38F171DCC21A4000A5CB1 /* HireMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HireMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B38F1B1DCC21A4000A5CB1 /* HireMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HireMeUITests.swift; sourceTree = "<group>"; };
 		21B38F1D1DCC21A4000A5CB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21C3C3321E5E940400836477 /* SelectedBid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedBid.swift; sourceTree = "<group>"; };
+		21C3C3341E5E957D00836477 /* SelectedBidController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedBidController.swift; sourceTree = "<group>"; };
 		2788E1A6E281FCD49C176023 /* Pods-HireMeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HireMeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HireMeUITests/Pods-HireMeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		34983C9B63B372B09F18A223 /* Pods-HireMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HireMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HireMeTests/Pods-HireMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		60B3B5B55512633A4F50B917 /* Pods_HireMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HireMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +170,7 @@
 		21103D9C1E4AA0FF0097F595 /* ModelController */ = {
 			isa = PBXGroup;
 			children = (
+				21C3C3341E5E957D00836477 /* SelectedBidController.swift */,
 				D0797CB21E49796000BA7B19 /* BidController.swift */,
 				D0797CB41E49796000BA7B19 /* BidderController.swift */,
 				D0797CB61E49796000BA7B19 /* JobController.swift */,
@@ -277,6 +282,7 @@
 				D0797CB31E49796000BA7B19 /* Bidder.swift */,
 				D0797CB51E49796000BA7B19 /* Job.swift */,
 				D0797CB71E49796000BA7B19 /* Skill.swift */,
+				21C3C3321E5E940400836477 /* SelectedBid.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -634,6 +640,7 @@
 				D0797C9C1E49701A00BA7B19 /* NewBidViewController.swift in Sources */,
 				D0797CBF1E49796000BA7B19 /* Skill.swift in Sources */,
 				D0797C951E49701A00BA7B19 /* BidsViewController.swift in Sources */,
+				21C3C3351E5E957D00836477 /* SelectedBidController.swift in Sources */,
 				D0797CCF1E4979FC00BA7B19 /* JobInfoCell.swift in Sources */,
 				D0797CC01E49796000BA7B19 /* SkillController.swift in Sources */,
 				D0797CAA1E49778600BA7B19 /* MenuViewController.swift in Sources */,
@@ -660,6 +667,7 @@
 				D0797CBE1E49796000BA7B19 /* JobController.swift in Sources */,
 				D0797CD11E4979FC00BA7B19 /* ViewBidderTableViewController.swift in Sources */,
 				D0797C961E49701A00BA7B19 /* CategoryViewController.swift in Sources */,
+				21C3C3331E5E940400836477 /* SelectedBid.swift in Sources */,
 				21B38EFC1DCC21A4000A5CB1 /* AppDelegate.swift in Sources */,
 				D0797CDA1E497B1A00BA7B19 /* NextControlTextField.swift in Sources */,
 				D0797CCC1E4979FC00BA7B19 /* BidderDescriptionCell.swift in Sources */,
