@@ -333,6 +333,9 @@
 				D0797CD51E497B1A00BA7B19 /* Extensions.swift */,
 				D0797CD61E497B1A00BA7B19 /* NextControlTextField.swift */,
 				21103D9A1E4A99370097F595 /* Constants.swift */,
+				D0797CD61E497B1A00BA7B19 /* NextPrevControlTextField.swift */,
+				D03EEFA41E4C2D8B006D18B1 /* DarkHighlightButton.swift */,
+				D0950D961E62C529001E6395 /* ClosureBarButtonItem.swift */,
 			);
 			path = HelperFiles;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				D0797CBF1E49796000BA7B19 /* Skill.swift in Sources */,
 				D0797C951E49701A00BA7B19 /* BidsViewController.swift in Sources */,
 				21C3C3351E5E957D00836477 /* SelectedBidController.swift in Sources */,
+				D027A0E91E58D72B00B5576E /* SettingsTableViewController.swift in Sources */,
 				D0797CCF1E4979FC00BA7B19 /* JobInfoCell.swift in Sources */,
 				D0797CC01E49796000BA7B19 /* SkillController.swift in Sources */,
 				D0797CAA1E49778600BA7B19 /* MenuViewController.swift in Sources */,
@@ -666,6 +670,7 @@
 				D0797CAB1E49778600BA7B19 /* ViewPhotosViewController.swift in Sources */,
 				D0797CCD1E4979FC00BA7B19 /* BidderImageCell.swift in Sources */,
 				21103D9E1E4AB7900097F595 /* JobImageCell.swift in Sources */,
+				D03EEFA51E4C2D8B006D18B1 /* DarkHighlightButton.swift in Sources */,
 				D0797CA91E49778600BA7B19 /* LoginViewController.swift in Sources */,
 				D0797CD01E4979FC00BA7B19 /* NewJobTableViewController.swift in Sources */,
 				D0797CD81E497B1A00BA7B19 /* AlertHelper.swift in Sources */,

@@ -48,23 +48,6 @@ extension Double {
 	}
 }
 
-extension Date {
-	func stringFromDate() -> String {
-		let dateFormatter = DateFormatter()
-		dateFormatter.dateFormat = "MMM dd, yyyy"
-		return dateFormatter.string(from: self)
-	}
-}
-
-extension String {
-	func dateFromString() -> Date? {
-		let dateFormatter = DateFormatter()
-		dateFormatter.dateFormat = "MMM dd, yyyy"
-		let date = dateFormatter.date(from: self)
-		return date
-	}
-}
-
 extension UIColor {
     convenience init?(hex: String) {
         var rgb: UInt64 = 0
@@ -95,6 +78,23 @@ extension UIColor {
         
         self.init(red: r, green: g, blue: b, alpha: a)
     }
+}
+
+extension Date {
+	func stringFromDate() -> String {
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = "MMM dd, yyyy"
+		return dateFormatter.string(from: self)
+	}
+}
+
+extension String {
+	func dateFromString() -> Date? {
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = "MMM dd, yyyy"
+		let date = dateFormatter.date(from: self)
+		return date
+	}
 }
 
 extension UITableView {
