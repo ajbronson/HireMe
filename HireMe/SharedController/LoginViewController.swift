@@ -7,25 +7,14 @@
 //
 
 import FBSDKLoginKit
-import GoogleSignIn
 
 // TODO: show an alert before signing in with Google and Facebook informing the user of what data we'll be accessingf
-class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate {
-    
-    // MARK: - Constants
-    
-    // Used if app can go landscape
-//    let BOTTOM_SPACING_PORTRAIT: CGFloat    = 175
-//    let BOTTOM_SPACING_LANDSCAPE: CGFloat   = 15
-//    let VERTICAL_SPACING_PORTRAIT: CGFloat  = 20
-//    let VERTICAL_SPACING_LANDSCAPE: CGFloat = 15
+class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     
     // MARK: - Outlets
     
     @IBOutlet weak var fbLoginButton: FBSDKLoginButton!
-    @IBOutlet weak var signUpBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var verticalSpacingBetweenButtons: NSLayoutConstraint!
     
     
     // MARK: - View controller life cycle
@@ -33,27 +22,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        GIDSignIn.sharedInstance().uiDelegate = self
-        
         fbLoginButton.delegate = self
         fbLoginButton.readPermissions = ["public_profile", "email"]
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationController?.navigationBar.isHidden = true
     }
-    
-    // Used if app can go landscape
-//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-//        if UIDevice.current.orientation.isLandscape {
-//            self.signUpBottomConstraint.constant = BOTTOM_SPACING_LANDSCAPE
-//            self.verticalSpacingBetweenButtons.constant = VERTICAL_SPACING_LANDSCAPE
-//        } else {
-//            self.signUpBottomConstraint.constant = BOTTOM_SPACING_PORTRAIT
-//            self.verticalSpacingBetweenButtons.constant = VERTICAL_SPACING_PORTRAIT
-//        }
-//    }
     
     
     // MARK: - FBSDKLoginButtonDelegate callbacks
@@ -78,11 +54,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignIn
     
     // MARK: - IBActions
     
-    @IBAction func signInTapped(_ sender: UIButton) {
+    @IBAction func skipTapped(_ sender: UIButton) {
         self.performSegue(withIdentifier: "showTabs", sender: nil)
-    }
-    
-    @IBAction func signUpTapped(_ sender: UIButton) {
-        // Custom code
     }
 }

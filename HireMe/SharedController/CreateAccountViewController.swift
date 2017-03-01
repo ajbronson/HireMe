@@ -9,16 +9,33 @@
 import UIKit
 
 class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
-    @IBOutlet weak var zipCodeTextField: NextControlTextField!
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var usernameTextField: NextPrevControlTextField!
+    @IBOutlet weak var firstNameTextField: NextPrevControlTextField!
+    @IBOutlet weak var lastNameTextField: NextPrevControlTextField!
+    @IBOutlet weak var phoneNumberTextField: NextPrevControlTextField!
+    @IBOutlet weak var zipCodeTextField: NextPrevControlTextField!
+    @IBOutlet weak var emailTextField: NextPrevControlTextField!
+    @IBOutlet weak var passwordTextField: NextPrevControlTextField!
+    @IBOutlet weak var reEnterPasswordTextField: NextPrevControlTextField!
+    
+    
+    // MARK: - Properties
     
     var keyboardIsVisible = false
-    var cancelTapped = false
+    
     
     // MARK: - View controller life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerForKeyboardNotifications()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     
@@ -31,20 +48,20 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
     
     // MARK: - UITextFieldDelegate
     
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if textField == self.zipCodeTextField {
-            self.addNextButtonOnKeyboard()
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {        
+        if let txtField = textField as? NextPrevControlTextField {
+            txtField.addToolbarAboveKeyboard()
         }
         
         return true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let txtField = textField as? NextControlTextField {
+        if let txtField = textField as? NextPrevControlTextField {
             txtField.transferFirstResponderToNextControl(completionHandler: { (didTransfer) in
                 if !didTransfer {
-                    // User finished verifying password, go to next screen
-                    print("Next")
+                    // User finished verifying password, save account
+                    self.printAccountDetails()
                 }
             })
         }
@@ -52,16 +69,16 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
         return false // Do not add a line break
     }
     
+    
     // MARK: - IBActions
     
-    @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
-        self.cancelTapped = true
-        
+    @IBAction func saveTapped(_ sender: UIBarButtonItem) {
         if self.keyboardIsVisible {
             self.view.endEditing(true) // Hide keyboard if showing
-        } else {
-            self.dismiss(animated: true, completion: nil)
         }
+        
+        // TODO: create and save their account
+        self.printAccountDetails()
     }
     
     
@@ -72,38 +89,22 @@ class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector:#selector(self.keyboardDidHide(_:)), name: .UIKeyboardDidHide, object: nil)
     }
     
-    /**
-     Adds a toolbar on top of the keyboard with a Next button.
-     
-     Intended to be used when the keyboard is a number or phone pad with no return key.
-     */
-    func addNextButtonOnKeyboard() {
-        let keyboardToolbar = UIToolbar()
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let next  = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(self.keyboardNextButtonAction))
-        next.tintColor = UIColor.black
-        
-        keyboardToolbar.items = [flexSpace, next] // Next button appears on far right
-        keyboardToolbar.sizeToFit()
-        
-        self.zipCodeTextField.inputAccessoryView = keyboardToolbar
-    }
-    
-    func keyboardNextButtonAction() {
-        self.zipCodeTextField.transferFirstResponderToNextControl { (didTransfer) in
-            // Do nothing. With how the text fields are arranged, this text field will always transfer first responder
-        }
-    }
-    
     func keyboardDidShow(_ notification: Notification) {
         self.keyboardIsVisible = true
     }
     
     func keyboardDidHide(_ notification: Notification) {
         self.keyboardIsVisible = false
-        
-        if self.cancelTapped {
-            self.dismiss(animated: true, completion: nil)
-        }
+    }
+    
+    func printAccountDetails() {
+        print("Username: \(self.usernameTextField.text)")
+        print("First Name: \(self.firstNameTextField.text)")
+        print("Last Name: \(self.lastNameTextField.text)")
+        print("Phone: \(self.phoneNumberTextField.text)")
+        print("ZIP Code: \(self.zipCodeTextField.text)")
+        print("Email: \(self.emailTextField.text)")
+        print("Password: \(self.passwordTextField.text)")
+        print("Re-entered password: \(self.reEnterPasswordTextField.text)")
     }
 }

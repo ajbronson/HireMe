@@ -17,15 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 	var window: UIWindow?
     let storyboard = UIStoryboard(name: "ProviderStoryboard", bundle: Bundle.main)
     var isProviderTabsVisible: Bool = false
-    
-    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
-        
-        return true
-    }
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		
-        UINavigationBar.appearance().barTintColor = UIColor(red:0.00, green:0.74, blue:0.83, alpha:1.0) // #00BCD4
+        UINavigationBar.appearance().barTintColor = defaultColor
         
         // Initialize Facebook sign-in
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -69,7 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         if error == nil {
             print("Signed in with Google") // DEBUG
 //            let userId = user.userID                  // For client-side use only!
-//            let idToken = user.authentication.idToken // Safe to send to the server
+            let idToken = user.authentication.idToken // Safe to send to the server
+            print("Google token: \(idToken)")
 
             let googleUserProfile = [
                 "fullName": user.profile.name,
@@ -79,28 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             ]
             
             UserDefaults.standard.set(googleUserProfile, forKey: "googleUserProfile")
-            
-            print("current VC \(getCurrentViewController()?.descr)") // DEBUG
-            
-            if self.isProviderTabsVisible {
-                print("provider tabs IS visible") // DEBUG
-                let tabBarNavController = getCurrentViewController() as! UINavigationController
-                
-                if let providerTabBarController = tabBarNavController.visibleViewController as? ProviderTabBarController {
-                    providerTabBarController.initializeUserProfile()
-                }
-            } else {
-                print("provider tabs IS NOT visible") // DEBUG
-                // current VC = SFSafariViewController
-                
-                if let rootNC = self.window?.rootViewController as? UINavigationController {
-                    // At this point, there is only one child view controller of RootNavigationController and it's LoginViewController
-                    if let loginVC = rootNC.viewControllers.first as? LoginViewController {
-                        loginVC.performSegue(withIdentifier: "showTabs", sender: nil)
-                    }
-                }
-
-            }
+            NotificationCenter.default.post(name: gSignInNotificationName, object: nil)
         } else {
             print("\(error.localizedDescription)")
         }

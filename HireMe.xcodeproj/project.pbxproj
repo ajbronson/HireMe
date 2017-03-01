@@ -13,6 +13,10 @@
 		21B38F1C1DCC21A4000A5CB1 /* HireMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38F1B1DCC21A4000A5CB1 /* HireMeUITests.swift */; };
 		6B9D6528207E89B71A2A96D2 /* Pods_HireMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63FA781523A1671C7EC4C65 /* Pods_HireMe.framework */; };
 		A20D39D3566CC81D2A69B0E6 /* Pods_HireMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B3B5B55512633A4F50B917 /* Pods_HireMeTests.framework */; };
+		D001AB2B1E4ED920008D3251 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D001AB2A1E4ED920008D3251 /* SignInViewController.swift */; };
+		D027A0E91E58D72B00B5576E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D027A0E81E58D72B00B5576E /* SettingsTableViewController.swift */; };
+		D03EEFA31E4C28BE006D18B1 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03EEFA21E4C28BE006D18B1 /* AdSupport.framework */; };
+		D03EEFA51E4C2D8B006D18B1 /* DarkHighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03EEFA41E4C2D8B006D18B1 /* DarkHighlightButton.swift */; };
 		D0495ECB1E49804A0076A548 /* SignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0495ECA1E49804A0076A548 /* SignInHelper.swift */; };
 		D0797C951E49701A00BA7B19 /* BidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */; };
 		D0797C961E49701A00BA7B19 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */; };
@@ -46,7 +50,8 @@
 		D0797CD21E4979FC00BA7B19 /* ViewJobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CCA1E4979FC00BA7B19 /* ViewJobTableViewController.swift */; };
 		D0797CD81E497B1A00BA7B19 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CD41E497B1A00BA7B19 /* AlertHelper.swift */; };
 		D0797CD91E497B1A00BA7B19 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CD51E497B1A00BA7B19 /* Extensions.swift */; };
-		D0797CDA1E497B1A00BA7B19 /* NextControlTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CD61E497B1A00BA7B19 /* NextControlTextField.swift */; };
+		D0797CDA1E497B1A00BA7B19 /* NextPrevControlTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CD61E497B1A00BA7B19 /* NextPrevControlTextField.swift */; };
+		D0950D971E62C529001E6395 /* ClosureBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0950D961E62C529001E6395 /* ClosureBarButtonItem.swift */; };
 		D0ECA6C31E39B33C001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
 		D0ECA6C41E39B347001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
 		D0ECA6C51E39B348001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
@@ -89,6 +94,10 @@
 		63CB25752D5FCD6D1980B106 /* Pods-HireMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HireMeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HireMeTests/Pods-HireMeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C50318D16C0CDDAFFD138EDC /* Pods-HireMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HireMeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HireMeUITests/Pods-HireMeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C63FA781523A1671C7EC4C65 /* Pods_HireMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HireMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D001AB2A1E4ED920008D3251 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		D027A0E81E58D72B00B5576E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		D03EEFA21E4C28BE006D18B1 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		D03EEFA41E4C2D8B006D18B1 /* DarkHighlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkHighlightButton.swift; sourceTree = "<group>"; };
 		D0495ECA1E49804A0076A548 /* SignInHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInHelper.swift; sourceTree = "<group>"; };
 		D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidsViewController.swift; sourceTree = "<group>"; };
 		D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -122,7 +131,8 @@
 		D0797CCA1E4979FC00BA7B19 /* ViewJobTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewJobTableViewController.swift; sourceTree = "<group>"; };
 		D0797CD41E497B1A00BA7B19 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		D0797CD51E497B1A00BA7B19 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		D0797CD61E497B1A00BA7B19 /* NextControlTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextControlTextField.swift; sourceTree = "<group>"; };
+		D0797CD61E497B1A00BA7B19 /* NextPrevControlTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextPrevControlTextField.swift; sourceTree = "<group>"; };
+		D0950D961E62C529001E6395 /* ClosureBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureBarButtonItem.swift; sourceTree = "<group>"; };
 		D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0ECA6CA1E39BECC001AB162 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D674E8CF36C0F147120D6D4A /* Pods-HireMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HireMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HireMe/Pods-HireMe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D03EEFA31E4C28BE006D18B1 /* AdSupport.framework in Frameworks */,
 				6B9D6528207E89B71A2A96D2 /* Pods_HireMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,6 +259,8 @@
 				D0797CA41E49778600BA7B19 /* LoginViewController.swift */,
 				D0797CA51E49778600BA7B19 /* MenuViewController.swift */,
 				D0797CA61E49778600BA7B19 /* ViewPhotosViewController.swift */,
+				D027A0E81E58D72B00B5576E /* SettingsTableViewController.swift */,
+				D001AB2A1E4ED920008D3251 /* SignInViewController.swift */,
 			);
 			path = SharedController;
 			sourceTree = "<group>";
@@ -296,7 +309,9 @@
 				D0797CD41E497B1A00BA7B19 /* AlertHelper.swift */,
 				D0495ECA1E49804A0076A548 /* SignInHelper.swift */,
 				D0797CD51E497B1A00BA7B19 /* Extensions.swift */,
-				D0797CD61E497B1A00BA7B19 /* NextControlTextField.swift */,
+				D0797CD61E497B1A00BA7B19 /* NextPrevControlTextField.swift */,
+				D03EEFA41E4C2D8B006D18B1 /* DarkHighlightButton.swift */,
+				D0950D961E62C529001E6395 /* ClosureBarButtonItem.swift */,
 			);
 			path = HelperFiles;
 			sourceTree = "<group>";
@@ -315,6 +330,7 @@
 		ECD4E4DC4467AA96951CC324 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D03EEFA21E4C28BE006D18B1 /* AdSupport.framework */,
 				C63FA781523A1671C7EC4C65 /* Pods_HireMe.framework */,
 				60B3B5B55512633A4F50B917 /* Pods_HireMeTests.framework */,
 				D8E20B60B21F41C9751635DA /* Pods_HireMeUITests.framework */,
@@ -617,15 +633,18 @@
 				D0797C9C1E49701A00BA7B19 /* NewBidViewController.swift in Sources */,
 				D0797CBF1E49796000BA7B19 /* Skill.swift in Sources */,
 				D0797C951E49701A00BA7B19 /* BidsViewController.swift in Sources */,
+				D027A0E91E58D72B00B5576E /* SettingsTableViewController.swift in Sources */,
 				D0797CCF1E4979FC00BA7B19 /* JobInfoCell.swift in Sources */,
 				D0797CC01E49796000BA7B19 /* SkillController.swift in Sources */,
 				D0797CAA1E49778600BA7B19 /* MenuViewController.swift in Sources */,
+				D0950D971E62C529001E6395 /* ClosureBarButtonItem.swift in Sources */,
 				D0797CCB1E4979FC00BA7B19 /* ConsumerJobsTableViewController.swift in Sources */,
 				D0797CB91E49796000BA7B19 /* Bid.swift in Sources */,
 				D0797CBA1E49796000BA7B19 /* BidController.swift in Sources */,
 				D0797C9E1E49701A00BA7B19 /* SearchViewController.swift in Sources */,
 				D0797CAB1E49778600BA7B19 /* ViewPhotosViewController.swift in Sources */,
 				D0797CCD1E4979FC00BA7B19 /* BidderImageCell.swift in Sources */,
+				D03EEFA51E4C2D8B006D18B1 /* DarkHighlightButton.swift in Sources */,
 				D0797CA91E49778600BA7B19 /* LoginViewController.swift in Sources */,
 				D0797CD01E4979FC00BA7B19 /* NewJobTableViewController.swift in Sources */,
 				D0797CD81E497B1A00BA7B19 /* AlertHelper.swift in Sources */,
@@ -638,10 +657,11 @@
 				D0797CA71E49778600BA7B19 /* AccountViewController.swift in Sources */,
 				D0797CCE1E4979FC00BA7B19 /* BidderInfoCell.swift in Sources */,
 				D0797CBE1E49796000BA7B19 /* JobController.swift in Sources */,
+				D001AB2B1E4ED920008D3251 /* SignInViewController.swift in Sources */,
 				D0797CD11E4979FC00BA7B19 /* ViewBidderTableViewController.swift in Sources */,
 				D0797C961E49701A00BA7B19 /* CategoryViewController.swift in Sources */,
 				21B38EFC1DCC21A4000A5CB1 /* AppDelegate.swift in Sources */,
-				D0797CDA1E497B1A00BA7B19 /* NextControlTextField.swift in Sources */,
+				D0797CDA1E497B1A00BA7B19 /* NextPrevControlTextField.swift in Sources */,
 				D0797CCC1E4979FC00BA7B19 /* BidderDescriptionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
