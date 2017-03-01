@@ -56,5 +56,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBAction func skipTapped(_ sender: UIButton) {
         self.performSegue(withIdentifier: "showTabs", sender: nil)
+
+		//TODO: this code sends to consumer views
+		//let storyboard = UIStoryboard(name: "ConsumerStoryboard", bundle: nil)
+		//let vc = storyboard.instantiateViewController(withIdentifier: "RootNavConsumerView") as? UINavigationController
+		//UIApplication.shared.windows[0].rootViewController = vc
     }
 }

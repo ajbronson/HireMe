@@ -12,8 +12,6 @@ class BidderDescriptionCell: UITableViewCell {
 
 	@IBOutlet weak var descriptionTextView: UITextView!
 
-	var delegate: DescriptionChanged?
-
 	func updateWith(description: String) {
 		descriptionTextView.text = description
 
@@ -23,11 +21,5 @@ class BidderDescriptionCell: UITableViewCell {
 		var newFrame = descriptionTextView.frame
 		newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
 		descriptionTextView.frame = newFrame;
-
-		delegate?.setDescriptionHeight(textView: descriptionTextView)
 	}
-}
-
-protocol DescriptionChanged {
-	func setDescriptionHeight(textView: UITextView)
 }

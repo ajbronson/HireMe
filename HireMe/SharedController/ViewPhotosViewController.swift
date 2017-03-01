@@ -17,13 +17,11 @@ class ViewPhotosViewController: UIViewController {
 	@IBOutlet weak var backgroundView: UIView!
 	@IBOutlet weak var displayingLabel: UILabel!
 
-	var images: [UIImage]?
-	var displaying: Int = 0
+	var images: [UIImage] = []
+	var displaying: Int = 1
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
-		displaying = 0
 
 		previousButton.layer.cornerRadius = 5.0
 		previousButton.layer.borderColor = UIColor.black.cgColor
@@ -39,36 +37,73 @@ class ViewPhotosViewController: UIViewController {
 
 		backgroundView.layer.cornerRadius = 5.0
 
+		if images.count == 1 {
+			nextButton.isEnabled = false
+			nextButton.backgroundColor = UIColor.lightGray
+			previousButton.isEnabled = false
+			previousButton.backgroundColor = UIColor.lightGray
+		} else {
+			checkToDisableButton()
+		}
+
 		updateDisplayLabel()
 
-		if let images = images,
-			images.count > 0 {
-			displayingImageView.image = images[0]
+		if images.count > 0 {
+			displayingImageView.image = images[displaying - 1]
 			displayingImageView.roundCornersForAspectFit(radius: 10.0)
 		}
 	}
 
+	func showImages(images: [UIImage], senderView: UIViewController, selfView: ViewPhotosViewController, selectedIndex: Int) {
+		self.images = images
+		displaying = selectedIndex + 1
+		selfView.modalPresentationStyle = .overCurrentContext
+		senderView.present(selfView, animated: true, completion: nil)
+	}
+
 	func updateDisplayLabel() {
-		displayingLabel.text = "\(displaying) of \(images?.count)"
+		displayingLabel.text = "\(displaying) of \(images.count)"
+	}
+
+	func checkToDisableButton() {
+		if displaying == images.count {
+			nextButton.isEnabled = false
+			nextButton.backgroundColor = UIColor.lightGray
+		} else {
+			nextButton.isEnabled = true
+			nextButton.backgroundColor = AppColors.blueColor
+		}
+
+		if displaying == 1 {
+			previousButton.isEnabled = false
+			previousButton.backgroundColor = UIColor.lightGray
+		} else {
+			previousButton.isEnabled = true
+			previousButton.backgroundColor = AppColors.blueColor
+		}
 	}
 
 	@IBAction func previousButtonTapped(_ sender: UIButton) {
-		guard let images = images else { return }
-		if displaying > 0 {
+		if displaying > 1 {
 			displaying -= 1
-			displayingImageView.image = images[displaying]
+			displayingImageView.image = images[displaying - 1]
 			displayingImageView.roundCornersForAspectFit(radius: 10.0)
 			updateDisplayLabel()
+			checkToDisableButton()
 		}
 	}
 	
 	@IBAction func nextButtonTapped(_ sender: UIButton) {
-		guard let images = images else { return }
 		if displaying < images.count {
 			displaying += 1
-			displayingImageView.image = images[displaying]
+			displayingImageView.image = images[displaying - 1]
 			displayingImageView.roundCornersForAspectFit(radius: 10.0)
 			updateDisplayLabel()
+			checkToDisableButton()
 		}
+	}
+
+	@IBAction func closeButtonTapped(_ sender: UIButton) {
+		dismiss(animated: true, completion: nil)
 	}
 }

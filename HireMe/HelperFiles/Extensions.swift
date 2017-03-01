@@ -36,10 +36,15 @@ extension UIImageView
 }
 
 extension Double {
-	func convertToCurrency() -> String? {
+	func convertToCurrency(includeDollarSign: Bool) -> String? {
 		let formatter = NumberFormatter()
 		formatter.numberStyle = NumberFormatter.Style.currency
-		return formatter.string(from: NSNumber(value: self))
+		let money = formatter.string(from: NSNumber(value: self))
+		if let money = money, !includeDollarSign && money.characters.count > 0 {
+			return money.substring(from: money.index(money.startIndex, offsetBy: 1))
+		} else {
+			return money
+		}
 	}
 }
 
@@ -73,6 +78,23 @@ extension UIColor {
         
         self.init(red: r, green: g, blue: b, alpha: a)
     }
+}
+
+extension Date {
+	func stringFromDate() -> String {
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = "MMM dd, yyyy"
+		return dateFormatter.string(from: self)
+	}
+}
+
+extension String {
+	func dateFromString() -> Date? {
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = "MMM dd, yyyy"
+		let date = dateFormatter.date(from: self)
+		return date
+	}
 }
 
 extension UITableView {
@@ -163,3 +185,4 @@ extension UINavigationController {
         }
     }
 }
+

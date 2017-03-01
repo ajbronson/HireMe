@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		210EC6351E4ED0E000643FD3 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210EC6341E4ED0E000643FD3 /* LocationHelper.swift */; };
+		21103D9B1E4A99370097F595 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21103D9A1E4A99370097F595 /* Constants.swift */; };
+		21103D9E1E4AB7900097F595 /* JobImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21103D9D1E4AB7900097F595 /* JobImageCell.swift */; };
 		21B38EFC1DCC21A4000A5CB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38EFB1DCC21A4000A5CB1 /* AppDelegate.swift */; };
 		21B38F031DCC21A4000A5CB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21B38F021DCC21A4000A5CB1 /* Assets.xcassets */; };
 		21B38F111DCC21A4000A5CB1 /* HireMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38F101DCC21A4000A5CB1 /* HireMeTests.swift */; };
 		21B38F1C1DCC21A4000A5CB1 /* HireMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38F1B1DCC21A4000A5CB1 /* HireMeUITests.swift */; };
+		21C3C3331E5E940400836477 /* SelectedBid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C3C3321E5E940400836477 /* SelectedBid.swift */; };
+		21C3C3351E5E957D00836477 /* SelectedBidController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C3C3341E5E957D00836477 /* SelectedBidController.swift */; };
 		6B9D6528207E89B71A2A96D2 /* Pods_HireMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63FA781523A1671C7EC4C65 /* Pods_HireMe.framework */; };
 		A20D39D3566CC81D2A69B0E6 /* Pods_HireMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B3B5B55512633A4F50B917 /* Pods_HireMeTests.framework */; };
 		D001AB2B1E4ED920008D3251 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D001AB2A1E4ED920008D3251 /* SignInViewController.swift */; };
@@ -78,6 +83,9 @@
 
 /* Begin PBXFileReference section */
 		1A1925A3082FD6438C80712C /* Pods-HireMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HireMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-HireMe/Pods-HireMe.release.xcconfig"; sourceTree = "<group>"; };
+		210EC6341E4ED0E000643FD3 /* LocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
+		21103D9A1E4A99370097F595 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		21103D9D1E4AB7900097F595 /* JobImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobImageCell.swift; sourceTree = "<group>"; };
 		21B38EF81DCC21A4000A5CB1 /* HireMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HireMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B38EFB1DCC21A4000A5CB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21B38F021DCC21A4000A5CB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,6 +96,8 @@
 		21B38F171DCC21A4000A5CB1 /* HireMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HireMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B38F1B1DCC21A4000A5CB1 /* HireMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HireMeUITests.swift; sourceTree = "<group>"; };
 		21B38F1D1DCC21A4000A5CB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21C3C3321E5E940400836477 /* SelectedBid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedBid.swift; sourceTree = "<group>"; };
+		21C3C3341E5E957D00836477 /* SelectedBidController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedBidController.swift; sourceTree = "<group>"; };
 		2788E1A6E281FCD49C176023 /* Pods-HireMeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HireMeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HireMeUITests/Pods-HireMeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		34983C9B63B372B09F18A223 /* Pods-HireMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HireMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HireMeTests/Pods-HireMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		60B3B5B55512633A4F50B917 /* Pods_HireMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HireMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,13 +124,13 @@
 		D0797CAC1E49787600BA7B19 /* ConsumerStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ConsumerStoryboard.storyboard; sourceTree = "<group>"; };
 		D0797CAD1E49787600BA7B19 /* ImageViewStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ImageViewStoryboard.storyboard; sourceTree = "<group>"; };
 		D0797CB11E49796000BA7B19 /* Bid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bid.swift; sourceTree = "<group>"; };
-		D0797CB21E49796000BA7B19 /* BidController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidController.swift; sourceTree = "<group>"; };
+		D0797CB21E49796000BA7B19 /* BidController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BidController.swift; path = Model/BidController.swift; sourceTree = "<group>"; };
 		D0797CB31E49796000BA7B19 /* Bidder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bidder.swift; sourceTree = "<group>"; };
-		D0797CB41E49796000BA7B19 /* BidderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidderController.swift; sourceTree = "<group>"; };
+		D0797CB41E49796000BA7B19 /* BidderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BidderController.swift; path = Model/BidderController.swift; sourceTree = "<group>"; };
 		D0797CB51E49796000BA7B19 /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
-		D0797CB61E49796000BA7B19 /* JobController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobController.swift; sourceTree = "<group>"; };
+		D0797CB61E49796000BA7B19 /* JobController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobController.swift; path = Model/JobController.swift; sourceTree = "<group>"; };
 		D0797CB71E49796000BA7B19 /* Skill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
-		D0797CB81E49796000BA7B19 /* SkillController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillController.swift; sourceTree = "<group>"; };
+		D0797CB81E49796000BA7B19 /* SkillController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkillController.swift; path = Model/SkillController.swift; sourceTree = "<group>"; };
 		D0797CC21E4979FC00BA7B19 /* ConsumerJobsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerJobsTableViewController.swift; sourceTree = "<group>"; };
 		D0797CC41E4979FC00BA7B19 /* BidderDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidderDescriptionCell.swift; sourceTree = "<group>"; };
 		D0797CC51E4979FC00BA7B19 /* BidderImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidderImageCell.swift; sourceTree = "<group>"; };
@@ -168,6 +178,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21103D9C1E4AA0FF0097F595 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				21C3C3341E5E957D00836477 /* SelectedBidController.swift */,
+				D0797CB21E49796000BA7B19 /* BidController.swift */,
+				D0797CB41E49796000BA7B19 /* BidderController.swift */,
+				D0797CB61E49796000BA7B19 /* JobController.swift */,
+				D0797CB81E49796000BA7B19 /* SkillController.swift */,
+			);
+			name = ModelController;
+			sourceTree = "<group>";
+		};
 		21B38EEF1DCC21A4000A5CB1 = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +216,7 @@
 		21B38EFA1DCC21A4000A5CB1 /* HireMe */ = {
 			isa = PBXGroup;
 			children = (
+				21103D9C1E4AA0FF0097F595 /* ModelController */,
 				D0797CB01E49796000BA7B19 /* Model */,
 				D08FBD821E2F0D81002DF217 /* View */,
 				D0797CC11E4979FC00BA7B19 /* ConsumerController */,
@@ -269,13 +292,10 @@
 			isa = PBXGroup;
 			children = (
 				D0797CB11E49796000BA7B19 /* Bid.swift */,
-				D0797CB21E49796000BA7B19 /* BidController.swift */,
 				D0797CB31E49796000BA7B19 /* Bidder.swift */,
-				D0797CB41E49796000BA7B19 /* BidderController.swift */,
 				D0797CB51E49796000BA7B19 /* Job.swift */,
-				D0797CB61E49796000BA7B19 /* JobController.swift */,
 				D0797CB71E49796000BA7B19 /* Skill.swift */,
-				D0797CB81E49796000BA7B19 /* SkillController.swift */,
+				21C3C3321E5E940400836477 /* SelectedBid.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -295,6 +315,7 @@
 		D0797CC31E4979FC00BA7B19 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
+				21103D9D1E4AB7900097F595 /* JobImageCell.swift */,
 				D0797CC41E4979FC00BA7B19 /* BidderDescriptionCell.swift */,
 				D0797CC51E4979FC00BA7B19 /* BidderImageCell.swift */,
 				D0797CC61E4979FC00BA7B19 /* BidderInfoCell.swift */,
@@ -306,9 +327,12 @@
 		D0797CD31E497B1A00BA7B19 /* HelperFiles */ = {
 			isa = PBXGroup;
 			children = (
+				210EC6341E4ED0E000643FD3 /* LocationHelper.swift */,
 				D0797CD41E497B1A00BA7B19 /* AlertHelper.swift */,
 				D0495ECA1E49804A0076A548 /* SignInHelper.swift */,
 				D0797CD51E497B1A00BA7B19 /* Extensions.swift */,
+				D0797CD61E497B1A00BA7B19 /* NextControlTextField.swift */,
+				21103D9A1E4A99370097F595 /* Constants.swift */,
 				D0797CD61E497B1A00BA7B19 /* NextPrevControlTextField.swift */,
 				D03EEFA41E4C2D8B006D18B1 /* DarkHighlightButton.swift */,
 				D0950D961E62C529001E6395 /* ClosureBarButtonItem.swift */,
@@ -415,7 +439,7 @@
 				TargetAttributes = {
 					21B38EF71DCC21A4000A5CB1 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = E5QLQ9VDQN;
+						DevelopmentTeam = D8BVW7B3PF;
 						ProvisioningStyle = Automatic;
 					};
 					21B38F0B1DCC21A4000A5CB1 = {
@@ -633,6 +657,7 @@
 				D0797C9C1E49701A00BA7B19 /* NewBidViewController.swift in Sources */,
 				D0797CBF1E49796000BA7B19 /* Skill.swift in Sources */,
 				D0797C951E49701A00BA7B19 /* BidsViewController.swift in Sources */,
+				21C3C3351E5E957D00836477 /* SelectedBidController.swift in Sources */,
 				D027A0E91E58D72B00B5576E /* SettingsTableViewController.swift in Sources */,
 				D0797CCF1E4979FC00BA7B19 /* JobInfoCell.swift in Sources */,
 				D0797CC01E49796000BA7B19 /* SkillController.swift in Sources */,
@@ -644,15 +669,18 @@
 				D0797C9E1E49701A00BA7B19 /* SearchViewController.swift in Sources */,
 				D0797CAB1E49778600BA7B19 /* ViewPhotosViewController.swift in Sources */,
 				D0797CCD1E4979FC00BA7B19 /* BidderImageCell.swift in Sources */,
+				21103D9E1E4AB7900097F595 /* JobImageCell.swift in Sources */,
 				D03EEFA51E4C2D8B006D18B1 /* DarkHighlightButton.swift in Sources */,
 				D0797CA91E49778600BA7B19 /* LoginViewController.swift in Sources */,
 				D0797CD01E4979FC00BA7B19 /* NewJobTableViewController.swift in Sources */,
 				D0797CD81E497B1A00BA7B19 /* AlertHelper.swift in Sources */,
+				210EC6351E4ED0E000643FD3 /* LocationHelper.swift in Sources */,
 				D0797CD91E497B1A00BA7B19 /* Extensions.swift in Sources */,
 				D0797C991E49701A00BA7B19 /* JobsViewController.swift in Sources */,
 				D0797CBD1E49796000BA7B19 /* Job.swift in Sources */,
 				D0495ECB1E49804A0076A548 /* SignInHelper.swift in Sources */,
 				D0797CBC1E49796000BA7B19 /* BidderController.swift in Sources */,
+				21103D9B1E4A99370097F595 /* Constants.swift in Sources */,
 				D0797C9D1E49701A00BA7B19 /* ProviderTabBarController.swift in Sources */,
 				D0797CA71E49778600BA7B19 /* AccountViewController.swift in Sources */,
 				D0797CCE1E4979FC00BA7B19 /* BidderInfoCell.swift in Sources */,
@@ -660,6 +688,7 @@
 				D001AB2B1E4ED920008D3251 /* SignInViewController.swift in Sources */,
 				D0797CD11E4979FC00BA7B19 /* ViewBidderTableViewController.swift in Sources */,
 				D0797C961E49701A00BA7B19 /* CategoryViewController.swift in Sources */,
+				21C3C3331E5E940400836477 /* SelectedBid.swift in Sources */,
 				21B38EFC1DCC21A4000A5CB1 /* AppDelegate.swift in Sources */,
 				D0797CDA1E497B1A00BA7B19 /* NextPrevControlTextField.swift in Sources */,
 				D0797CCC1E4979FC00BA7B19 /* BidderDescriptionCell.swift in Sources */,
@@ -799,7 +828,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E5QLQ9VDQN;
+				DEVELOPMENT_TEAM = D8BVW7B3PF;
 				INFOPLIST_FILE = HireMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.precisioncodes.HireMe;
@@ -814,7 +843,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E5QLQ9VDQN;
+				DEVELOPMENT_TEAM = D8BVW7B3PF;
 				INFOPLIST_FILE = HireMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.precisioncodes.HireMe;

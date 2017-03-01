@@ -21,28 +21,12 @@ class SearchViewController: UITableViewController {
     // MARK: - UITableViewDataSource methods
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 6
+		return AppInfo.industries.count
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell") else { return UITableViewCell() }
-		
-		switch indexPath.row {
-		case 0:
-			cell.textLabel?.text = "Automotive"
-		case 1:
-			cell.textLabel?.text = "House Cleaning"
-		case 2:
-			cell.textLabel?.text = "Babysitting"
-		case 3:
-			cell.textLabel?.text = "Tech Support"
-		case 4:
-			cell.textLabel?.text = "Remodeling"
-		default:
-			cell.textLabel?.text = "Yard work"
-			
-		}
-		
+		cell.textLabel?.text = AppInfo.industries[indexPath.row]
 		return cell
 	}
 	

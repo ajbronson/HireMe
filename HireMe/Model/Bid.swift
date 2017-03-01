@@ -8,15 +8,29 @@
 
 import Foundation
 
-class Bid {
+class Bid: Equatable {
 
-	var user: String
+	var id: Int
 	var price: Double?
 	var description: String
+	var status: String
+	var bidder: Bidder
+	var job: Job
+	let dateCreated: Date
+	var dateUpdated: Date
 
-	init(user: String, price: Double?, description: String) {
-		self.user = user
+	init(id: Int, bidder: Bidder, job: Job, price: Double?, description: String, status: String = BidStatus.PendingResponse.rawValue, dateCreated: Date = Date(), dateUpdated: Date = Date()) {
+		self.id = id
+		self.bidder = bidder
+		self.job = job
 		self.price = price
 		self.description = description
+		self.status = status
+		self.dateCreated = dateCreated
+		self.dateUpdated = dateUpdated
 	}
+}
+
+func ==(lhs: Bid, rhs:Bid) -> Bool {
+	return lhs.id == rhs.id
 }

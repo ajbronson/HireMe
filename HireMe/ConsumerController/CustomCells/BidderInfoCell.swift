@@ -19,25 +19,30 @@ class BidderInfoCell: UITableViewCell {
 	@IBOutlet weak var starImage4: UIImageView!
 	@IBOutlet weak var starImage5: UIImageView!
 
-	func updateWith(bid: Bid, bidder: Bidder) {
-		nameLabel.text = bid.user
+	func updateWith(bid: Bid) {
+		nameLabel.text = "\(bid.bidder.firstName) \(bid.bidder.lastName)"
 
 		if let price = bid.price {
-			priceLabel.text = price.convertToCurrency()
+			priceLabel.text = price.convertToCurrency(includeDollarSign: true)
 		}
+
+		if let image = UIImage(named: bid.status) {
+			statusIndicator.image = image
+		}
+		
 
 		for i in 1...5 {
 			switch i {
 			case 1:
-				starImage1.image = bidder.numberOfStars > 0 ? UIImage(named: "Star") : UIImage(named: "BlankStar")
+				starImage1.image = bid.bidder.numberOfStars > 0 ? UIImage(named: "Star") : UIImage(named: "BlankStar")
 			case 2:
-				starImage2.image = bidder.numberOfStars > 1 ? UIImage(named: "Star") : UIImage(named: "BlankStar")
+				starImage2.image = bid.bidder.numberOfStars > 1 ? UIImage(named: "Star") : UIImage(named: "BlankStar")
 			case 3:
-				starImage3.image = bidder.numberOfStars > 2 ? UIImage(named: "Star") : UIImage(named: "BlankStar")
+				starImage3.image = bid.bidder.numberOfStars > 2 ? UIImage(named: "Star") : UIImage(named: "BlankStar")
 			case 4:
-				starImage4.image = bidder.numberOfStars > 3 ? UIImage(named: "Star") : UIImage(named: "BlankStar")
+				starImage4.image = bid.bidder.numberOfStars > 3 ? UIImage(named: "Star") : UIImage(named: "BlankStar")
 			case 5:
-				starImage5.image = bidder.numberOfStars > 4 ? UIImage(named: "Star") : UIImage(named: "BlankStar")
+				starImage5.image = bid.bidder.numberOfStars > 4 ? UIImage(named: "Star") : UIImage(named: "BlankStar")
 			default:
 				break
 			}

@@ -8,18 +8,25 @@
 
 import UIKit
 
-class ViewBidderTableViewController: UITableViewController, DescriptionChanged {
+class ViewBidderTableViewController: UITableViewController {
 
 	var bid: Bid?
 	var skills: [Skill]?
-	var bidders: [Bidder]?
+	var bidder: Bidder?
 	var descriptionHeight: CGFloat?
+	var job: Job?
 
 	override func viewDidLoad() {
 		skills = SkillController.shared.skills
-		bidders = BidderController.shared.bidders
 		self.tableView.rowHeight = UITableViewAutomaticDimension
 		descriptionHeight = nil
+		tableView.estimatedRowHeight = 44
+		self.tableView.rowHeight = UITableViewAutomaticDimension
+		bidder = bid?.bidder
+
+		if let bidder = bidder {
+			title = "\(bidder.firstName) \(bidder.lastName)"
+		}
 	}
 
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -60,14 +67,14 @@ class ViewBidderTableViewController: UITableViewController, DescriptionChanged {
 		if indexPath.section == 0 {
 			guard let cell = tableView.dequeueReusableCell(withIdentifier: "bidderImageCell") as? BidderImageCell,
 				let bid = bid,
-				let bidders = bidders else { return UITableViewCell() }
-			cell.updateWith(bid: bid, bidder: bidders[0])
+				let job = job,
+				let bidder = bidder else { return UITableViewCell() }
+			cell.updateWith(bid: bid, bidder: bidder, job: job, view: self)
 			return cell
 		} else if indexPath.section == 1 {
 			if bid?.description != nil {
 				guard let cell = tableView.dequeueReusableCell(withIdentifier: "bidderDescriptionCell") as? BidderDescriptionCell,
 					let bid = bid else { return UITableViewCell() }
-				cell.delegate = self
 				cell.updateWith(description: bid.description)
 				return cell
 			} else {
@@ -88,28 +95,9 @@ class ViewBidderTableViewController: UITableViewController, DescriptionChanged {
 
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		if indexPath.section == 0 {
-			return 250
-		} else if indexPath.section == 1 {
-			if bid?.description != nil {
-				return descriptionHeight ?? 225
-			} else {
-				return 44
-			}
-		} else {
-			return 44
+			return 295
 		}
-	}
 
-	func setDescriptionHeight(textView: UITextView) {
-		if descriptionHeight == nil {
-			if textView.frame.height == 33.0 {
-				descriptionHeight = textView.frame.height + 15
-			} else if textView.frame.height < 100.0 {
-				descriptionHeight = textView.frame.height + 25
-			} else {
-				descriptionHeight = textView.frame.height
-			}
-			tableView.reloadData()
-		}
+		return UITableViewAutomaticDimension
 	}
 }
