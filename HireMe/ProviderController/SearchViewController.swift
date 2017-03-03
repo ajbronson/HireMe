@@ -8,15 +8,7 @@
 
 import UIKit
 
-class SearchViewController: UITableViewController {
-	
-    // MARK: - View controller life cycle
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.navigationItem.title = "Search"
-    }
-    
+class SearchViewController: UITableViewController {    
     
     // MARK: - UITableViewDataSource methods
 	

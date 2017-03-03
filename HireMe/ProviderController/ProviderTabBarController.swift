@@ -7,13 +7,8 @@
 //
 
 import SideMenu
-import FBSDKLoginKit
 
 class ProviderTabBarController: UITabBarController {
-    
-    private var fbUserProfile: [String: Any]?
-    private var googleUserProfile: [String: String]?
-    
     
     // MARK: View controller life cycle
     
@@ -27,17 +22,11 @@ class ProviderTabBarController: UITabBarController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isHidden = false
         
         if isSignedIn() == false {
+            print("ProviderTabBarController viewWillAppear(_:) not signed in")
             //show search VC and hide the rest
-            self.selectedViewController = self.viewControllers?.last
+            self.selectedViewController = self.viewControllers?.first
         }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.isProviderTabsVisible = false
     }
 }

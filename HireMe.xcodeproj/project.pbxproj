@@ -331,7 +331,6 @@
 				D0797CD41E497B1A00BA7B19 /* AlertHelper.swift */,
 				D0495ECA1E49804A0076A548 /* SignInHelper.swift */,
 				D0797CD51E497B1A00BA7B19 /* Extensions.swift */,
-				D0797CD61E497B1A00BA7B19 /* NextControlTextField.swift */,
 				21103D9A1E4A99370097F595 /* Constants.swift */,
 				D0797CD61E497B1A00BA7B19 /* NextPrevControlTextField.swift */,
 				D03EEFA41E4C2D8B006D18B1 /* DarkHighlightButton.swift */,
@@ -439,7 +438,7 @@
 				TargetAttributes = {
 					21B38EF71DCC21A4000A5CB1 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = D8BVW7B3PF;
+						DevelopmentTeam = E5QLQ9VDQN;
 						ProvisioningStyle = Automatic;
 					};
 					21B38F0B1DCC21A4000A5CB1 = {
@@ -828,7 +827,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D8BVW7B3PF;
+				DEVELOPMENT_TEAM = E5QLQ9VDQN;
 				INFOPLIST_FILE = HireMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.precisioncodes.HireMe;
@@ -843,7 +842,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D8BVW7B3PF;
+				DEVELOPMENT_TEAM = E5QLQ9VDQN;
 				INFOPLIST_FILE = HireMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.precisioncodes.HireMe;

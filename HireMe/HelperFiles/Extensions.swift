@@ -124,9 +124,9 @@ extension NextPrevControlTextField {
     func addToolbarAboveKeyboard() {
         let keyboardToolbar = UIToolbar()
 
-        let close = ClosureBarButtonItem(image: UIImage(named: "Close"), style: .plain) { (params) in
+        let close = ClosureBarButtonItem(image: UIImage(named: "Close"), style: .plain) {(
             self.resignFirstResponder()
-        }
+        )}
         
         let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         

@@ -8,15 +8,7 @@
 
 import UIKit
 
-class BidsViewController: UITableViewController {
-    
-    // MARK: - View controller life cycle
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.navigationItem.title = "My Bids"
-    }
-    
+class BidsViewController: UITableViewController {    
 	
 	// MARK: - UITableViewDataSource methods
 	
