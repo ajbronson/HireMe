@@ -21,10 +21,12 @@
 		D001AB2B1E4ED920008D3251 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D001AB2A1E4ED920008D3251 /* SignInViewController.swift */; };
 		D027A0E91E58D72B00B5576E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D027A0E81E58D72B00B5576E /* SettingsTableViewController.swift */; };
 		D03EEFA31E4C28BE006D18B1 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03EEFA21E4C28BE006D18B1 /* AdSupport.framework */; };
-		D03EEFA51E4C2D8B006D18B1 /* DarkHighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03EEFA41E4C2D8B006D18B1 /* DarkHighlightButton.swift */; };
 		D0495ECB1E49804A0076A548 /* SignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0495ECA1E49804A0076A548 /* SignInHelper.swift */; };
 		D05A24A21E69481500DB6268 /* MenuStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D05A24A11E69481500DB6268 /* MenuStoryboard.storyboard */; };
 		D05A24A41E694A6000DB6268 /* MenuHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A24A31E694A6000DB6268 /* MenuHelper.swift */; };
+		D05A24A91E694E3500DB6268 /* ClosureBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A24A61E694E3500DB6268 /* ClosureBarButtonItem.swift */; };
+		D05A24AA1E694E3500DB6268 /* DarkHighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A24A71E694E3500DB6268 /* DarkHighlightButton.swift */; };
+		D05A24AB1E694E3500DB6268 /* NextPrevControlTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A24A81E694E3500DB6268 /* NextPrevControlTextField.swift */; };
 		D0797C951E49701A00BA7B19 /* BidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */; };
 		D0797C961E49701A00BA7B19 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */; };
 		D0797C991E49701A00BA7B19 /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8E1E49701A00BA7B19 /* JobsViewController.swift */; };
@@ -57,8 +59,6 @@
 		D0797CD21E4979FC00BA7B19 /* ViewJobTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CCA1E4979FC00BA7B19 /* ViewJobTableViewController.swift */; };
 		D0797CD81E497B1A00BA7B19 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CD41E497B1A00BA7B19 /* AlertHelper.swift */; };
 		D0797CD91E497B1A00BA7B19 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CD51E497B1A00BA7B19 /* Extensions.swift */; };
-		D0797CDA1E497B1A00BA7B19 /* NextPrevControlTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CD61E497B1A00BA7B19 /* NextPrevControlTextField.swift */; };
-		D0950D971E62C529001E6395 /* ClosureBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0950D961E62C529001E6395 /* ClosureBarButtonItem.swift */; };
 		D0ECA6C31E39B33C001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
 		D0ECA6C41E39B347001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
 		D0ECA6C51E39B348001AB162 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */; };
@@ -109,10 +109,12 @@
 		D001AB2A1E4ED920008D3251 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		D027A0E81E58D72B00B5576E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		D03EEFA21E4C28BE006D18B1 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		D03EEFA41E4C2D8B006D18B1 /* DarkHighlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkHighlightButton.swift; sourceTree = "<group>"; };
 		D0495ECA1E49804A0076A548 /* SignInHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInHelper.swift; sourceTree = "<group>"; };
 		D05A24A11E69481500DB6268 /* MenuStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuStoryboard.storyboard; sourceTree = "<group>"; };
 		D05A24A31E694A6000DB6268 /* MenuHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuHelper.swift; sourceTree = "<group>"; };
+		D05A24A61E694E3500DB6268 /* ClosureBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureBarButtonItem.swift; sourceTree = "<group>"; };
+		D05A24A71E694E3500DB6268 /* DarkHighlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkHighlightButton.swift; sourceTree = "<group>"; };
+		D05A24A81E694E3500DB6268 /* NextPrevControlTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextPrevControlTextField.swift; sourceTree = "<group>"; };
 		D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidsViewController.swift; sourceTree = "<group>"; };
 		D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		D0797C8E1E49701A00BA7B19 /* JobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
@@ -128,13 +130,13 @@
 		D0797CAC1E49787600BA7B19 /* ConsumerStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ConsumerStoryboard.storyboard; sourceTree = "<group>"; };
 		D0797CAD1E49787600BA7B19 /* ImageViewStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ImageViewStoryboard.storyboard; sourceTree = "<group>"; };
 		D0797CB11E49796000BA7B19 /* Bid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bid.swift; sourceTree = "<group>"; };
-		D0797CB21E49796000BA7B19 /* BidController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BidController.swift; path = Model/BidController.swift; sourceTree = "<group>"; };
+		D0797CB21E49796000BA7B19 /* BidController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidController.swift; sourceTree = "<group>"; };
 		D0797CB31E49796000BA7B19 /* Bidder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bidder.swift; sourceTree = "<group>"; };
-		D0797CB41E49796000BA7B19 /* BidderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BidderController.swift; path = Model/BidderController.swift; sourceTree = "<group>"; };
+		D0797CB41E49796000BA7B19 /* BidderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidderController.swift; sourceTree = "<group>"; };
 		D0797CB51E49796000BA7B19 /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
-		D0797CB61E49796000BA7B19 /* JobController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobController.swift; path = Model/JobController.swift; sourceTree = "<group>"; };
+		D0797CB61E49796000BA7B19 /* JobController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobController.swift; sourceTree = "<group>"; };
 		D0797CB71E49796000BA7B19 /* Skill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
-		D0797CB81E49796000BA7B19 /* SkillController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkillController.swift; path = Model/SkillController.swift; sourceTree = "<group>"; };
+		D0797CB81E49796000BA7B19 /* SkillController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillController.swift; sourceTree = "<group>"; };
 		D0797CC21E4979FC00BA7B19 /* ConsumerJobsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerJobsTableViewController.swift; sourceTree = "<group>"; };
 		D0797CC41E4979FC00BA7B19 /* BidderDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidderDescriptionCell.swift; sourceTree = "<group>"; };
 		D0797CC51E4979FC00BA7B19 /* BidderImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidderImageCell.swift; sourceTree = "<group>"; };
@@ -145,8 +147,6 @@
 		D0797CCA1E4979FC00BA7B19 /* ViewJobTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewJobTableViewController.swift; sourceTree = "<group>"; };
 		D0797CD41E497B1A00BA7B19 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		D0797CD51E497B1A00BA7B19 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		D0797CD61E497B1A00BA7B19 /* NextPrevControlTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextPrevControlTextField.swift; sourceTree = "<group>"; };
-		D0950D961E62C529001E6395 /* ClosureBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureBarButtonItem.swift; sourceTree = "<group>"; };
 		D0ECA6C21E39B33C001AB162 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0ECA6CA1E39BECC001AB162 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D674E8CF36C0F147120D6D4A /* Pods-HireMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HireMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HireMe/Pods-HireMe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -191,7 +191,7 @@
 				D0797CB61E49796000BA7B19 /* JobController.swift */,
 				D0797CB81E49796000BA7B19 /* SkillController.swift */,
 			);
-			name = ModelController;
+			path = ModelController;
 			sourceTree = "<group>";
 		};
 		21B38EEF1DCC21A4000A5CB1 = {
@@ -227,6 +227,7 @@
 				D0797C881E49701A00BA7B19 /* ProviderController */,
 				D0797CA11E49778600BA7B19 /* SharedController */,
 				D0797CD31E497B1A00BA7B19 /* HelperFiles */,
+				D05A24A51E694E3500DB6268 /* Subclasses */,
 				21B38F021DCC21A4000A5CB1 /* Assets.xcassets */,
 				21B38EFB1DCC21A4000A5CB1 /* AppDelegate.swift */,
 				21B38F071DCC21A4000A5CB1 /* Info.plist */,
@@ -263,6 +264,16 @@
 				C50318D16C0CDDAFFD138EDC /* Pods-HireMeUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D05A24A51E694E3500DB6268 /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				D05A24A61E694E3500DB6268 /* ClosureBarButtonItem.swift */,
+				D05A24A71E694E3500DB6268 /* DarkHighlightButton.swift */,
+				D05A24A81E694E3500DB6268 /* NextPrevControlTextField.swift */,
+			);
+			path = Subclasses;
 			sourceTree = "<group>";
 		};
 		D0797C881E49701A00BA7B19 /* ProviderController */ = {
@@ -336,9 +347,6 @@
 				D0495ECA1E49804A0076A548 /* SignInHelper.swift */,
 				D0797CD51E497B1A00BA7B19 /* Extensions.swift */,
 				21103D9A1E4A99370097F595 /* Constants.swift */,
-				D0797CD61E497B1A00BA7B19 /* NextPrevControlTextField.swift */,
-				D03EEFA41E4C2D8B006D18B1 /* DarkHighlightButton.swift */,
-				D0950D961E62C529001E6395 /* ClosureBarButtonItem.swift */,
 				D05A24A31E694A6000DB6268 /* MenuHelper.swift */,
 			);
 			path = HelperFiles;
@@ -669,7 +677,6 @@
 				D0797CCF1E4979FC00BA7B19 /* JobInfoCell.swift in Sources */,
 				D0797CC01E49796000BA7B19 /* SkillController.swift in Sources */,
 				D0797CAA1E49778600BA7B19 /* MenuViewController.swift in Sources */,
-				D0950D971E62C529001E6395 /* ClosureBarButtonItem.swift in Sources */,
 				D0797CCB1E4979FC00BA7B19 /* ConsumerJobsTableViewController.swift in Sources */,
 				D0797CB91E49796000BA7B19 /* Bid.swift in Sources */,
 				D0797CBA1E49796000BA7B19 /* BidController.swift in Sources */,
@@ -677,14 +684,15 @@
 				D0797CAB1E49778600BA7B19 /* ViewPhotosViewController.swift in Sources */,
 				D0797CCD1E4979FC00BA7B19 /* BidderImageCell.swift in Sources */,
 				21103D9E1E4AB7900097F595 /* JobImageCell.swift in Sources */,
-				D03EEFA51E4C2D8B006D18B1 /* DarkHighlightButton.swift in Sources */,
 				D0797CA91E49778600BA7B19 /* LoginViewController.swift in Sources */,
 				D0797CD01E4979FC00BA7B19 /* NewJobTableViewController.swift in Sources */,
+				D05A24AB1E694E3500DB6268 /* NextPrevControlTextField.swift in Sources */,
 				D0797CD81E497B1A00BA7B19 /* AlertHelper.swift in Sources */,
 				210EC6351E4ED0E000643FD3 /* LocationHelper.swift in Sources */,
 				D0797CD91E497B1A00BA7B19 /* Extensions.swift in Sources */,
 				D0797C991E49701A00BA7B19 /* JobsViewController.swift in Sources */,
 				D0797CBD1E49796000BA7B19 /* Job.swift in Sources */,
+				D05A24A91E694E3500DB6268 /* ClosureBarButtonItem.swift in Sources */,
 				D0495ECB1E49804A0076A548 /* SignInHelper.swift in Sources */,
 				D0797CBC1E49796000BA7B19 /* BidderController.swift in Sources */,
 				21103D9B1E4A99370097F595 /* Constants.swift in Sources */,
@@ -693,11 +701,11 @@
 				D0797CCE1E4979FC00BA7B19 /* BidderInfoCell.swift in Sources */,
 				D0797CBE1E49796000BA7B19 /* JobController.swift in Sources */,
 				D001AB2B1E4ED920008D3251 /* SignInViewController.swift in Sources */,
+				D05A24AA1E694E3500DB6268 /* DarkHighlightButton.swift in Sources */,
 				D0797CD11E4979FC00BA7B19 /* ViewBidderTableViewController.swift in Sources */,
 				D0797C961E49701A00BA7B19 /* CategoryViewController.swift in Sources */,
 				21C3C3331E5E940400836477 /* SelectedBid.swift in Sources */,
 				21B38EFC1DCC21A4000A5CB1 /* AppDelegate.swift in Sources */,
-				D0797CDA1E497B1A00BA7B19 /* NextPrevControlTextField.swift in Sources */,
 				D0797CCC1E4979FC00BA7B19 /* BidderDescriptionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
