@@ -14,7 +14,7 @@
         <!--Login View Controller-->
         <scene sceneID="QyE-gh-aZX">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xeK-lE-v96" customClass="LoginViewController" customModule="HireMe" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xeK-lE-v96" customClass="LoginViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pUC-ry-YDj"/>
                         <viewControllerLayoutGuide type="bottom" id="loU-3K-jsS"/>
@@ -112,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FyL-F6-Kr3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1062" y="-901"/>
+            <point key="canvasLocation" x="1436" y="1798"/>
         </scene>
         <!--Job-->
         <scene sceneID="XY1-Pu-RiE">

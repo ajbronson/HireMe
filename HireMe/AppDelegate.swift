@@ -15,7 +15,6 @@ import GoogleSignIn
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
 	var window: UIWindow?
-    let storyboard = UIStoryboard(name: "ProviderStoryboard", bundle: Bundle.main)
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		
