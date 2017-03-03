@@ -22,7 +22,7 @@ class SearchViewController: UITableViewController {
 		return cell
 	}
 	
-	//MARK: - Segue
+	// MARK: - Navigation
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "toCategory" {
@@ -33,4 +33,11 @@ class SearchViewController: UITableViewController {
 			}
 		}
 	}
+    
+    
+    // MARK: - IBActions
+    
+    @IBAction func didPressMenuButton(_ sender: UIBarButtonItem) {
+        MenuHelper.showMenu(from: self)
+    }
 }

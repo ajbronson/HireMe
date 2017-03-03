@@ -24,6 +24,7 @@
 		D03EEFA51E4C2D8B006D18B1 /* DarkHighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03EEFA41E4C2D8B006D18B1 /* DarkHighlightButton.swift */; };
 		D0495ECB1E49804A0076A548 /* SignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0495ECA1E49804A0076A548 /* SignInHelper.swift */; };
 		D05A24A21E69481500DB6268 /* MenuStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D05A24A11E69481500DB6268 /* MenuStoryboard.storyboard */; };
+		D05A24A41E694A6000DB6268 /* MenuHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A24A31E694A6000DB6268 /* MenuHelper.swift */; };
 		D0797C951E49701A00BA7B19 /* BidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */; };
 		D0797C961E49701A00BA7B19 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */; };
 		D0797C991E49701A00BA7B19 /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8E1E49701A00BA7B19 /* JobsViewController.swift */; };
@@ -111,6 +112,7 @@
 		D03EEFA41E4C2D8B006D18B1 /* DarkHighlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkHighlightButton.swift; sourceTree = "<group>"; };
 		D0495ECA1E49804A0076A548 /* SignInHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInHelper.swift; sourceTree = "<group>"; };
 		D05A24A11E69481500DB6268 /* MenuStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuStoryboard.storyboard; sourceTree = "<group>"; };
+		D05A24A31E694A6000DB6268 /* MenuHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuHelper.swift; sourceTree = "<group>"; };
 		D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidsViewController.swift; sourceTree = "<group>"; };
 		D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		D0797C8E1E49701A00BA7B19 /* JobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				D0797CD61E497B1A00BA7B19 /* NextPrevControlTextField.swift */,
 				D03EEFA41E4C2D8B006D18B1 /* DarkHighlightButton.swift */,
 				D0950D961E62C529001E6395 /* ClosureBarButtonItem.swift */,
+				D05A24A31E694A6000DB6268 /* MenuHelper.swift */,
 			);
 			path = HelperFiles;
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 				D0797C9C1E49701A00BA7B19 /* NewBidViewController.swift in Sources */,
 				D0797CBF1E49796000BA7B19 /* Skill.swift in Sources */,
 				D0797C951E49701A00BA7B19 /* BidsViewController.swift in Sources */,
+				D05A24A41E694A6000DB6268 /* MenuHelper.swift in Sources */,
 				21C3C3351E5E957D00836477 /* SelectedBidController.swift in Sources */,
 				D027A0E91E58D72B00B5576E /* SettingsTableViewController.swift in Sources */,
 				D0797CCF1E4979FC00BA7B19 /* JobInfoCell.swift in Sources */,

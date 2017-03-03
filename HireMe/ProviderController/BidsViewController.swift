@@ -10,7 +10,7 @@ import UIKit
 
 class BidsViewController: UITableViewController {    
 	
-	// MARK: - UITableViewDataSource methods
+	// MARK: - UITableViewDataSource
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return 6
@@ -43,4 +43,12 @@ class BidsViewController: UITableViewController {
 		
 		return cell
 	}
+    
+    
+    // MARK: - IBActions
+    
+    @IBAction func didPressMenuButton(_ sender: UIBarButtonItem) {
+        MenuHelper.showMenu(from: self)
+    }
+    
 }

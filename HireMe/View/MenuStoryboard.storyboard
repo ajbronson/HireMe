@@ -460,7 +460,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SideMenuNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ejT-K3-iX2" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="psg-oa-Oee">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="psg-oa-Oee">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -775,7 +775,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="2d2-7P-hai" userLabel="SignIn">
-                                <rect key="frame" x="24" y="212" width="327" height="286"/>
+                                <rect key="frame" x="24" y="212" width="327" height="285.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="R0U-6H-boE" userLabel="NativeChangeCreate">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="90"/>
@@ -809,7 +809,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XvG-bg-4ti" userLabel="PipeLabel">
-                                                        <rect key="frame" x="160" y="0.0" width="5" height="30"/>
+                                                        <rect key="frame" x="160.5" y="0.0" width="5" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -832,13 +832,13 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dQ-qc-eC6">
-                                        <rect key="frame" x="0.0" y="120" width="327" height="21"/>
+                                        <rect key="frame" x="0.0" y="120" width="327" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7Mu-Q8-VLx" userLabel="FBGoogle">
-                                        <rect key="frame" x="0.0" y="171" width="327" height="115"/>
+                                        <rect key="frame" x="0.0" y="170.5" width="327" height="115"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qrj-mh-WoK">
                                                 <rect key="frame" x="0.0" y="0.0" width="327" height="50"/>
@@ -906,7 +906,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SettingsNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="z1V-i0-1Zd" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J8C-4h-seo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="J8C-4h-seo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -925,7 +925,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DNl-Mj-0sa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Account" image="Account" id="Ucf-6F-CsN"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jeG-iA-4Yx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jeG-iA-4Yx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
