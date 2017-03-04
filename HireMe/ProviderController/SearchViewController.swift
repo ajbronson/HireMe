@@ -33,11 +33,4 @@ class SearchViewController: UITableViewController {
 			}
 		}
 	}
-    
-    
-    // MARK: - IBActions
-    
-    @IBAction func didPressMenuButton(_ sender: UIBarButtonItem) {
-        MenuHelper.showMenu(from: self)
-    }
 }

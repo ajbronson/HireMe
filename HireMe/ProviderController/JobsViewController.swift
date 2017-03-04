@@ -90,13 +90,6 @@ class JobsViewController: UITableViewController {
 	}
     
     
-    // MARK: - IBActions
-    
-    @IBAction func didPressMenuButton(_ sender: UIBarButtonItem) {
-        MenuHelper.showMenu(from: self)
-    }
-    
-    
     // MARK: - Custom functions
 
 	func getJobs() -> [JobStatus] {

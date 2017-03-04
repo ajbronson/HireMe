@@ -43,12 +43,4 @@ class BidsViewController: UITableViewController {
 		
 		return cell
 	}
-    
-    
-    // MARK: - IBActions
-    
-    @IBAction func didPressMenuButton(_ sender: UIBarButtonItem) {
-        MenuHelper.showMenu(from: self)
-    }
-    
 }
