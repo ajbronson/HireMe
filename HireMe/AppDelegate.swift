@@ -76,20 +76,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             print("\(error.localizedDescription)")
         }
     }
-    
-    
-    // MARK: Custom functions
-    
-    func getCurrentViewController() -> UIViewController? {
-        guard var currentVC = self.window?.rootViewController else {
-            return nil
-        }
-        
-        while let presentedVC = currentVC.presentedViewController {
-            currentVC = presentedVC
-        }
-        
-        return currentVC
-    }
 }
 

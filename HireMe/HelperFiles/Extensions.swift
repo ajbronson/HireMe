@@ -97,6 +97,29 @@ extension String {
 	}
 }
 
+
+// MARK: - UIKit extensions
+
+extension UIApplication {
+    class func visibleViewController(from viewController: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+        if let nav = viewController as? UINavigationController {
+            return visibleViewController(from: nav.visibleViewController)
+        }
+        
+        if let tab = viewController as? UITabBarController {
+            if let selected = tab.selectedViewController {
+                return visibleViewController(from: selected)
+            }
+        }
+        
+        if let presented = viewController?.presentedViewController {
+            return visibleViewController(from: presented)
+        }
+        
+        return viewController
+    }
+}
+
 extension UITableView {
     /// Hides empty cells while still keeping the bottom border of the last non-empty cell
     func hideEmptyCells() {
@@ -170,7 +193,11 @@ extension UIViewController {
     
     /// Prints the class name and storyboard ID
     var descr: String {
-        return "class: \(self.className), ID: \(self.restorationIdentifier)"
+        return "class: \(self.className), ID: \(self.restorationIdentifier), storyboard: \(self.storyboardName)"
+    }
+    
+    var storyboardName: String? {
+        return self.storyboard?.value(forKey: "name") as? String
     }
 }
 
