@@ -41,7 +41,7 @@
                                             <segue destination="DNl-Mj-0sa" kind="presentation" identifier="editAccount" id="G18-d0-pWH"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="T1o-ca-wvj" style="IBUITableViewCellStyleDefault" id="eeP-iN-ca4">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="switchModesCell" textLabel="T1o-ca-wvj" style="IBUITableViewCellStyleDefault" id="eeP-iN-ca4">
                                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eeP-iN-ca4" id="oNM-91-dRS">

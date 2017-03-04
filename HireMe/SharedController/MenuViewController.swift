@@ -55,6 +55,29 @@ class MenuViewController: UITableViewController {
     }
     
     
+    // MARK: - UITableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView.cellForRow(at: indexPath)?.reuseIdentifier == "switchModesCell" {
+            // Switch modes
+            self.dismiss(animated: true, completion: {
+                var viewController: UIViewController?
+                
+                if UIApplication.visibleViewController()?.storyboardName == "ConsumerStoryboard" {
+                    let storyboard = UIStoryboard(name: "ProviderStoryboard", bundle: nil)
+                    viewController = storyboard.instantiateViewController(withIdentifier: "ProviderTabBarController") as? UITabBarController
+                } else {
+                    let storyboard = UIStoryboard(name: "ConsumerStoryboard", bundle: nil)
+                    viewController = storyboard.instantiateViewController(withIdentifier: "RootNavConsumerView") as? UINavigationController
+                }
+                
+                let appDelegate = UIApplication.shared.delegate as? AppDelegate
+                appDelegate?.window?.rootViewController = viewController
+            })
+        }
+    }
+    
+    
     // MARK: Custom functions
     
     private func initializeUserProfile() {
