@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchViewController: UITableViewController {    
+class SearchTableViewController: UITableViewController {
     
     // MARK: - UITableViewDataSource methods
 	
