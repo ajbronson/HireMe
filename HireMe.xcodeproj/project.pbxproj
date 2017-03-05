@@ -183,10 +183,10 @@
 		21103D9C1E4AA0FF0097F595 /* ModelController */ = {
 			isa = PBXGroup;
 			children = (
-				21C3C3341E5E957D00836477 /* SelectedBidController.swift */,
 				D0797CB21E49796000BA7B19 /* BidController.swift */,
 				D0797CB41E49796000BA7B19 /* BidderController.swift */,
 				D0797CB61E49796000BA7B19 /* JobController.swift */,
+				21C3C3341E5E957D00836477 /* SelectedBidController.swift */,
 				D0797CB81E49796000BA7B19 /* SkillController.swift */,
 			);
 			path = ModelController;
@@ -279,8 +279,8 @@
 			children = (
 				D0797C8A1E49701A00BA7B19 /* BidsTableViewController.swift */,
 				D0797C8B1E49701A00BA7B19 /* CategoryTableViewController.swift */,
-				D0797C8E1E49701A00BA7B19 /* ProviderJobsTableViewController.swift */,
 				D0797C911E49701A00BA7B19 /* NewBidViewController.swift */,
+				D0797C8E1E49701A00BA7B19 /* ProviderJobsTableViewController.swift */,
 				D0797C921E49701A00BA7B19 /* ProviderTabBarController.swift */,
 				D0797C931E49701A00BA7B19 /* SearchTableViewController.swift */,
 			);
@@ -294,9 +294,9 @@
 				D0797CA31E49778600BA7B19 /* CreateAccountTableViewController.swift */,
 				D0797CA41E49778600BA7B19 /* LoginViewController.swift */,
 				D0797CA51E49778600BA7B19 /* MenuTableViewController.swift */,
-				D0797CA61E49778600BA7B19 /* ViewPhotosViewController.swift */,
 				D027A0E81E58D72B00B5576E /* SettingsTableViewController.swift */,
 				D001AB2A1E4ED920008D3251 /* SignInViewController.swift */,
+				D0797CA61E49778600BA7B19 /* ViewPhotosViewController.swift */,
 			);
 			path = SharedController;
 			sourceTree = "<group>";
@@ -307,8 +307,8 @@
 				D0797CB11E49796000BA7B19 /* Bid.swift */,
 				D0797CB31E49796000BA7B19 /* Bidder.swift */,
 				D0797CB51E49796000BA7B19 /* Job.swift */,
-				D0797CB71E49796000BA7B19 /* Skill.swift */,
 				21C3C3321E5E940400836477 /* SelectedBid.swift */,
+				D0797CB71E49796000BA7B19 /* Skill.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -328,10 +328,10 @@
 		D0797CC31E4979FC00BA7B19 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
-				21103D9D1E4AB7900097F595 /* JobImageCell.swift */,
 				D0797CC41E4979FC00BA7B19 /* BidderDescriptionCell.swift */,
 				D0797CC51E4979FC00BA7B19 /* BidderImageCell.swift */,
 				D0797CC61E4979FC00BA7B19 /* BidderInfoCell.swift */,
+				21103D9D1E4AB7900097F595 /* JobImageCell.swift */,
 				D0797CC71E4979FC00BA7B19 /* JobInfoCell.swift */,
 			);
 			path = CustomCells;
@@ -340,8 +340,8 @@
 		D0797CD31E497B1A00BA7B19 /* HelperFiles */ = {
 			isa = PBXGroup;
 			children = (
-				210EC6341E4ED0E000643FD3 /* LocationHelper.swift */,
 				D0797CD41E497B1A00BA7B19 /* AlertHelper.swift */,
+				210EC6341E4ED0E000643FD3 /* LocationHelper.swift */,
 				D0495ECA1E49804A0076A548 /* SignInHelper.swift */,
 				D0797CD51E497B1A00BA7B19 /* Extensions.swift */,
 				21103D9A1E4A99370097F595 /* Constants.swift */,
@@ -355,8 +355,8 @@
 				D0ECA6CA1E39BECC001AB162 /* LaunchScreen.storyboard */,
 				D0797CAC1E49787600BA7B19 /* ConsumerStoryboard.storyboard */,
 				D0797C9F1E49767E00BA7B19 /* ProviderStoryboard.storyboard */,
-				D0797CAD1E49787600BA7B19 /* ImageViewStoryboard.storyboard */,
 				D05A24A11E69481500DB6268 /* MenuStoryboard.storyboard */,
+				D0797CAD1E49787600BA7B19 /* ImageViewStoryboard.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
