@@ -27,7 +27,7 @@
 		D05A24AA1E694E3500DB6268 /* DarkHighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A24A71E694E3500DB6268 /* DarkHighlightButton.swift */; };
 		D05A24AB1E694E3500DB6268 /* NextPrevControlTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A24A81E694E3500DB6268 /* NextPrevControlTextField.swift */; };
 		D0797C951E49701A00BA7B19 /* BidsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8A1E49701A00BA7B19 /* BidsTableViewController.swift */; };
-		D0797C961E49701A00BA7B19 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */; };
+		D0797C961E49701A00BA7B19 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8B1E49701A00BA7B19 /* CategoryTableViewController.swift */; };
 		D0797C991E49701A00BA7B19 /* ProviderJobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8E1E49701A00BA7B19 /* ProviderJobsTableViewController.swift */; };
 		D0797C9C1E49701A00BA7B19 /* NewBidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C911E49701A00BA7B19 /* NewBidViewController.swift */; };
 		D0797C9D1E49701A00BA7B19 /* ProviderTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C921E49701A00BA7B19 /* ProviderTabBarController.swift */; };
@@ -114,7 +114,7 @@
 		D05A24A71E694E3500DB6268 /* DarkHighlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkHighlightButton.swift; sourceTree = "<group>"; };
 		D05A24A81E694E3500DB6268 /* NextPrevControlTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextPrevControlTextField.swift; sourceTree = "<group>"; };
 		D0797C8A1E49701A00BA7B19 /* BidsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidsTableViewController.swift; sourceTree = "<group>"; };
-		D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		D0797C8B1E49701A00BA7B19 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		D0797C8E1E49701A00BA7B19 /* ProviderJobsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderJobsTableViewController.swift; sourceTree = "<group>"; };
 		D0797C911E49701A00BA7B19 /* NewBidViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBidViewController.swift; sourceTree = "<group>"; };
 		D0797C921E49701A00BA7B19 /* ProviderTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderTabBarController.swift; sourceTree = "<group>"; };
@@ -278,7 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				D0797C8A1E49701A00BA7B19 /* BidsTableViewController.swift */,
-				D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */,
+				D0797C8B1E49701A00BA7B19 /* CategoryTableViewController.swift */,
 				D0797C8E1E49701A00BA7B19 /* ProviderJobsTableViewController.swift */,
 				D0797C911E49701A00BA7B19 /* NewBidViewController.swift */,
 				D0797C921E49701A00BA7B19 /* ProviderTabBarController.swift */,
@@ -699,7 +699,7 @@
 				D001AB2B1E4ED920008D3251 /* SignInViewController.swift in Sources */,
 				D05A24AA1E694E3500DB6268 /* DarkHighlightButton.swift in Sources */,
 				D0797CD11E4979FC00BA7B19 /* ViewBidderTableViewController.swift in Sources */,
-				D0797C961E49701A00BA7B19 /* CategoryViewController.swift in Sources */,
+				D0797C961E49701A00BA7B19 /* CategoryTableViewController.swift in Sources */,
 				21C3C3331E5E940400836477 /* SelectedBid.swift in Sources */,
 				21B38EFC1DCC21A4000A5CB1 /* AppDelegate.swift in Sources */,
 				D0797CCC1E4979FC00BA7B19 /* BidderDescriptionCell.swift in Sources */,

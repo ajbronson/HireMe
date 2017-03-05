@@ -234,7 +234,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <!--Category-->
         <scene sceneID="zse-sQ-T8L">
             <objects>
-                <tableViewController id="OZJ-gO-06H" customClass="CategoryViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="OZJ-gO-06H" customClass="CategoryTableViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="KPG-qd-Izp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

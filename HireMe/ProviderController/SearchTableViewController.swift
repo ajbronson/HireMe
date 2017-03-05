@@ -26,7 +26,7 @@ class SearchTableViewController: UITableViewController {
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "toCategory" {
-			if let destinationVC = segue.destination as? CategoryViewController,
+			if let destinationVC = segue.destination as? CategoryTableViewController,
 				let indexPath = tableView.indexPathForSelectedRow,
 				let cell = tableView.cellForRow(at: indexPath) {
 				destinationVC.title = cell.textLabel?.text
