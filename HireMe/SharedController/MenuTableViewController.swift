@@ -70,19 +70,6 @@ class MenuTableViewController: UITableViewController {
     }
     
     
-    // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "editAccount" {
-            if let editAccountNavC = segue.destination as? UINavigationController,
-                let accountVC = editAccountNavC.childViewControllers.first as? AccountTableViewController {
-                accountVC.fbUserProfile = self.fbUserProfile
-                accountVC.googleUserProfile = self.googleUserProfile
-            }
-        }
-    }
-    
-    
     // MARK: - UITableViewDataSource
     
     override func numberOfSections(in tableView: UITableView) -> Int {
