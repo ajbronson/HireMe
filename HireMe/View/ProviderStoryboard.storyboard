@@ -533,7 +533,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <!--My Bids-->
         <scene sceneID="Lob-pA-6VJ">
             <objects>
-                <tableViewController id="PHW-DV-B7q" customClass="BidsViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="PHW-DV-B7q" customClass="BidsTableViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="iWg-rz-9OZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -612,7 +612,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <image name="Star" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xPR-pH-VYk"/>
-        <segue reference="jkM-Ly-1T8"/>
+        <segue reference="ial-fH-XVL"/>
+        <segue reference="FrF-m5-N7p"/>
     </inferredMetricsTieBreakers>
 </document>

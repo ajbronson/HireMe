@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BidsViewController: UITableViewController {    
+class BidsTableViewController: UITableViewController {
 	
 	// MARK: - UITableViewDataSource
 	

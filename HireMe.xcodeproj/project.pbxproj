@@ -26,7 +26,7 @@
 		D05A24A91E694E3500DB6268 /* ClosureBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A24A61E694E3500DB6268 /* ClosureBarButtonItem.swift */; };
 		D05A24AA1E694E3500DB6268 /* DarkHighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A24A71E694E3500DB6268 /* DarkHighlightButton.swift */; };
 		D05A24AB1E694E3500DB6268 /* NextPrevControlTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A24A81E694E3500DB6268 /* NextPrevControlTextField.swift */; };
-		D0797C951E49701A00BA7B19 /* BidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */; };
+		D0797C951E49701A00BA7B19 /* BidsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8A1E49701A00BA7B19 /* BidsTableViewController.swift */; };
 		D0797C961E49701A00BA7B19 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */; };
 		D0797C991E49701A00BA7B19 /* ProviderJobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8E1E49701A00BA7B19 /* ProviderJobsTableViewController.swift */; };
 		D0797C9C1E49701A00BA7B19 /* NewBidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C911E49701A00BA7B19 /* NewBidViewController.swift */; };
@@ -113,7 +113,7 @@
 		D05A24A61E694E3500DB6268 /* ClosureBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureBarButtonItem.swift; sourceTree = "<group>"; };
 		D05A24A71E694E3500DB6268 /* DarkHighlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkHighlightButton.swift; sourceTree = "<group>"; };
 		D05A24A81E694E3500DB6268 /* NextPrevControlTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextPrevControlTextField.swift; sourceTree = "<group>"; };
-		D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidsViewController.swift; sourceTree = "<group>"; };
+		D0797C8A1E49701A00BA7B19 /* BidsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidsTableViewController.swift; sourceTree = "<group>"; };
 		D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		D0797C8E1E49701A00BA7B19 /* ProviderJobsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderJobsTableViewController.swift; sourceTree = "<group>"; };
 		D0797C911E49701A00BA7B19 /* NewBidViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBidViewController.swift; sourceTree = "<group>"; };
@@ -277,7 +277,7 @@
 		D0797C881E49701A00BA7B19 /* ProviderController */ = {
 			isa = PBXGroup;
 			children = (
-				D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */,
+				D0797C8A1E49701A00BA7B19 /* BidsTableViewController.swift */,
 				D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */,
 				D0797C8E1E49701A00BA7B19 /* ProviderJobsTableViewController.swift */,
 				D0797C911E49701A00BA7B19 /* NewBidViewController.swift */,
@@ -667,7 +667,7 @@
 				D0797CBB1E49796000BA7B19 /* Bidder.swift in Sources */,
 				D0797C9C1E49701A00BA7B19 /* NewBidViewController.swift in Sources */,
 				D0797CBF1E49796000BA7B19 /* Skill.swift in Sources */,
-				D0797C951E49701A00BA7B19 /* BidsViewController.swift in Sources */,
+				D0797C951E49701A00BA7B19 /* BidsTableViewController.swift in Sources */,
 				21C3C3351E5E957D00836477 /* SelectedBidController.swift in Sources */,
 				D027A0E91E58D72B00B5576E /* SettingsTableViewController.swift in Sources */,
 				D0797CCF1E4979FC00BA7B19 /* JobInfoCell.swift in Sources */,
