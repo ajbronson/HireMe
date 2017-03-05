@@ -404,6 +404,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                         <segue destination="PnE-mb-l9r" kind="relationship" relationship="viewControllers" id="p2v-uy-WnZ"/>
                         <segue destination="ZXi-FD-it0" kind="relationship" relationship="viewControllers" id="n5p-9T-QEI"/>
                         <segue destination="4Kf-1T-rXf" kind="relationship" relationship="viewControllers" id="XHP-5l-0Vk"/>
+                        <segue destination="q7u-nQ-IQi" kind="presentation" identifier="presentSignIn" id="H9l-aq-uUX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMC-jT-9It" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -483,6 +484,14 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rO-ld-qyk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2277.5999999999999" y="2389.6551724137935"/>
+        </scene>
+        <!--SignInNavigationController-->
+        <scene sceneID="ui4-Wo-JNM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MenuStoryboard" referencedIdentifier="SignInNavigationController" id="q7u-nQ-IQi" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iDL-KI-LjV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1435" y="3430"/>
         </scene>
         <!--My Jobs-->
         <scene sceneID="vVu-1f-aKu">

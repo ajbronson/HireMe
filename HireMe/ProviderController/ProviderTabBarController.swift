@@ -9,8 +9,7 @@
 import SideMenu
 
 class ProviderTabBarController: UITabBarController {
-    var tabBarItemJobs: UITabBarItem?
-    var tabBarItemBids: UITabBarItem?
+    var tabBarItemJobs, tabBarItemBids: UITabBarItem?
     
     
     // MARK: View controller life cycle
@@ -30,6 +29,7 @@ class ProviderTabBarController: UITabBarController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.enableTabBarItems), name: gSignInNotificationName, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.disableTabBarItems), name: signOutNotificationName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.presentSignInViewController), name: signInRowNotificationName, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,15 +49,19 @@ class ProviderTabBarController: UITabBarController {
     
     // MARK: - Custom functions
     
-    func enableTabBarItems() {
-        self.tabBarItemJobs?.isEnabled = true
-        self.tabBarItemBids?.isEnabled = true
-    }
-    
     func disableTabBarItems() {
         //show search VC and hide the rest
         self.selectedViewController = self.viewControllers?.first
         self.tabBarItemJobs?.isEnabled = false
         self.tabBarItemBids?.isEnabled = false
+    }
+    
+    func enableTabBarItems() {
+        self.tabBarItemJobs?.isEnabled = true
+        self.tabBarItemBids?.isEnabled = true
+    }
+    
+    func presentSignInViewController() {
+        self.performSegue(withIdentifier: "presentSignIn", sender: nil)
     }
 }
