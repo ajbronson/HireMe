@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Menu View Controller-->
+        <!--Menu Table View Controller-->
         <scene sceneID="bf0-H7-RGO">
             <objects>
-                <tableViewController storyboardIdentifier="MenuViewController" id="ljv-rt-Ykn" customClass="MenuViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="ljv-rt-Ykn" customClass="MenuTableViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="bRW-dD-3Gt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -885,7 +885,7 @@
                 <navigationController storyboardIdentifier="AccountNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DNl-Mj-0sa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Account" image="Account" id="Ucf-6F-CsN"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jeG-iA-4Yx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jeG-iA-4Yx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

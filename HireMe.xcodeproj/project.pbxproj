@@ -36,7 +36,7 @@
 		D0797CA71E49778600BA7B19 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CA21E49778600BA7B19 /* AccountViewController.swift */; };
 		D0797CA81E49778600BA7B19 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CA31E49778600BA7B19 /* CreateAccountViewController.swift */; };
 		D0797CA91E49778600BA7B19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CA41E49778600BA7B19 /* LoginViewController.swift */; };
-		D0797CAA1E49778600BA7B19 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CA51E49778600BA7B19 /* MenuViewController.swift */; };
+		D0797CAA1E49778600BA7B19 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CA51E49778600BA7B19 /* MenuTableViewController.swift */; };
 		D0797CAB1E49778600BA7B19 /* ViewPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CA61E49778600BA7B19 /* ViewPhotosViewController.swift */; };
 		D0797CAE1E49787600BA7B19 /* ConsumerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0797CAC1E49787600BA7B19 /* ConsumerStoryboard.storyboard */; };
 		D0797CAF1E49787600BA7B19 /* ImageViewStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0797CAD1E49787600BA7B19 /* ImageViewStoryboard.storyboard */; };
@@ -123,7 +123,7 @@
 		D0797CA21E49778600BA7B19 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		D0797CA31E49778600BA7B19 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		D0797CA41E49778600BA7B19 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		D0797CA51E49778600BA7B19 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		D0797CA51E49778600BA7B19 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		D0797CA61E49778600BA7B19 /* ViewPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPhotosViewController.swift; sourceTree = "<group>"; };
 		D0797CAC1E49787600BA7B19 /* ConsumerStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ConsumerStoryboard.storyboard; sourceTree = "<group>"; };
 		D0797CAD1E49787600BA7B19 /* ImageViewStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ImageViewStoryboard.storyboard; sourceTree = "<group>"; };
@@ -293,7 +293,7 @@
 				D0797CA21E49778600BA7B19 /* AccountViewController.swift */,
 				D0797CA31E49778600BA7B19 /* CreateAccountViewController.swift */,
 				D0797CA41E49778600BA7B19 /* LoginViewController.swift */,
-				D0797CA51E49778600BA7B19 /* MenuViewController.swift */,
+				D0797CA51E49778600BA7B19 /* MenuTableViewController.swift */,
 				D0797CA61E49778600BA7B19 /* ViewPhotosViewController.swift */,
 				D027A0E81E58D72B00B5576E /* SettingsTableViewController.swift */,
 				D001AB2A1E4ED920008D3251 /* SignInViewController.swift */,
@@ -672,7 +672,7 @@
 				D027A0E91E58D72B00B5576E /* SettingsTableViewController.swift in Sources */,
 				D0797CCF1E4979FC00BA7B19 /* JobInfoCell.swift in Sources */,
 				D0797CC01E49796000BA7B19 /* SkillController.swift in Sources */,
-				D0797CAA1E49778600BA7B19 /* MenuViewController.swift in Sources */,
+				D0797CAA1E49778600BA7B19 /* MenuTableViewController.swift in Sources */,
 				D0797CCB1E4979FC00BA7B19 /* ConsumerJobsTableViewController.swift in Sources */,
 				D0797CB91E49796000BA7B19 /* Bid.swift in Sources */,
 				D0797CBA1E49796000BA7B19 /* BidController.swift in Sources */,

@@ -20,7 +20,7 @@ let PROVIDER_INITIAL_VC_ID = "ProviderTabBarController"
 let CONSUMER_INITIAL_VC_ID = "RootNavConsumerView"
 let SECTION_TITLE_KEY = "sectionTitle"
 
-class MenuViewController: UITableViewController {
+class MenuTableViewController: UITableViewController {
     
     var fbUserProfile: [String: Any]?
     var googleUserProfile: [String: String]?
