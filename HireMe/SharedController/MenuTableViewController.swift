@@ -75,7 +75,7 @@ class MenuTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editAccount" {
             if let editAccountNavC = segue.destination as? UINavigationController,
-                let accountVC = editAccountNavC.childViewControllers.first as? AccountViewController {
+                let accountVC = editAccountNavC.childViewControllers.first as? AccountTableViewController {
                 accountVC.fbUserProfile = self.fbUserProfile
                 accountVC.googleUserProfile = self.googleUserProfile
             }

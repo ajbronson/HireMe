@@ -33,7 +33,7 @@
 		D0797C9D1E49701A00BA7B19 /* ProviderTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C921E49701A00BA7B19 /* ProviderTabBarController.swift */; };
 		D0797C9E1E49701A00BA7B19 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C931E49701A00BA7B19 /* SearchViewController.swift */; };
 		D0797CA01E49767E00BA7B19 /* ProviderStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0797C9F1E49767E00BA7B19 /* ProviderStoryboard.storyboard */; };
-		D0797CA71E49778600BA7B19 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CA21E49778600BA7B19 /* AccountViewController.swift */; };
+		D0797CA71E49778600BA7B19 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CA21E49778600BA7B19 /* AccountTableViewController.swift */; };
 		D0797CA81E49778600BA7B19 /* CreateAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CA31E49778600BA7B19 /* CreateAccountTableViewController.swift */; };
 		D0797CA91E49778600BA7B19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CA41E49778600BA7B19 /* LoginViewController.swift */; };
 		D0797CAA1E49778600BA7B19 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797CA51E49778600BA7B19 /* MenuTableViewController.swift */; };
@@ -120,7 +120,7 @@
 		D0797C921E49701A00BA7B19 /* ProviderTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderTabBarController.swift; sourceTree = "<group>"; };
 		D0797C931E49701A00BA7B19 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D0797C9F1E49767E00BA7B19 /* ProviderStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProviderStoryboard.storyboard; sourceTree = "<group>"; };
-		D0797CA21E49778600BA7B19 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		D0797CA21E49778600BA7B19 /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		D0797CA31E49778600BA7B19 /* CreateAccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountTableViewController.swift; sourceTree = "<group>"; };
 		D0797CA41E49778600BA7B19 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D0797CA51E49778600BA7B19 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
@@ -290,7 +290,7 @@
 		D0797CA11E49778600BA7B19 /* SharedController */ = {
 			isa = PBXGroup;
 			children = (
-				D0797CA21E49778600BA7B19 /* AccountViewController.swift */,
+				D0797CA21E49778600BA7B19 /* AccountTableViewController.swift */,
 				D0797CA31E49778600BA7B19 /* CreateAccountTableViewController.swift */,
 				D0797CA41E49778600BA7B19 /* LoginViewController.swift */,
 				D0797CA51E49778600BA7B19 /* MenuTableViewController.swift */,
@@ -693,7 +693,7 @@
 				D0797CBC1E49796000BA7B19 /* BidderController.swift in Sources */,
 				21103D9B1E4A99370097F595 /* Constants.swift in Sources */,
 				D0797C9D1E49701A00BA7B19 /* ProviderTabBarController.swift in Sources */,
-				D0797CA71E49778600BA7B19 /* AccountViewController.swift in Sources */,
+				D0797CA71E49778600BA7B19 /* AccountTableViewController.swift in Sources */,
 				D0797CCE1E4979FC00BA7B19 /* BidderInfoCell.swift in Sources */,
 				D0797CBE1E49796000BA7B19 /* JobController.swift in Sources */,
 				D001AB2B1E4ED920008D3251 /* SignInViewController.swift in Sources */,
