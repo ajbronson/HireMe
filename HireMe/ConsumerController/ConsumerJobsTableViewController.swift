@@ -16,11 +16,11 @@ class ConsumerJobTableViewController: UITableViewController {
 	var types: [JobStatus]?
 
 	override func viewWillAppear(_ animated: Bool) {
-//		let allJobs = JobController.shared.jobs
-//		jobs = allJobs.filter {$0.status == JobStatus.open.rawValue}
-//		completedJobs = allJobs.filter {$0.status == JobStatus.completed.rawValue}
-//		cancelledJobs = allJobs.filter {$0.status == JobStatus.cancelled.rawValue}
-//		types = getJobs()
+		let allJobs = JobController.shared.jobs
+		jobs = allJobs.filter {$0.status == JobStatus.open.rawValue}
+		completedJobs = allJobs.filter {$0.status == JobStatus.completed.rawValue}
+		cancelledJobs = allJobs.filter {$0.status == JobStatus.cancelled.rawValue}
+		types = getJobs()
 		tableView.reloadData()
 	}
 

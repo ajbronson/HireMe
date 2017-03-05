@@ -22,7 +22,6 @@ class JobController {
 		let job3 = Job(id: 2, name: "Test", timeFrameStart: "Jan 23, 2014", timeFrameEnd: "Jan 24, 2015", priceRangeStart: 200, priceRangeEnd: 250, industry: "House Cleaning", locationCity: "South Jordan", locationState: "UT", locationZip: "84604", description: "This is an example of a description.", status: JobStatus.awarded.rawValue, images: nil)
 
 		let job4 = Job(id: 3, name: "Test2", timeFrameStart: "Jan 23, 2014", timeFrameEnd: "Jan 24, 2015", priceRangeStart: 200, priceRangeEnd: 250, industry: "Automotive", locationCity: "South Jordan", locationState: "UT", locationZip: "84604", description: "This is an example of a description.", status: JobStatus.open.rawValue, images: nil)
-		job4.selectedBid = BidController.shared.bids[0]
 
 		jobs = [job, job2, job3, job4]
 	}

@@ -40,6 +40,7 @@ class BidController {
 		let bid5 = Bid(id: 0, bidder: bidder, job: job, price: 2225.35, description: "I can do this pretty well END", status: BidStatus.PendingResponse.rawValue)
 
 		bids = [bid, bid2, bid3, bid4, bid5]
+        job.selectedBid = bid // job4
 	}
 
 	func removeBids(passedBids: [Bid]) {

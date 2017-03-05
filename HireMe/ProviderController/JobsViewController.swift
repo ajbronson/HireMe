@@ -20,11 +20,11 @@ class JobsViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-//		let me = BidController.shared.bids[0].bidder
-//		let myjobs = JobController.shared.jobs.filter{$0.selectedBid?.bidder == me}
-//		jobs = myjobs.filter {$0.status == JobStatus.open.rawValue}
-//		completedJobs = myjobs.filter {$0.status == JobStatus.completed.rawValue}
-//		cancelledJobs = myjobs.filter {$0.status == JobStatus.cancelled.rawValue}
+		let me = BidController.shared.bids[0].bidder
+		let myjobs = JobController.shared.jobs.filter{$0.selectedBid?.bidder == me}
+		jobs = myjobs.filter {$0.status == JobStatus.open.rawValue}
+		completedJobs = myjobs.filter {$0.status == JobStatus.completed.rawValue}
+		cancelledJobs = myjobs.filter {$0.status == JobStatus.cancelled.rawValue}
 		types = getJobs()
 		tableView.reloadData()
     }
