@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateAccountViewController: UITableViewController, UITextFieldDelegate {
+class CreateAccountTableViewController: UITableViewController, UITextFieldDelegate {
     
     // MARK: - Outlets
     
