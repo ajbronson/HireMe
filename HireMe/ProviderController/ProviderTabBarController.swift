@@ -9,8 +9,8 @@
 import SideMenu
 
 class ProviderTabBarController: UITabBarController {
-    var tabBarItemJobs = UITabBarItem()
-    var tabBarItemBids = UITabBarItem()
+    var tabBarItemJobs: UITabBarItem?
+    var tabBarItemBids: UITabBarItem?
     
     
     // MARK: View controller life cycle
@@ -50,14 +50,14 @@ class ProviderTabBarController: UITabBarController {
     // MARK: - Custom functions
     
     func enableTabBarItems() {
-        self.tabBarItemJobs.isEnabled = true
-        self.tabBarItemBids.isEnabled = true
+        self.tabBarItemJobs?.isEnabled = true
+        self.tabBarItemBids?.isEnabled = true
     }
     
     func disableTabBarItems() {
         //show search VC and hide the rest
         self.selectedViewController = self.viewControllers?.first
-        self.tabBarItemJobs.isEnabled = false
-        self.tabBarItemBids.isEnabled = false
+        self.tabBarItemJobs?.isEnabled = false
+        self.tabBarItemBids?.isEnabled = false
     }
 }
