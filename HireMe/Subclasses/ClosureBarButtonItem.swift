@@ -12,13 +12,13 @@ import UIKit
 class ClosureBarButtonItem: UIBarButtonItem {
     private var actionHandler: ((Void) -> Void)?
     
-    convenience init(title: String?, style: UIBarButtonItemStyle, actionHandler: (() -> ())?) {
+    convenience init(title: String?, style: UIBarButtonItemStyle, actionHandler: (() -> Void)?) {
         self.init(title: title, style: style, target: nil, action: #selector(barButtonItemPressed))
         self.target = self
         self.actionHandler = actionHandler
     }
     
-    convenience init(image: UIImage?, style: UIBarButtonItemStyle, actionHandler: (() -> ())?) {
+    convenience init(image: UIImage?, style: UIBarButtonItemStyle, actionHandler: (() -> Void)?) {
         self.init(image: image, style: style, target: nil, action: #selector(barButtonItemPressed))
         self.target = self
         self.actionHandler = actionHandler

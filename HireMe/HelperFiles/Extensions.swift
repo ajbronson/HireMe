@@ -152,16 +152,17 @@ extension NextPrevControlTextField {
         )}
         
         let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        
-        let up = ClosureBarButtonItem(image: UIImage(named: "UpChevron"), style: .plain) { (params) in
+        let up = ClosureBarButtonItem(image: UIImage(named: "UpChevron"), style: .plain) {(
             self.transferFirstResponderToPrevControl(completionHandler: nil)
-        }
+        )}
+        up.isEnabled = self.prevControl == nil ? false : true
         
-        let down = ClosureBarButtonItem(image: UIImage(named: "DownChevron"), style: .plain) { (params) in
+        let down = ClosureBarButtonItem(image: UIImage(named: "DownChevron"), style: .plain) {(
             self.transferFirstResponderToNextControl(completionHandler: nil)
-        }
+        )}
+        down.isEnabled = self.nextControl == nil ? false : true
         
-        keyboardToolbar.items = [close, flexSpace, up, down] // Next button appears on far right
+        keyboardToolbar.items = [close, flexSpace, up, down]
         keyboardToolbar.sizeToFit()
         
         self.inputAccessoryView = keyboardToolbar
