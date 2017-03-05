@@ -10,7 +10,6 @@ import UIKit
 
 let gSignInNotificationName = Notification.Name(rawValue: "didSignInWithGoogle")
 let signOutNotificationName = Notification.Name(rawValue: "didSignOut")
-let signInRowNotificationName = Notification.Name(rawValue: "didSelectSignInRow")
 
 enum BidStatus: String {
 	case Selected = "greenIndicator"

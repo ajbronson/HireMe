@@ -10,6 +10,16 @@ import FBSDKLoginKit
 
 typealias switchModesClosure = () -> Void
 
+// MARK: - Constants
+
+let ROWS_KEY = "rows"
+let TITLE_KEY = "title"
+let SEGUE_ID_KEY = "segueID"
+let ACTION_KEY = "action"
+let PROVIDER_INITIAL_VC_ID = "ProviderTabBarController"
+let CONSUMER_INITIAL_VC_ID = "RootNavConsumerView"
+let SECTION_TITLE_KEY = "sectionTitle"
+
 class MenuViewController: UITableViewController {
     
     var fbUserProfile: [String: Any]?
@@ -21,10 +31,10 @@ class MenuViewController: UITableViewController {
         
         if UIApplication.visibleViewController()?.storyboardName == "ConsumerStoryboard" {
             let storyboard = UIStoryboard(name: "ProviderStoryboard", bundle: nil)
-            viewController = storyboard.instantiateViewController(withIdentifier: "ProviderTabBarController") as? UITabBarController
+            viewController = storyboard.instantiateViewController(withIdentifier: PROVIDER_INITIAL_VC_ID) as? UITabBarController
         } else {
             let storyboard = UIStoryboard(name: "ConsumerStoryboard", bundle: nil)
-            viewController = storyboard.instantiateViewController(withIdentifier: "RootNavConsumerView") as? UINavigationController
+            viewController = storyboard.instantiateViewController(withIdentifier: CONSUMER_INITIAL_VC_ID) as? UINavigationController
         }
         
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
@@ -55,6 +65,8 @@ class MenuViewController: UITableViewController {
         } else if let googleUser = self.googleUserProfile {
             self.name = googleUser["fullName"]
         }
+        
+        self.tableViewData[0][SECTION_TITLE_KEY] = self.name
     }
     
     
@@ -86,12 +98,12 @@ class MenuViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.name
+        return self.tableViewData[section][SECTION_TITLE_KEY] as? String
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath)
-        cell.textLabel?.text = self.tableViewDataRow(forIndexPath: indexPath)?["title"] as? String
+        cell.textLabel?.text = self.tableViewDataRow(forIndexPath: indexPath)?[TITLE_KEY] as? String
         
         return cell
     }
@@ -101,10 +113,20 @@ class MenuViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let row = self.tableViewDataRow(forIndexPath: indexPath) {
-            self.dismiss(animated: true, completion: { 
-                if let _ = row["segueID"] as? String {
-                    NotificationCenter.default.post(name: signInRowNotificationName, object: nil)
-                } else if let action = row["action"] as? switchModesClosure {
+            self.dismiss(animated: true, completion: {
+                if let segueID = row[SEGUE_ID_KEY] as? String {
+                    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate,
+                        let rootVC = appDelegate.window?.rootViewController else {
+                        return
+                    }
+                    
+                    if let tab = rootVC as? ProviderTabBarController {
+                        tab.performSegue(withIdentifier: segueID, sender: nil)
+                    } else if let nav = rootVC as? UINavigationController,
+                        let consumerJobsVC = nav.visibleViewController as? ConsumerJobTableViewController {
+                        consumerJobsVC.performSegue(withIdentifier: segueID, sender: nil)
+                    }
+                } else if let action = row[ACTION_KEY] as? switchModesClosure {
                     action() // Switch modes
                 }
             })
@@ -112,15 +134,24 @@ class MenuViewController: UITableViewController {
     }
     
     
-    // MARK: Custom functions
+    // MARK: - Custom functions
     
     private func initalizeTableViewData() {
+        // NOTE: segueID must be the same in both the consumer and provider storyboards
+        
         if isSignedIn() {
-            print("MenuViewController initalizeTableViewData() signed in")
+            self.tableViewData = [
+                [SECTION_TITLE_KEY: "",
+                 ROWS_KEY: [
+                    [TITLE_KEY: "Edit account", SEGUE_ID_KEY: "presentAccount"],
+                    [TITLE_KEY: "Settings", SEGUE_ID_KEY: "presentSettings"]
+                    ]],
+                [SECTION_TITLE_KEY: "", ROWS_KEY: [[TITLE_KEY: "Switch Modes", "action": self.switchModes]]]
+            ]
         } else {
             self.tableViewData = [
-                ["sectionTitle": "", "rows": [["title": "Sign in", "segueID": "presentSignIn"]]],
-                ["sectionTitle": "", "rows": [["title": "Switch Modes", "action": self.switchModes]]]
+                [SECTION_TITLE_KEY: "", ROWS_KEY: [[TITLE_KEY: "Sign in", SEGUE_ID_KEY: "presentSignIn"]]],
+                [SECTION_TITLE_KEY: "", ROWS_KEY: [[TITLE_KEY: "Switch Modes", ACTION_KEY: self.switchModes]]]
             ]
         }
         
@@ -154,12 +185,12 @@ class MenuViewController: UITableViewController {
     }
     
     private func tableViewDataRows(forSection section: Int) -> [[String: Any]]? {
-        return self.tableViewData[section]["rows"] as? [[String: Any]]
+        return self.tableViewData[section][ROWS_KEY] as? [[String: Any]]
     }
     
     private func tableViewDataRow(forIndexPath indexPath: IndexPath) -> [String: Any]? {
         guard let rows = self.tableViewDataRows(forSection: indexPath.section) else { return nil }
-        print("row title: \(rows[indexPath.row]["title"] as? String)")
+
         return rows[indexPath.row]
     }
 }

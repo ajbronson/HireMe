@@ -29,7 +29,6 @@ class ProviderTabBarController: UITabBarController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.enableTabBarItems), name: gSignInNotificationName, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.disableTabBarItems), name: signOutNotificationName, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.presentSignInViewController), name: signInRowNotificationName, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,9 +58,5 @@ class ProviderTabBarController: UITabBarController {
     func enableTabBarItems() {
         self.tabBarItemJobs?.isEnabled = true
         self.tabBarItemBids?.isEnabled = true
-    }
-    
-    func presentSignInViewController() {
-        self.performSegue(withIdentifier: "presentSignIn", sender: nil)
     }
 }

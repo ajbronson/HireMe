@@ -882,10 +882,10 @@
         <!--My Account-->
         <scene sceneID="d9i-qJ-oul">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DNl-Mj-0sa" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AccountNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DNl-Mj-0sa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Account" image="Account" id="Ucf-6F-CsN"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jeG-iA-4Yx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jeG-iA-4Yx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -903,7 +903,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SignInNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ThB-50-lLW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GWv-RC-kSn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GWv-RC-kSn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
