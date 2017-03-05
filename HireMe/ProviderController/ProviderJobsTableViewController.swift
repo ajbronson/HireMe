@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JobsViewController: UITableViewController {
+class ProviderJobsTableViewController: UITableViewController {
 
 	var jobs: [Job]?
 	var completedJobs: [Job]?

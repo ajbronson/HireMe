@@ -339,7 +339,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <!--My Jobs-->
         <scene sceneID="TCQ-Tq-47f">
             <objects>
-                <tableViewController id="Ndg-EZ-Gj0" customClass="JobsViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Ndg-EZ-Gj0" customClass="ProviderJobsTableViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="EFA-ss-UoY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -612,7 +612,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <image name="Star" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="RZY-OK-kP1"/>
         <segue reference="xPR-pH-VYk"/>
-        <segue reference="jkM-Ly-1T8"/>
     </inferredMetricsTieBreakers>
 </document>

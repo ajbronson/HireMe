@@ -28,7 +28,7 @@
 		D05A24AB1E694E3500DB6268 /* NextPrevControlTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A24A81E694E3500DB6268 /* NextPrevControlTextField.swift */; };
 		D0797C951E49701A00BA7B19 /* BidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */; };
 		D0797C961E49701A00BA7B19 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */; };
-		D0797C991E49701A00BA7B19 /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8E1E49701A00BA7B19 /* JobsViewController.swift */; };
+		D0797C991E49701A00BA7B19 /* ProviderJobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8E1E49701A00BA7B19 /* ProviderJobsTableViewController.swift */; };
 		D0797C9C1E49701A00BA7B19 /* NewBidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C911E49701A00BA7B19 /* NewBidViewController.swift */; };
 		D0797C9D1E49701A00BA7B19 /* ProviderTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C921E49701A00BA7B19 /* ProviderTabBarController.swift */; };
 		D0797C9E1E49701A00BA7B19 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C931E49701A00BA7B19 /* SearchViewController.swift */; };
@@ -115,7 +115,7 @@
 		D05A24A81E694E3500DB6268 /* NextPrevControlTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextPrevControlTextField.swift; sourceTree = "<group>"; };
 		D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidsViewController.swift; sourceTree = "<group>"; };
 		D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-		D0797C8E1E49701A00BA7B19 /* JobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
+		D0797C8E1E49701A00BA7B19 /* ProviderJobsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderJobsTableViewController.swift; sourceTree = "<group>"; };
 		D0797C911E49701A00BA7B19 /* NewBidViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBidViewController.swift; sourceTree = "<group>"; };
 		D0797C921E49701A00BA7B19 /* ProviderTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderTabBarController.swift; sourceTree = "<group>"; };
 		D0797C931E49701A00BA7B19 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -279,7 +279,7 @@
 			children = (
 				D0797C8A1E49701A00BA7B19 /* BidsViewController.swift */,
 				D0797C8B1E49701A00BA7B19 /* CategoryViewController.swift */,
-				D0797C8E1E49701A00BA7B19 /* JobsViewController.swift */,
+				D0797C8E1E49701A00BA7B19 /* ProviderJobsTableViewController.swift */,
 				D0797C911E49701A00BA7B19 /* NewBidViewController.swift */,
 				D0797C921E49701A00BA7B19 /* ProviderTabBarController.swift */,
 				D0797C931E49701A00BA7B19 /* SearchViewController.swift */,
@@ -686,7 +686,7 @@
 				D0797CD81E497B1A00BA7B19 /* AlertHelper.swift in Sources */,
 				210EC6351E4ED0E000643FD3 /* LocationHelper.swift in Sources */,
 				D0797CD91E497B1A00BA7B19 /* Extensions.swift in Sources */,
-				D0797C991E49701A00BA7B19 /* JobsViewController.swift in Sources */,
+				D0797C991E49701A00BA7B19 /* ProviderJobsTableViewController.swift in Sources */,
 				D0797CBD1E49796000BA7B19 /* Job.swift in Sources */,
 				D05A24A91E694E3500DB6268 /* ClosureBarButtonItem.swift in Sources */,
 				D0495ECB1E49804A0076A548 /* SignInHelper.swift in Sources */,
