@@ -137,7 +137,7 @@ class MenuTableViewController: UITableViewController {
             ]
         } else {
             self.tableViewData = [
-                [SECTION_TITLE_KEY: "", ROWS_KEY: [[TITLE_KEY: "Sign in", SEGUE_ID_KEY: "presentSignIn"]]],
+                [SECTION_TITLE_KEY: "", ROWS_KEY: [[TITLE_KEY: "Sign In", SEGUE_ID_KEY: "presentSignIn"]]],
                 [SECTION_TITLE_KEY: "", ROWS_KEY: [[TITLE_KEY: "Switch Modes", ACTION_KEY: self.switchModes]]]
             ]
         }

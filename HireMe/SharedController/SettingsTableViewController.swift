@@ -91,13 +91,4 @@ class SettingsTableViewController: UITableViewController {
     @IBAction func doneTapped(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showSignIn", let signInVC = segue.destination as? SignInViewController {
-            signInVC.didSegueFromSettings = true
-        }
-    }
 }

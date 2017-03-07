@@ -17,11 +17,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     @IBOutlet weak var emailTextField: NextPrevControlTextField!
     @IBOutlet weak var passwordTextField: NextPrevControlTextField!
     @IBOutlet weak var fbButton: UIButton!
-    
-    
-    // MARK: - Properties
-    
-    var didSegueFromSettings = false
 
     
     // MARK: - View controller life cycle
@@ -33,10 +28,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
         
         GIDSignIn.sharedInstance().uiDelegate = self
         
-        if self.didSegueFromSettings {
-            self.navigationItem.leftBarButtonItem = nil // Remove cancel button
-        }
-        
         self.emailTextField.bottomBorder()
         self.passwordTextField.bottomBorder()
     }
@@ -47,10 +38,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
         super.viewWillAppear(animated)
         self.emailTextField.text = nil
         self.passwordTextField.text = nil
-        
-        print("SignInViewController's parent \(self.parent?.descr)") // DEBUG
-        print("SignInViewController's parent's parent \(self.parent?.parent?.descr)") // DEBUG
-        print("presentingViewController \(self.presentingViewController?.descr)") // DEBUG
     }
     
     deinit {
@@ -62,13 +49,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     
     @IBAction func signInTapped(_ sender: UIButton) {
         print("Signed in with LimitedHire")
-        
-        if self.didSegueFromSettings {
-            self.dismiss(animated: true, completion: nil)
-            // TODO: sign in natively
-        } else {
-            self.performSegue(withIdentifier: "showTabsFromSignIn", sender: nil)
-        }
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func changePasswordTapped(_ sender: UIButton) {
@@ -98,12 +79,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
                     FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, picture.type(large), email"]).start { (connection, result, error) in
                         if error == nil {
                             UserDefaults.standard.set(result, forKey: "fbUserProfile")
-                            
-                            if self.didSegueFromSettings {
-                                self.dismiss(animated: false, completion: nil)
-                            } else {
-                                self.performSegue(withIdentifier: "showTabsFromSignIn", sender: nil)
-                            }
+                            self.dismiss(animated: false, completion: nil)
                         } else {
                             print("\(error?.localizedDescription)")
                         }
@@ -149,9 +125,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     }
     
     func userDidSignInWithGoogle() {
-        if self.didSegueFromSettings {
-            self.dismiss(animated: true, completion: nil)
-        }
+        self.dismiss(animated: true, completion: nil)
     }
 
 }
