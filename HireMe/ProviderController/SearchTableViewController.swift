@@ -8,15 +8,7 @@
 
 import UIKit
 
-class SearchViewController: UITableViewController {
-	
-    // MARK: - View controller life cycle
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.navigationItem.title = "Search"
-    }
-    
+class SearchTableViewController: UITableViewController {
     
     // MARK: - UITableViewDataSource methods
 	
@@ -30,11 +22,11 @@ class SearchViewController: UITableViewController {
 		return cell
 	}
 	
-	//MARK: - Segue
+	// MARK: - Navigation
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "toCategory" {
-			if let destinationVC = segue.destination as? CategoryViewController,
+			if let destinationVC = segue.destination as? CategoryTableViewController,
 				let indexPath = tableView.indexPathForSelectedRow,
 				let cell = tableView.cellForRow(at: indexPath) {
 				destinationVC.title = cell.textLabel?.text

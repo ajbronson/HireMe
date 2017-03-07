@@ -8,6 +8,9 @@
 
 import UIKit
 
+let gSignInNotificationName = Notification.Name(rawValue: "didSignInWithGoogle")
+let signOutNotificationName = Notification.Name(rawValue: "didSignOut")
+
 enum BidStatus: String {
 	case Selected = "greenIndicator"
 	case Rejected = "redIndicator"

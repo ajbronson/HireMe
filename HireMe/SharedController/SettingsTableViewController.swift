@@ -68,9 +68,12 @@ class SettingsTableViewController: UITableViewController {
                                 print("Signed out from Google") // DEBUG
                             case .ThisApp:
                                 print("Signed out from LimitedHire") // DEBUG
-                            case .NotSignedIn:
+                            default:
                                 print("Not signed in") // DEBUG
+                                break
                         }
+                        
+                        NotificationCenter.default.post(name: signOutNotificationName, object: nil)
                     })
                 }))
                 
@@ -87,14 +90,5 @@ class SettingsTableViewController: UITableViewController {
 
     @IBAction func doneTapped(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
-    }
-    
-
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showSignIn", let signInVC = segue.destination as? SignInViewController {
-            signInVC.didSegueFromSettings = true
-        }
     }
 }

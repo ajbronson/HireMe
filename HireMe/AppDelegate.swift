@@ -15,8 +15,6 @@ import GoogleSignIn
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
 	var window: UIWindow?
-    let storyboard = UIStoryboard(name: "ProviderStoryboard", bundle: Bundle.main)
-    var isProviderTabsVisible: Bool = false
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		
@@ -32,17 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         GIDSignIn.sharedInstance().delegate = self
         
-        print("Google hasAuthInKeychain: \(GIDSignIn.sharedInstance().hasAuthInKeychain())") // DEBUG
+//        print("Google hasAuthInKeychain: \(GIDSignIn.sharedInstance().hasAuthInKeychain())") // DEBUG
         
         if GIDSignIn.sharedInstance().hasAuthInKeychain() {
             // Signed in with Google
             print("Already signed in with Google") // DEBUG
             GIDSignIn.sharedInstance().signInSilently()
-            self.showProviderTabBarController()
         } else if FBSDKAccessToken.current() != nil {
             // Signed in with Facebook
             print("Already signed in with Facebook") // DEBUG
-            self.showProviderTabBarController()
         }
         
 		return true
@@ -64,8 +60,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         if error == nil {
             print("Signed in with Google") // DEBUG
 //            let userId = user.userID                  // For client-side use only!
-            let idToken = user.authentication.idToken // Safe to send to the server
-            print("Google token: \(idToken)")
+//            let idToken = user.authentication.idToken // Safe to send to the server
+//            print("Google token: \(idToken)") // DEBUG
 
             let googleUserProfile = [
                 "fullName": user.profile.name,
@@ -79,29 +75,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         } else {
             print("\(error.localizedDescription)")
         }
-    }
-    
-    
-    // MARK: Custom functions
-    
-    func showProviderTabBarController() {
-        if let rootVC = self.window?.rootViewController as? UINavigationController {
-            let providerTabBarController = self.storyboard.instantiateViewController(withIdentifier: "ProviderTabBarController") as! ProviderTabBarController
-            rootVC.pushViewController(providerTabBarController, animated: false)
-            self.isProviderTabsVisible = true
-        }
-    }
-    
-    func getCurrentViewController() -> UIViewController? {
-        guard var currentVC = self.window?.rootViewController else {
-            return nil
-        }
-        
-        while let presentedVC = currentVC.presentedViewController {
-            currentVC = presentedVC
-        }
-        
-        return currentVC
     }
 }
 

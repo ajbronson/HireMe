@@ -7,12 +7,9 @@
 //
 
 import SideMenu
-import FBSDKLoginKit
 
 class ProviderTabBarController: UITabBarController {
-    
-    private var fbUserProfile: [String: Any]?
-    private var googleUserProfile: [String: String]?
+    var tabBarItemJobs, tabBarItemBids: UITabBarItem?
     
     
     // MARK: View controller life cycle
@@ -23,21 +20,43 @@ class ProviderTabBarController: UITabBarController {
         // Customize side menu
         SideMenuManager.menuPresentMode = .menuSlideIn
         SideMenuManager.menuAnimationFadeStrength = 0.5
+        
+        if let tabBarItems = self.tabBar.items {
+            // If the order of the tabs changes in the storyboard, the indexes will have to be changed accordingly
+            self.tabBarItemJobs = tabBarItems[1] // My Jobs
+            self.tabBarItemBids = tabBarItems[2] // My Bids
+        }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.enableTabBarItems), name: gSignInNotificationName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.disableTabBarItems), name: signOutNotificationName, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isHidden = false
         
-        if isSignedIn() == false {
-            //show search VC and hide the rest
-            self.selectedViewController = self.viewControllers?.last
+        if isSignedIn() {
+            self.enableTabBarItems()
+        } else {
+            self.disableTabBarItems()
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.isProviderTabsVisible = false
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    
+    // MARK: - Custom functions
+    
+    func disableTabBarItems() {
+        //show search VC and hide the rest
+        self.selectedViewController = self.viewControllers?.first
+        self.tabBarItemJobs?.isEnabled = false
+        self.tabBarItemBids?.isEnabled = false
+    }
+    
+    func enableTabBarItems() {
+        self.tabBarItemJobs?.isEnabled = true
+        self.tabBarItemBids?.isEnabled = true
     }
 }

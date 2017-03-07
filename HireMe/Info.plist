@@ -2,12 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We&apos;re requesting your location when using the app to auto-complete new job locations</string>
-	<key>NSCameraUsageDescription</key>
-	<string>We&apos;re requesting access to your camera.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We&apos;re requesting access to your photo library.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -62,8 +56,14 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>We're requesting access to your camera.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We're requesting your location when using the app to auto-complete new job locations</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We're requesting access to your photo library.</string>
 	<key>UILaunchStoryboardName</key>
-	<string>ConsumerStoryboard</string>
+	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>ProviderStoryboard</string>
 	<key>UIRequiredDeviceCapabilities</key>

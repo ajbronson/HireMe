@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JobsViewController: UITableViewController {
+class ProviderJobsTableViewController: UITableViewController {
 
 	var jobs: [Job]?
 	var completedJobs: [Job]?
@@ -19,7 +19,6 @@ class JobsViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.navigationItem.title = "My Jobs"
 
 		let me = BidController.shared.bids[0].bidder
 		let myjobs = JobController.shared.jobs.filter{$0.selectedBid?.bidder == me}
@@ -89,6 +88,9 @@ class JobsViewController: UITableViewController {
 
 		return cell
 	}
+    
+    
+    // MARK: - Custom functions
 
 	func getJobs() -> [JobStatus] {
 		if let jobs = jobs,

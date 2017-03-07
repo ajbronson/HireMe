@@ -97,6 +97,29 @@ extension String {
 	}
 }
 
+
+// MARK: - UIKit extensions
+
+extension UIApplication {
+    class func visibleViewController(from viewController: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+        if let nav = viewController as? UINavigationController {
+            return visibleViewController(from: nav.visibleViewController)
+        }
+        
+        if let tab = viewController as? UITabBarController {
+            if let selected = tab.selectedViewController {
+                return visibleViewController(from: selected)
+            }
+        }
+        
+        if let presented = viewController?.presentedViewController {
+            return visibleViewController(from: presented)
+        }
+        
+        return viewController
+    }
+}
+
 extension UITableView {
     /// Hides empty cells while still keeping the bottom border of the last non-empty cell
     func hideEmptyCells() {
@@ -124,21 +147,22 @@ extension NextPrevControlTextField {
     func addToolbarAboveKeyboard() {
         let keyboardToolbar = UIToolbar()
 
-        let close = ClosureBarButtonItem(image: UIImage(named: "Close"), style: .plain) { (params) in
+        let close = ClosureBarButtonItem(image: UIImage(named: "Close"), style: .plain) {(
             self.resignFirstResponder()
-        }
+        )}
         
         let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        
-        let up = ClosureBarButtonItem(image: UIImage(named: "UpChevron"), style: .plain) { (params) in
+        let up = ClosureBarButtonItem(image: UIImage(named: "UpChevron"), style: .plain) {(
             self.transferFirstResponderToPrevControl(completionHandler: nil)
-        }
+        )}
+        up.isEnabled = self.prevControl == nil ? false : true
         
-        let down = ClosureBarButtonItem(image: UIImage(named: "DownChevron"), style: .plain) { (params) in
+        let down = ClosureBarButtonItem(image: UIImage(named: "DownChevron"), style: .plain) {(
             self.transferFirstResponderToNextControl(completionHandler: nil)
-        }
+        )}
+        down.isEnabled = self.nextControl == nil ? false : true
         
-        keyboardToolbar.items = [close, flexSpace, up, down] // Next button appears on far right
+        keyboardToolbar.items = [close, flexSpace, up, down]
         keyboardToolbar.sizeToFit()
         
         self.inputAccessoryView = keyboardToolbar
@@ -170,7 +194,11 @@ extension UIViewController {
     
     /// Prints the class name and storyboard ID
     var descr: String {
-        return "class: \(self.className), ID: \(self.restorationIdentifier)"
+        return "class: \(self.className), ID: \(self.restorationIdentifier), storyboard: \(self.storyboardName)"
+    }
+    
+    var storyboardName: String? {
+        return self.storyboard?.value(forKey: "name") as? String
     }
 }
 

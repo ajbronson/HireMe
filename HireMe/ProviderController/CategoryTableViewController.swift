@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CategoryViewController: UITableViewController {
+class CategoryTableViewController: UITableViewController {
 	
 	//MARK: - ViewController Lifecycle
 	
