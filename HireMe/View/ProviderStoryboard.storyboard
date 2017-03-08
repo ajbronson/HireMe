@@ -471,7 +471,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <!--Navigation Controller-->
         <scene sceneID="cHU-Fd-mCP">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PnE-mb-l9r" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SearchNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PnE-mb-l9r" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="aO3-rb-AO1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ZLp-3E-aai">
@@ -514,7 +514,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <!--My Jobs-->
         <scene sceneID="vVu-1f-aKu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZXi-FD-it0" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ProviderJobsNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZXi-FD-it0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Jobs" image="Money" id="4Cu-Py-ij7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Dvw-Vn-KCB">
@@ -587,7 +587,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <!--My Bids-->
         <scene sceneID="5IP-P1-Els">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Kf-1T-rXf" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="BidsNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4Kf-1T-rXf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Bids" image="Bid" id="y79-qf-p9r"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0lq-qw-mYg">

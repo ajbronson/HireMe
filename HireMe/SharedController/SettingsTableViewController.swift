@@ -26,7 +26,7 @@ class SettingsTableViewController: UITableViewController {
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "SignInOutCell", for: indexPath)
                 
-                if isSignedIn() {
+                if SignInHelper.isSignedIn() {
                     cell.textLabel?.text = "Sign Out"
                     cell.textLabel?.textColor = .red
                 } else {
@@ -51,7 +51,7 @@ class SettingsTableViewController: UITableViewController {
         let reuseId = tableView.cellForRow(at: indexPath)?.reuseIdentifier
         
         if reuseId == "SignInOutCell" {
-            if isSignedIn() {
+            if SignInHelper.isSignedIn() {
                 let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
                 alertController.popoverPresentationController?.sourceView = self.view
                 alertController.popoverPresentationController?.sourceRect = self.view.bounds;
@@ -59,7 +59,7 @@ class SettingsTableViewController: UITableViewController {
                 alertController.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { (action) in
                     self.dismiss(animated: true, completion: {
                         print("Signing out...") // DEBUG
-                        switch getSignInMethod() {
+                        switch SignInHelper.getSignInMethod() {
                             case .Facebook:
                                 FBSDKLoginManager().logOut()
                                 print("Signed out from Facebook") // DEBUG

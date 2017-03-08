@@ -126,7 +126,7 @@ class MenuTableViewController: UITableViewController {
     private func initalizeTableViewData() {
         // NOTE: segueID must be the same in both the consumer and provider storyboards
         
-        if isSignedIn() {
+        if SignInHelper.isSignedIn() {
             self.tableViewData = [
                 [SECTION_TITLE_KEY: "",
                  ROWS_KEY: [
@@ -147,15 +147,15 @@ class MenuTableViewController: UITableViewController {
     
     private func initializeUserProfile() {
         print("Initializing user profile...") // DEBUG
-        switch getSignInMethod() {
+        switch SignInHelper.getSignInMethod() {
             case .Facebook:
                 print("Facebook token: \(FBSDKAccessToken.current().tokenString)") // DEBUG
                 self.resetUserProfiles()
-                self.fbUserProfile = UserDefaults.standard.dictionary(forKey: "fbUserProfile")
+                self.fbUserProfile = UserDefaults.standard.dictionary(forKey: FB_PROFILE_KEY)
                 print("Facebook profile initialized") // DEBUG
             case .Google:
                 self.resetUserProfiles()
-                self.googleUserProfile = UserDefaults.standard.dictionary(forKey: "googleUserProfile") as? [String: String]
+                self.googleUserProfile = UserDefaults.standard.dictionary(forKey: GOOGLE_PROFILE_KEY) as? [String: String]
                 print("Google profile initialized") // DEBUG
             case .ThisApp:
                 print("LimitedHire profile initialized") // DEBUG

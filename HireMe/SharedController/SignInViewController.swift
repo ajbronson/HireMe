@@ -78,7 +78,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
                 if result.grantedPermissions != nil {
                     FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, picture.type(large), email"]).start { (connection, result, error) in
                         if error == nil {
-                            UserDefaults.standard.set(result, forKey: "fbUserProfile")
+                            UserDefaults.standard.set(result, forKey: FB_PROFILE_KEY)
                             self.dismiss(animated: false, completion: nil)
                         } else {
                             print("\(error?.localizedDescription)")

@@ -17,17 +17,23 @@ enum SignInMethod: String {
     case ThisApp
 }
 
-// TODO: check if signed in with LimitedHire
-func getSignInMethod() -> SignInMethod {
-    if FBSDKAccessToken.current() != nil {
-        return SignInMethod.Facebook
-    } else if GIDSignIn.sharedInstance().currentUser != nil {
-        return SignInMethod.Google
-    } else {
-        return SignInMethod.NotSignedIn
+class SignInHelper {
+    static func authAlertHasDisplayed() -> Bool {
+        return UserDefaults.standard.bool(forKey: AUTH_ALERT_KEY)
     }
-}
-
-func isSignedIn() -> Bool {
-    return !(getSignInMethod() == .NotSignedIn)
+    
+    // TODO: check if signed in with LimitedHire
+    static func getSignInMethod() -> SignInMethod {
+        if FBSDKAccessToken.current() != nil {
+            return SignInMethod.Facebook
+        } else if GIDSignIn.sharedInstance().currentUser != nil {
+            return SignInMethod.Google
+        } else {
+            return SignInMethod.NotSignedIn
+        }
+    }
+    
+    static func isSignedIn() -> Bool {
+        return !(self.getSignInMethod() == .NotSignedIn)
+    }
 }

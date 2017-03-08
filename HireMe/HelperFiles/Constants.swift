@@ -8,6 +8,9 @@
 
 import UIKit
 
+let AUTH_ALERT_KEY = "authAlertHasDisplayed"
+let FB_PROFILE_KEY = "fbUserProfile"
+let GOOGLE_PROFILE_KEY = "googleUserProfile"
 let gSignInNotificationName = Notification.Name(rawValue: "didSignInWithGoogle")
 let signOutNotificationName = Notification.Name(rawValue: "didSignOut")
 

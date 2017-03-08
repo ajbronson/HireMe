@@ -8,7 +8,7 @@
 
 import SideMenu
 
-class ProviderTabBarController: UITabBarController {
+class ProviderTabBarController: UITabBarController, UITabBarControllerDelegate {
     var tabBarItemJobs, tabBarItemBids: UITabBarItem?
     
     
@@ -16,6 +16,8 @@ class ProviderTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.delegate = self;
         
         // Customize side menu
         SideMenuManager.menuPresentMode = .menuSlideIn
@@ -34,15 +36,45 @@ class ProviderTabBarController: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if isSignedIn() {
+        if SignInHelper.isSignedIn() {
             self.enableTabBarItems()
-        } else {
+        } else if SignInHelper.authAlertHasDisplayed() {
             self.disableTabBarItems()
         }
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    
+    // MARK: - UITabBarControllerDelegate
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if SignInHelper.isSignedIn() == false && (viewController.restorationIdentifier == "ProviderJobsNavigationController" || viewController.restorationIdentifier == "BidsNavigationController") {
+            guard let jobsTitle = self.tabBarItemJobs?.title, let bidsTitle = self.tabBarItemBids?.title else {
+                return false
+            }
+            
+            let message = "You must be signed in to view \"\(jobsTitle)\" and \"\(bidsTitle)\"."
+            let alert = UIAlertController(title: "Authentication Required", message: message, preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            let signIn = UIAlertAction(title: "Sign In", style: .default, handler: { (action) in
+                guard let signInNavController = UIStoryboard(name: "MenuStoryboard", bundle: nil).instantiateViewController(withIdentifier: "SignInNavigationController") as? UINavigationController else { return }
+                self.present(signInNavController, animated: true, completion: nil)
+            })
+            
+            alert.addAction(cancel)
+            alert.addAction(signIn)
+            self.present(alert, animated: true, completion: {
+                UserDefaults.standard.set(true, forKey: AUTH_ALERT_KEY)
+                self.disableTabBarItems()
+            })
+            
+            return false
+        }
+        
+        return true
     }
     
     
