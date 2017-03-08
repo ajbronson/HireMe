@@ -21,9 +21,6 @@ let CONSUMER_INITIAL_VC_ID = "RootNavConsumerView"
 let SECTION_TITLE_KEY = "sectionTitle"
 
 class MenuTableViewController: UITableViewController {
-    
-    var fbUserProfile: [String: Any]?
-    var googleUserProfile: [String: String]?
     private var name: String?
     private var tableViewData = [[String: Any]]()
     private var switchModes = {() -> Void in
@@ -58,15 +55,11 @@ class MenuTableViewController: UITableViewController {
             self.tableView.deselectRow(at: indexPath, animated: true)
         }
         
-        self.initializeUserProfile()
-        
-        if let fbUser = self.fbUserProfile {
-            self.name = fbUser["name"] as? String
-        } else if let googleUser = self.googleUserProfile {
-            self.name = googleUser["fullName"]
+        if SignInHelper.isSignedIn(),
+            let profile = SignInHelper.userProfile(),
+            let fullName = profile["fullName"] {
+            self.tableViewData[0][SECTION_TITLE_KEY] = fullName
         }
-        
-        self.tableViewData[0][SECTION_TITLE_KEY] = self.name
     }
     
     
@@ -143,32 +136,6 @@ class MenuTableViewController: UITableViewController {
         }
         
         self.tableView.reloadData()
-    }
-    
-    private func initializeUserProfile() {
-        print("Initializing user profile...") // DEBUG
-        switch SignInHelper.getSignInMethod() {
-            case .Facebook:
-                print("Facebook token: \(FBSDKAccessToken.current().tokenString)") // DEBUG
-                self.resetUserProfiles()
-                self.fbUserProfile = UserDefaults.standard.dictionary(forKey: FB_PROFILE_KEY)
-                print("Facebook profile initialized") // DEBUG
-            case .Google:
-                self.resetUserProfiles()
-                self.googleUserProfile = UserDefaults.standard.dictionary(forKey: GOOGLE_PROFILE_KEY) as? [String: String]
-                print("Google profile initialized") // DEBUG
-            case .ThisApp:
-                print("LimitedHire profile initialized") // DEBUG
-                self.resetUserProfiles()
-            default:
-                print("Not signed in") // DEBUG
-                break
-        }
-    }
-    
-    private func resetUserProfiles() {
-        self.fbUserProfile = nil
-        self.googleUserProfile = nil
     }
     
     private func tableViewDataRows(forSection section: Int) -> [[String: Any]]? {
