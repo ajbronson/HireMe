@@ -10,14 +10,16 @@ import Foundation
 import GoogleSignIn
 import FBSDKLoginKit
 
-enum SignInMethod: String {
-    case NotSignedIn
-    case Facebook
-    case Google
-    case ThisApp
-}
-
 class SignInHelper {
+    private static let USER_PROFILE_KEY = "userProfile"
+    
+    enum SignInMethod: String {
+        case NotSignedIn
+        case Facebook
+        case Google
+        case ThisApp
+    }
+    
     static func authAlertHasDisplayed() -> Bool {
         return UserDefaults.standard.bool(forKey: AUTH_ALERT_KEY)
     }
@@ -35,5 +37,20 @@ class SignInHelper {
     
     static func isSignedIn() -> Bool {
         return !(self.getSignInMethod() == .NotSignedIn)
+    }
+    
+    static func setUserProfile(fullName: String?, firstName: String?, lastName: String?, email: String?) {
+        let userProfile = [
+            "fullName": fullName,
+            "firstName": firstName,
+            "lastName": lastName,
+            "email": email
+        ]
+        
+        UserDefaults.standard.set(userProfile, forKey: self.USER_PROFILE_KEY)
+    }
+    
+    static func userProfile() -> [String: String?]? {
+        return UserDefaults.standard.dictionary(forKey: self.USER_PROFILE_KEY) as? [String: String?]
     }
 }
