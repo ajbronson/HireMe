@@ -36,10 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             // Signed in with Google
             print("Already signed in with Google") // DEBUG
             GIDSignIn.sharedInstance().signInSilently()
-        } else if FBSDKAccessToken.current() != nil {
-            // Signed in with Facebook
-            print("Already signed in with Facebook") // DEBUG
         }
+        
+        // TODO: remove for prod
+        SignInHelper.resetAuthAlertUserDefaultsKey()
         
 		return true
 	}

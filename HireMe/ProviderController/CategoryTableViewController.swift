@@ -12,6 +12,11 @@ class CategoryTableViewController: UITableViewController {
 	
 	//MARK: - ViewController Lifecycle
 	
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tableView.hideEmptyCells()
+    }
+    
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		tabBarController?.tabBar.isHidden = false

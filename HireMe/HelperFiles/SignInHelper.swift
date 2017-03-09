@@ -11,7 +11,7 @@ import GoogleSignIn
 import FBSDKLoginKit
 
 class SignInHelper {
-    private static let USER_PROFILE_KEY = "userProfile"
+    private static let USER_PROFILE_KEY = "LH_UserProfile"
     
     enum SignInMethod: String {
         case NotSignedIn
@@ -22,6 +22,10 @@ class SignInHelper {
     
     static func authAlertHasDisplayed() -> Bool {
         return UserDefaults.standard.bool(forKey: AUTH_ALERT_KEY)
+    }
+    
+    static func resetAuthAlertUserDefaultsKey() {
+        UserDefaults.standard.removeObject(forKey: AUTH_ALERT_KEY)
     }
     
     // TODO: check if signed in with LimitedHire

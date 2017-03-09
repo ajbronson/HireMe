@@ -97,6 +97,18 @@ extension String {
 	}
 }
 
+extension UserDefaults {
+    func printKeys() {
+        print("UserDefaults Keys\n-----------------")
+        var i = 0
+        
+        for key in self.dictionaryRepresentation().keys {
+            i += 1
+            print("\(i): \(key)")
+        }
+    }
+}
+
 
 // MARK: - UIKit extensions
 

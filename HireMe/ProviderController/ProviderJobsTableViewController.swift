@@ -17,6 +17,11 @@ class ProviderJobsTableViewController: UITableViewController {
     
     // MARK: - View controller life cycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tableView.hideEmptyCells()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
