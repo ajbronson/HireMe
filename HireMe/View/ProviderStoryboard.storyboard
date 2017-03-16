@@ -273,7 +273,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YDw-g2-Keh">
-                                                    <rect key="frame" x="15" y="39" width="68" height="20.5"/>
+                                                    <rect key="frame" x="15" y="39.5" width="68" height="20.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eey-wB-fo8" userLabel="Lower Limit">
                                                             <rect key="frame" x="0.0" y="0.0" width="21" height="20.5"/>
@@ -296,7 +296,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                     </subviews>
                                                 </stackView>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="250" minValue="5" maxValue="500" translatesAutoresizingMaskIntoConstraints="NO" id="4wr-uc-51v">
-                                                    <rect key="frame" x="13" y="66" width="347" height="31"/>
+                                                    <rect key="frame" x="13" y="67" width="347" height="31"/>
                                                 </slider>
                                             </subviews>
                                             <constraints>
@@ -341,7 +341,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="within a 5 mi radius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPh-pF-qH3">
-                                                    <rect key="frame" x="121.5" y="40" width="132.5" height="18"/>
+                                                    <rect key="frame" x="121" y="40" width="133" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -405,35 +405,60 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <scene sceneID="zse-sQ-T8L">
             <objects>
                 <tableViewController id="OZJ-gO-06H" customClass="CategoryTableViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="KPG-qd-Izp">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" id="KPG-qd-Izp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" textLabel="k5m-ua-P9Y" detailTextLabel="XyJ-mO-ebG" style="IBUITableViewCellStyleSubtitle" id="BQC-Gf-a3h">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="61" id="BQC-Gf-a3h" customClass="SearchJobTableViewCell" customModule="HireMe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BQC-Gf-a3h" id="WHf-5V-2VC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="k5m-ua-P9Y">
-                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyD-Em-TSR" userLabel="Name">
+                                            <rect key="frame" x="15" y="11" width="245" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XyJ-mO-ebG">
-                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyn-Bq-kVm" userLabel="City">
+                                            <rect key="frame" x="15" y="36" width="26" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="$10-$9,999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKn-tI-cAg" userLabel="Price Range">
+                                            <rect key="frame" x="268" y="11" width="92" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mar 22 - Mar 29" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qdr-qk-YMd" userLabel="Time Frame">
+                                            <rect key="frame" x="261.5" y="36" width="98.5" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="iKn-tI-cAg" secondAttribute="trailing" constant="7" id="EQR-Ps-Y2W"/>
+                                        <constraint firstItem="jyn-Bq-kVm" firstAttribute="leading" secondItem="yyD-Em-TSR" secondAttribute="leading" id="Ege-tw-Ili"/>
+                                        <constraint firstItem="yyD-Em-TSR" firstAttribute="top" secondItem="WHf-5V-2VC" secondAttribute="topMargin" constant="3" id="KM5-kS-ihK"/>
+                                        <constraint firstItem="Qdr-qk-YMd" firstAttribute="top" secondItem="jyn-Bq-kVm" secondAttribute="top" id="Od5-On-Pzr"/>
+                                        <constraint firstItem="yyD-Em-TSR" firstAttribute="leading" secondItem="WHf-5V-2VC" secondAttribute="leadingMargin" constant="7" id="hjT-nm-Gmr"/>
+                                        <constraint firstItem="Qdr-qk-YMd" firstAttribute="trailing" secondItem="iKn-tI-cAg" secondAttribute="trailing" id="mPo-OU-kcf"/>
+                                        <constraint firstItem="iKn-tI-cAg" firstAttribute="leading" secondItem="yyD-Em-TSR" secondAttribute="trailing" constant="8" id="pMC-Xb-mBt"/>
+                                        <constraint firstItem="jyn-Bq-kVm" firstAttribute="top" secondItem="yyD-Em-TSR" secondAttribute="bottom" constant="4" id="pjK-ME-gav"/>
+                                        <constraint firstItem="iKn-tI-cAg" firstAttribute="top" secondItem="yyD-Em-TSR" secondAttribute="top" id="tOZ-Ag-D7D"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="cityLabel" destination="jyn-Bq-kVm" id="eiS-vj-LkQ"/>
+                                    <outlet property="nameLabel" destination="yyD-Em-TSR" id="Bal-PT-N1G"/>
+                                    <outlet property="priceRangeLabel" destination="iKn-tI-cAg" id="C4I-LK-8Uo"/>
+                                    <outlet property="timeFrameLabel" destination="Qdr-qk-YMd" id="IIH-yn-7h2"/>
                                     <segue destination="6y4-dI-qTG" kind="show" id="Km8-YV-SXX"/>
                                 </connections>
                             </tableViewCell>
@@ -447,7 +472,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDo-5i-El4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4220" y="2390"/>
+            <point key="canvasLocation" x="4220" y="2389.6551724137935"/>
         </scene>
         <!--New Bid-->
         <scene sceneID="beE-nQ-I76">
@@ -632,11 +657,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                 <segue destination="dRI-6i-7TL" kind="presentation" id="jkM-Ly-1T8"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Refine" id="AZx-Cq-O7k">
-                            <connections>
-                                <segue destination="dcK-8J-QHz" kind="presentation" id="Afz-dc-KwX"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Refine" id="AZx-Cq-O7k"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SUq-os-vmY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -649,7 +670,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 <navigationController storyboardIdentifier="SearchNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PnE-mb-l9r" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="aO3-rb-AO1"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZLp-3E-aai">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ZLp-3E-aai">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -692,7 +713,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 <navigationController storyboardIdentifier="ProviderJobsNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZXi-FD-it0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Jobs" image="Money" id="4Cu-Py-ij7"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dvw-Vn-KCB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Dvw-Vn-KCB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -765,7 +786,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 <navigationController storyboardIdentifier="BidsNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4Kf-1T-rXf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Bids" image="Bid" id="y79-qf-p9r"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0lq-qw-mYg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0lq-qw-mYg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -783,7 +804,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dcK-8J-QHz" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UMi-PU-heT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UMi-PU-heT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

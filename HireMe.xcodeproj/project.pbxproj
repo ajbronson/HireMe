@@ -26,6 +26,7 @@
 		D05A24A91E694E3500DB6268 /* ClosureBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A24A61E694E3500DB6268 /* ClosureBarButtonItem.swift */; };
 		D05A24AA1E694E3500DB6268 /* DarkHighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A24A71E694E3500DB6268 /* DarkHighlightButton.swift */; };
 		D05A24AB1E694E3500DB6268 /* NextPrevControlTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A24A81E694E3500DB6268 /* NextPrevControlTextField.swift */; };
+		D0759ED21E7A47280031F93A /* SearchJobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0759ED11E7A47280031F93A /* SearchJobTableViewCell.swift */; };
 		D0797C951E49701A00BA7B19 /* BidsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8A1E49701A00BA7B19 /* BidsTableViewController.swift */; };
 		D0797C961E49701A00BA7B19 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8B1E49701A00BA7B19 /* CategoryTableViewController.swift */; };
 		D0797C991E49701A00BA7B19 /* ProviderJobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0797C8E1E49701A00BA7B19 /* ProviderJobsTableViewController.swift */; };
@@ -113,6 +114,7 @@
 		D05A24A61E694E3500DB6268 /* ClosureBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureBarButtonItem.swift; sourceTree = "<group>"; };
 		D05A24A71E694E3500DB6268 /* DarkHighlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkHighlightButton.swift; sourceTree = "<group>"; };
 		D05A24A81E694E3500DB6268 /* NextPrevControlTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextPrevControlTextField.swift; sourceTree = "<group>"; };
+		D0759ED11E7A47280031F93A /* SearchJobTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchJobTableViewCell.swift; sourceTree = "<group>"; };
 		D0797C8A1E49701A00BA7B19 /* BidsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidsTableViewController.swift; sourceTree = "<group>"; };
 		D0797C8B1E49701A00BA7B19 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		D0797C8E1E49701A00BA7B19 /* ProviderJobsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderJobsTableViewController.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				D0797C8E1E49701A00BA7B19 /* ProviderJobsTableViewController.swift */,
 				D0797C921E49701A00BA7B19 /* ProviderTabBarController.swift */,
 				D0797C931E49701A00BA7B19 /* SearchTableViewController.swift */,
+				D0759ED11E7A47280031F93A /* SearchJobTableViewCell.swift */,
 			);
 			path = ProviderController;
 			sourceTree = "<group>";
@@ -697,6 +700,7 @@
 				D0797CCE1E4979FC00BA7B19 /* BidderInfoCell.swift in Sources */,
 				D0797CBE1E49796000BA7B19 /* JobController.swift in Sources */,
 				D001AB2B1E4ED920008D3251 /* SignInViewController.swift in Sources */,
+				D0759ED21E7A47280031F93A /* SearchJobTableViewCell.swift in Sources */,
 				D05A24AA1E694E3500DB6268 /* DarkHighlightButton.swift in Sources */,
 				D0797CD11E4979FC00BA7B19 /* ViewBidderTableViewController.swift in Sources */,
 				D0797C961E49701A00BA7B19 /* CategoryTableViewController.swift in Sources */,

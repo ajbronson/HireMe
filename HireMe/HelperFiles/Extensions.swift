@@ -36,10 +36,16 @@ extension UIImageView
 }
 
 extension Double {
-	func convertToCurrency(includeDollarSign: Bool) -> String? {
+    func convertToCurrency(includeDollarSign: Bool = true, truncateZeros: Bool = true) -> String? {
 		let formatter = NumberFormatter()
 		formatter.numberStyle = NumberFormatter.Style.currency
+        
+        if truncateZeros {
+            formatter.maximumFractionDigits = 0
+        }
+        
 		let money = formatter.string(from: NSNumber(value: self))
+        
 		if let money = money, !includeDollarSign && money.characters.count > 0 {
 			return money.substring(from: money.index(money.startIndex, offsetBy: 1))
 		} else {
