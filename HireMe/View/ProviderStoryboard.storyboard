@@ -424,7 +424,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyn-Bq-kVm" userLabel="City">
-                                            <rect key="frame" x="15" y="36" width="26" height="17"/>
+                                            <rect key="frame" x="15" y="36" width="239" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -435,7 +435,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mar 22 - Mar 29" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qdr-qk-YMd" userLabel="Time Frame">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Mar 22 - Mar 29" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qdr-qk-YMd" userLabel="Time Frame">
                                             <rect key="frame" x="261.5" y="36" width="98.5" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="textColor"/>
@@ -447,6 +447,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                         <constraint firstItem="jyn-Bq-kVm" firstAttribute="leading" secondItem="yyD-Em-TSR" secondAttribute="leading" id="Ege-tw-Ili"/>
                                         <constraint firstItem="yyD-Em-TSR" firstAttribute="top" secondItem="WHf-5V-2VC" secondAttribute="topMargin" constant="3" id="KM5-kS-ihK"/>
                                         <constraint firstItem="Qdr-qk-YMd" firstAttribute="top" secondItem="jyn-Bq-kVm" secondAttribute="top" id="Od5-On-Pzr"/>
+                                        <constraint firstItem="Qdr-qk-YMd" firstAttribute="leading" secondItem="jyn-Bq-kVm" secondAttribute="trailing" constant="7.5" id="SSK-81-PY8"/>
                                         <constraint firstItem="yyD-Em-TSR" firstAttribute="leading" secondItem="WHf-5V-2VC" secondAttribute="leadingMargin" constant="7" id="hjT-nm-Gmr"/>
                                         <constraint firstItem="Qdr-qk-YMd" firstAttribute="trailing" secondItem="iKn-tI-cAg" secondAttribute="trailing" id="mPo-OU-kcf"/>
                                         <constraint firstItem="iKn-tI-cAg" firstAttribute="leading" secondItem="yyD-Em-TSR" secondAttribute="trailing" constant="8" id="pMC-Xb-mBt"/>

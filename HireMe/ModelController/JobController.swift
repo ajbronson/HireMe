@@ -21,7 +21,7 @@ class JobController {
 
 		let job3 = Job(id: 2, name: "Test", timeFrameStart: "May 1, 2017", timeFrameEnd: "Aug 31, 2017", priceRangeStart: 750, priceRangeEnd: 1200, industry: "House Cleaning", locationCity: "Salt Lake City", locationState: "UT", locationZip: "84604", description: "This is an example of a description.", status: JobStatus.awarded.rawValue, images: nil)
 
-		let job4 = Job(id: 3, name: "I couldn't think of a good name for this job so it's going to be really long", timeFrameStart: "Sep 23, 2017", timeFrameEnd: "Oct 9, 2017", priceRangeStart: 1500, priceRangeEnd: 4000, industry: "Automotive", locationCity: "Orem", locationState: "UT", locationZip: "84604", description: "This is an example of a description.", status: JobStatus.open.rawValue, images: nil)
+		let job4 = Job(id: 3, name: "I couldn't think of a good name for this job so it's going to be really long", timeFrameStart: "Sep 23, 2017", timeFrameEnd: "Oct 9, 2017", priceRangeStart: 1500, priceRangeEnd: 4000, industry: "Automotive", locationCity: "Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch", locationState: "WA", locationZip: "84604", description: "This is an example of a description.", status: JobStatus.open.rawValue, images: nil)
 
 		jobs = [job, job2, job3, job4]
 	}
