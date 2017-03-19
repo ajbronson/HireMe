@@ -43,13 +43,8 @@ class ProviderJobDetailTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "presentPhotos" {
-            guard let images = job.images else {
-                return
-            }
-            
-            if let vc = segue.destination as? ViewPhotosViewController {
-                vc.images = images
-            }
+            guard let images = job.images, let vc = segue.destination as? ViewPhotosViewController else { return }
+            vc.images = images
         }
     }
 
