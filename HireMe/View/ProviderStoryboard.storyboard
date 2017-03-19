@@ -374,16 +374,24 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="BTp-gZ-Fxz"/>
                         <barButtonItem title="Make a Bid" id="UaE-SO-mx1">
                             <connections>
-                                <segue destination="uD4-Fv-mhQ" kind="presentation" id="3m4-b2-yVC"/>
+                                <segue destination="6y4-dI-qTG" kind="show" id="9kd-G3-ygg"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="OjO-Ah-hqu"/>
                     </toolbarItems>
+                    <navigationItem key="navigationItem" id="40Z-dy-IcB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="82X-Sx-FCy">
+                            <connections>
+                                <segue destination="1Ku-ef-91l" kind="unwind" unwindAction="unwindToCategoryWithSegue:" id="6bS-bF-Xk8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1l9-27-r4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="1Ku-ef-91l" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5096.8000000000002" y="2389.6551724137935"/>
+            <point key="canvasLocation" x="5940" y="2390"/>
         </scene>
         <!--Refine-->
         <scene sceneID="m9E-Ma-8IE">
@@ -614,7 +622,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                     <outlet property="nameLabel" destination="yyD-Em-TSR" id="Bal-PT-N1G"/>
                                     <outlet property="priceRangeLabel" destination="iKn-tI-cAg" id="C4I-LK-8Uo"/>
                                     <outlet property="timeFrameLabel" destination="Qdr-qk-YMd" id="IIH-yn-7h2"/>
-                                    <segue destination="2NK-eR-wYY" kind="show" id="Bsz-kT-3zW"/>
+                                    <segue destination="IeW-rh-iaN" kind="presentation" id="Bsz-kT-3zW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -648,7 +656,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ra7-va-2Ji">
-                                <rect key="frame" x="16" y="135" width="343" height="524"/>
+                                <rect key="frame" x="16" y="135" width="343" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -684,7 +692,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Yh-Ka-NeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6710" y="2390"/>
+            <point key="canvasLocation" x="6705" y="2390"/>
         </scene>
         <!--My Jobs-->
         <scene sceneID="TCQ-Tq-47f">
@@ -973,22 +981,22 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <point key="canvasLocation" x="4208.8000000000002" y="1662.8185907046477"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="VLz-qB-EF9">
+        <scene sceneID="Jiu-9V-kzh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uD4-Fv-mhQ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IeW-rh-iaN" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lzY-D0-z23">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dNC-Pd-tYZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="6y4-dI-qTG" kind="relationship" relationship="rootViewController" id="aN7-7T-0Vp"/>
+                        <segue destination="2NK-eR-wYY" kind="relationship" relationship="rootViewController" id="rX3-ka-ZnB"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KnR-P4-6OX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mvT-Nc-34i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5860" y="2389.6551724137935"/>
+            <point key="canvasLocation" x="5096.8000000000002" y="2389.6551724137935"/>
         </scene>
     </scenes>
     <resources>

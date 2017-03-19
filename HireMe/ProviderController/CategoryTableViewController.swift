@@ -34,12 +34,15 @@ class CategoryTableViewController: UITableViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? ProviderJobDetailTableViewController,
+        if let navController = segue.destination as? UINavigationController,
+            let vc = navController.childViewControllers.first as? ProviderJobDetailTableViewController,
             let cell = sender as? UITableViewCell,
             let indexPath = tableView.indexPath(for: cell) {
             vc.job = JobController.shared.jobs[indexPath.row]
         }
     }
+    
+    @IBAction func unwindToCategory(segue: UIStoryboardSegue) {}
 	
 	//MARK: - UITableViewDataSource
 	
