@@ -42,6 +42,10 @@ class ProviderJobDetailTableViewController: UITableViewController {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseID, for: indexPath) as? JobAdvertiserTableViewCell else { return UITableViewCell() }
             cell.nameLabel.text = job.advertiser.fullName
             cell.ratingsLabel.text = "(\(job.advertiser.numberOfRatings))"
+            
+            let stars = [cell.starImageView1, cell.starImageView2, cell.starImageView3, cell.starImageView4, cell.starImageView5]
+            RatingStarsHelper.show(job.advertiser.numberOfStars, stars: stars)
+            
             cell.personImageView.image = job.advertiser.image ?? UIImage(named: "Person")
             
             // Turns image view into a circle
