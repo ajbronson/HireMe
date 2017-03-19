@@ -13,7 +13,7 @@ typealias switchModesClosure = () -> Void
 // MARK: - Constants
 
 let ROWS_KEY = "rows"
-let TITLE_KEY = "title"
+fileprivate let TITLE_KEY = "title"
 let SEGUE_ID_KEY = "segueID"
 let ACTION_KEY = "action"
 let PROVIDER_INITIAL_VC_ID = "ProviderTabBarController"

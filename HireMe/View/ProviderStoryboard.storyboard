@@ -231,10 +231,10 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             </objects>
             <point key="canvasLocation" x="4220" y="3528"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Provider Job Detail Table View Controller-->
         <scene sceneID="RP8-2p-FU1">
             <objects>
-                <tableViewController id="2NK-eR-wYY" sceneMemberID="viewController">
+                <tableViewController id="2NK-eR-wYY" customClass="ProviderJobDetailTableViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="70G-N0-3tl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -271,7 +271,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="personCell" rowHeight="218" id="LM4-OL-AvF">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="personCell" rowHeight="218" id="LM4-OL-AvF" customClass="JobAdvertiserTableViewCell" customModule="HireMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="93" width="375" height="218"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LM4-OL-AvF" id="EMA-V4-VTB">
@@ -279,7 +279,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Julie Harris" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfK-UD-QTz" userLabel="Name">
-                                            <rect key="frame" x="15" y="131" width="345" height="25.5"/>
+                                            <rect key="frame" x="15" y="131" width="345" height="26"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -347,6 +347,16 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                         <constraint firstItem="kYn-yh-Omn" firstAttribute="leading" secondItem="HUW-7W-j1X" secondAttribute="trailing" constant="8" id="yV9-HJ-Pqz"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="gfK-UD-QTz" id="QxQ-EF-G7O"/>
+                                    <outlet property="personImageView" destination="YkU-Mp-h5q" id="e4b-KN-ga8"/>
+                                    <outlet property="ratingsLabel" destination="kYn-yh-Omn" id="tkP-sD-YrK"/>
+                                    <outlet property="starImageView1" destination="NqH-1y-Kof" id="gUe-5R-csh"/>
+                                    <outlet property="starImageView2" destination="Kaq-Zu-KKg" id="rSI-h6-DLu"/>
+                                    <outlet property="starImageView3" destination="YvI-H5-CwT" id="I8R-We-ate"/>
+                                    <outlet property="starImageView4" destination="NKI-mO-RtN" id="I3D-SH-u3S"/>
+                                    <outlet property="starImageView5" destination="bXg-xZ-lcc" id="jqd-Kp-olJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -576,7 +586,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Mar 22 - Mar 29" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qdr-qk-YMd" userLabel="Time Frame">
-                                            <rect key="frame" x="261.5" y="36" width="98.5" height="16"/>
+                                            <rect key="frame" x="261" y="36" width="99" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>

@@ -24,14 +24,24 @@ class CategoryTableViewController: UITableViewController {
         return formatter
     }()
 	
-	//MARK: - ViewController Lifecycle
+	//MARK: - View controller life cycle
 	
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.hideEmptyCells()
     }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? ProviderJobDetailTableViewController,
+            let cell = sender as? UITableViewCell,
+            let indexPath = tableView.indexPath(for: cell) {
+            vc.job = JobController.shared.jobs[indexPath.row]
+        }
+    }
 	
-	//MARK: - TableView Methods
+	//MARK: - UITableViewDataSource
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return JobController.shared.jobs.count
