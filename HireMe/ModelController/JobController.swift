@@ -15,7 +15,12 @@ class JobController {
 	var jobs: [Job] = []
 
 	init() {
-		let job = Job(id: 0, name: "Wifi Issue", timeFrameStart: "Jan 23, 2017", timeFrameEnd: "Jan 24, 2017", priceRangeStart: 10, priceRangeEnd: 100, industry: "Remodeling/Home Repairs", locationCity: "South Jordan", locationState: "UT", locationZip: "84604", description: "This is an example of a description.", status: JobStatus.awarded.rawValue, images: nil)
+        let user1 = User(id: 0, firstName: "Julie", lastName: "Harris", numberOfStars: 5, numberOfRatings: 45)
+        let user2 = User(id: 1, firstName: "Benjamin", lastName: "Franklin", numberOfStars: 4, numberOfRatings: 22)
+        let user3 = User(id: 2, firstName: "Wonder", lastName: "Woman", numberOfStars: 3, numberOfRatings: 199)
+        let user4 = User(id: 3, firstName: "Clark", lastName: "Kent")
+        
+        let job = Job(id: 0, name: "Wifi Issue", timeFrameStart: "Jan 23, 2017", timeFrameEnd: "Jan 24, 2017", priceRangeStart: 10, priceRangeEnd: 100, industry: "Remodeling/Home Repairs", locationCity: "South Jordan", locationState: "UT", locationZip: "84604", description: "This is an example of a description.", status: JobStatus.awarded.rawValue, images: nil)
 
 		let job2 = Job(id: 1, name: "Lawn Mowing", timeFrameStart: "Feb 14, 2017", timeFrameEnd: "Feb 21, 2017", priceRangeStart: 200, priceRangeEnd: 450, industry: "Technical Support", locationCity: "Provo", locationState: "UT", locationZip: "84604", description: "This is an example of a description.", status: JobStatus.cancelled.rawValue, images: nil)
 
