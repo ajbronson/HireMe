@@ -29,8 +29,9 @@ class Job: Equatable {
 	var dateCompleted: Date?
 	var reopenDate: Date?
 	var selectedBid: Bid?
+    var advertiser: User
 
-	init(id: Int, name: String, timeFrameStart: String?, timeFrameEnd: String?, priceRangeStart: Double?, priceRangeEnd: Double?, industry: String?, locationCity: String?, locationState: String?, locationZip: String?, description: String?, status: String = JobStatus.open.rawValue, images: [UIImage]?, dateCreated: Date = Date(), dateUpdated: Date = Date()) {
+    init(id: Int, name: String, timeFrameStart: String?, timeFrameEnd: String?, priceRangeStart: Double?, priceRangeEnd: Double?, industry: String?, locationCity: String?, locationState: String?, locationZip: String?, description: String?, status: String = JobStatus.open.rawValue, images: [UIImage]?, dateCreated: Date = Date(), dateUpdated: Date = Date(), advertiser: User) {
 		self.id = id
 		self.name = name
 		self.timeFrameStart = timeFrameStart == "" ? nil : timeFrameStart
@@ -50,6 +51,7 @@ class Job: Equatable {
 		self.dateCompleted = nil
 		self.reopenDate = nil
 		self.selectedBid = nil
+        self.advertiser = advertiser
 	}
 }
 
