@@ -25,6 +25,7 @@
 		D02E74321E7E24160066DC99 /* ProviderJobDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02E74311E7E24160066DC99 /* ProviderJobDetailTableViewController.swift */; };
 		D02E74341E7E2BAF0066DC99 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02E74331E7E2BAF0066DC99 /* User.swift */; };
 		D02E74361E7E36C00066DC99 /* RatingStarsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02E74351E7E36C00066DC99 /* RatingStarsHelper.swift */; };
+		D02E74381E7E43480066DC99 /* ProviderJobInfoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02E74371E7E43480066DC99 /* ProviderJobInfoItemTableViewCell.swift */; };
 		D03EEFA31E4C28BE006D18B1 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03EEFA21E4C28BE006D18B1 /* AdSupport.framework */; };
 		D0495ECB1E49804A0076A548 /* SignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0495ECA1E49804A0076A548 /* SignInHelper.swift */; };
 		D05A24A21E69481500DB6268 /* MenuStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D05A24A11E69481500DB6268 /* MenuStoryboard.storyboard */; };
@@ -117,6 +118,7 @@
 		D02E74311E7E24160066DC99 /* ProviderJobDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderJobDetailTableViewController.swift; sourceTree = "<group>"; };
 		D02E74331E7E2BAF0066DC99 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D02E74351E7E36C00066DC99 /* RatingStarsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingStarsHelper.swift; sourceTree = "<group>"; };
+		D02E74371E7E43480066DC99 /* ProviderJobInfoItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderJobInfoItemTableViewCell.swift; sourceTree = "<group>"; };
 		D03EEFA21E4C28BE006D18B1 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		D0495ECA1E49804A0076A548 /* SignInHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInHelper.swift; sourceTree = "<group>"; };
 		D05A24A11E69481500DB6268 /* MenuStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuStoryboard.storyboard; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 			children = (
 				D02E742D1E7E1FA80066DC99 /* SearchJobTableViewCell.swift */,
 				D02E742F1E7E220B0066DC99 /* JobAdvertiserTableViewCell.swift */,
+				D02E74371E7E43480066DC99 /* ProviderJobInfoItemTableViewCell.swift */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -720,6 +723,7 @@
 				21103D9B1E4A99370097F595 /* Constants.swift in Sources */,
 				D0797C9D1E49701A00BA7B19 /* ProviderTabBarController.swift in Sources */,
 				D0797CA71E49778600BA7B19 /* AccountTableViewController.swift in Sources */,
+				D02E74381E7E43480066DC99 /* ProviderJobInfoItemTableViewCell.swift in Sources */,
 				D0797CCE1E4979FC00BA7B19 /* BidderInfoCell.swift in Sources */,
 				D0797CBE1E49796000BA7B19 /* JobController.swift in Sources */,
 				D001AB2B1E4ED920008D3251 /* SignInViewController.swift in Sources */,

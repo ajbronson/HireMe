@@ -240,7 +240,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" rowHeight="65" id="5ZI-oM-GyU">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" rowHeight="65" id="5ZI-oM-GyU" customClass="ProviderJobInfoItemTableViewCell" customModule="HireMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5ZI-oM-GyU" id="c5i-Hj-1DO">
@@ -248,13 +248,13 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qA-Jx-zwt">
-                                            <rect key="frame" x="15" y="12" width="34" height="14.5"/>
+                                            <rect key="frame" x="15" y="12" width="345" height="15"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mlh-i7-s0U">
-                                            <rect key="frame" x="15" y="34" width="352" height="21"/>
+                                            <rect key="frame" x="15" y="34" width="345" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -262,14 +262,18 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="4qA-Jx-zwt" firstAttribute="leading" secondItem="c5i-Hj-1DO" secondAttribute="leadingMargin" constant="7" id="AQZ-gE-hAt"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Mlh-i7-s0U" secondAttribute="trailing" id="GUC-0a-e5u"/>
                                         <constraint firstItem="4qA-Jx-zwt" firstAttribute="top" secondItem="c5i-Hj-1DO" secondAttribute="topMargin" constant="4" id="HhH-S6-6yF"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="4qA-Jx-zwt" secondAttribute="trailing" constant="318" id="NxL-tB-XjZ"/>
                                         <constraint firstItem="Mlh-i7-s0U" firstAttribute="leading" secondItem="4qA-Jx-zwt" secondAttribute="leading" id="Rf4-CM-pkD"/>
+                                        <constraint firstItem="Mlh-i7-s0U" firstAttribute="trailing" secondItem="4qA-Jx-zwt" secondAttribute="trailing" id="bqI-NA-V07"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="4qA-Jx-zwt" secondAttribute="trailing" constant="7" id="kzL-ux-ail"/>
                                         <constraint firstItem="Mlh-i7-s0U" firstAttribute="top" secondItem="4qA-Jx-zwt" secondAttribute="bottom" constant="7.5" id="p2S-E2-Uky"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Mlh-i7-s0U" secondAttribute="bottom" constant="1" id="zsT-4i-fzf"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="infoLabel" destination="Mlh-i7-s0U" id="WXG-hj-VZd"/>
+                                    <outlet property="titleLabel" destination="4qA-Jx-zwt" id="FHI-qw-xiL"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="personCell" rowHeight="218" id="LM4-OL-AvF" customClass="JobAdvertiserTableViewCell" customModule="HireMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="93" width="375" height="218"/>

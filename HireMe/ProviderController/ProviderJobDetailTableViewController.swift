@@ -36,7 +36,8 @@ class ProviderJobDetailTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let reuseID = tableViewData[indexPath.row][REUSE_ID_KEY] else { return UITableViewCell() }
+        let cellInfo = tableViewData[indexPath.row]
+        guard let reuseID = cellInfo[REUSE_ID_KEY] else { return UITableViewCell() }
         
         if reuseID == PERSON_REUSE_ID {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseID, for: indexPath) as? JobAdvertiserTableViewCell else { return UITableViewCell() }
@@ -54,17 +55,65 @@ class ProviderJobDetailTableViewController: UITableViewController {
             
             return cell
         } else {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: reuseID, for: indexPath) as? JobAdvertiserTableViewCell
-            return UITableViewCell()
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseID, for: indexPath) as? ProviderJobInfoItemTableViewCell else { return UITableViewCell() }
+            cell.titleLabel.text = cellInfo[TITLE_KEY]
+            cell.infoLabel.text = cellInfo[INFO_KEY]
+            
+            return cell
         }
     }
     
     // MARK: - Private functions
     
     private func initializeTableViewData() {
+        var location = ""
+        
+        if let city = job.locationCity {
+            location += city
+        }
+        
+        if let state = job.locationState {
+            if location.characters.count > 0 {
+                location += ", "
+            }
+            
+            location += state
+        }
+        
+        if let zip = job.locationZip {
+            location += " " + zip
+        }
+        
+        var timeFrame = ""
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE MMM d"
+        
+        if let start = job.timeFrameStart?.dateFromString() {
+            timeFrame += dateFormatter.string(from: start)
+        }
+        
+        if let end = job.timeFrameEnd?.dateFromString() {
+            timeFrame += " - " + dateFormatter.string(from: end)
+        }
+        
+        var priceRange = ""
+        
+        if let startingPrice = job.priceRangeStart?.convertToCurrency() {
+            priceRange += startingPrice
+        }
+        
+        if let endingPrice = job.priceRangeEnd?.convertToCurrency() {
+            priceRange += " - " + endingPrice
+        }
+        
         tableViewData = [
             [REUSE_ID_KEY: PERSON_REUSE_ID],
-            [TITLE_KEY: "What I Need Done", INFO_KEY: job.name, REUSE_ID_KEY: INFO_REUSE_ID]
+            [TITLE_KEY: "What I Need Done", INFO_KEY: job.name, REUSE_ID_KEY: INFO_REUSE_ID],
+            [TITLE_KEY: "Industry", INFO_KEY: job.industry ?? "", REUSE_ID_KEY: INFO_REUSE_ID],
+            [TITLE_KEY: "Where", INFO_KEY: location, REUSE_ID_KEY: INFO_REUSE_ID],
+            [TITLE_KEY: "When", INFO_KEY: timeFrame, REUSE_ID_KEY: INFO_REUSE_ID],
+            [TITLE_KEY: "Expected Price", INFO_KEY: priceRange, REUSE_ID_KEY: INFO_REUSE_ID],
+            [TITLE_KEY: "Description", INFO_KEY: job.description ?? "", REUSE_ID_KEY: INFO_REUSE_ID],
         ]
     }
 }
