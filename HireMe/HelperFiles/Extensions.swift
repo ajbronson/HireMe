@@ -38,7 +38,7 @@ extension UIImageView
 extension Double {
     func convertToCurrency(includeDollarSign: Bool = true, truncateZeros: Bool = true) -> String? {
 		let formatter = NumberFormatter()
-		formatter.numberStyle = NumberFormatter.Style.currency
+		formatter.numberStyle = .currency
         
         if truncateZeros {
             formatter.maximumFractionDigits = 0
@@ -101,6 +101,15 @@ extension String {
 		let date = dateFormatter.date(from: self)
 		return date
 	}
+    
+    func toDouble(from numberStyle: NumberFormatter.Style) -> Double? {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = numberStyle
+        
+        guard let number = numberFormatter.number(from: self) else { return nil }
+        
+        return number.doubleValue
+    }
 }
 
 

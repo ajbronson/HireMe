@@ -38,6 +38,20 @@ class ProviderJobDetailTableViewController: UITableViewController {
         super.viewWillDisappear(animated)
         self.navigationController?.setToolbarHidden(true, animated: false)
     }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "presentPhotos" {
+            guard let images = job.images else {
+                return
+            }
+            
+            if let vc = segue.destination as? ViewPhotosViewController {
+                vc.images = images
+            }
+        }
+    }
 
     // MARK: - UITableViewDataSource
 
@@ -72,6 +86,18 @@ class ProviderJobDetailTableViewController: UITableViewController {
             return cell
         }
     }
+    
+    // MARK: - IBActions
+    
+    @IBAction func didTapViewPhotos(_ sender: UIBarButtonItem) {
+        guard job.images != nil else {
+            AlertHelper.showAlert(view: self, title: "No Images", message: nil, closeButtonText: "OK")
+            return
+        }
+        
+        self.performSegue(withIdentifier: "presentPhotos", sender: nil)
+    }
+    
     
     // MARK: - Private functions
     
