@@ -28,6 +28,16 @@ class ProviderJobDetailTableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         initializeTableViewData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setToolbarHidden(false, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setToolbarHidden(true, animated: false)
+    }
 
     // MARK: - UITableViewDataSource
 
