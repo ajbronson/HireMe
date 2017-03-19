@@ -103,18 +103,6 @@ extension String {
 	}
 }
 
-extension UserDefaults {
-    func printKeys() {
-        print("UserDefaults Keys\n-----------------")
-        var i = 0
-        
-        for key in self.dictionaryRepresentation().keys {
-            i += 1
-            print("\(i): \(key)")
-        }
-    }
-}
-
 
 // MARK: - UIKit extensions
 
@@ -204,7 +192,8 @@ extension UIView {
     }
 }
 
-// For debugging
+// MARK: - For debugging
+
 extension UIViewController {
     var className: String {
         return NSStringFromClass(self.classForCoder).components(separatedBy: ".").last!
@@ -220,7 +209,6 @@ extension UIViewController {
     }
 }
 
-// For debugging
 extension UINavigationController {
     func printViewControllers() {
         var i = 0
@@ -228,6 +216,18 @@ extension UINavigationController {
         for vc in self.viewControllers {
             print("viewControllers[\(i)] \(vc.descr)")
             i += 1
+        }
+    }
+}
+
+extension UserDefaults {
+    func printKeys() {
+        print("UserDefaults Keys\n-----------------")
+        var i = 0
+        
+        for key in self.dictionaryRepresentation().keys {
+            i += 1
+            print("\(i): \(key)")
         }
     }
 }
