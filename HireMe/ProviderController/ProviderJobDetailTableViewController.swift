@@ -24,6 +24,8 @@ class ProviderJobDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.hideEmptyCells()
+        tableView.estimatedRowHeight = 65
+        tableView.rowHeight = UITableViewAutomaticDimension
         initializeTableViewData()
     }
 
@@ -34,18 +36,30 @@ class ProviderJobDetailTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        guard let reuseID = tableViewData[indexPath.row][REUSE_ID_KEY] else { return UITableViewCell() }
+        
+        if reuseID == PERSON_REUSE_ID {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseID, for: indexPath) as? JobAdvertiserTableViewCell else { return UITableViewCell() }
+            cell.nameLabel.text = job.advertiser.fullName
+            cell.ratingsLabel.text = "(\(job.advertiser.numberOfRatings))"
+            cell.personImageView.image = job.advertiser.image ?? UIImage(named: "Person")
+            
+            // Turns image view into a circle
+            cell.personImageView.layer.cornerRadius = cell.personImageView.frame.size.width / 2
+            cell.personImageView.clipsToBounds = true
+            
+            return cell
+        } else {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: reuseID, for: indexPath) as? JobAdvertiserTableViewCell
+            return UITableViewCell()
+        }
     }
     
     // MARK: - Private functions
     
     private func initializeTableViewData() {
         tableViewData = [
-            [NAME_KEY: "name", REUSE_ID_KEY: PERSON_REUSE_ID],
+            [REUSE_ID_KEY: PERSON_REUSE_ID],
             [TITLE_KEY: "What I Need Done", INFO_KEY: job.name, REUSE_ID_KEY: INFO_REUSE_ID]
         ]
     }
