@@ -284,7 +284,7 @@ class NewJobTableViewController: UITableViewController, UICollectionViewDataSour
             let text = textField.text,
             text.characters.count > 0,
             let price = text.toDouble(from: .currency) {
-            textField.text = "\(price)"
+            textField.text = String(format: "%.0f", price) // round to nearest int
         }
 	}
 
