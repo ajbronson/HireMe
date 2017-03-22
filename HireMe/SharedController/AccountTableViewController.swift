@@ -9,21 +9,13 @@
 import UIKit
 
 class AccountTableViewController: UITableViewController, UITextFieldDelegate {
-	
-    // MARK: - Outlets
-    
+
     @IBOutlet weak var usernameTextField: NextPrevControlTextField!
     @IBOutlet weak var firstNameTextField: NextPrevControlTextField!
     @IBOutlet weak var lastNameTextField: NextPrevControlTextField!
     @IBOutlet weak var phoneTextField: NextPrevControlTextField!
     @IBOutlet weak var zipCodeTextField: NextPrevControlTextField!
     @IBOutlet weak var emailTextField: NextPrevControlTextField!
-    
-    
-    // MARK: - Properties
-    
-    var fbUserProfile: [String: Any]?
-    var googleUserProfile: [String: String]?
     
     
 	// MARK: - View controller life cycle
@@ -88,18 +80,13 @@ class AccountTableViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - Custom functions
     
     private func populateTextFields() {
-        var name: String?
-        var email: String?
-        
-        if let fbUser = self.fbUserProfile {
-            name = fbUser["name"] as? String
-            email = fbUser["email"] as? String
-        } else if let googleUser = self.googleUserProfile {
-            name = googleUser["fullName"]
-            email = googleUser["email"]
+        if let profile = SignInHelper.userProfile(),
+            let firstName = profile["firstName"],
+            let lastName = profile["lastName"],
+            let email = profile["email"] {
+            self.firstNameTextField.text = firstName
+            self.lastNameTextField.text = lastName
+            self.emailTextField.text = email
         }
-        
-        self.firstNameTextField.text = name
-        self.emailTextField.text = email
     }
 }

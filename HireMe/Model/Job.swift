@@ -29,8 +29,9 @@ class Job: Equatable {
 	var dateCompleted: Date?
 	var reopenDate: Date?
 	var selectedBid: Bid?
+    var advertiser: User
 
-	init(id: Int, name: String, timeFrameStart: String?, timeFrameEnd: String?, priceRangeStart: Double?, priceRangeEnd: Double?, industry: String?, locationCity: String?, locationState: String?, locationZip: String?, description: String?, status: String = JobStatus.open.rawValue, images: [UIImage]?, dateCreated: Date = Date(), dateUpdated: Date = Date()) {
+    init(id: Int, name: String, timeFrameStart: String?, timeFrameEnd: String?, priceRangeStart: Double?, priceRangeEnd: Double?, industry: String?, locationCity: String?, locationState: String?, locationZip: String?, description: String?, status: String = JobStatus.open.rawValue, images: [UIImage]?, dateCreated: Date = Date(), dateUpdated: Date = Date(), advertiser: User) {
 		self.id = id
 		self.name = name
 		self.timeFrameStart = timeFrameStart == "" ? nil : timeFrameStart
@@ -50,7 +51,33 @@ class Job: Equatable {
 		self.dateCompleted = nil
 		self.reopenDate = nil
 		self.selectedBid = nil
+        self.advertiser = advertiser
 	}
+    
+    func timeFrame(dateFormat: String) -> String {
+        var startDate: Date?
+        var timeFrame = ""
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+        
+        if let start = timeFrameStart?.dateFromString() {
+            startDate = start
+            timeFrame += dateFormatter.string(from: start)
+        }
+        
+        if let end = timeFrameEnd?.dateFromString() {
+            if let start = startDate {
+                if Calendar.current.compare(start, to: end, toGranularity: .day) != ComparisonResult.orderedSame {
+                    timeFrame += " - " + dateFormatter.string(from: end)
+                }
+            } else {
+                timeFrame += dateFormatter.string(from: end)
+            }
+        }
+        
+        return timeFrame
+    }
 }
 
 func ==(lhs: Job, rhs: Job) -> Bool {

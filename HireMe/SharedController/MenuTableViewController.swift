@@ -13,28 +13,35 @@ typealias switchModesClosure = () -> Void
 // MARK: - Constants
 
 let ROWS_KEY = "rows"
-let TITLE_KEY = "title"
+fileprivate let TITLE_KEY = "title"
 let SEGUE_ID_KEY = "segueID"
 let ACTION_KEY = "action"
 let PROVIDER_INITIAL_VC_ID = "ProviderTabBarController"
 let CONSUMER_INITIAL_VC_ID = "RootNavConsumerView"
 let SECTION_TITLE_KEY = "sectionTitle"
+let SECTION_FOOTER_TEXT_CONSUMER_KEY = "sectionFooterTextConsumer"
+let SECTION_FOOTER_TEXT_PROVIDER_KEY = "sectionFooterTextProvider"
 
 class MenuTableViewController: UITableViewController {
+    private enum UserMode {
+        case consumer
+        case provider
+    }
     
-    var fbUserProfile: [String: Any]?
-    var googleUserProfile: [String: String]?
-    private var name: String?
+    private var presentingVC: UIViewController? // This controller's presenting view controller
     private var tableViewData = [[String: Any]]()
-    private var switchModes = {() -> Void in
+    private lazy var switchModes: () -> Void = {
+        guard let userMode = self.userMode() else { return }
+        
         var viewController: UIViewController?
         
-        if UIApplication.visibleViewController()?.storyboardName == "ConsumerStoryboard" {
-            let storyboard = UIStoryboard(name: "ProviderStoryboard", bundle: nil)
-            viewController = storyboard.instantiateViewController(withIdentifier: PROVIDER_INITIAL_VC_ID) as? UITabBarController
-        } else {
-            let storyboard = UIStoryboard(name: "ConsumerStoryboard", bundle: nil)
-            viewController = storyboard.instantiateViewController(withIdentifier: CONSUMER_INITIAL_VC_ID) as? UINavigationController
+        switch (userMode) {
+            case .consumer:
+                let storyboard = UIStoryboard(name: "ProviderStoryboard", bundle: nil)
+                viewController = storyboard.instantiateViewController(withIdentifier: PROVIDER_INITIAL_VC_ID) as? UITabBarController
+            case .provider:
+                let storyboard = UIStoryboard(name: "ConsumerStoryboard", bundle: nil)
+                viewController = storyboard.instantiateViewController(withIdentifier: CONSUMER_INITIAL_VC_ID) as? UINavigationController
         }
         
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
@@ -49,6 +56,9 @@ class MenuTableViewController: UITableViewController {
         self.tableView.hideEmptyCells()
         
         self.initalizeTableViewData()
+        
+        // self.presentingViewController returns nil in self.switchModes, so it's saved to a variable here to be accessible in self.switchModes
+        self.presentingVC = self.presentingViewController
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,15 +68,11 @@ class MenuTableViewController: UITableViewController {
             self.tableView.deselectRow(at: indexPath, animated: true)
         }
         
-        self.initializeUserProfile()
-        
-        if let fbUser = self.fbUserProfile {
-            self.name = fbUser["name"] as? String
-        } else if let googleUser = self.googleUserProfile {
-            self.name = googleUser["fullName"]
+        if SignInHelper.isSignedIn(),
+            let profile = SignInHelper.userProfile(),
+            let fullName = profile["fullName"] {
+            self.tableViewData[0][SECTION_TITLE_KEY] = fullName
         }
-        
-        self.tableViewData[0][SECTION_TITLE_KEY] = self.name
     }
     
     
@@ -120,55 +126,47 @@ class MenuTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        guard let userMode = self.userMode() else { return nil }
+        
+        switch (userMode) {
+            case .consumer: return self.tableViewData[section][SECTION_FOOTER_TEXT_CONSUMER_KEY] as? String
+            case .provider: return self.tableViewData[section][SECTION_FOOTER_TEXT_PROVIDER_KEY] as? String
+        }
+    }
+    
     
     // MARK: - Custom functions
     
     private func initalizeTableViewData() {
         // NOTE: segueID must be the same in both the consumer and provider storyboards
         
-        if isSignedIn() {
+        if SignInHelper.isSignedIn() {
             self.tableViewData = [
                 [SECTION_TITLE_KEY: "",
                  ROWS_KEY: [
                     [TITLE_KEY: "Edit account", SEGUE_ID_KEY: "presentAccount"],
                     [TITLE_KEY: "Settings", SEGUE_ID_KEY: "presentSettings"]
                     ]],
-                [SECTION_TITLE_KEY: "", ROWS_KEY: [[TITLE_KEY: "Switch Modes", "action": self.switchModes]]]
+                self.switchModesSection()
             ]
         } else {
             self.tableViewData = [
                 [SECTION_TITLE_KEY: "", ROWS_KEY: [[TITLE_KEY: "Sign In", SEGUE_ID_KEY: "presentSignIn"]]],
-                [SECTION_TITLE_KEY: "", ROWS_KEY: [[TITLE_KEY: "Switch Modes", ACTION_KEY: self.switchModes]]]
+                self.switchModesSection()
             ]
         }
         
         self.tableView.reloadData()
     }
     
-    private func initializeUserProfile() {
-        print("Initializing user profile...") // DEBUG
-        switch getSignInMethod() {
-            case .Facebook:
-                print("Facebook token: \(FBSDKAccessToken.current().tokenString)") // DEBUG
-                self.resetUserProfiles()
-                self.fbUserProfile = UserDefaults.standard.dictionary(forKey: "fbUserProfile")
-                print("Facebook profile initialized") // DEBUG
-            case .Google:
-                self.resetUserProfiles()
-                self.googleUserProfile = UserDefaults.standard.dictionary(forKey: "googleUserProfile") as? [String: String]
-                print("Google profile initialized") // DEBUG
-            case .ThisApp:
-                print("LimitedHire profile initialized") // DEBUG
-                self.resetUserProfiles()
-            default:
-                print("Not signed in") // DEBUG
-                break
-        }
-    }
-    
-    private func resetUserProfiles() {
-        self.fbUserProfile = nil
-        self.googleUserProfile = nil
+    private func switchModesSection() -> [String: Any] {
+        return [
+            SECTION_TITLE_KEY: "",
+            SECTION_FOOTER_TEXT_PROVIDER_KEY: "Post jobs that you want others to complete.", // text to show when in provider mode
+            SECTION_FOOTER_TEXT_CONSUMER_KEY: "Search for and make bids on jobs you want to complete", // text to show when in consumer mode
+            ROWS_KEY: [[TITLE_KEY: "Switch Modes", "action": self.switchModes]]
+        ]
     }
     
     private func tableViewDataRows(forSection section: Int) -> [[String: Any]]? {
@@ -179,5 +177,11 @@ class MenuTableViewController: UITableViewController {
         guard let rows = self.tableViewDataRows(forSection: indexPath.section) else { return nil }
 
         return rows[indexPath.row]
+    }
+    
+    private func userMode() -> UserMode? {
+        guard let vc = self.presentingVC else { return nil }
+        
+        return vc.storyboardName == "ConsumerStoryboard" ? .consumer : .provider
     }
 }

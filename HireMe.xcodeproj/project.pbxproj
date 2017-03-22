@@ -20,6 +20,12 @@
 		A20D39D3566CC81D2A69B0E6 /* Pods_HireMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B3B5B55512633A4F50B917 /* Pods_HireMeTests.framework */; };
 		D001AB2B1E4ED920008D3251 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D001AB2A1E4ED920008D3251 /* SignInViewController.swift */; };
 		D027A0E91E58D72B00B5576E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D027A0E81E58D72B00B5576E /* SettingsTableViewController.swift */; };
+		D02E742E1E7E1FA80066DC99 /* SearchJobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02E742D1E7E1FA80066DC99 /* SearchJobTableViewCell.swift */; };
+		D02E74301E7E220B0066DC99 /* JobAdvertiserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02E742F1E7E220B0066DC99 /* JobAdvertiserTableViewCell.swift */; };
+		D02E74321E7E24160066DC99 /* ProviderJobDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02E74311E7E24160066DC99 /* ProviderJobDetailTableViewController.swift */; };
+		D02E74341E7E2BAF0066DC99 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02E74331E7E2BAF0066DC99 /* User.swift */; };
+		D02E74361E7E36C00066DC99 /* RatingStarsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02E74351E7E36C00066DC99 /* RatingStarsHelper.swift */; };
+		D02E74381E7E43480066DC99 /* ProviderJobInfoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02E74371E7E43480066DC99 /* ProviderJobInfoItemTableViewCell.swift */; };
 		D03EEFA31E4C28BE006D18B1 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03EEFA21E4C28BE006D18B1 /* AdSupport.framework */; };
 		D0495ECB1E49804A0076A548 /* SignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0495ECA1E49804A0076A548 /* SignInHelper.swift */; };
 		D05A24A21E69481500DB6268 /* MenuStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D05A24A11E69481500DB6268 /* MenuStoryboard.storyboard */; };
@@ -107,6 +113,12 @@
 		C63FA781523A1671C7EC4C65 /* Pods_HireMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HireMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D001AB2A1E4ED920008D3251 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		D027A0E81E58D72B00B5576E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		D02E742D1E7E1FA80066DC99 /* SearchJobTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchJobTableViewCell.swift; sourceTree = "<group>"; };
+		D02E742F1E7E220B0066DC99 /* JobAdvertiserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobAdvertiserTableViewCell.swift; sourceTree = "<group>"; };
+		D02E74311E7E24160066DC99 /* ProviderJobDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderJobDetailTableViewController.swift; sourceTree = "<group>"; };
+		D02E74331E7E2BAF0066DC99 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D02E74351E7E36C00066DC99 /* RatingStarsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingStarsHelper.swift; sourceTree = "<group>"; };
+		D02E74371E7E43480066DC99 /* ProviderJobInfoItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderJobInfoItemTableViewCell.swift; sourceTree = "<group>"; };
 		D03EEFA21E4C28BE006D18B1 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		D0495ECA1E49804A0076A548 /* SignInHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInHelper.swift; sourceTree = "<group>"; };
 		D05A24A11E69481500DB6268 /* MenuStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuStoryboard.storyboard; sourceTree = "<group>"; };
@@ -264,6 +276,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D02E742C1E7E1FA80066DC99 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				D02E742D1E7E1FA80066DC99 /* SearchJobTableViewCell.swift */,
+				D02E742F1E7E220B0066DC99 /* JobAdvertiserTableViewCell.swift */,
+				D02E74371E7E43480066DC99 /* ProviderJobInfoItemTableViewCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
 		D05A24A51E694E3500DB6268 /* Subclasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,9 +299,11 @@
 		D0797C881E49701A00BA7B19 /* ProviderController */ = {
 			isa = PBXGroup;
 			children = (
+				D02E742C1E7E1FA80066DC99 /* CustomCells */,
 				D0797C8A1E49701A00BA7B19 /* BidsTableViewController.swift */,
 				D0797C8B1E49701A00BA7B19 /* CategoryTableViewController.swift */,
 				D0797C911E49701A00BA7B19 /* NewBidViewController.swift */,
+				D02E74311E7E24160066DC99 /* ProviderJobDetailTableViewController.swift */,
 				D0797C8E1E49701A00BA7B19 /* ProviderJobsTableViewController.swift */,
 				D0797C921E49701A00BA7B19 /* ProviderTabBarController.swift */,
 				D0797C931E49701A00BA7B19 /* SearchTableViewController.swift */,
@@ -309,6 +333,7 @@
 				D0797CB51E49796000BA7B19 /* Job.swift */,
 				21C3C3321E5E940400836477 /* SelectedBid.swift */,
 				D0797CB71E49796000BA7B19 /* Skill.swift */,
+				D02E74331E7E2BAF0066DC99 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -342,6 +367,7 @@
 			children = (
 				D0797CD41E497B1A00BA7B19 /* AlertHelper.swift */,
 				210EC6341E4ED0E000643FD3 /* LocationHelper.swift */,
+				D02E74351E7E36C00066DC99 /* RatingStarsHelper.swift */,
 				D0495ECA1E49804A0076A548 /* SignInHelper.swift */,
 				D0797CD51E497B1A00BA7B19 /* Extensions.swift */,
 				21103D9A1E4A99370097F595 /* Constants.swift */,
@@ -676,14 +702,17 @@
 				D0797CCB1E4979FC00BA7B19 /* ConsumerJobsTableViewController.swift in Sources */,
 				D0797CB91E49796000BA7B19 /* Bid.swift in Sources */,
 				D0797CBA1E49796000BA7B19 /* BidController.swift in Sources */,
+				D02E74361E7E36C00066DC99 /* RatingStarsHelper.swift in Sources */,
 				D0797C9E1E49701A00BA7B19 /* SearchTableViewController.swift in Sources */,
 				D0797CAB1E49778600BA7B19 /* ViewPhotosViewController.swift in Sources */,
 				D0797CCD1E4979FC00BA7B19 /* BidderImageCell.swift in Sources */,
 				21103D9E1E4AB7900097F595 /* JobImageCell.swift in Sources */,
 				D0797CA91E49778600BA7B19 /* LoginViewController.swift in Sources */,
+				D02E74301E7E220B0066DC99 /* JobAdvertiserTableViewCell.swift in Sources */,
 				D0797CD01E4979FC00BA7B19 /* NewJobTableViewController.swift in Sources */,
 				D05A24AB1E694E3500DB6268 /* NextPrevControlTextField.swift in Sources */,
 				D0797CD81E497B1A00BA7B19 /* AlertHelper.swift in Sources */,
+				D02E74341E7E2BAF0066DC99 /* User.swift in Sources */,
 				210EC6351E4ED0E000643FD3 /* LocationHelper.swift in Sources */,
 				D0797CD91E497B1A00BA7B19 /* Extensions.swift in Sources */,
 				D0797C991E49701A00BA7B19 /* ProviderJobsTableViewController.swift in Sources */,
@@ -694,13 +723,16 @@
 				21103D9B1E4A99370097F595 /* Constants.swift in Sources */,
 				D0797C9D1E49701A00BA7B19 /* ProviderTabBarController.swift in Sources */,
 				D0797CA71E49778600BA7B19 /* AccountTableViewController.swift in Sources */,
+				D02E74381E7E43480066DC99 /* ProviderJobInfoItemTableViewCell.swift in Sources */,
 				D0797CCE1E4979FC00BA7B19 /* BidderInfoCell.swift in Sources */,
 				D0797CBE1E49796000BA7B19 /* JobController.swift in Sources */,
 				D001AB2B1E4ED920008D3251 /* SignInViewController.swift in Sources */,
+				D02E742E1E7E1FA80066DC99 /* SearchJobTableViewCell.swift in Sources */,
 				D05A24AA1E694E3500DB6268 /* DarkHighlightButton.swift in Sources */,
 				D0797CD11E4979FC00BA7B19 /* ViewBidderTableViewController.swift in Sources */,
 				D0797C961E49701A00BA7B19 /* CategoryTableViewController.swift in Sources */,
 				21C3C3331E5E940400836477 /* SelectedBid.swift in Sources */,
+				D02E74321E7E24160066DC99 /* ProviderJobDetailTableViewController.swift in Sources */,
 				21B38EFC1DCC21A4000A5CB1 /* AppDelegate.swift in Sources */,
 				D0797CCC1E4979FC00BA7B19 /* BidderDescriptionCell.swift in Sources */,
 			);

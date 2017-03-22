@@ -77,8 +77,8 @@ class NewJobTableViewController: UITableViewController, UICollectionViewDataSour
 		typeTextField.text = job.industry
 		timeStartTextField.text = job.timeFrameStart
 		timeEndTextField.text = job.timeFrameEnd
-		priceLowerTextField.text = job.priceRangeStart?.convertToCurrency(includeDollarSign: false)
-		priceUpperTextField.text = job.priceRangeEnd?.convertToCurrency(includeDollarSign: false)
+        priceLowerTextField.text = job.priceRangeStart?.convertToCurrency()
+        priceUpperTextField.text = job.priceRangeEnd?.convertToCurrency()
 		descriptionTextView.text = job.description
 		cityTextField.text = job.locationCity
 		stateTextField.text = job.locationState
@@ -110,15 +110,29 @@ class NewJobTableViewController: UITableViewController, UICollectionViewDataSour
 			vc.showImages(images: images, senderView: self, selfView: vc, selectedIndex: indexPath.row)
 		}
 	}
+    
+    // If user saves while still editing a price range field, the value will be a double, not currency. This function will return a double regardless of the current format of the text
+    private func priceAsDouble(from string: String?) -> Double? {
+        guard let str = string else { return nil }
+        
+        if let priceFromCurrency = str.toDouble(from: .currency) {
+            return priceFromCurrency
+        } else if let priceFromDouble = Double(str) {
+            return priceFromDouble
+        }
+        
+        return nil
+    }
 
 	@IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
-		guard let title = titleTextField.text,
-			let priceLowerString = priceLowerTextField.text,
-			let priceUpperString = priceUpperTextField.text,
-			let priceLower = Double(priceLowerString),
-			let priceUpper = Double(priceUpperString),
-			title.characters.count > 0 else { AlertHelper.showAlert(view: self, title: "Error", message: "Must supply Title and Upper and Lower Price fields", closeButtonText: "OK"); return }
-
+        guard let title = titleTextField.text,
+            let priceLower = priceAsDouble(from: priceLowerTextField.text),
+            let priceUpper = priceAsDouble(from: priceUpperTextField.text),
+            title.characters.count > 0 else {
+                AlertHelper.showAlert(view: self, title: "Error", message: "Must supply Title and Upper and Lower Price fields", closeButtonText: "OK")
+                return
+        }
+        
 		if priceLower > priceUpper {
 			AlertHelper.showAlert(view: self, title: "Error", message: "Lower Price Range must be less than or equal to Upper Price Range", closeButtonText: "Dismiss")
 			return
@@ -164,7 +178,7 @@ class NewJobTableViewController: UITableViewController, UICollectionViewDataSour
 			text.characters.count > 0,
 			textField == priceLowerTextField || textField == priceUpperTextField {
 			let price = Double(text)
-			textField.text = price?.convertToCurrency(includeDollarSign: false)
+			textField.text = price?.convertToCurrency()
 		} else if let timeStart = timeStartTextField.text,
 			let timeEnd = timeEndTextField.text,
 			timeStart.characters.count == 0,
@@ -266,7 +280,12 @@ class NewJobTableViewController: UITableViewController, UICollectionViewDataSour
 					typeTextField.text = AppInfo.industries[0]
 				}
 			}
-		}
+        } else if textField == priceLowerTextField || textField == priceUpperTextField,
+            let text = textField.text,
+            text.characters.count > 0,
+            let price = text.toDouble(from: .currency) {
+            textField.text = String(format: "%.0f", price) // round to nearest int
+        }
 	}
 
 	func numberOfComponents(in pickerView: UIPickerView) -> Int {

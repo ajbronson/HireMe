@@ -10,6 +10,14 @@ import UIKit
 
 class SearchTableViewController: UITableViewController {
     
+    // MARK: - View controller life cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tableView.hideEmptyCells()
+    }
+    
+    
     // MARK: - UITableViewDataSource methods
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -22,6 +30,7 @@ class SearchTableViewController: UITableViewController {
 		return cell
 	}
 	
+    
 	// MARK: - Navigation
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

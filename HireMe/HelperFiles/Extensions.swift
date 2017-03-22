@@ -36,10 +36,16 @@ extension UIImageView
 }
 
 extension Double {
-	func convertToCurrency(includeDollarSign: Bool) -> String? {
+    func convertToCurrency(includeDollarSign: Bool = true, truncateZeros: Bool = true) -> String? {
 		let formatter = NumberFormatter()
-		formatter.numberStyle = NumberFormatter.Style.currency
+		formatter.numberStyle = .currency
+        
+        if truncateZeros {
+            formatter.maximumFractionDigits = 0
+        }
+        
 		let money = formatter.string(from: NSNumber(value: self))
+        
 		if let money = money, !includeDollarSign && money.characters.count > 0 {
 			return money.substring(from: money.index(money.startIndex, offsetBy: 1))
 		} else {
@@ -95,6 +101,15 @@ extension String {
 		let date = dateFormatter.date(from: self)
 		return date
 	}
+    
+    func toDouble(from numberStyle: NumberFormatter.Style) -> Double? {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = numberStyle
+        
+        guard let number = numberFormatter.number(from: self) else { return nil }
+        
+        return number.doubleValue
+    }
 }
 
 
@@ -186,7 +201,8 @@ extension UIView {
     }
 }
 
-// For debugging
+// MARK: - For debugging
+
 extension UIViewController {
     var className: String {
         return NSStringFromClass(self.classForCoder).components(separatedBy: ".").last!
@@ -202,7 +218,6 @@ extension UIViewController {
     }
 }
 
-// For debugging
 extension UINavigationController {
     func printViewControllers() {
         var i = 0
@@ -210,6 +225,18 @@ extension UINavigationController {
         for vc in self.viewControllers {
             print("viewControllers[\(i)] \(vc.descr)")
             i += 1
+        }
+    }
+}
+
+extension UserDefaults {
+    func printKeys() {
+        print("UserDefaults Keys\n-----------------")
+        var i = 0
+        
+        for key in self.dictionaryRepresentation().keys {
+            i += 1
+            print("\(i): \(key)")
         }
     }
 }

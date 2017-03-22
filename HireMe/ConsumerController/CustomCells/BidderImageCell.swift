@@ -45,22 +45,8 @@ class BidderImageCell: UITableViewCell {
 			priceLabel.text = price.convertToCurrency(includeDollarSign: true)
 		}
 
-		for i in 1...5 {
-			switch i {
-			case 1:
-				starImage1.image = bidder.numberOfStars > 0 ? UIImage(named: "Star") : UIImage(named: "BlankStar")
-			case 2:
-				starImage2.image = bidder.numberOfStars > 1 ? UIImage(named: "Star") : UIImage(named: "BlankStar")
-			case 3:
-				starImage3.image = bidder.numberOfStars > 2 ? UIImage(named: "Star") : UIImage(named: "BlankStar")
-			case 4:
-				starImage4.image = bidder.numberOfStars > 3 ? UIImage(named: "Star") : UIImage(named: "BlankStar")
-			case 5:
-				starImage5.image = bidder.numberOfStars > 4 ? UIImage(named: "Star") : UIImage(named: "BlankStar")
-			default:
-				break
-			}
-		}
+		let stars = [starImage1, starImage2, starImage3, starImage4, starImage5]
+        RatingStarsHelper.show(bidder.numberOfStars, stars: stars)
 
 		if job.status == JobStatus.cancelled.rawValue || job.status == JobStatus.completed.rawValue {
 			acceptButton.isEnabled = false

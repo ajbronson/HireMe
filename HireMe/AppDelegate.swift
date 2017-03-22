@@ -36,10 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             // Signed in with Google
             print("Already signed in with Google") // DEBUG
             GIDSignIn.sharedInstance().signInSilently()
-        } else if FBSDKAccessToken.current() != nil {
-            // Signed in with Facebook
-            print("Already signed in with Facebook") // DEBUG
         }
+        
+        // TODO: remove for prod
+        SignInHelper.resetAuthAlertUserDefaultsKey()
         
 		return true
 	}
@@ -62,15 +62,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 //            let userId = user.userID                  // For client-side use only!
 //            let idToken = user.authentication.idToken // Safe to send to the server
 //            print("Google token: \(idToken)") // DEBUG
-
-            let googleUserProfile = [
-                "fullName": user.profile.name,
-                "givenName": user.profile.givenName,
-                "familyName": user.profile.familyName,
-                "email": user.profile.email
-            ]
             
-            UserDefaults.standard.set(googleUserProfile, forKey: "googleUserProfile")
+            SignInHelper.setUserProfile(fullName: user.profile.name,
+                                        firstName: user.profile.givenName,
+                                        lastName: user.profile.familyName,
+                                        email: user.profile.email)
             NotificationCenter.default.post(name: gSignInNotificationName, object: nil)
         } else {
             print("\(error.localizedDescription)")

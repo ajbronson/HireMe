@@ -10,6 +10,14 @@ import UIKit
 
 class BidsTableViewController: UITableViewController {
 	
+    // MARK: - View controller life cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tableView.hideEmptyCells()
+    }
+    
+    
 	// MARK: - UITableViewDataSource
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -12,8 +12,6 @@ import FBSDKLoginKit
 
 class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
     
-    // MARK: - Outlets
-    
     @IBOutlet weak var emailTextField: NextPrevControlTextField!
     @IBOutlet weak var passwordTextField: NextPrevControlTextField!
     @IBOutlet weak var fbButton: UIButton!
@@ -76,10 +74,17 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
                 }
                 
                 if result.grantedPermissions != nil {
-                    FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, picture.type(large), email"]).start { (connection, result, error) in
+                    FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, first_name, last_name, email"]).start { (connection, result, error) in
                         if error == nil {
-                            UserDefaults.standard.set(result, forKey: "fbUserProfile")
-                            self.dismiss(animated: false, completion: nil)
+                            guard let profile = result as? [String: Any] else {
+                                return
+                            }
+                            
+                            SignInHelper.setUserProfile(fullName: profile["name"] as? String,
+                                                        firstName: profile["first_name"] as? String,
+                                                        lastName: profile["last_name"] as? String,
+                                                        email: profile["email"] as? String)
+                            self.dismiss(animated: true, completion: nil)
                         } else {
                             print("\(error?.localizedDescription)")
                         }
