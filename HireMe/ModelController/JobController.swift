@@ -27,8 +27,10 @@ class JobController {
 		let job3 = Job(id: 2, name: "Test", timeFrameStart: "May 1, 2017", timeFrameEnd: "Aug 31, 2017", priceRangeStart: 750, priceRangeEnd: 1200, industry: "House Cleaning", locationCity: "Salt Lake City", locationState: "UT", locationZip: "84604", description: "This is an example of a description.", status: JobStatus.awarded.rawValue, images: nil, advertiser: user3)
 
 		let job4 = Job(id: 3, name: "I couldn't think of a good name for this job so it's going to be really long", timeFrameStart: "Sep 23, 2017", timeFrameEnd: "Oct 9, 2017", priceRangeStart: 1500, priceRangeEnd: 4000, industry: "Automotive", locationCity: "Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch", locationState: "WA", locationZip: "84604", description: "Lorem ipsum dolor sit amet, laoreet proin mauris dui hymenaeos mi dictumst, etiam consectetuer lectus morbi turpis vulputate, lectus rutrum a landit, eu tincidunt ridiculus. Inceptos feugiat justo vitae pellentesque congue, diam non nam, pulvinar eu, pharetra torquent. Sollicitudin proin arcu vestibulum ac, a tristique ante vel. Aliquam sit eros scelerisque, ut adipiscing fermentum fusce felis suspendisse aenean.", status: JobStatus.open.rawValue, images: nil, advertiser: user4)
+        
+        let job5 = Job(id: 4, name: "Fence Painting", timeFrameStart: "Jun 12, 2017", timeFrameEnd: "Jun 12, 2017", priceRangeStart: 50, priceRangeEnd: 150, industry: "Yardwork", locationCity: "Springville", locationState: "UT", locationZip: "83713", description: "Lorem ipsum dolor sit amet, laoreet proin mauris dui hymenaeos mi dictumst, etiam consectetuer lectus morbi turpis vulputate, lectus rutrum a landit, eu tincidunt ridiculus.", images: nil, advertiser: user3)
 
-		jobs = [job, job2, job3, job4]
+		jobs = [job, job2, job3, job4, job5]
 	}
 
 	func addJob(name: String, timeFrameStart: String?, timeFrameEnd: String?, priceRangeStart: Double?, priceRangeEnd: Double?, industry: String?, locationCity: String?, locationState: String?, locationZip: String?, description: String?, images: [UIImage]?) -> Bool {

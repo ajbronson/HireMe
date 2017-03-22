@@ -9,20 +9,6 @@
 import UIKit
 
 class CategoryTableViewController: UITableViewController {
-    
-    // Intended to convert a string with the specified date format into a date
-    private static let dateFormatterFrom: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM d, yyyy"
-        return formatter
-    }()
-    
-    // Intended to convert a date to a string with the specified date format
-    private static let dateFormatterTo: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM d"
-        return formatter
-    }()
 	
 	//MARK: - View controller life cycle
 	
@@ -61,14 +47,7 @@ class CategoryTableViewController: UITableViewController {
             cell.priceRangeLabel.text = "\(priceRangeStart) - \(priceRangeEnd)"
         }
         
-        if let timeFrameStart = job.timeFrameStart, let timeFrameEnd = job.timeFrameEnd,
-            let timeFrameStartDate = CategoryTableViewController.dateFormatterFrom.date(from: timeFrameStart),
-            let timeFrameEndDate = CategoryTableViewController.dateFormatterFrom.date(from: timeFrameEnd) {
-            
-            let formattedTimeFrameStart = CategoryTableViewController.dateFormatterTo.string(from: timeFrameStartDate)
-            let formattedTimeFrameEnd = CategoryTableViewController.dateFormatterTo.string(from: timeFrameEndDate)
-            cell.timeFrameLabel.text = "\(formattedTimeFrameStart) - \(formattedTimeFrameEnd)"
-        }
+        cell.timeFrameLabel.text = job.timeFrame(dateFormat: "MMM d")
 		
 		return cell
 	}
