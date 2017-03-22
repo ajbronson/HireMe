@@ -288,7 +288,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="HUW-7W-j1X">
+                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" distribution="equalSpacing" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="HUW-7W-j1X">
                                             <rect key="frame" x="111" y="164" width="153" height="25"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="NqH-1y-Kof" userLabel="Star 1">
@@ -328,7 +328,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YkU-Mp-h5q">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="YkU-Mp-h5q">
                                             <rect key="frame" x="137" y="23" width="100" height="100"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="100" id="9fI-V7-LoH"/>
@@ -342,13 +342,12 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                         <constraint firstAttribute="bottomMargin" secondItem="HUW-7W-j1X" secondAttribute="bottom" constant="20" id="85z-8U-aOa"/>
                                         <constraint firstItem="gfK-UD-QTz" firstAttribute="leading" secondItem="EMA-V4-VTB" secondAttribute="leadingMargin" constant="7" id="BMk-af-FS6"/>
                                         <constraint firstItem="kYn-yh-Omn" firstAttribute="centerY" secondItem="HUW-7W-j1X" secondAttribute="centerY" id="KTr-zk-VfC"/>
-                                        <constraint firstItem="HUW-7W-j1X" firstAttribute="leading" secondItem="EMA-V4-VTB" secondAttribute="leadingMargin" constant="103" id="PyN-2N-PhO"/>
-                                        <constraint firstItem="YkU-Mp-h5q" firstAttribute="leading" secondItem="EMA-V4-VTB" secondAttribute="leadingMargin" constant="129" id="QoL-7Y-GXq"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="gfK-UD-QTz" secondAttribute="trailing" constant="7" id="Raz-8S-klU"/>
+                                        <constraint firstItem="YkU-Mp-h5q" firstAttribute="centerX" secondItem="EMA-V4-VTB" secondAttribute="centerX" id="au2-nQ-abH"/>
                                         <constraint firstItem="HUW-7W-j1X" firstAttribute="top" secondItem="gfK-UD-QTz" secondAttribute="bottom" constant="7.5" id="d3J-90-kUa"/>
                                         <constraint firstItem="YkU-Mp-h5q" firstAttribute="top" secondItem="EMA-V4-VTB" secondAttribute="topMargin" constant="15" id="lZU-19-EB1"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="YkU-Mp-h5q" secondAttribute="trailing" constant="130" id="vDk-GR-Ty7"/>
                                         <constraint firstItem="kYn-yh-Omn" firstAttribute="leading" secondItem="HUW-7W-j1X" secondAttribute="trailing" constant="8" id="yV9-HJ-Pqz"/>
+                                        <constraint firstItem="HUW-7W-j1X" firstAttribute="centerX" secondItem="EMA-V4-VTB" secondAttribute="centerX" id="yrx-ES-iKA"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
