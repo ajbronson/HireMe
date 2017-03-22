@@ -53,6 +53,31 @@ class Job: Equatable {
 		self.selectedBid = nil
         self.advertiser = advertiser
 	}
+    
+    func timeFrame(dateFormat: String) -> String {
+        var startDate: Date?
+        var timeFrame = ""
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+        
+        if let start = timeFrameStart?.dateFromString() {
+            startDate = start
+            timeFrame += dateFormatter.string(from: start)
+        }
+        
+        if let end = timeFrameEnd?.dateFromString() {
+            if let start = startDate {
+                if Calendar.current.compare(start, to: end, toGranularity: .day) != ComparisonResult.orderedSame {
+                    timeFrame += " - " + dateFormatter.string(from: end)
+                }
+            } else {
+                timeFrame += dateFormatter.string(from: end)
+            }
+        }
+        
+        return timeFrame
+    }
 }
 
 func ==(lhs: Job, rhs: Job) -> Bool {
