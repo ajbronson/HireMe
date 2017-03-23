@@ -741,7 +741,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="xnU-IF-Zv4" kind="show" id="xPR-pH-VYk"/>
+                                    <segue destination="IeW-rh-iaN" kind="presentation" id="j8C-zv-pEU"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1021,7 +1021,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <image name="Star" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ial-fH-XVL"/>
-        <segue reference="jkM-Ly-1T8"/>
+        <segue reference="j8C-zv-pEU"/>
+        <segue reference="RZY-OK-kP1"/>
     </inferredMetricsTieBreakers>
 </document>
