@@ -707,68 +707,6 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             </objects>
             <point key="canvasLocation" x="6705" y="2390"/>
         </scene>
-        <!--My Jobs-->
-        <scene sceneID="TCQ-Tq-47f">
-            <objects>
-                <tableViewController id="Ndg-EZ-Gj0" customClass="ProviderJobsTableViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="EFA-ss-UoY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="MPa-qg-evK">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="First"/>
-                                <segment title="Second"/>
-                            </segments>
-                        </segmentedControl>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="jobCell" textLabel="YYP-xS-HSU" detailTextLabel="ugP-v6-kAp" style="IBUITableViewCellStyleSubtitle" id="ASh-Ir-kIc">
-                                <rect key="frame" x="0.0" y="57" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ASh-Ir-kIc" id="bkl-41-5yi">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YYP-xS-HSU">
-                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ugP-v6-kAp">
-                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="IeW-rh-iaN" kind="presentation" id="j8C-zv-pEU"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Ndg-EZ-Gj0" id="7Wo-qM-zYr"/>
-                            <outlet property="delegate" destination="Ndg-EZ-Gj0" id="O0E-H2-pEi"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="My Jobs" id="Bbz-Av-CXu">
-                        <barButtonItem key="leftBarButtonItem" image="Menu" id="8OG-hj-gOK">
-                            <connections>
-                                <segue destination="dRI-6i-7TL" kind="presentation" id="RZY-OK-kP1"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1pJ-SI-yeu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3217" y="3122"/>
-        </scene>
         <!--Provider Tab Bar Controller-->
         <scene sceneID="Q4K-M9-Ctf">
             <objects>
@@ -977,7 +915,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wyp-UC-W90" userLabel="Segmented Control">
-                                <rect key="frame" x="16" y="72" width="343" height="29"/>
+                                <rect key="frame" x="16" y="79" width="343" height="29"/>
                                 <segments>
                                     <segment title="Current"/>
                                     <segment title="Completed"/>
@@ -994,7 +932,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g7F-aW-Ozj">
-                                <rect key="frame" x="0.0" y="108" width="375" height="510"/>
+                                <rect key="frame" x="0.0" y="122" width="375" height="496"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="jobCell" textLabel="KJO-f5-1pZ" detailTextLabel="LRi-zb-ySE" style="IBUITableViewCellStyleSubtitle" id="jwM-TL-vPz">
@@ -1020,6 +958,9 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="IeW-rh-iaN" kind="presentation" id="Cm3-VV-UuI"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -1036,13 +977,19 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                             <constraint firstAttribute="trailing" secondItem="g7F-aW-Ozj" secondAttribute="trailing" id="Qmx-F2-s9Y"/>
                             <constraint firstItem="Lmg-rH-go1" firstAttribute="centerY" secondItem="TKv-7O-Dkk" secondAttribute="centerY" id="Y9y-Ex-7d8"/>
                             <constraint firstItem="Lmg-rH-go1" firstAttribute="leading" secondItem="TKv-7O-Dkk" secondAttribute="leadingMargin" id="g18-b9-e4W"/>
-                            <constraint firstItem="g7F-aW-Ozj" firstAttribute="top" secondItem="wyp-UC-W90" secondAttribute="bottom" constant="8" id="gCH-3V-7VR"/>
+                            <constraint firstItem="g7F-aW-Ozj" firstAttribute="top" secondItem="wyp-UC-W90" secondAttribute="bottom" constant="15" id="gCH-3V-7VR"/>
                             <constraint firstItem="g7F-aW-Ozj" firstAttribute="leading" secondItem="TKv-7O-Dkk" secondAttribute="leading" id="oFR-8A-Cdy"/>
                             <constraint firstItem="Lmg-rH-go1" firstAttribute="trailing" secondItem="TKv-7O-Dkk" secondAttribute="trailingMargin" id="sbw-gX-BUB"/>
-                            <constraint firstItem="wyp-UC-W90" firstAttribute="top" secondItem="xd0-iK-Vpa" secondAttribute="bottom" constant="8" id="zfK-Xm-YfM"/>
+                            <constraint firstItem="wyp-UC-W90" firstAttribute="top" secondItem="xd0-iK-Vpa" secondAttribute="bottom" constant="15" id="zfK-Xm-YfM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="My Jobs" id="NPh-jI-asx"/>
+                    <navigationItem key="navigationItem" title="My Jobs" id="NPh-jI-asx">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" id="K9K-Ek-Jty">
+                            <connections>
+                                <segue destination="dRI-6i-7TL" kind="presentation" id="uPR-Du-0OG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="noDataLabel" destination="Lmg-rH-go1" id="256-96-hpy"/>
                         <outlet property="segmentedControl" destination="wyp-UC-W90" id="PMY-Lb-ixw"/>
@@ -1051,7 +998,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BAe-Sa-L4R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4208.8000000000002" y="4365.9670164917543"/>
+            <point key="canvasLocation" x="3217" y="3122"/>
         </scene>
         <!--My Bids-->
         <scene sceneID="5IP-P1-Els">
@@ -1117,7 +1064,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <image name="Star" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="j8C-zv-pEU"/>
-        <segue reference="RZY-OK-kP1"/>
+        <segue reference="Cm3-VV-UuI"/>
+        <segue reference="uPR-Du-0OG"/>
     </inferredMetricsTieBreakers>
 </document>
