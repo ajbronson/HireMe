@@ -903,7 +903,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Ndg-EZ-Gj0" kind="relationship" relationship="rootViewController" id="wbv-5f-Vhd"/>
+                        <segue destination="hz2-SD-vkO" kind="relationship" relationship="rootViewController" id="gAQ-AQ-rOB"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NlT-im-BfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -964,7 +964,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             </objects>
             <point key="canvasLocation" x="3217" y="3896"/>
         </scene>
-        <!--Provider Jobs View Controller-->
+        <!--My Jobs-->
         <scene sceneID="j1U-Wo-idT">
             <objects>
                 <viewController id="hz2-SD-vkO" customClass="ProviderJobsViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -977,7 +977,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wyp-UC-W90" userLabel="Segmented Control">
-                                <rect key="frame" x="16" y="28" width="343" height="29"/>
+                                <rect key="frame" x="16" y="72" width="343" height="29"/>
                                 <segments>
                                     <segment title="Current"/>
                                     <segment title="Completed"/>
@@ -987,8 +987,14 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                     <action selector="segmentedControlValueChanged:" destination="hz2-SD-vkO" eventType="valueChanged" id="OcI-Bn-lsk"/>
                                 </connections>
                             </segmentedControl>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmg-rH-go1" userLabel="No Data">
+                                <rect key="frame" x="16" y="323" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g7F-aW-Ozj">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="jobCell" textLabel="KJO-f5-1pZ" detailTextLabel="LRi-zb-ySE" style="IBUITableViewCellStyleSubtitle" id="jwM-TL-vPz">
@@ -1028,18 +1034,24 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                             <constraint firstItem="wyp-UC-W90" firstAttribute="trailing" secondItem="TKv-7O-Dkk" secondAttribute="trailingMargin" id="CRx-UL-NHc"/>
                             <constraint firstItem="3ah-3t-N9T" firstAttribute="top" secondItem="g7F-aW-Ozj" secondAttribute="bottom" id="Kz5-su-9Em"/>
                             <constraint firstAttribute="trailing" secondItem="g7F-aW-Ozj" secondAttribute="trailing" id="Qmx-F2-s9Y"/>
+                            <constraint firstItem="Lmg-rH-go1" firstAttribute="centerY" secondItem="TKv-7O-Dkk" secondAttribute="centerY" id="Y9y-Ex-7d8"/>
+                            <constraint firstItem="Lmg-rH-go1" firstAttribute="leading" secondItem="TKv-7O-Dkk" secondAttribute="leadingMargin" id="g18-b9-e4W"/>
                             <constraint firstItem="g7F-aW-Ozj" firstAttribute="top" secondItem="wyp-UC-W90" secondAttribute="bottom" constant="8" id="gCH-3V-7VR"/>
                             <constraint firstItem="g7F-aW-Ozj" firstAttribute="leading" secondItem="TKv-7O-Dkk" secondAttribute="leading" id="oFR-8A-Cdy"/>
+                            <constraint firstItem="Lmg-rH-go1" firstAttribute="trailing" secondItem="TKv-7O-Dkk" secondAttribute="trailingMargin" id="sbw-gX-BUB"/>
                             <constraint firstItem="wyp-UC-W90" firstAttribute="top" secondItem="xd0-iK-Vpa" secondAttribute="bottom" constant="8" id="zfK-Xm-YfM"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="My Jobs" id="NPh-jI-asx"/>
                     <connections>
+                        <outlet property="noDataLabel" destination="Lmg-rH-go1" id="256-96-hpy"/>
+                        <outlet property="segmentedControl" destination="wyp-UC-W90" id="PMY-Lb-ixw"/>
                         <outlet property="tableView" destination="g7F-aW-Ozj" id="Dm9-Zn-BGb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BAe-Sa-L4R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4209" y="4414"/>
+            <point key="canvasLocation" x="4208.8000000000002" y="4365.9670164917543"/>
         </scene>
         <!--My Bids-->
         <scene sceneID="5IP-P1-Els">
