@@ -84,6 +84,10 @@ class ProviderJobDetailTableViewController: UITableViewController {
     
     // MARK: - IBActions
     
+    @IBAction func didTapDone(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func didTapViewPhotos(_ sender: UIBarButtonItem) {
         guard job.images != nil else {
             AlertHelper.showAlert(view: self, title: "No Images", message: nil, closeButtonText: "OK")

@@ -27,8 +27,6 @@ class CategoryTableViewController: UITableViewController {
             vc.job = JobController.shared.jobs[indexPath.row]
         }
     }
-    
-    @IBAction func unwindToCategory(segue: UIStoryboardSegue) {}
 	
 	//MARK: - UITableViewDataSource
 	

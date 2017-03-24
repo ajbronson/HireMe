@@ -385,7 +385,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                     <navigationItem key="navigationItem" id="40Z-dy-IcB">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="82X-Sx-FCy">
                             <connections>
-                                <segue destination="1Ku-ef-91l" kind="unwind" unwindAction="unwindToCategoryWithSegue:" id="6bS-bF-Xk8"/>
+                                <action selector="didTapDone:" destination="2NK-eR-wYY" id="fz5-F2-zuE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -395,7 +395,6 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1l9-27-r4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="1Ku-ef-91l" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5940" y="2390"/>
         </scene>
