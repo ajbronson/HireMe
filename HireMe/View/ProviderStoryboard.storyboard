@@ -792,7 +792,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 <navigationController storyboardIdentifier="SearchNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PnE-mb-l9r" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="aO3-rb-AO1"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ZLp-3E-aai">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZLp-3E-aai">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1006,7 +1006,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 <navigationController storyboardIdentifier="BidsNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4Kf-1T-rXf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Bids" image="Bid" id="y79-qf-p9r"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0lq-qw-mYg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0lq-qw-mYg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1042,7 +1042,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IeW-rh-iaN" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dNC-Pd-tYZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dNC-Pd-tYZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
