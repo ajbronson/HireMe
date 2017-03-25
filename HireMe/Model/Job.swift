@@ -72,11 +72,29 @@ class Job: Equatable {
                     timeFrame += " - " + dateFormatter.string(from: end)
                 }
             } else {
-                timeFrame += dateFormatter.string(from: end)
+                timeFrame = dateFormatter.string(from: end)
             }
         }
         
         return timeFrame
+    }
+    
+    func priceRange() -> String {
+        var priceRange = priceRangeStart?.convertToCurrency() ?? ""
+        
+        if let endingPrice = priceRangeEnd?.convertToCurrency() {
+            if priceRange.characters.count > 0 {
+                // A starting price exists
+                if endingPrice != priceRange {
+                    // ending price != starting price
+                    priceRange += " - " + endingPrice
+                }
+            } else {
+                priceRange = endingPrice
+            }
+        }
+        
+        return priceRange
     }
 }
 

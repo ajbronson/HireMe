@@ -39,12 +39,7 @@ class CategoryTableViewController: UITableViewController {
 		let job = JobController.shared.jobs[indexPath.row]
         cell.nameLabel.text = job.name
         cell.cityLabel.text = job.locationCity
-        
-        if let priceRangeStart = job.priceRangeStart?.convertToCurrency(),
-            let priceRangeEnd = job.priceRangeEnd?.convertToCurrency() {
-            cell.priceRangeLabel.text = "\(priceRangeStart) - \(priceRangeEnd)"
-        }
-        
+        cell.priceRangeLabel.text = job.priceRange()
         cell.timeFrameLabel.text = job.timeFrame(dateFormat: "MMM d")
 		
 		return cell
