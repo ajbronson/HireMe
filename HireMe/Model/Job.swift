@@ -55,14 +55,13 @@ class Job: Equatable {
 	}
     
     func timeFrame(dateFormat: String) -> String {
-        var startDate: Date?
+        let startDate = timeFrameStart?.dateFromString()
         var timeFrame = ""
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat
         
-        if let start = timeFrameStart?.dateFromString() {
-            startDate = start
+        if let start = startDate {
             timeFrame += dateFormatter.string(from: start)
         }
         
@@ -95,6 +94,35 @@ class Job: Equatable {
         }
         
         return priceRange
+    }
+    
+    func cityState() -> String {
+        var cityState = locationCity ?? ""
+        
+        if let state = locationState {
+            if locationCity != nil {
+                cityState += ", "
+            }
+            
+            cityState += state
+        }
+        
+        return cityState
+    }
+    
+    // TODO: return City ZIP; State ZIP; City, State ZIP; ZIP
+    func location() -> String {
+        let cityState = self.cityState()
+        
+//        if let zip = locationZip {
+//            if locationCity != nil || locationState != nil {
+//                location += " "
+//            }
+//            
+//            location += zip
+//        }
+        
+        return cityState.characters.count > 0 ? cityState : locationZip ?? ""
     }
 }
 

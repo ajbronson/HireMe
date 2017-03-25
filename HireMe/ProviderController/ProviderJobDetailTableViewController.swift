@@ -101,29 +101,11 @@ class ProviderJobDetailTableViewController: UITableViewController {
     // MARK: - Private functions
     
     private func initializeTableViewData() {
-        var location = ""
-        
-        if let city = job.locationCity {
-            location += city
-        }
-        
-        if let state = job.locationState {
-            if location.characters.count > 0 {
-                location += ", "
-            }
-            
-            location += state
-        }
-        
-        if let zip = job.locationZip {
-            location += " " + zip
-        }
-        
         tableViewData = [
             [REUSE_ID_KEY: PERSON_REUSE_ID],
             [TITLE_KEY: "What I Need Done", INFO_KEY: job.name, REUSE_ID_KEY: INFO_REUSE_ID],
             [TITLE_KEY: "Industry", INFO_KEY: job.industry ?? "", REUSE_ID_KEY: INFO_REUSE_ID],
-            [TITLE_KEY: "Where", INFO_KEY: location, REUSE_ID_KEY: INFO_REUSE_ID],
+            [TITLE_KEY: "Where", INFO_KEY: job.location(), REUSE_ID_KEY: INFO_REUSE_ID],
             [TITLE_KEY: "When", INFO_KEY: job.timeFrame(dateFormat: "EEE MMM d"), REUSE_ID_KEY: INFO_REUSE_ID],
             [TITLE_KEY: "Expected Price", INFO_KEY: job.priceRange(), REUSE_ID_KEY: INFO_REUSE_ID],
             [TITLE_KEY: "Description", INFO_KEY: job.description ?? "", REUSE_ID_KEY: INFO_REUSE_ID],
