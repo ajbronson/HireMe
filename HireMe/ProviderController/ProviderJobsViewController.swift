@@ -44,6 +44,7 @@ class ProviderJobsViewController: UIViewController, UITableViewDataSource {
             let cell = sender as? UITableViewCell,
             let indexPath = tableView.indexPath(for: cell) {
             vc.job = tableViewData[selectedSegmentIndex][indexPath.row]
+            vc.seguedFromMyJobs = true
         }
     }
 

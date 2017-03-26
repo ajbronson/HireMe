@@ -17,6 +17,7 @@ fileprivate let PERSON_REUSE_ID = "personCell"
 
 class ProviderJobDetailTableViewController: UITableViewController {
     var job: Job!
+    var seguedFromMyJobs = false
     private var tableViewData = [[String: String]]()
     
     // MARK: - View controller life cycle
@@ -101,13 +102,21 @@ class ProviderJobDetailTableViewController: UITableViewController {
     // MARK: - Private functions
     
     private func initializeTableViewData() {
+        var priceTitle = "Expected Price"
+        var price = job.priceRange()
+        
+        if seguedFromMyJobs {
+            priceTitle = "Bid Price"
+            price = job.selectedBid?.price?.convertToCurrency() ?? ""
+        }
+        
         tableViewData = [
             [REUSE_ID_KEY: PERSON_REUSE_ID],
-            [TITLE_KEY: "What I Need Done", INFO_KEY: job.name, REUSE_ID_KEY: INFO_REUSE_ID],
+            [TITLE_KEY: "Title", INFO_KEY: job.name, REUSE_ID_KEY: INFO_REUSE_ID],
             [TITLE_KEY: "Industry", INFO_KEY: job.industry ?? "", REUSE_ID_KEY: INFO_REUSE_ID],
             [TITLE_KEY: "Where", INFO_KEY: job.cityStateZip(), REUSE_ID_KEY: INFO_REUSE_ID],
             [TITLE_KEY: "When", INFO_KEY: job.timeFrame(dateFormat: "EEE MMM d"), REUSE_ID_KEY: INFO_REUSE_ID],
-            [TITLE_KEY: "Expected Price", INFO_KEY: job.priceRange(), REUSE_ID_KEY: INFO_REUSE_ID],
+            [TITLE_KEY: priceTitle, INFO_KEY: price, REUSE_ID_KEY: INFO_REUSE_ID],
             [TITLE_KEY: "Description", INFO_KEY: job.description ?? "", REUSE_ID_KEY: INFO_REUSE_ID],
         ]
     }
