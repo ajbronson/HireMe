@@ -102,12 +102,15 @@ class ProviderJobDetailTableViewController: UITableViewController {
     // MARK: - Private functions
     
     private func initializeTableViewData() {
-        var priceTitle = "Expected Price"
-        var price = job.priceRange()
+        var priceTitle: String
+        var price: String
         
         if seguedFromMyJobs {
             priceTitle = "Bid Price"
             price = job.selectedBid?.price?.convertToCurrency() ?? ""
+        } else {
+            priceTitle = "Expected Price"
+            price = job.priceRange()
         }
         
         tableViewData = [
