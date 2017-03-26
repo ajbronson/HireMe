@@ -110,19 +110,26 @@ class Job: Equatable {
         return cityState
     }
     
-    // TODO: return City ZIP; State ZIP; City, State ZIP; ZIP
     func location() -> String {
-        let cityState = self.cityState()
+        var location = locationCity ?? ""
         
-//        if let zip = locationZip {
-//            if locationCity != nil || locationState != nil {
-//                location += " "
-//            }
-//            
-//            location += zip
-//        }
+        if let state = locationState {
+            if locationCity != nil {
+                location += ", "
+            }
+            
+            location += state
+        }
         
-        return cityState.characters.count > 0 ? cityState : locationZip ?? ""
+        if let zip = locationZip {
+            if locationState != nil || locationCity != nil {
+                location += " "
+            }
+            
+            location += zip
+        }
+
+        return location
     }
 }
 
