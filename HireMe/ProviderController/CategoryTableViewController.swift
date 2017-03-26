@@ -38,7 +38,7 @@ class CategoryTableViewController: UITableViewController {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell") as? SearchJobTableViewCell else { return UITableViewCell() }
 		let job = JobController.shared.jobs[indexPath.row]
         cell.nameLabel.text = job.name
-        cell.cityLabel.text = job.locationCity
+        cell.cityLabel.text = job.cityState()
         cell.priceRangeLabel.text = job.priceRange()
         cell.timeFrameLabel.text = job.timeFrame(dateFormat: "MMM d")
 		

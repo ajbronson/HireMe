@@ -17,8 +17,8 @@ class Job: Equatable {
 	var priceRangeStart: Double?
 	var priceRangeEnd: Double?
 	var industry: String?
-	var locationCity: String?
-	var locationState: String?
+	var locationCity: String
+	var locationState: String
 	var locationZip: String?
 	var description: String?
 	var status: String
@@ -31,7 +31,7 @@ class Job: Equatable {
 	var selectedBid: Bid?
     var advertiser: User
 
-    init(id: Int, name: String, timeFrameStart: String?, timeFrameEnd: String?, priceRangeStart: Double?, priceRangeEnd: Double?, industry: String?, locationCity: String?, locationState: String?, locationZip: String?, description: String?, status: String = JobStatus.open.rawValue, images: [UIImage]?, dateCreated: Date = Date(), dateUpdated: Date = Date(), advertiser: User) {
+    init(id: Int, name: String, timeFrameStart: String?, timeFrameEnd: String?, priceRangeStart: Double?, priceRangeEnd: Double?, industry: String?, locationCity: String, locationState: String, locationZip: String?, description: String?, status: String = JobStatus.open.rawValue, images: [UIImage]?, dateCreated: Date = Date(), dateUpdated: Date = Date(), advertiser: User) {
 		self.id = id
 		self.name = name
 		self.timeFrameStart = timeFrameStart == "" ? nil : timeFrameStart
@@ -39,8 +39,8 @@ class Job: Equatable {
 		self.priceRangeStart = priceRangeStart
 		self.priceRangeEnd = priceRangeEnd
 		self.industry = industry == "" ? nil : industry
-		self.locationCity = locationCity == "" ? nil : locationCity
-		self.locationState = locationState == "" ? nil : locationState
+		self.locationCity = locationCity
+		self.locationState = locationState
 		self.locationZip = locationZip == "" ? nil : locationZip
 		self.description = description == "" ? nil : description
 		self.status = status
@@ -97,38 +97,16 @@ class Job: Equatable {
     }
     
     func cityState() -> String {
-        var cityState = locationCity ?? ""
-        
-        if let state = locationState {
-            if locationCity != nil {
-                cityState += ", "
-            }
-            
-            cityState += state
-        }
-        
-        return cityState
+        return locationCity + ", " + locationState
     }
     
-    func location() -> String {
-        var location = locationCity ?? ""
-        
-        if let state = locationState {
-            if locationCity != nil {
-                location += ", "
-            }
-            
-            location += state
-        }
+    func cityStateZip() -> String {
+        var location = cityState()
         
         if let zip = locationZip {
-            if locationState != nil || locationCity != nil {
-                location += " "
-            }
-            
-            location += zip
+            location += " " + zip
         }
-
+        
         return location
     }
 }
