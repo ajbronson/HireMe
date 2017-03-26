@@ -70,6 +70,8 @@ class JobInfoCell: UITableViewCell {
 			statusLabel.textColor = UIColor.red
 		} else if job.status == JobStatus.completed.rawValue {
 			statusLabel.textColor = AppColors.greenColor
+		} else if job.status == JobStatus.open.rawValue {
+			statusLabel.textColor = AppColors.yellowColor
 		}
 
 		self.job = job

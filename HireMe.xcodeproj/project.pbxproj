@@ -10,6 +10,7 @@
 		210EC6351E4ED0E000643FD3 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210EC6341E4ED0E000643FD3 /* LocationHelper.swift */; };
 		21103D9B1E4A99370097F595 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21103D9A1E4A99370097F595 /* Constants.swift */; };
 		21103D9E1E4AB7900097F595 /* JobImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21103D9D1E4AB7900097F595 /* JobImageCell.swift */; };
+		21A709691E6F97520037671A /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A709681E6F97520037671A /* NetworkController.swift */; };
 		21B38EFC1DCC21A4000A5CB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38EFB1DCC21A4000A5CB1 /* AppDelegate.swift */; };
 		21B38F031DCC21A4000A5CB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21B38F021DCC21A4000A5CB1 /* Assets.xcassets */; };
 		21B38F111DCC21A4000A5CB1 /* HireMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B38F101DCC21A4000A5CB1 /* HireMeTests.swift */; };
@@ -87,6 +88,7 @@
 		210EC6341E4ED0E000643FD3 /* LocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		21103D9A1E4A99370097F595 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		21103D9D1E4AB7900097F595 /* JobImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobImageCell.swift; sourceTree = "<group>"; };
+		21A709681E6F97520037671A /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		21B38EF81DCC21A4000A5CB1 /* HireMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HireMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B38EFB1DCC21A4000A5CB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21B38F021DCC21A4000A5CB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				D027A0E81E58D72B00B5576E /* SettingsTableViewController.swift */,
 				D001AB2A1E4ED920008D3251 /* SignInViewController.swift */,
 				D0797CA61E49778600BA7B19 /* ViewPhotosViewController.swift */,
+				21A709681E6F97520037671A /* NetworkController.swift */,
 			);
 			path = SharedController;
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				D0797CD91E497B1A00BA7B19 /* Extensions.swift in Sources */,
 				D0797C991E49701A00BA7B19 /* ProviderJobsTableViewController.swift in Sources */,
 				D0797CBD1E49796000BA7B19 /* Job.swift in Sources */,
+				21A709691E6F97520037671A /* NetworkController.swift in Sources */,
 				D05A24A91E694E3500DB6268 /* ClosureBarButtonItem.swift in Sources */,
 				D0495ECB1E49804A0076A548 /* SignInHelper.swift in Sources */,
 				D0797CBC1E49796000BA7B19 /* BidderController.swift in Sources */,
