@@ -18,5 +18,7 @@ class JobAdvertiserTableViewCell: UITableViewCell {
     @IBOutlet weak var starImageView3: UIImageView!
     @IBOutlet weak var starImageView4: UIImageView!
     @IBOutlet weak var starImageView5: UIImageView!
+    @IBOutlet weak var starsStackView: UIStackView!
+    @IBOutlet weak var noRatingsLabel: UILabel!
     
 }

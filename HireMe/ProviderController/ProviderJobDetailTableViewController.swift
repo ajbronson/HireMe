@@ -62,10 +62,17 @@ class ProviderJobDetailTableViewController: UITableViewController {
         if reuseID == PERSON_REUSE_ID {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseID, for: indexPath) as? JobAdvertiserTableViewCell else { return UITableViewCell() }
             cell.nameLabel.text = job.advertiser.fullName
-            cell.ratingsLabel.text = "(\(job.advertiser.numberOfRatings))"
             
-            let stars = [cell.starImageView1, cell.starImageView2, cell.starImageView3, cell.starImageView4, cell.starImageView5]
-            RatingStarsHelper.show(job.advertiser.numberOfStars, stars: stars)
+            if job.advertiser.numberOfRatings > 0 {
+                cell.ratingsLabel.text = "(\(job.advertiser.numberOfRatings))"
+                
+                let stars = [cell.starImageView1, cell.starImageView2, cell.starImageView3, cell.starImageView4, cell.starImageView5]
+                RatingStarsHelper.show(job.advertiser.numberOfStars, stars: stars)
+            } else {
+                cell.starsStackView.isHidden = true
+                cell.ratingsLabel.isHidden = true
+                cell.noRatingsLabel.isHidden = false
+            }
             
             cell.personImageView.image = job.advertiser.image ?? UIImage(named: "Person")
             

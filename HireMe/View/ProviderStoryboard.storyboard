@@ -336,22 +336,32 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                 <constraint firstAttribute="width" constant="100" id="fwK-lB-MiX"/>
                                             </constraints>
                                         </imageView>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New to LimitedHire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3b-hO-ZFF" userLabel="No Ratings">
+                                            <rect key="frame" x="15" y="166.5" width="345" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="gfK-UD-QTz" firstAttribute="top" secondItem="YkU-Mp-h5q" secondAttribute="bottom" constant="8" id="6CR-Uk-PBB"/>
+                                        <constraint firstItem="A3b-hO-ZFF" firstAttribute="centerY" secondItem="HUW-7W-j1X" secondAttribute="centerY" id="7CR-YT-K2K"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="HUW-7W-j1X" secondAttribute="bottom" constant="20" id="85z-8U-aOa"/>
                                         <constraint firstItem="gfK-UD-QTz" firstAttribute="leading" secondItem="EMA-V4-VTB" secondAttribute="leadingMargin" constant="7" id="BMk-af-FS6"/>
+                                        <constraint firstItem="A3b-hO-ZFF" firstAttribute="leading" secondItem="gfK-UD-QTz" secondAttribute="leading" id="CbE-Y5-9iv"/>
                                         <constraint firstItem="kYn-yh-Omn" firstAttribute="centerY" secondItem="HUW-7W-j1X" secondAttribute="centerY" id="KTr-zk-VfC"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="gfK-UD-QTz" secondAttribute="trailing" constant="7" id="Raz-8S-klU"/>
                                         <constraint firstItem="YkU-Mp-h5q" firstAttribute="centerX" secondItem="EMA-V4-VTB" secondAttribute="centerX" id="au2-nQ-abH"/>
                                         <constraint firstItem="HUW-7W-j1X" firstAttribute="top" secondItem="gfK-UD-QTz" secondAttribute="bottom" constant="7.5" id="d3J-90-kUa"/>
                                         <constraint firstItem="YkU-Mp-h5q" firstAttribute="top" secondItem="EMA-V4-VTB" secondAttribute="topMargin" constant="15" id="lZU-19-EB1"/>
+                                        <constraint firstItem="A3b-hO-ZFF" firstAttribute="trailing" secondItem="gfK-UD-QTz" secondAttribute="trailing" id="yLb-ot-FIe"/>
                                         <constraint firstItem="kYn-yh-Omn" firstAttribute="leading" secondItem="HUW-7W-j1X" secondAttribute="trailing" constant="8" id="yV9-HJ-Pqz"/>
                                         <constraint firstItem="HUW-7W-j1X" firstAttribute="centerX" secondItem="EMA-V4-VTB" secondAttribute="centerX" id="yrx-ES-iKA"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="gfK-UD-QTz" id="QxQ-EF-G7O"/>
+                                    <outlet property="noRatingsLabel" destination="A3b-hO-ZFF" id="Jru-1J-K9I"/>
                                     <outlet property="personImageView" destination="YkU-Mp-h5q" id="e4b-KN-ga8"/>
                                     <outlet property="ratingsLabel" destination="kYn-yh-Omn" id="tkP-sD-YrK"/>
                                     <outlet property="starImageView1" destination="NqH-1y-Kof" id="gUe-5R-csh"/>
@@ -359,6 +369,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                     <outlet property="starImageView3" destination="YvI-H5-CwT" id="I8R-We-ate"/>
                                     <outlet property="starImageView4" destination="NKI-mO-RtN" id="I3D-SH-u3S"/>
                                     <outlet property="starImageView5" destination="bXg-xZ-lcc" id="jqd-Kp-olJ"/>
+                                    <outlet property="starsStackView" destination="HUW-7W-j1X" id="usz-Nr-gg9"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -396,7 +407,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1l9-27-r4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5940" y="2390"/>
+            <point key="canvasLocation" x="5940" y="2389.6551724137935"/>
         </scene>
         <!--LargeImageController-->
         <scene sceneID="eVp-eC-kub">
@@ -792,7 +803,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 <navigationController storyboardIdentifier="SearchNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PnE-mb-l9r" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="aO3-rb-AO1"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZLp-3E-aai">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ZLp-3E-aai">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1006,7 +1017,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 <navigationController storyboardIdentifier="BidsNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4Kf-1T-rXf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Bids" image="Bid" id="y79-qf-p9r"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0lq-qw-mYg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0lq-qw-mYg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1042,7 +1053,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IeW-rh-iaN" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dNC-Pd-tYZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dNC-Pd-tYZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1065,6 +1076,6 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Cm3-VV-UuI"/>
-        <segue reference="uPR-Du-0OG"/>
+        <segue reference="FrF-m5-N7p"/>
     </inferredMetricsTieBreakers>
 </document>
