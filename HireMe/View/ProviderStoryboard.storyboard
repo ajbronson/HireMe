@@ -336,22 +336,32 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                                 <constraint firstAttribute="width" constant="100" id="fwK-lB-MiX"/>
                                             </constraints>
                                         </imageView>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New to LimitedHire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3b-hO-ZFF" userLabel="No Ratings">
+                                            <rect key="frame" x="15" y="166.5" width="345" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="gfK-UD-QTz" firstAttribute="top" secondItem="YkU-Mp-h5q" secondAttribute="bottom" constant="8" id="6CR-Uk-PBB"/>
+                                        <constraint firstItem="A3b-hO-ZFF" firstAttribute="centerY" secondItem="HUW-7W-j1X" secondAttribute="centerY" id="7CR-YT-K2K"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="HUW-7W-j1X" secondAttribute="bottom" constant="20" id="85z-8U-aOa"/>
                                         <constraint firstItem="gfK-UD-QTz" firstAttribute="leading" secondItem="EMA-V4-VTB" secondAttribute="leadingMargin" constant="7" id="BMk-af-FS6"/>
+                                        <constraint firstItem="A3b-hO-ZFF" firstAttribute="leading" secondItem="gfK-UD-QTz" secondAttribute="leading" id="CbE-Y5-9iv"/>
                                         <constraint firstItem="kYn-yh-Omn" firstAttribute="centerY" secondItem="HUW-7W-j1X" secondAttribute="centerY" id="KTr-zk-VfC"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="gfK-UD-QTz" secondAttribute="trailing" constant="7" id="Raz-8S-klU"/>
                                         <constraint firstItem="YkU-Mp-h5q" firstAttribute="centerX" secondItem="EMA-V4-VTB" secondAttribute="centerX" id="au2-nQ-abH"/>
                                         <constraint firstItem="HUW-7W-j1X" firstAttribute="top" secondItem="gfK-UD-QTz" secondAttribute="bottom" constant="7.5" id="d3J-90-kUa"/>
                                         <constraint firstItem="YkU-Mp-h5q" firstAttribute="top" secondItem="EMA-V4-VTB" secondAttribute="topMargin" constant="15" id="lZU-19-EB1"/>
+                                        <constraint firstItem="A3b-hO-ZFF" firstAttribute="trailing" secondItem="gfK-UD-QTz" secondAttribute="trailing" id="yLb-ot-FIe"/>
                                         <constraint firstItem="kYn-yh-Omn" firstAttribute="leading" secondItem="HUW-7W-j1X" secondAttribute="trailing" constant="8" id="yV9-HJ-Pqz"/>
                                         <constraint firstItem="HUW-7W-j1X" firstAttribute="centerX" secondItem="EMA-V4-VTB" secondAttribute="centerX" id="yrx-ES-iKA"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="gfK-UD-QTz" id="QxQ-EF-G7O"/>
+                                    <outlet property="noRatingsLabel" destination="A3b-hO-ZFF" id="Jru-1J-K9I"/>
                                     <outlet property="personImageView" destination="YkU-Mp-h5q" id="e4b-KN-ga8"/>
                                     <outlet property="ratingsLabel" destination="kYn-yh-Omn" id="tkP-sD-YrK"/>
                                     <outlet property="starImageView1" destination="NqH-1y-Kof" id="gUe-5R-csh"/>
@@ -359,6 +369,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                                     <outlet property="starImageView3" destination="YvI-H5-CwT" id="I8R-We-ate"/>
                                     <outlet property="starImageView4" destination="NKI-mO-RtN" id="I3D-SH-u3S"/>
                                     <outlet property="starImageView5" destination="bXg-xZ-lcc" id="jqd-Kp-olJ"/>
+                                    <outlet property="starsStackView" destination="HUW-7W-j1X" id="usz-Nr-gg9"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -385,7 +396,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                     <navigationItem key="navigationItem" id="40Z-dy-IcB">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="82X-Sx-FCy">
                             <connections>
-                                <segue destination="1Ku-ef-91l" kind="unwind" unwindAction="unwindToCategoryWithSegue:" id="6bS-bF-Xk8"/>
+                                <action selector="didTapDone:" destination="2NK-eR-wYY" id="fz5-F2-zuE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -395,9 +406,8 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1l9-27-r4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="1Ku-ef-91l" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5940" y="2390"/>
+            <point key="canvasLocation" x="5940" y="2389.6551724137935"/>
         </scene>
         <!--LargeImageController-->
         <scene sceneID="eVp-eC-kub">
@@ -708,60 +718,6 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
             </objects>
             <point key="canvasLocation" x="6705" y="2390"/>
         </scene>
-        <!--My Jobs-->
-        <scene sceneID="TCQ-Tq-47f">
-            <objects>
-                <tableViewController id="Ndg-EZ-Gj0" customClass="ProviderJobsTableViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="EFA-ss-UoY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="jobCell" textLabel="YYP-xS-HSU" detailTextLabel="ugP-v6-kAp" style="IBUITableViewCellStyleSubtitle" id="ASh-Ir-kIc">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ASh-Ir-kIc" id="bkl-41-5yi">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YYP-xS-HSU">
-                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ugP-v6-kAp">
-                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="xnU-IF-Zv4" kind="show" id="xPR-pH-VYk"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Ndg-EZ-Gj0" id="7Wo-qM-zYr"/>
-                            <outlet property="delegate" destination="Ndg-EZ-Gj0" id="O0E-H2-pEi"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="My Jobs" id="Bbz-Av-CXu">
-                        <barButtonItem key="leftBarButtonItem" image="Menu" id="8OG-hj-gOK">
-                            <connections>
-                                <segue destination="dRI-6i-7TL" kind="presentation" id="RZY-OK-kP1"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1pJ-SI-yeu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3217" y="3122"/>
-        </scene>
         <!--Provider Tab Bar Controller-->
         <scene sceneID="Q4K-M9-Ctf">
             <objects>
@@ -896,7 +852,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Ndg-EZ-Gj0" kind="relationship" relationship="rootViewController" id="wbv-5f-Vhd"/>
+                        <segue destination="hz2-SD-vkO" kind="relationship" relationship="rootViewController" id="gAQ-AQ-rOB"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NlT-im-BfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -956,6 +912,104 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGa-2d-GLL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3217" y="3896"/>
+        </scene>
+        <!--My Jobs-->
+        <scene sceneID="j1U-Wo-idT">
+            <objects>
+                <viewController id="hz2-SD-vkO" customClass="ProviderJobsViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xd0-iK-Vpa"/>
+                        <viewControllerLayoutGuide type="bottom" id="3ah-3t-N9T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TKv-7O-Dkk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wyp-UC-W90" userLabel="Segmented Control">
+                                <rect key="frame" x="16" y="79" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Current"/>
+                                    <segment title="Completed"/>
+                                    <segment title="Cancelled"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlValueChanged:" destination="hz2-SD-vkO" eventType="valueChanged" id="OcI-Bn-lsk"/>
+                                </connections>
+                            </segmentedControl>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmg-rH-go1" userLabel="No Data">
+                                <rect key="frame" x="16" y="323" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g7F-aW-Ozj">
+                                <rect key="frame" x="0.0" y="122" width="375" height="496"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="jobCell" textLabel="KJO-f5-1pZ" detailTextLabel="LRi-zb-ySE" style="IBUITableViewCellStyleSubtitle" id="jwM-TL-vPz">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jwM-TL-vPz" id="3I2-bm-0nt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KJO-f5-1pZ">
+                                                    <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LRi-zb-ySE">
+                                                    <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="IeW-rh-iaN" kind="presentation" id="Cm3-VV-UuI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="hz2-SD-vkO" id="MGU-et-UPF"/>
+                                    <outlet property="delegate" destination="hz2-SD-vkO" id="9Ko-qT-qv9"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wyp-UC-W90" firstAttribute="leading" secondItem="TKv-7O-Dkk" secondAttribute="leadingMargin" id="CRd-kC-ABf"/>
+                            <constraint firstItem="wyp-UC-W90" firstAttribute="trailing" secondItem="TKv-7O-Dkk" secondAttribute="trailingMargin" id="CRx-UL-NHc"/>
+                            <constraint firstItem="3ah-3t-N9T" firstAttribute="top" secondItem="g7F-aW-Ozj" secondAttribute="bottom" id="Kz5-su-9Em"/>
+                            <constraint firstAttribute="trailing" secondItem="g7F-aW-Ozj" secondAttribute="trailing" id="Qmx-F2-s9Y"/>
+                            <constraint firstItem="Lmg-rH-go1" firstAttribute="centerY" secondItem="TKv-7O-Dkk" secondAttribute="centerY" id="Y9y-Ex-7d8"/>
+                            <constraint firstItem="Lmg-rH-go1" firstAttribute="leading" secondItem="TKv-7O-Dkk" secondAttribute="leadingMargin" id="g18-b9-e4W"/>
+                            <constraint firstItem="g7F-aW-Ozj" firstAttribute="top" secondItem="wyp-UC-W90" secondAttribute="bottom" constant="15" id="gCH-3V-7VR"/>
+                            <constraint firstItem="g7F-aW-Ozj" firstAttribute="leading" secondItem="TKv-7O-Dkk" secondAttribute="leading" id="oFR-8A-Cdy"/>
+                            <constraint firstItem="Lmg-rH-go1" firstAttribute="trailing" secondItem="TKv-7O-Dkk" secondAttribute="trailingMargin" id="sbw-gX-BUB"/>
+                            <constraint firstItem="wyp-UC-W90" firstAttribute="top" secondItem="xd0-iK-Vpa" secondAttribute="bottom" constant="15" id="zfK-Xm-YfM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Jobs" id="NPh-jI-asx">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" id="K9K-Ek-Jty">
+                            <connections>
+                                <segue destination="dRI-6i-7TL" kind="presentation" id="uPR-Du-0OG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="noDataLabel" destination="Lmg-rH-go1" id="256-96-hpy"/>
+                        <outlet property="segmentedControl" destination="wyp-UC-W90" id="PMY-Lb-ixw"/>
+                        <outlet property="tableView" destination="g7F-aW-Ozj" id="Dm9-Zn-BGb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BAe-Sa-L4R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3217" y="3122"/>
         </scene>
         <!--My Bids-->
         <scene sceneID="5IP-P1-Els">
@@ -1021,7 +1075,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
         <image name="Star" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ial-fH-XVL"/>
-        <segue reference="jkM-Ly-1T8"/>
+        <segue reference="Cm3-VV-UuI"/>
+        <segue reference="FrF-m5-N7p"/>
     </inferredMetricsTieBreakers>
 </document>

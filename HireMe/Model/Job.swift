@@ -17,8 +17,8 @@ class Job: Equatable {
 	var priceRangeStart: Double?
 	var priceRangeEnd: Double?
 	var industry: String?
-	var locationCity: String?
-	var locationState: String?
+	var locationCity: String
+	var locationState: String
 	var locationZip: String?
 	var description: String?
 	var status: String
@@ -31,7 +31,7 @@ class Job: Equatable {
 	var selectedBid: Bid?
     var advertiser: User
 
-    init(id: Int, name: String, timeFrameStart: String?, timeFrameEnd: String?, priceRangeStart: Double?, priceRangeEnd: Double?, industry: String?, locationCity: String?, locationState: String?, locationZip: String?, description: String?, status: String = JobStatus.open.rawValue, images: [UIImage]?, dateCreated: Date = Date(), dateUpdated: Date = Date(), advertiser: User) {
+    init(id: Int, name: String, timeFrameStart: String?, timeFrameEnd: String?, priceRangeStart: Double?, priceRangeEnd: Double?, industry: String?, locationCity: String, locationState: String, locationZip: String?, description: String?, status: String = JobStatus.open.rawValue, images: [UIImage]?, dateCreated: Date = Date(), dateUpdated: Date = Date(), advertiser: User) {
 		self.id = id
 		self.name = name
 		self.timeFrameStart = timeFrameStart == "" ? nil : timeFrameStart
@@ -39,8 +39,8 @@ class Job: Equatable {
 		self.priceRangeStart = priceRangeStart
 		self.priceRangeEnd = priceRangeEnd
 		self.industry = industry == "" ? nil : industry
-		self.locationCity = locationCity == "" ? nil : locationCity
-		self.locationState = locationState == "" ? nil : locationState
+		self.locationCity = locationCity
+		self.locationState = locationState
 		self.locationZip = locationZip == "" ? nil : locationZip
 		self.description = description == "" ? nil : description
 		self.status = status
@@ -55,14 +55,13 @@ class Job: Equatable {
 	}
     
     func timeFrame(dateFormat: String) -> String {
-        var startDate: Date?
+        let startDate = timeFrameStart?.dateFromString()
         var timeFrame = ""
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat
         
-        if let start = timeFrameStart?.dateFromString() {
-            startDate = start
+        if let start = startDate {
             timeFrame += dateFormatter.string(from: start)
         }
         
@@ -72,11 +71,43 @@ class Job: Equatable {
                     timeFrame += " - " + dateFormatter.string(from: end)
                 }
             } else {
-                timeFrame += dateFormatter.string(from: end)
+                timeFrame = dateFormatter.string(from: end)
             }
         }
         
         return timeFrame
+    }
+    
+    func priceRange() -> String {
+        var priceRange = priceRangeStart?.convertToCurrency() ?? ""
+        
+        if let endingPrice = priceRangeEnd?.convertToCurrency() {
+            if priceRange.characters.count > 0 {
+                // A starting price exists
+                if endingPrice != priceRange {
+                    // ending price != starting price
+                    priceRange += " - " + endingPrice
+                }
+            } else {
+                priceRange = endingPrice
+            }
+        }
+        
+        return priceRange
+    }
+    
+    func cityState() -> String {
+        return locationCity + ", " + locationState
+    }
+    
+    func cityStateZip() -> String {
+        var location = cityState()
+        
+        if let zip = locationZip {
+            location += " " + zip
+        }
+        
+        return location
     }
 }
 

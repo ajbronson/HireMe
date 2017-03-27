@@ -94,6 +94,15 @@ class MenuTableViewController: UITableViewController {
         return self.tableViewData[section][SECTION_TITLE_KEY] as? String
     }
     
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        guard let userMode = self.userMode() else { return nil }
+        
+        switch (userMode) {
+        case .consumer: return self.tableViewData[section][SECTION_FOOTER_TEXT_CONSUMER_KEY] as? String
+        case .provider: return self.tableViewData[section][SECTION_FOOTER_TEXT_PROVIDER_KEY] as? String
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath)
         cell.textLabel?.text = self.tableViewDataRow(forIndexPath: indexPath)?[TITLE_KEY] as? String
@@ -126,13 +135,15 @@ class MenuTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        guard let userMode = self.userMode() else { return nil }
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let headerView = view as! UITableViewHeaderFooterView
         
-        switch (userMode) {
-            case .consumer: return self.tableViewData[section][SECTION_FOOTER_TEXT_CONSUMER_KEY] as? String
-            case .provider: return self.tableViewData[section][SECTION_FOOTER_TEXT_PROVIDER_KEY] as? String
-        }
+        /*
+         Setting the text in this function as well as in tableView(_:titleForHeaderInSection:) will make the text
+         not be in all caps. The text must match in both functions for it to work though.
+         */
+        headerView.textLabel?.text = self.tableViewData[section][SECTION_TITLE_KEY] as? String
+        headerView.textLabel?.font = UIFont.systemFont(ofSize: 17.0)
     }
     
     
@@ -152,7 +163,7 @@ class MenuTableViewController: UITableViewController {
             ]
         } else {
             self.tableViewData = [
-                [SECTION_TITLE_KEY: "", ROWS_KEY: [[TITLE_KEY: "Sign In", SEGUE_ID_KEY: "presentSignIn"]]],
+                [SECTION_TITLE_KEY: "", ROWS_KEY: [[TITLE_KEY: "Sign in", SEGUE_ID_KEY: "presentSignIn"]]],
                 self.switchModesSection()
             ]
         }

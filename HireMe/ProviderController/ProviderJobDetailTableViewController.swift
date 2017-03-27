@@ -17,6 +17,7 @@ fileprivate let PERSON_REUSE_ID = "personCell"
 
 class ProviderJobDetailTableViewController: UITableViewController {
     var job: Job!
+    var seguedFromMyJobs = false
     private var tableViewData = [[String: String]]()
     
     // MARK: - View controller life cycle
@@ -61,10 +62,17 @@ class ProviderJobDetailTableViewController: UITableViewController {
         if reuseID == PERSON_REUSE_ID {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseID, for: indexPath) as? JobAdvertiserTableViewCell else { return UITableViewCell() }
             cell.nameLabel.text = job.advertiser.fullName
-            cell.ratingsLabel.text = "(\(job.advertiser.numberOfRatings))"
             
-            let stars = [cell.starImageView1, cell.starImageView2, cell.starImageView3, cell.starImageView4, cell.starImageView5]
-            RatingStarsHelper.show(job.advertiser.numberOfStars, stars: stars)
+            if job.advertiser.numberOfRatings > 0 {
+                cell.ratingsLabel.text = "(\(job.advertiser.numberOfRatings))"
+                
+                let stars = [cell.starImageView1, cell.starImageView2, cell.starImageView3, cell.starImageView4, cell.starImageView5]
+                RatingStarsHelper.show(job.advertiser.numberOfStars, stars: stars)
+            } else {
+                cell.starsStackView.isHidden = true
+                cell.ratingsLabel.isHidden = true
+                cell.noRatingsLabel.isHidden = false
+            }
             
             cell.personImageView.image = job.advertiser.image ?? UIImage(named: "Person")
             
@@ -84,6 +92,10 @@ class ProviderJobDetailTableViewController: UITableViewController {
     
     // MARK: - IBActions
     
+    @IBAction func didTapDone(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func didTapViewPhotos(_ sender: UIBarButtonItem) {
         guard job.images != nil else {
             AlertHelper.showAlert(view: self, title: "No Images", message: nil, closeButtonText: "OK")
@@ -97,41 +109,24 @@ class ProviderJobDetailTableViewController: UITableViewController {
     // MARK: - Private functions
     
     private func initializeTableViewData() {
-        var location = ""
+        var priceTitle: String
+        var price: String
         
-        if let city = job.locationCity {
-            location += city
-        }
-        
-        if let state = job.locationState {
-            if location.characters.count > 0 {
-                location += ", "
-            }
-            
-            location += state
-        }
-        
-        if let zip = job.locationZip {
-            location += " " + zip
-        }
-        
-        var priceRange = ""
-        
-        if let startingPrice = job.priceRangeStart?.convertToCurrency() {
-            priceRange += startingPrice
-        }
-        
-        if let endingPrice = job.priceRangeEnd?.convertToCurrency() {
-            priceRange += " - " + endingPrice
+        if seguedFromMyJobs {
+            priceTitle = "Bid Price"
+            price = job.selectedBid?.price?.convertToCurrency() ?? ""
+        } else {
+            priceTitle = "Expected Price"
+            price = job.priceRange()
         }
         
         tableViewData = [
             [REUSE_ID_KEY: PERSON_REUSE_ID],
-            [TITLE_KEY: "What I Need Done", INFO_KEY: job.name, REUSE_ID_KEY: INFO_REUSE_ID],
+            [TITLE_KEY: "Title", INFO_KEY: job.name, REUSE_ID_KEY: INFO_REUSE_ID],
             [TITLE_KEY: "Industry", INFO_KEY: job.industry ?? "", REUSE_ID_KEY: INFO_REUSE_ID],
-            [TITLE_KEY: "Where", INFO_KEY: location, REUSE_ID_KEY: INFO_REUSE_ID],
+            [TITLE_KEY: "Where", INFO_KEY: job.cityStateZip(), REUSE_ID_KEY: INFO_REUSE_ID],
             [TITLE_KEY: "When", INFO_KEY: job.timeFrame(dateFormat: "EEE MMM d"), REUSE_ID_KEY: INFO_REUSE_ID],
-            [TITLE_KEY: "Expected Price", INFO_KEY: priceRange, REUSE_ID_KEY: INFO_REUSE_ID],
+            [TITLE_KEY: priceTitle, INFO_KEY: price, REUSE_ID_KEY: INFO_REUSE_ID],
             [TITLE_KEY: "Description", INFO_KEY: job.description ?? "", REUSE_ID_KEY: INFO_REUSE_ID],
         ]
     }
