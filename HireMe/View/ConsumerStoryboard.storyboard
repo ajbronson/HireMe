@@ -186,13 +186,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="5pN-ZB-OZV">
                                                     <rect key="frame" x="115" y="0.0" width="244" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.85971907383419688" green="0.77996594761268134" blue="0.10622356298333616" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.85882352941176465" green="0.77996594761268134" blue="0.10622356298333616" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </stackView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAC-dK-xYm">
-                                            <rect key="frame" x="113" y="166" width="150" height="30"/>
+                                            <rect key="frame" x="112.5" y="166" width="150" height="30"/>
                                             <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="150" id="jQZ-Tc-2mp"/>
@@ -483,7 +483,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="UgS-1s-sP6">
-                                            <rect key="frame" x="129.5" y="258.5" width="117.5" height="21.5"/>
+                                            <rect key="frame" x="129" y="258.5" width="117.5" height="21.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uku-2t-6d1">
                                                     <rect key="frame" x="0.0" y="0.0" width="60.5" height="21.5"/>
@@ -782,7 +782,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9H-Db-cMK">
-                                                    <rect key="frame" x="98" y="8" width="180" height="30"/>
+                                                    <rect key="frame" x="97.5" y="8" width="180" height="30"/>
                                                     <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="180" id="h08-RZ-51S"/>
@@ -795,7 +795,7 @@
                                                     </connections>
                                                 </button>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="T3r-sm-59q">
-                                                    <rect key="frame" x="286" y="13" width="20" height="20"/>
+                                                    <rect key="frame" x="285.5" y="13" width="20" height="20"/>
                                                     <color key="color" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </activityIndicatorView>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xn4-7J-d1l">
@@ -858,7 +858,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mU-9N-d6s">
-                                                    <rect key="frame" x="112" y="8" width="150" height="30"/>
+                                                    <rect key="frame" x="112.5" y="8" width="150" height="30"/>
                                                     <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="5qy-QT-OkX"/>
@@ -979,13 +979,17 @@
         <!--Navigation Controller-->
         <scene sceneID="HnA-LH-iqx">
             <objects>
-                <navigationController storyboardIdentifier="RootNavConsumerView" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Yg4-BA-eqp" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RootNavConsumerView" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" toolbarHidden="NO" id="Yg4-BA-eqp" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Fec-bc-RkW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fec-bc-RkW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Cl3-PB-8ln">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="dwQ-HI-D8r" kind="relationship" relationship="rootViewController" id="z90-67-b4n"/>
                     </connections>
@@ -1032,6 +1036,6 @@
         <image name="Wide" width="255" height="49"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Fkc-5Q-vdH"/>
+        <segue reference="yeI-Of-M54"/>
     </inferredMetricsTieBreakers>
 </document>

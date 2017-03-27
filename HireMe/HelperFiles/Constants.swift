@@ -30,6 +30,7 @@ struct AppColors {
 	static let blueColor = UIColor(colorLiteralRed: 0/255.0, green: 188/255.0, blue: 212/255.0, alpha: 1.0)
 	static let lightBlueColor = UIColor(colorLiteralRed: 0/255.0, green: 188/255.0, blue: 212/255.0, alpha: 0.6)
 	static let greenColor = UIColor(colorLiteralRed: 63/255.0, green: 178/255.0, blue: 86/255.0, alpha: 1.0)
+	static let yellowColor = UIColor(colorLiteralRed: 219/255.0, green: 199/255.0, blue: 27/255.0, alpha: 1.0)
 }
 
 struct AppInfo {
