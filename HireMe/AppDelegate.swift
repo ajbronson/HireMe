@@ -66,7 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             SignInHelper.setUserProfile(fullName: user.profile.name,
                                         firstName: user.profile.givenName,
                                         lastName: user.profile.familyName,
-                                        email: user.profile.email)
+                                        email: user.profile.email,
+                                        imageURL: nil)
             NotificationCenter.default.post(name: gSignInNotificationName, object: nil)
         } else {
             print("\(error.localizedDescription)")

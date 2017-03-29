@@ -74,16 +74,24 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
                 }
                 
                 if result.grantedPermissions != nil {
-                    FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, first_name, last_name, email"]).start { (connection, result, error) in
+                    // https://developers.facebook.com/docs/graph-api/reference/user for a list of available fields
+                    FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, first_name, last_name, email, cover"]).start { (connection, result, error) in
                         if error == nil {
                             guard let profile = result as? [String: Any] else {
                                 return
                             }
                             
+                            var coverPhotoSource: String?
+                            
+                            if let cover = profile["cover"] as? [String: Any] {
+                                coverPhotoSource = cover["source"] as? String
+                            }
+                            
                             SignInHelper.setUserProfile(fullName: profile["name"] as? String,
                                                         firstName: profile["first_name"] as? String,
                                                         lastName: profile["last_name"] as? String,
-                                                        email: profile["email"] as? String)
+                                                        email: profile["email"] as? String,
+                                                        imageURL: coverPhotoSource)
                             self.dismiss(animated: true, completion: nil)
                         } else {
                             print("\(error?.localizedDescription)")

@@ -81,6 +81,18 @@ class MenuTableViewController: UITableViewController {
             let profile = SignInHelper.userProfile(),
             let fullName = profile["fullName"] {
             tableHeaderNameLabel.text = fullName
+            
+            if let imageURLStr = profile["imageURL"],
+                let urlStr = imageURLStr,
+                let url = URL(string: urlStr) {
+                DispatchQueue.global().async {
+                    if let data = try? Data(contentsOf: url) {
+                        DispatchQueue.main.async {
+                            self.tableHeaderImageView.image = UIImage(data: data)
+                        }
+                    }
+                }
+            }
         }
     }
     

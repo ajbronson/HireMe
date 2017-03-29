@@ -43,12 +43,13 @@ class SignInHelper {
         return !(self.getSignInMethod() == .NotSignedIn)
     }
     
-    static func setUserProfile(fullName: String?, firstName: String?, lastName: String?, email: String?) {
+    static func setUserProfile(fullName: String?, firstName: String?, lastName: String?, email: String?, imageURL: String?) {
         let userProfile = [
             "fullName": fullName,
             "firstName": firstName,
             "lastName": lastName,
-            "email": email
+            "email": email,
+            "imageURL": imageURL
         ]
         
         UserDefaults.standard.set(userProfile, forKey: self.USER_PROFILE_KEY)
