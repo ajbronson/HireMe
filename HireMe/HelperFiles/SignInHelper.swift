@@ -58,4 +58,22 @@ class SignInHelper {
     static func userProfile() -> [String: String?]? {
         return UserDefaults.standard.dictionary(forKey: self.USER_PROFILE_KEY) as? [String: String?]
     }
+    
+    static func getToken(tokenToConvert token: String, completion: @escaping (_ token: String?, _ error: Error?) -> Void) {
+        let url = NetworkConroller.url(withBaseURL: BASE_URL, pathParameters: ["Auth", "convert-token"])
+        let request = NetworkConroller.request(url, method: .Post, headers: ["client_id": CLIENT_ID, "client_secret": CLIENT_SECRET])
+        NetworkConroller.performURLRequest(url, method: .Get) { (data, error) in
+            if let err = error {
+                completion(nil, err)
+            } else {
+                guard let responseData = data else {
+                    // TODO: create a custom error to pass
+                    completion(nil, nil)
+                    return
+                }
+                
+                let json = try? JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any]
+            }
+        }
+    }
 }
