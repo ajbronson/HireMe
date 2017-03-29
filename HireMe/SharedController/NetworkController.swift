@@ -32,6 +32,20 @@ class NetworkConroller {
 		})
 		dataTask.resume()
 	}
+    
+    static func request(_ url: URL, method: HTTPMethod, headers: [String: String]? = nil, body: Data? = nil) -> URLRequest {
+        var request = URLRequest(url: url)
+        request.httpMethod = method.rawValue
+        request.httpBody = body
+        
+        if let headersDict = headers {
+            for (key, value) in headersDict {
+                request.addValue(value, forHTTPHeaderField: key)
+            }
+        }
+        
+        return request
+    }
 
 	static func urlFromURLParameters(_ url: URL, urlParameters: [String: String]?) -> URL {
 
@@ -44,6 +58,18 @@ class NetworkConroller {
 			fatalError("URL optional is nil")
 		}
 	}
+    
+    static func url(withBaseURL base: String, pathParameters: [String]) -> URL {
+        let encodedPathParameters = pathParameters.map({ "\($0.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!)" }).joined(separator: "/")
+        let urlString = "\(base)/\(encodedPathParameters)"
+//        print("url(base:pathParameters:): \(urlString)")
+        
+        if let url = URL(string: urlString) {
+            return url
+        } else {
+            fatalError("URL optional is nil")
+        }
+    }
 
 	static func fetchImage(_ url: URL, completion: @escaping (_ image: UIImage?) -> Void) {
 		self.performURLRequest(url, method: .Get) { (data, error) in
