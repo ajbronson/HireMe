@@ -23,10 +23,18 @@ let SECTION_FOOTER_TEXT_CONSUMER_KEY = "sectionFooterTextConsumer"
 let SECTION_FOOTER_TEXT_PROVIDER_KEY = "sectionFooterTextProvider"
 
 class MenuTableViewController: UITableViewController {
+    
     private enum UserMode {
         case consumer
         case provider
     }
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var tableHeaderImageView: UIImageView!
+    @IBOutlet weak var tableHeaderNameLabel: UILabel!
+    
+    // MARK: - Properties
     
     private var presentingVC: UIViewController? // This controller's presenting view controller
     private var tableViewData = [[String: Any]]()
@@ -53,25 +61,26 @@ class MenuTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.hideEmptyCells()
+        tableView.hideEmptyCells()
+        tableHeaderImageView.layer.cornerRadius = tableHeaderImageView.frame.height / 2 // make image a circle
         
-        self.initalizeTableViewData()
+        initalizeTableViewData()
         
         // self.presentingViewController returns nil in self.switchModes, so it's saved to a variable here to be accessible in self.switchModes
-        self.presentingVC = self.presentingViewController
+        presentingVC = presentingViewController
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         if let indexPath = self.tableView.indexPathForSelectedRow {
-            self.tableView.deselectRow(at: indexPath, animated: true)
+            tableView.deselectRow(at: indexPath, animated: true)
         }
         
         if SignInHelper.isSignedIn(),
             let profile = SignInHelper.userProfile(),
             let fullName = profile["fullName"] {
-            self.tableViewData[0][SECTION_TITLE_KEY] = fullName
+            tableHeaderNameLabel.text = fullName
         }
     }
     
@@ -79,33 +88,29 @@ class MenuTableViewController: UITableViewController {
     // MARK: - UITableViewDataSource
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return self.tableViewData.count
+        return tableViewData.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let rows = self.tableViewDataRows(forSection: section) {
+        if let rows = tableViewDataRows(forSection: section) {
             return rows.count
         }
         
         return 0
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.tableViewData[section][SECTION_TITLE_KEY] as? String
-    }
-    
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        guard let userMode = self.userMode() else { return nil }
+        guard let userMode = userMode() else { return nil }
         
         switch (userMode) {
-        case .consumer: return self.tableViewData[section][SECTION_FOOTER_TEXT_CONSUMER_KEY] as? String
-        case .provider: return self.tableViewData[section][SECTION_FOOTER_TEXT_PROVIDER_KEY] as? String
+        case .consumer: return tableViewData[section][SECTION_FOOTER_TEXT_CONSUMER_KEY] as? String
+        case .provider: return tableViewData[section][SECTION_FOOTER_TEXT_PROVIDER_KEY] as? String
         }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath)
-        cell.textLabel?.text = self.tableViewDataRow(forIndexPath: indexPath)?[TITLE_KEY] as? String
+        cell.textLabel?.text = tableViewDataRow(forIndexPath: indexPath)?[TITLE_KEY] as? String
         
         return cell
     }
@@ -114,7 +119,7 @@ class MenuTableViewController: UITableViewController {
     // MARK: - UITableViewDelegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let row = self.tableViewDataRow(forIndexPath: indexPath) {
+        if let row = tableViewDataRow(forIndexPath: indexPath) {
             self.dismiss(animated: true, completion: {
                 if let segueID = row[SEGUE_ID_KEY] as? String {
                     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate,
@@ -135,17 +140,6 @@ class MenuTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        let headerView = view as! UITableViewHeaderFooterView
-        
-        /*
-         Setting the text in this function as well as in tableView(_:titleForHeaderInSection:) will make the text
-         not be in all caps. The text must match in both functions for it to work though.
-         */
-        headerView.textLabel?.text = self.tableViewData[section][SECTION_TITLE_KEY] as? String
-        headerView.textLabel?.font = UIFont.systemFont(ofSize: 17.0)
-    }
-    
     
     // MARK: - Custom functions
     
@@ -159,16 +153,16 @@ class MenuTableViewController: UITableViewController {
                     [TITLE_KEY: "Edit account", SEGUE_ID_KEY: "presentAccount"],
                     [TITLE_KEY: "Settings", SEGUE_ID_KEY: "presentSettings"]
                     ]],
-                self.switchModesSection()
+                switchModesSection()
             ]
         } else {
             self.tableViewData = [
                 [SECTION_TITLE_KEY: "", ROWS_KEY: [[TITLE_KEY: "Sign in", SEGUE_ID_KEY: "presentSignIn"]]],
-                self.switchModesSection()
+                switchModesSection()
             ]
         }
         
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
     
     private func switchModesSection() -> [String: Any] {
@@ -181,17 +175,17 @@ class MenuTableViewController: UITableViewController {
     }
     
     private func tableViewDataRows(forSection section: Int) -> [[String: Any]]? {
-        return self.tableViewData[section][ROWS_KEY] as? [[String: Any]]
+        return tableViewData[section][ROWS_KEY] as? [[String: Any]]
     }
     
     private func tableViewDataRow(forIndexPath indexPath: IndexPath) -> [String: Any]? {
-        guard let rows = self.tableViewDataRows(forSection: indexPath.section) else { return nil }
+        guard let rows = tableViewDataRows(forSection: indexPath.section) else { return nil }
 
         return rows[indexPath.row]
     }
     
     private func userMode() -> UserMode? {
-        guard let vc = self.presentingVC else { return nil }
+        guard let vc = presentingVC else { return nil }
         
         return vc.storyboardName == "ConsumerStoryboard" ? .consumer : .provider
     }
