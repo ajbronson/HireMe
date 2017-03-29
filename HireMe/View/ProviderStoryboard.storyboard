@@ -846,7 +846,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 <navigationController storyboardIdentifier="ProviderJobsNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZXi-FD-it0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Jobs" image="Money" id="4Cu-Py-ij7"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Dvw-Vn-KCB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dvw-Vn-KCB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1017,7 +1017,7 @@ Also, I pay like really pretty well, so if anyone wants to come out, then I'll a
                 <navigationController storyboardIdentifier="BidsNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4Kf-1T-rXf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Bids" image="Bid" id="y79-qf-p9r"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0lq-qw-mYg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0lq-qw-mYg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
