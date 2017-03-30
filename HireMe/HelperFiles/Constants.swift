@@ -8,6 +8,8 @@
 
 import UIKit
 
+let FACEBOOK_APP_SECRET = "793e210989cf4c60e85c47f312035181"
+let FACEBOOK_APP_ID = "560166467523718"
 let CLIENT_ID = "1CgTrJsB5uCOI34YJ93SdDcbsdtOu83L0ajax7NC"
 let CLIENT_SECRET = "Ja7goH80w7mIXjQ9iQZzkQoyYyohmtoUUNgSdXZj65raJHxy8iRtEkCLmlgixvZ69T30feD9nJBMaWaYZkNNgFfAExN6oeuSGsvk0sYkM9mMJ1w73FK7GIsCtyRRn2l9"
 let BASE_URL = "http://limitedhire-dev.us-west-2.elasticbeanstalk.com"
