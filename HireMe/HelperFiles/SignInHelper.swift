@@ -31,6 +31,7 @@ class SignInHelper {
     // TODO: check if signed in with LimitedHire
     static func getSignInMethod() -> SignInMethod {
         if FBSDKAccessToken.current() != nil {
+            print("Facebook token: \(FBSDKAccessToken.current().tokenString)")
             return SignInMethod.Facebook
         } else if GIDSignIn.sharedInstance().currentUser != nil {
             return SignInMethod.Google
@@ -60,7 +61,7 @@ class SignInHelper {
     }
     
     static func getToken(tokenToConvert token: String, completion: @escaping (_ token: String?, _ error: Error?) -> Void) {
-        let url = NetworkConroller.url(withBaseURL: BASE_URL, pathParameters: ["Auth", "convert-token"])
+        let url = NetworkConroller.url(withBaseURL: BASE_URL, pathParameters: ["auth", "convert-token"])
         let request = NetworkConroller.request(url, method: .Post, headers: ["client_id": CLIENT_ID, "client_secret": CLIENT_SECRET])
         NetworkConroller.performURLRequest(request) { (data, error) in
             if let err = error {
