@@ -33,6 +33,12 @@ class NetworkConroller {
 		dataTask.resume()
 	}
     
+    static func performURLRequest(_ request: URLRequest, completion: @escaping ((Data?, Error?) -> Void)) {
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            completion(data, error)
+        }.resume()
+    }
+    
     static func request(_ url: URL, method: HTTPMethod, headers: [String: String]? = nil, body: Data? = nil) -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
