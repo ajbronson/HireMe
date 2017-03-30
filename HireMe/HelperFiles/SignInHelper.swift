@@ -62,7 +62,7 @@ class SignInHelper {
     static func getToken(tokenToConvert token: String, completion: @escaping (_ token: String?, _ error: Error?) -> Void) {
         let url = NetworkConroller.url(withBaseURL: BASE_URL, pathParameters: ["Auth", "convert-token"])
         let request = NetworkConroller.request(url, method: .Post, headers: ["client_id": CLIENT_ID, "client_secret": CLIENT_SECRET])
-        NetworkConroller.performURLRequest(url, method: .Get) { (data, error) in
+        NetworkConroller.performURLRequest(request) { (data, error) in
             if let err = error {
                 completion(nil, err)
             } else {
