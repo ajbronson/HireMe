@@ -60,14 +60,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         if error == nil {
             print("Signed in with Google") // DEBUG
 //            let userId = user.userID                  // For client-side use only!
-//            let idToken = user.authentication.idToken // Safe to send to the server
-//            print("Google token: \(idToken)") // DEBUG
+            let idToken = user.authentication.idToken // Safe to send to the server
+            print("Google token: \(idToken)") // DEBUG
             
             SignInHelper.setUserProfile(fullName: user.profile.name,
                                         firstName: user.profile.givenName,
                                         lastName: user.profile.familyName,
                                         email: user.profile.email,
-                                        imageURL: nil)
+                                        imageURL: "")
             NotificationCenter.default.post(name: gSignInNotificationName, object: nil)
         } else {
             print("\(error.localizedDescription)")
