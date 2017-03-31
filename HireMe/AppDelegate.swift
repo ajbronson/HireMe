@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Initialize Google sign-in
         var configureError: NSError?
         GGLContext.sharedInstance().configureWithError(&configureError)
-        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        assert(configureError == nil, "Error configuring Google services: \(String(describing: configureError))")
         
         GIDSignIn.sharedInstance().delegate = self
         
@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             print("Signed in with Google") // DEBUG
 //            let userId = user.userID                  // For client-side use only!
             let idToken = user.authentication.idToken // Safe to send to the server
-            print("Google token: \(idToken)") // DEBUG
+            print("Google token: \(String(describing: idToken))") // DEBUG
             
             //SignInHelper.setUserProfile(fullName: user.profile.name,
                                         //firstName: user.profile.givenName,

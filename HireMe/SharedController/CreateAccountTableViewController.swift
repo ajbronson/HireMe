@@ -98,13 +98,13 @@ class CreateAccountTableViewController: UITableViewController, UITextFieldDelega
     }
     
     func printAccountDetails() {
-        print("Username: \(self.usernameTextField.text)")
-        print("First Name: \(self.firstNameTextField.text)")
-        print("Last Name: \(self.lastNameTextField.text)")
-        print("Phone: \(self.phoneNumberTextField.text)")
-        print("ZIP Code: \(self.zipCodeTextField.text)")
-        print("Email: \(self.emailTextField.text)")
-        print("Password: \(self.passwordTextField.text)")
-        print("Re-entered password: \(self.reEnterPasswordTextField.text)")
+        print("Username: \(String(describing: self.usernameTextField.text))")
+        print("First Name: \(String(describing: self.firstNameTextField.text))")
+        print("Last Name: \(String(describing: self.lastNameTextField.text))")
+        print("Phone: \(String(describing: self.phoneNumberTextField.text))")
+        print("ZIP Code: \(String(describing: self.zipCodeTextField.text))")
+        print("Email: \(String(describing: self.emailTextField.text))")
+        print("Password: \(String(describing: self.passwordTextField.text))")
+        print("Re-entered password: \(String(describing: self.reEnterPasswordTextField.text))")
     }
 }

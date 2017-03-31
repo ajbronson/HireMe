@@ -210,7 +210,7 @@ extension UIViewController {
     
     /// Prints the class name and storyboard ID
     var descr: String {
-        return "class: \(self.className), ID: \(self.restorationIdentifier), storyboard: \(self.storyboardName)"
+        return "class: \(self.className), ID: \(String(describing: self.restorationIdentifier)), storyboard: \(String(describing: self.storyboardName))"
     }
     
     var storyboardName: String? {

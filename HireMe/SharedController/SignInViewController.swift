@@ -94,7 +94,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
                                                         imageURL: coverPhotoSource)
                             self.dismiss(animated: true, completion: nil)
                         } else {
-                            print("\(error?.localizedDescription)")
+                            print("\(String(describing: error?.localizedDescription))")
                         }
                     }
                 }
