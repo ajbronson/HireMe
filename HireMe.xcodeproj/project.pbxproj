@@ -873,7 +873,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D674E8CF36C0F147120D6D4A /* Pods-HireMe.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E5QLQ9VDQN;
 				INFOPLIST_FILE = HireMe/Info.plist;
@@ -888,7 +887,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1A1925A3082FD6438C80712C /* Pods-HireMe.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E5QLQ9VDQN;
 				INFOPLIST_FILE = HireMe/Info.plist;
@@ -908,7 +906,6 @@
 				DEVELOPMENT_TEAM = E5QLQ9VDQN;
 				INFOPLIST_FILE = HireMeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.precisioncodes.HireMeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -925,7 +922,6 @@
 				DEVELOPMENT_TEAM = E5QLQ9VDQN;
 				INFOPLIST_FILE = HireMeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.precisioncodes.HireMeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -941,7 +937,6 @@
 				DEVELOPMENT_TEAM = E5QLQ9VDQN;
 				INFOPLIST_FILE = HireMeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.precisioncodes.HireMeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -957,7 +952,6 @@
 				DEVELOPMENT_TEAM = E5QLQ9VDQN;
 				INFOPLIST_FILE = HireMeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.precisioncodes.HireMeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
