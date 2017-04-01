@@ -68,7 +68,15 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
             if let err = error {
                 print(err)
             } else {
-                print("Signed in with Facebook")
+                print("Facebook token: \(FBSDKAccessToken.current().tokenString)")
+                SignInHelper.getTokens(completionHandler: { (accessToken, refreshToken, error) in
+                    if let err = error {
+                        print(err.localizedDescription)
+                    } else {
+                        print("access token: \(String(describing: accessToken)), refresh token: \(String(describing: refreshToken))")
+                    }
+                })
+                
                 guard let result = loginResult else {
                     return
                 }
@@ -87,11 +95,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
                                 coverPhotoSource = cover["source"] as? String
                             }
                             
-                            SignInHelper.setUserProfile(fullName: profile["name"] as? String,
-                                                        firstName: profile["first_name"] as? String,
-                                                        lastName: profile["last_name"] as? String,
-                                                        email: profile["email"] as? String,
-                                                        imageURL: coverPhotoSource)
+//                            SignInHelper.setUserProfile(fullName: profile["name"] as? String,
+//                                                        firstName: profile["first_name"] as? String,
+//                                                        lastName: profile["last_name"] as? String,
+//                                                        email: profile["email"] as? String,
+//                                                        imageURL: coverPhotoSource)
                             self.dismiss(animated: true, completion: nil)
                         } else {
                             print("\(String(describing: error?.localizedDescription))")
