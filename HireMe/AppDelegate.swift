@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         if error == nil {
             print("Signed in with Google") // DEBUG
 //            let userId = user.userID                  // For client-side use only!
-            let idToken = user.authentication.idToken // Safe to send to the server
+            let idToken = user.authentication.idToken
             print("Google token: \(String(describing: idToken))") // DEBUG
             
             //SignInHelper.setUserProfile(fullName: user.profile.name,

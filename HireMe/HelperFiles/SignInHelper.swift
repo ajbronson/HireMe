@@ -31,7 +31,6 @@ class SignInHelper {
     // TODO: check if signed in with LimitedHire
     static func getSignInMethod() -> SignInMethod {
         if FBSDKAccessToken.current() != nil {
-            print("Facebook token: \(FBSDKAccessToken.current().tokenString)")
             return SignInMethod.Facebook
         } else if GIDSignIn.sharedInstance().currentUser != nil {
             return SignInMethod.Google
@@ -60,21 +59,63 @@ class SignInHelper {
         return UserDefaults.standard.dictionary(forKey: self.USER_PROFILE_KEY) as? [String: String?]
     }
     
-    static func getToken(tokenToConvert token: String, completion: @escaping (_ token: String?, _ error: Error?) -> Void) {
+    static func getTokens(completionHandler: @escaping (_ accessToken: String?, _ refreshToken: String?, _ error: Error?) -> Void) {
+        let backTok = backendToken()
+        let json = [
+            "grant_type": "convert_token",
+            "client_id": CLIENT_ID,
+            "client_secret": CLIENT_SECRET,
+            "backend": backTok.backend,
+            "token": backTok.token
+        ]
+        let data = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
         let url = NetworkConroller.url(withBaseURL: BASE_URL, pathParameters: ["auth", "convert-token"])
-        let request = NetworkConroller.request(url, method: .Post, headers: ["client_id": CLIENT_ID, "client_secret": CLIENT_SECRET])
+        let request = NetworkConroller.request(url, method: .Post, headers: ["Authorization": bearerToken()], body: data)
+        
         NetworkConroller.performURLRequest(request) { (data, error) in
             if let err = error {
-                completion(nil, err)
+                completionHandler(nil, nil, err)
             } else {
                 guard let responseData = data else {
                     // TODO: create a custom error to pass
-                    completion(nil, nil)
+                    completionHandler(nil, nil, nil)
                     return
                 }
                 
-                let json = try? JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any]
+                guard let json = try? JSONSerialization.jsonObject(with: responseData, options: []),
+                    let jsonDict = json as? [String: Any] else {
+                    // TODO: create a custom error to pass; e.g., InvalidJSON or JSONSerializationFailure
+                    completionHandler(nil, nil, nil)
+                    return
+                }
+                
+//                print(jsonDict)
+                
+                completionHandler(jsonDict["access_token"] as? String, jsonDict["refresh_token"] as? String, nil)
             }
         }
+    }
+    
+    static func bearerToken() -> String {
+        let backTok = backendToken()
+        var bearer = "Bearer " + backTok.backend
+        
+        if backTok.backend.characters.count > 0 {
+            bearer += " "
+        }
+        
+        return "\(bearer)\(backTok.token)"
+    }
+}
+
+func backendToken() -> (backend: String, token: String) {
+    switch SignInHelper.getSignInMethod() {
+    case .Facebook: return ("facebook", FBSDKAccessToken.current().tokenString)
+    case .Google: return ("google", GIDSignIn.sharedInstance().currentUser.authentication.idToken)
+    case .ThisApp:
+        //If signing in natively, the value of backend will not change
+        // TODO: get user's access token
+        return ("", "")
+    case .NotSignedIn: fatalError("Error: Attempting to get a token when user is not signed in")
     }
 }
