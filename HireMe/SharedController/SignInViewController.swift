@@ -74,7 +74,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
                         print(err.localizedDescription)
                     } else {
                         if let oauthToken = token {
-                            print("authorization: \(oauthToken.authorization())")
+                            print(oauthToken.description)
                         }
                     }
                 })

@@ -43,10 +43,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                     print(err.localizedDescription)
                 } else {
                     if let oauthToken = token {
-                        print("authorization: \(oauthToken.authorization())")
+                        print(oauthToken.description)
                     }
                 }
             })
+        }
+        
+        if AuthenticationManager.shared.isSignedIn {
+            // Sync data with latest on the server; i.e., /user/<user's ID>
+            
+        } else {
+            
         }
         
         // TODO: remove for prod
