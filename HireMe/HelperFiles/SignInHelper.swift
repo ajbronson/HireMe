@@ -68,9 +68,13 @@ class SignInHelper {
             "backend": backTok.backend,
             "token": backTok.token
         ]
+        
+        print(json) // DEBUG
+        
         let data = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
-        let url = NetworkConroller.url(withBaseURL: BASE_URL, pathParameters: ["auth", "convert-token"])
-        let request = NetworkConroller.request(url, method: .Post, headers: ["Authorization": bearerToken()], body: data)
+        let url = NetworkConroller.url(withBase: BASE_URL, pathParameters: ["auth", "convert-token"])
+        var request = NetworkConroller.request(url, method: .Post, body: data)
+        request.addContentTypeHeader(mimeType: .JSON)
         
         NetworkConroller.performURLRequest(request) { (data, error) in
             if let err = error {
@@ -89,7 +93,7 @@ class SignInHelper {
                     return
                 }
                 
-//                print(jsonDict)
+                print(jsonDict)
                 
                 completionHandler(jsonDict["access_token"] as? String, jsonDict["refresh_token"] as? String, nil)
             }

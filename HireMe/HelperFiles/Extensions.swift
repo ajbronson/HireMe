@@ -8,33 +8,6 @@
 
 import UIKit
 
-extension UIImageView
-{
-	func roundCornersForAspectFit(radius: CGFloat)
-	{
-		if let image = self.image {
-
-			//calculate drawingRect
-			let boundsScale = self.bounds.size.width / self.bounds.size.height
-			let imageScale = image.size.width / image.size.height
-
-			var drawingRect : CGRect = self.bounds
-
-			if boundsScale > imageScale {
-				drawingRect.size.width =  drawingRect.size.height * imageScale
-				drawingRect.origin.x = (self.bounds.size.width - drawingRect.size.width) / 2
-			} else {
-				drawingRect.size.height = drawingRect.size.width / imageScale
-				drawingRect.origin.y = (self.bounds.size.height - drawingRect.size.height) / 2
-			}
-			let path = UIBezierPath(roundedRect: drawingRect, cornerRadius: radius)
-			let mask = CAShapeLayer()
-			mask.path = path.cgPath
-			self.layer.mask = mask
-		}
-	}
-}
-
 extension Double {
     func convertToCurrency(includeDollarSign: Bool = true, truncateZeros: Bool = true) -> String? {
 		let formatter = NumberFormatter()
@@ -52,6 +25,61 @@ extension Double {
 			return money
 		}
 	}
+}
+
+extension Date {
+	func stringFromDate() -> String {
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = "MMM dd, yyyy"
+		return dateFormatter.string(from: self)
+	}
+}
+
+extension String {
+	func dateFromString() -> Date? {
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = "MMM dd, yyyy"
+		let date = dateFormatter.date(from: self)
+		return date
+	}
+    
+    func toDouble(from numberStyle: NumberFormatter.Style) -> Double? {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = numberStyle
+        
+        guard let number = numberFormatter.number(from: self) else { return nil }
+        
+        return number.doubleValue
+    }
+}
+
+extension URLRequest {
+    mutating func addContentTypeHeader(mimeType: NetworkConroller.MIMEType) {
+        self.addValue(mimeType.rawValue, forHTTPHeaderField: "Content-Type")
+    }
+}
+
+
+// MARK: - UIKit extensions
+
+extension UIApplication {
+    class func visibleViewController(from viewController: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+        if let nav = viewController as? UINavigationController {
+            return visibleViewController(from: nav.visibleViewController)
+        }
+        
+        if let tab = viewController as? UITabBarController {
+            if let selected = tab.selectedViewController {
+                return visibleViewController(from: selected)
+            }
+        }
+        
+        if let presented = viewController?.presentedViewController {
+            return visibleViewController(from: presented)
+        }
+        
+        return viewController
+    }
 }
 
 extension UIColor {
@@ -86,52 +114,30 @@ extension UIColor {
     }
 }
 
-extension Date {
-	func stringFromDate() -> String {
-		let dateFormatter = DateFormatter()
-		dateFormatter.dateFormat = "MMM dd, yyyy"
-		return dateFormatter.string(from: self)
-	}
-}
-
-extension String {
-	func dateFromString() -> Date? {
-		let dateFormatter = DateFormatter()
-		dateFormatter.dateFormat = "MMM dd, yyyy"
-		let date = dateFormatter.date(from: self)
-		return date
-	}
-    
-    func toDouble(from numberStyle: NumberFormatter.Style) -> Double? {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = numberStyle
-        
-        guard let number = numberFormatter.number(from: self) else { return nil }
-        
-        return number.doubleValue
-    }
-}
-
-
-// MARK: - UIKit extensions
-
-extension UIApplication {
-    class func visibleViewController(from viewController: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
-        if let nav = viewController as? UINavigationController {
-            return visibleViewController(from: nav.visibleViewController)
-        }
-        
-        if let tab = viewController as? UITabBarController {
-            if let selected = tab.selectedViewController {
-                return visibleViewController(from: selected)
+extension UIImageView
+{
+    func roundCornersForAspectFit(radius: CGFloat)
+    {
+        if let image = self.image {
+            
+            //calculate drawingRect
+            let boundsScale = self.bounds.size.width / self.bounds.size.height
+            let imageScale = image.size.width / image.size.height
+            
+            var drawingRect : CGRect = self.bounds
+            
+            if boundsScale > imageScale {
+                drawingRect.size.width =  drawingRect.size.height * imageScale
+                drawingRect.origin.x = (self.bounds.size.width - drawingRect.size.width) / 2
+            } else {
+                drawingRect.size.height = drawingRect.size.width / imageScale
+                drawingRect.origin.y = (self.bounds.size.height - drawingRect.size.height) / 2
             }
+            let path = UIBezierPath(roundedRect: drawingRect, cornerRadius: radius)
+            let mask = CAShapeLayer()
+            mask.path = path.cgPath
+            self.layer.mask = mask
         }
-        
-        if let presented = viewController?.presentedViewController {
-            return visibleViewController(from: presented)
-        }
-        
-        return viewController
     }
 }
 

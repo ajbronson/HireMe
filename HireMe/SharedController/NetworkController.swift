@@ -17,6 +17,10 @@ class NetworkConroller {
 		case Patch = "PATCH"
 		case Delete = "DELETE"
 	}
+    
+    enum MIMEType: String {
+        case JSON = "application/json"
+    }
 
 	static func performURLRequest(_ url: URL, method: HTTPMethod, urlParams: [String: String]? = nil, body: Data? = nil, completion: ((_ data: Data?, _ error: Error?) -> Void)?) {
 		let requestURL = urlFromURLParameters(url, urlParameters: urlParams)
@@ -34,6 +38,7 @@ class NetworkConroller {
 	}
     
     static func performURLRequest(_ request: URLRequest, completion: @escaping ((Data?, Error?) -> Void)) {
+//        print("request headers: \(String(describing: request.allHTTPHeaderFields))")
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             completion(data, error)
         }.resume()
@@ -43,6 +48,7 @@ class NetworkConroller {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         request.httpBody = body
+        request.addValue(SignInHelper.bearerToken(), forHTTPHeaderField: "Authorization")
         
         if let headersDict = headers {
             for (key, value) in headersDict {
@@ -65,10 +71,10 @@ class NetworkConroller {
 		}
 	}
     
-    static func url(withBaseURL base: String, pathParameters: [String]) -> URL {
+    static func url(withBase base: String, pathParameters: [String]) -> URL {
         let encodedPathParameters = pathParameters.map({ "\($0.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!)" }).joined(separator: "/")
         let urlString = "\(base)/\(encodedPathParameters)"
-//        print("url(base:pathParameters:): \(urlString)")
+//        print("url: \(urlString)")
         
         if let url = URL(string: urlString) {
             return url
