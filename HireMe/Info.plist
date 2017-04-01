@@ -56,6 +56,19 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSExceptionDomains</key>
+        <dict>
+            <key>limitedhire-dev.us-west-2.elasticbeanstalk.com</key>
+            <dict>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+                <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+                <true/>
+            </dict>
+        </dict>
+    </dict>
 	<key>NSCameraUsageDescription</key>
 	<string>We're requesting access to your camera.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
