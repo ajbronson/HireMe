@@ -59,7 +59,7 @@ class SignInHelper {
         return UserDefaults.standard.dictionary(forKey: self.USER_PROFILE_KEY) as? [String: String?]
     }
     
-    static func getTokens(completionHandler: @escaping (_ accessToken: String?, _ refreshToken: String?, _ error: Error?) -> Void) {
+    static func getOAuthToken(completionHandler: @escaping (_ token: OAuthToken?, _ error: Error?) -> Void) {
         let backTok = backendToken()
         let json = [
             "grant_type": "convert_token",
@@ -78,24 +78,24 @@ class SignInHelper {
         
         NetworkConroller.performURLRequest(request) { (data, error) in
             if let err = error {
-                completionHandler(nil, nil, err)
+                completionHandler(nil, err)
             } else {
                 guard let responseData = data else {
                     // TODO: create a custom error to pass
-                    completionHandler(nil, nil, nil)
+                    completionHandler(nil, nil)
                     return
                 }
                 
                 guard let json = try? JSONSerialization.jsonObject(with: responseData, options: []),
                     let jsonDict = json as? [String: Any] else {
                     // TODO: create a custom error to pass; e.g., InvalidJSON or JSONSerializationFailure
-                    completionHandler(nil, nil, nil)
+                    completionHandler(nil, nil)
                     return
                 }
                 
                 print(jsonDict)
                 
-                completionHandler(jsonDict["access_token"] as? String, jsonDict["refresh_token"] as? String, nil)
+                completionHandler(OAuthToken(json: jsonDict), nil)
             }
         }
     }

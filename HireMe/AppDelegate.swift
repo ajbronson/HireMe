@@ -36,6 +36,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             // Signed in with Google
             print("Already signed in with Google") // DEBUG
             GIDSignIn.sharedInstance().signInSilently()
+        } else if FBSDKAccessToken.current() != nil {
+            print("Already signed in with Facebook") // DEBUG
+            SignInHelper.getOAuthToken(completionHandler: { (token, error) in
+                if let err = error {
+                    print(err.localizedDescription)
+                } else {
+                    if let oauthToken = token {
+                        print("authorization: \(oauthToken.authorization())")
+                    }
+                }
+            })
         }
         
         // TODO: remove for prod
@@ -62,12 +73,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 //            let userId = user.userID                  // For client-side use only!
             let idToken = user.authentication.idToken
             print("Google token: \(String(describing: idToken))") // DEBUG
-            
-            SignInHelper.getTokens(completionHandler: { (accessToken, refreshToken, error) in
+            SignInHelper.getOAuthToken(completionHandler: { (token, error) in
                 if let err = error {
                     print(err.localizedDescription)
                 } else {
-                    print("access token: \(String(describing: accessToken)), refresh token: \(String(describing: refreshToken))")
+                    if let oauthToken = token {
+                        print("authorization: \(oauthToken.authorization())")
+                    }
                 }
             })
             
