@@ -63,6 +63,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             let idToken = user.authentication.idToken
             print("Google token: \(String(describing: idToken))") // DEBUG
             
+            SignInHelper.getTokens(completionHandler: { (accessToken, refreshToken, error) in
+                if let err = error {
+                    print(err.localizedDescription)
+                } else {
+                    print("access token: \(String(describing: accessToken)), refresh token: \(String(describing: refreshToken))")
+                }
+            })
+            
             //SignInHelper.setUserProfile(fullName: user.profile.name,
                                         //firstName: user.profile.givenName,
                                         //lastName: user.profile.familyName,
