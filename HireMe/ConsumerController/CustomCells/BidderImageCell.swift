@@ -48,7 +48,7 @@ class BidderImageCell: UITableViewCell {
 		let stars = [starImage1, starImage2, starImage3, starImage4, starImage5]
         RatingStarsHelper.show(bidder.numberOfStars, stars: stars)
 
-		if job.status == JobStatus.cancelled.rawValue || job.status == JobStatus.completed.rawValue {
+		if job.status == .cancelled || job.status == .completed || job.status == .pending {
 			acceptButton.isEnabled = false
 			acceptButton.backgroundColor = UIColor.lightGray
 			declineButton.isEnabled = false
@@ -77,6 +77,7 @@ class BidderImageCell: UITableViewCell {
 			acceptButton.backgroundColor = UIColor.lightGray
 			declineButton.isEnabled = false
 			declineButton.backgroundColor = UIColor.lightGray
+            bid.job.status = .pending
 		}
 	}
 	
@@ -106,6 +107,8 @@ class BidderImageCell: UITableViewCell {
 		}
 		alert.addAction(cancelAction)
 		alert.addAction(okAction)
-		view.present(alert, animated: true, completion: nil)
+        view.present(alert, animated: true) { 
+            // TODO: pop back to view the job
+        }
 	}
 }

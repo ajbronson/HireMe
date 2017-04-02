@@ -97,7 +97,7 @@ class ViewJobTableViewController: UITableViewController {
 
 	func configureBottomButtons(onLoad: Bool) {
 		if let job = job {
-			if job.status == JobStatus.open.rawValue {
+			if job.status == .open {
 				editButton.isEnabled = true
 				completeButton = UIBarButtonItem(title: "Complete Job", style: .plain, target: self, action: #selector(completeButtonAction))
 				cancelButton = UIBarButtonItem(title: "Cancel Job", style: .plain, target: self, action: #selector(cancelButtonAction))

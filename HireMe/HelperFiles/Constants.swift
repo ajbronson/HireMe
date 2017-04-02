@@ -29,6 +29,7 @@ enum JobStatus: String {
 	case cancelled = "Cancelled"
 	case completed = "Completed"
 	case awarded = "Awarded"
+    case pending = "Pending Bidder Response"
 }
 
 struct AppColors {
