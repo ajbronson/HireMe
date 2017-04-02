@@ -15,7 +15,7 @@ class SelectedBidController {
 	var selectedBids: [SelectedBid]?
 
 	init() {
-		let allAwardedJobs = JobController.shared.jobs.filter{$0.status == JobStatus.awarded.rawValue}
+		let allAwardedJobs = JobController.shared.jobs.filter{$0.status == .awarded}
 		let bids = BidController.shared.bids.filter{$0.job == allAwardedJobs[0]}
 		let selectedBid = SelectedBid(id: 0, job: allAwardedJobs[0], bid: bids[0])
 
