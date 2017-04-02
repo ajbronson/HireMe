@@ -43,7 +43,7 @@ class JobInfoCell: UITableViewCell {
         case .open: color = AppColors.yellowColor
         case .completed: color = AppColors.greenColor
         case .cancelled: color = UIColor.red
-        case .pending: color = AppColors.blueColor
+        case .pending: color = UIColor.purple
             // TODO: implement awarded
         default: color = UIColor.black
         }
