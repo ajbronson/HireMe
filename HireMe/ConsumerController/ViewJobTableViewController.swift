@@ -26,7 +26,11 @@ class ViewJobTableViewController: UITableViewController {
 		title = job.name
 
 		configureBottomButtons(onLoad: true)
-		navigationController?.navigationBar.tintColor = UIColor.white
+        
+        // TODO: decide on tint color of nav bar
+		navigationController?.navigationBar.tintColor = UIColor.black // temporary for screen shot
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.black // temporary for screen shot
+        tableView.hideEmptyCells()
 	}
 
 	override func viewDidAppear(_ animated: Bool) {
