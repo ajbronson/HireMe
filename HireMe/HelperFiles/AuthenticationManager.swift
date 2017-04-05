@@ -74,5 +74,10 @@ class AuthenticationManager {
             }
         }
     }
+    
+    func signOut() {
+        oAuthToken = nil
+        NotificationCenter.default.post(name: signOutNotificationName, object: nil)
+    }
 
 }
