@@ -7,16 +7,26 @@
 //
 
 import Foundation
+import GoogleSignIn
+import FBSDKLoginKit
 
 class AuthenticationManager {
     static let shared = AuthenticationManager()
-    private static let oAuthTokenKey = "LH_OAuthToken"
+    
+    // MARK: - Constants
+    
+    private let AUTH_BASE_URL = "\(BASE_URL)/auth"
+    private let OAUTH_TOKEN_KEY = "LH_OAuthToken"
+    private let CONVERT_TOKEN = "convert_token"
+    private let REFRESH_TOKEN = "refresh_token"
+    
+    // MARK: - Properties
     
     var oAuthToken: OAuthToken? {
         get {
             if let token = self.oAuthToken {
                 return token
-            } else if let json = UserDefaults.standard.object(forKey: AuthenticationManager.oAuthTokenKey) as? [String: Any] {
+            } else if let json = UserDefaults.standard.object(forKey: OAUTH_TOKEN_KEY) as? [String: Any] {
                 return OAuthToken(json: json)
             } else {
                 return nil
@@ -24,7 +34,7 @@ class AuthenticationManager {
         }
         
         set {
-            UserDefaults.standard.set(newValue?.toJSON(), forKey: AuthenticationManager.oAuthTokenKey)
+            UserDefaults.standard.set(newValue?.toJSON(), forKey: OAUTH_TOKEN_KEY)
         }
     }
     
@@ -32,52 +42,81 @@ class AuthenticationManager {
         return oAuthToken?.accessToken != nil
     }
     
+    // MARK: - Object life cycle
+    
     private init() {}
     
-    func getOAuthToken(completionHandler: @escaping (_ token: OAuthToken?, _ error: Error?) -> Void) {
+    // MARK: - Functions
+    
+    func getOAuthToken() {
         let backTok = backendToken()
-        let json = [
-            "grant_type": "convert_token",
-            "client_id": CLIENT_ID,
-            "client_secret": CLIENT_SECRET,
-            "backend": backTok.backend,
-            "token": backTok.token
-        ]
         
-        print(json) // DEBUG
+        var httpBody = NetworkConroller.httpBody(withGrantType: CONVERT_TOKEN)
+        httpBody["backend"] = ""
+        httpBody["token"] = ""
+//        print(json) // DEBUG
+        let data = try? JSONSerialization.data(withJSONObject: httpBody, options: .prettyPrinted)
+        let url = NetworkConroller.url(withBase: AUTH_BASE_URL, pathParameters: [CONVERT_TOKEN])
+        performTokenURLRequest(url, body: data)
+    }
+    
+    func refreshToken() {
+        guard let token = oAuthToken else {
+            // TODO: handle error
+            return
+        }
         
-        let data = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
-        let url = NetworkConroller.url(withBase: BASE_URL, pathParameters: ["auth", "convert-token"])
-        var request = NetworkConroller.request(url, method: .Post, body: data)
+        var httpBody = NetworkConroller.httpBody(withGrantType: REFRESH_TOKEN)
+        httpBody[REFRESH_TOKEN] = token.refreshToken
+        
+        let data = try? JSONSerialization.data(withJSONObject: httpBody, options: .prettyPrinted)
+        let url = NetworkConroller.url(withBase: AUTH_BASE_URL, pathParameters: [REFRESH_TOKEN])
+        performTokenURLRequest(url, body: data)
+    }
+    
+    func signOut() {
+        oAuthToken = nil
+        
+        if FBSDKAccessToken.current() != nil { // Logged in with Facebook
+            FBSDKLoginManager().logOut()
+        } else if GIDSignIn.sharedInstance().currentUser != nil { // Logged in with Google
+            GIDSignIn.sharedInstance().signOut()
+        }
+        
+        NotificationCenter.default.post(name: signOutNotificationName, object: nil)
+    }
+    
+    // MARK: - Private functions
+    
+    /**
+     Makes a POST request with a header specifying the content type as JSON to get an access token
+     
+     - Parameter url: The request URL
+     - Parameter body: The request HTTP body
+     */
+    private func performTokenURLRequest(_ url: URL, body: Data?) {
+        var request = NetworkConroller.request(url, method: .Post, body: body)
         request.addContentTypeHeader(mimeType: .JSON)
         
         NetworkConroller.performURLRequest(request) { (data, error) in
             if let err = error {
-                completionHandler(nil, err)
+                // TODO: handle error
+                print(err.localizedDescription)
             } else {
                 guard let responseData = data else {
-                    // TODO: create a custom error to pass
-                    completionHandler(nil, nil)
+                    // TODO: handle error
                     return
                 }
                 
                 guard let json = try? JSONSerialization.jsonObject(with: responseData, options: []),
                     let jsonDict = json as? [String: Any] else {
-                        // TODO: create a custom error to pass; e.g., InvalidJSON or JSONSerializationFailure
-                        completionHandler(nil, nil)
+                        // TODO: handle error
                         return
                 }
-                
-                print(jsonDict)
-                
-                completionHandler(OAuthToken(json: jsonDict), nil)
+//                print(jsonDict) // DEBUG
+                self.oAuthToken = OAuthToken(json: jsonDict)
             }
         }
-    }
-    
-    func signOut() {
-        oAuthToken = nil
-        NotificationCenter.default.post(name: signOutNotificationName, object: nil)
     }
 
 }
