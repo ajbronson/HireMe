@@ -82,6 +82,20 @@ class NetworkConroller {
             fatalError("URL optional is nil")
         }
     }
+    
+    /**
+     Creates a dictionary with the values for the keys "grant_type", "client_id", and "client_secret"
+     
+     - Parameter grantType: E.g., "convert_token", "refresh_token"
+     - Returns: A dictionary
+     */
+    static func httpBody(withGrantType grantType: String) -> [String: String] {
+        return [
+            "grant_type": grantType,
+            "client_id": CLIENT_ID,
+            "client_secret": CLIENT_SECRET
+        ]
+    }
 
 	static func fetchImage(_ url: URL, completion: @escaping (_ image: UIImage?) -> Void) {
 		self.performURLRequest(url, method: .Get) { (data, error) in
