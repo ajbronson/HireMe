@@ -10,8 +10,24 @@ import Foundation
 
 class AuthenticationManager {
     static let shared = AuthenticationManager()
+    private static let oAuthTokenKey = "LH_OAuthToken"
     
-    var oAuthToken: OAuthToken?
+    var oAuthToken: OAuthToken? {
+        get {
+            if let token = self.oAuthToken {
+                return token
+            } else if let json = UserDefaults.standard.object(forKey: AuthenticationManager.oAuthTokenKey) as? [String: Any] {
+                return OAuthToken(json: json)
+            } else {
+                return nil
+            }
+        }
+        
+        set {
+            UserDefaults.standard.set(newValue?.toJSON(), forKey: AuthenticationManager.oAuthTokenKey)
+        }
+    }
+    
     var isSignedIn: Bool {
         return oAuthToken?.accessToken != nil
     }
