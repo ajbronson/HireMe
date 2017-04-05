@@ -32,19 +32,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
 //        print("Google hasAuthInKeychain: \(GIDSignIn.sharedInstance().hasAuthInKeychain())") // DEBUG
         
-        if GIDSignIn.sharedInstance().hasAuthInKeychain() {
-            // Signed in with Google
-            print("Already signed in with Google") // DEBUG
-            GIDSignIn.sharedInstance().signInSilently()
-        } else if FBSDKAccessToken.current() != nil {
-            print("Already signed in with Facebook") // DEBUG
-        }
+//        if GIDSignIn.sharedInstance().hasAuthInKeychain() {
+//            // Signed in with Google
+//            print("Already signed in with Google") // DEBUG
+//            GIDSignIn.sharedInstance().signInSilently()
+//        } else if FBSDKAccessToken.current() != nil {
+//            print("Already signed in with Facebook") // DEBUG
+//        }
         
-        if AuthenticationManager.shared.isSignedIn {
-            // Sync data with latest on the server; i.e., /user/<user's ID>
-            
-        } else {
-            
+        if let token = AuthenticationManager.shared.oAuthToken {
+            if token.isExpired {
+                // TODO: refresh token
+            } else {
+                // Sync data with latest on the server; i.e., /user/<user's ID>
+            }
         }
         
         // TODO: remove for prod
@@ -71,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 //            let userId = user.userID                  // For client-side use only!
             let idToken = user.authentication.idToken
             print("Google token: \(String(describing: idToken))") // DEBUG
-            // TODO: get OAuth token
+            AuthenticationManager.shared.getOAuthToken()
             
             //SignInHelper.setUserProfile(fullName: user.profile.name,
                                         //firstName: user.profile.givenName,
