@@ -11,6 +11,9 @@ import GoogleSignIn
 import FBSDKLoginKit
 
 class AuthenticationManager {
+    
+    // MARK: - Type properties
+    
     static let shared = AuthenticationManager()
     
     // MARK: - Constants
@@ -20,7 +23,7 @@ class AuthenticationManager {
     private let CONVERT_TOKEN = "convert_token"
     private let REFRESH_TOKEN = "refresh_token"
     
-    // MARK: - Properties
+    // MARK: - Computed properties
     
     var oAuthToken: OAuthToken? {
         get {
@@ -42,27 +45,51 @@ class AuthenticationManager {
         return oAuthToken?.accessToken != nil
     }
     
+    private enum SignInMethod: String {
+        case facebook
+        case google
+        case limitedHire
+        case notSignedIn
+    }
+    
     // MARK: - Object life cycle
     
     private init() {}
     
-    // MARK: - Functions
+    // MARK: - Methods
     
     func getOAuthToken() {
-        let backTok = backendToken()
+        var token: String
+        let signIn = signInMethod()
+        
+        switch signIn {
+        case .facebook: token = FBSDKAccessToken.current().tokenString
+        case .google: token = GIDSignIn.sharedInstance().currentUser.authentication.accessToken
+        case .limitedHire:
+            print("Error: Attempting to get an OAuth token when a token has already been given")
+            return
+        case .notSignedIn:
+            print("Error: Attempting to get an OAuth token when not signed in")
+            return
+        }
         
         var httpBody = NetworkConroller.httpBody(withGrantType: CONVERT_TOKEN)
-        httpBody["backend"] = ""
-        httpBody["token"] = ""
-//        print(json) // DEBUG
+        httpBody["backend"] = signIn.rawValue
+        httpBody["token"] = token
+        
         let data = try? JSONSerialization.data(withJSONObject: httpBody, options: .prettyPrinted)
         let url = NetworkConroller.url(withBase: AUTH_BASE_URL, pathParameters: [CONVERT_TOKEN])
+        var request = NetworkConroller.request(url, method: .Post, body: data)
+        
+        let bearerToken = "Bearer \(signIn.rawValue) \(token)"
+        request.addValue(bearerToken, forHTTPHeaderField: "Authorization")
         performTokenURLRequest(url, body: data)
     }
     
     func refreshToken() {
         guard let token = oAuthToken else {
             // TODO: handle error
+            print("Error: Failed to refresh acces token, because an access token does not exist.")
             return
         }
         
@@ -77,16 +104,16 @@ class AuthenticationManager {
     func signOut() {
         oAuthToken = nil
         
-        if FBSDKAccessToken.current() != nil { // Logged in with Facebook
-            FBSDKLoginManager().logOut()
-        } else if GIDSignIn.sharedInstance().currentUser != nil { // Logged in with Google
-            GIDSignIn.sharedInstance().signOut()
+        switch signInMethod() {
+        case .facebook: FBSDKLoginManager().logOut()
+        case .google: GIDSignIn.sharedInstance().signOut()
+        default: break
         }
         
         NotificationCenter.default.post(name: signOutNotificationName, object: nil)
     }
     
-    // MARK: - Private functions
+    // MARK: - Private methods
     
     /**
      Makes a POST request with a header specifying the content type as JSON to get an access token
@@ -119,4 +146,15 @@ class AuthenticationManager {
         }
     }
 
+    private func signInMethod() -> SignInMethod {
+        if FBSDKAccessToken.current() != nil {
+            return SignInMethod.facebook
+        } else if GIDSignIn.sharedInstance().currentUser != nil {
+            return SignInMethod.google
+        } else if oAuthToken?.accessToken != nil {
+            return SignInMethod.limitedHire
+        } else {
+            return SignInMethod.notSignedIn
+        }
+    }
 }
