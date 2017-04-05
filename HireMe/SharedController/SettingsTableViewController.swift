@@ -25,22 +25,7 @@ class SettingsTableViewController: UITableViewController {
             alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             alertController.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { (action) in
                 self.dismiss(animated: true, completion: {
-                    print("Signing out...") // DEBUG
-                    switch SignInHelper.getSignInMethod() {
-                    case .Facebook:
-                        FBSDKLoginManager().logOut()
-                        print("Signed out from Facebook") // DEBUG
-                    case .Google:
-                        GIDSignIn.sharedInstance().signOut()
-                        print("Signed out from Google") // DEBUG
-                    case .ThisApp:
-                        print("Signed out from LimitedHire") // DEBUG
-                    default:
-                        print("Not signed in") // DEBUG
-                        break
-                    }
-                    
-                    NotificationCenter.default.post(name: signOutNotificationName, object: nil)
+                    AuthenticationManager.shared.signOut()
                 })
             }))
             

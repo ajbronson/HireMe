@@ -23,23 +23,13 @@ class AuthenticationManager {
     private let CONVERT_TOKEN = "convert_token"
     private let REFRESH_TOKEN = "refresh_token"
     
-    // MARK: - Computed properties
-    
-    var oAuthToken: OAuthToken? {
-        get {
-            if let token = self.oAuthToken {
-                return token
-            } else if let json = UserDefaults.standard.object(forKey: OAUTH_TOKEN_KEY) as? [String: Any] {
-                return OAuthToken(json: json)
-            } else {
-                return nil
-            }
-        }
-        
-        set {
-            UserDefaults.standard.set(newValue?.toJSON(), forKey: OAUTH_TOKEN_KEY)
+    private var oAuthToken: OAuthToken? {
+        didSet {
+            UserDefaults.standard.set(oAuthToken?.toJSON(), forKey: OAUTH_TOKEN_KEY)
         }
     }
+    
+    // MARK: - Computed properties
     
     var isSignedIn: Bool {
         return oAuthToken?.accessToken != nil
@@ -58,6 +48,18 @@ class AuthenticationManager {
     
     // MARK: - Methods
     
+    func token() -> OAuthToken? {
+        if let token = oAuthToken {
+            return token
+        } else if let json = UserDefaults.standard.object(forKey: OAUTH_TOKEN_KEY) as? [String: Any] {
+            oAuthToken = OAuthToken(json: json)
+            return oAuthToken
+        } else {
+            return nil
+        }
+    }
+    
+    /// Makes a request to get a valid OAuth token
     func getOAuthToken() {
         var token: String
         let signIn = signInMethod()
@@ -77,13 +79,24 @@ class AuthenticationManager {
         httpBody["backend"] = signIn.rawValue
         httpBody["token"] = token
         
-        let data = try? JSONSerialization.data(withJSONObject: httpBody, options: .prettyPrinted)
-        let url = NetworkConroller.url(withBase: AUTH_BASE_URL, pathParameters: [CONVERT_TOKEN])
-        var request = NetworkConroller.request(url, method: .Post, body: data)
+//        let httpBody = [
+//            "grant_type": CONVERT_TOKEN,
+//            "client_id": CLIENT_ID,
+//            "client_secret": CLIENT_SECRET,
+//            "backend": signIn.rawValue,
+//            "token": token
+//        ]
         
+        print(httpBody) // DEBUG
+        let data = try? JSONSerialization.data(withJSONObject: httpBody)
+        
+        let url = NetworkConroller.url(withBase: AUTH_BASE_URL, pathParameters: [CONVERT_TOKEN])
+        
+        var request = NetworkConroller.request(url, method: .Post, body: data)
         let bearerToken = "Bearer \(signIn.rawValue) \(token)"
         request.addValue(bearerToken, forHTTPHeaderField: "Authorization")
-        performTokenURLRequest(url, body: data)
+        
+        performTokenURLRequest(&request)
     }
     
     func refreshToken() {
@@ -92,13 +105,16 @@ class AuthenticationManager {
             print("Error: Failed to refresh acces token, because an access token does not exist.")
             return
         }
-        
+        print("refreshing token...") // DEBUG
         var httpBody = NetworkConroller.httpBody(withGrantType: REFRESH_TOKEN)
         httpBody[REFRESH_TOKEN] = token.refreshToken
-        
         let data = try? JSONSerialization.data(withJSONObject: httpBody, options: .prettyPrinted)
+        
         let url = NetworkConroller.url(withBase: AUTH_BASE_URL, pathParameters: [REFRESH_TOKEN])
-        performTokenURLRequest(url, body: data)
+        
+        var request = NetworkConroller.request(url, method: .Post, body: data)
+        
+        performTokenURLRequest(&request)
     }
     
     func signOut() {
@@ -115,33 +131,47 @@ class AuthenticationManager {
     
     // MARK: - Private methods
     
-    /**
-     Makes a POST request with a header specifying the content type as JSON to get an access token
-     
-     - Parameter url: The request URL
-     - Parameter body: The request HTTP body
-     */
-    private func performTokenURLRequest(_ url: URL, body: Data?) {
-        var request = NetworkConroller.request(url, method: .Post, body: body)
+    /// Makes the request with a header specifying the content type as JSON to get an access token
+    private func performTokenURLRequest(_ request: inout URLRequest) {
         request.addContentTypeHeader(mimeType: .JSON)
-        
+
         NetworkConroller.performURLRequest(request) { (data, error) in
             if let err = error {
                 // TODO: handle error
-                print(err.localizedDescription)
+                print("Error: \(err.localizedDescription)")
             } else {
                 guard let responseData = data else {
                     // TODO: handle error
                     return
                 }
                 
-                guard let json = try? JSONSerialization.jsonObject(with: responseData, options: []),
-                    let jsonDict = json as? [String: Any] else {
-                        // TODO: handle error
-                        return
+                do {
+                    let json = try JSONSerialization.jsonObject(with: responseData, options: [])
+                    print("It's working!")
+                } catch let jsonError {
+                    print("Error: \(jsonError.localizedDescription)")
+                    return
                 }
+                
+                guard let json = try? JSONSerialization.jsonObject(with: responseData, options: []) else {
+                    print("Error: Failed to deserialize JSON")
+                    return
+                }
+                
+                guard let jsonDict = json as? [String: Any] else {
+                    print("Error: Response JSON is not a dictionary")
+                    return
+                }
+                
+//                guard let json = try? JSONSerialization.jsonObject(with: responseData, options: []),
+//                    let jsonDict = json as? [String: Any] else {
+//                        // TODO: handle error
+//                        print("Error: Failed to deserialize JSON")
+//                        return
+//                }
 //                print(jsonDict) // DEBUG
                 self.oAuthToken = OAuthToken(json: jsonDict)
+                print(self.oAuthToken!.authorization()) // DEBUG
             }
         }
     }

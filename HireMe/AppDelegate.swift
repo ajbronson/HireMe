@@ -32,20 +32,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
 //        print("Google hasAuthInKeychain: \(GIDSignIn.sharedInstance().hasAuthInKeychain())") // DEBUG
         
-//        if GIDSignIn.sharedInstance().hasAuthInKeychain() {
-//            // Signed in with Google
-//            print("Already signed in with Google") // DEBUG
+        if GIDSignIn.sharedInstance().hasAuthInKeychain() {
+            // Signed in with Google
+            print("Already signed in with Google") // DEBUG
 //            GIDSignIn.sharedInstance().signInSilently()
-//        } else if FBSDKAccessToken.current() != nil {
-//            print("Already signed in with Facebook") // DEBUG
-//        }
+        } else if FBSDKAccessToken.current() != nil {
+            print("Already signed in with Facebook") // DEBUG
+        }
         
-        if let token = AuthenticationManager.shared.oAuthToken {
+        if let token = AuthenticationManager.shared.token() {
             if token.isExpired {
-                // TODO: refresh token
+                AuthenticationManager.shared.refreshToken()
             } else {
                 // Sync data with latest on the server; i.e., /user/<user's ID>
+                print("Already signed in")
             }
+        } else {
+            print("Signed out; no token")
         }
         
         // TODO: remove for prod

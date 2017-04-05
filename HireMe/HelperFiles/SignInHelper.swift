@@ -58,27 +58,4 @@ class SignInHelper {
     static func userProfile() -> [String: String?]? {
         return UserDefaults.standard.dictionary(forKey: self.USER_PROFILE_KEY) as? [String: String?]
     }
-    
-    static func bearerToken() -> String {
-        let backTok = backendToken()
-        var bearer = "Bearer " + backTok.backend
-        
-        if backTok.backend.characters.count > 0 {
-            bearer += " "
-        }
-        
-        return "\(bearer)\(backTok.token)"
-    }
-}
-
-func backendToken() -> (backend: String, token: String) {
-    switch SignInHelper.getSignInMethod() {
-    case .Facebook: return ("facebook", FBSDKAccessToken.current().tokenString)
-    case .Google: return ("google", GIDSignIn.sharedInstance().currentUser.authentication.idToken)
-    case .ThisApp:
-        //If signing in natively, the value of backend will not change
-        // TODO: get user's access token
-        return ("", "")
-    case .NotSignedIn: fatalError("Error: Attempting to get a token when user is not signed in")
-    }
 }

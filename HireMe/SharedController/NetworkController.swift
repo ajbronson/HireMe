@@ -38,7 +38,7 @@ class NetworkConroller {
 	}
     
     static func performURLRequest(_ request: URLRequest, completion: @escaping ((Data?, Error?) -> Void)) {
-//        print("request headers: \(String(describing: request.allHTTPHeaderFields))")
+        print("request headers: \(String(describing: request.allHTTPHeaderFields))") // DEBUG
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             completion(data, error)
         }.resume()
@@ -48,7 +48,6 @@ class NetworkConroller {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         request.httpBody = body
-        request.addValue(SignInHelper.bearerToken(), forHTTPHeaderField: "Authorization")
         
         if let headersDict = headers {
             for (key, value) in headersDict {
@@ -74,7 +73,7 @@ class NetworkConroller {
     static func url(withBase base: String, pathParameters: [String]) -> URL {
         let encodedPathParameters = pathParameters.map({ "\($0.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!)" }).joined(separator: "/")
         let urlString = "\(base)/\(encodedPathParameters)"
-//        print("url: \(urlString)")
+        print("url: \(urlString)") // DEBUG
         
         if let url = URL(string: urlString) {
             return url
