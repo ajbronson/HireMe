@@ -69,15 +69,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
                 print(err)
             } else {
                 print("Facebook token: \(FBSDKAccessToken.current().tokenString)")
-                SignInHelper.getOAuthToken(completionHandler: { (token, error) in
-                    if let err = error {
-                        print(err.localizedDescription)
-                    } else {
-                        if let oauthToken = token {
-                            print(oauthToken.description)
-                        }
-                    }
-                })
+                // TODO: get OAuth token
                 
                 guard let result = loginResult else {
                     return

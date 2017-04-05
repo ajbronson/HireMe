@@ -38,15 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             GIDSignIn.sharedInstance().signInSilently()
         } else if FBSDKAccessToken.current() != nil {
             print("Already signed in with Facebook") // DEBUG
-            SignInHelper.getOAuthToken(completionHandler: { (token, error) in
-                if let err = error {
-                    print(err.localizedDescription)
-                } else {
-                    if let oauthToken = token {
-                        print(oauthToken.description)
-                    }
-                }
-            })
         }
         
         if AuthenticationManager.shared.isSignedIn {
@@ -80,15 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 //            let userId = user.userID                  // For client-side use only!
             let idToken = user.authentication.idToken
             print("Google token: \(String(describing: idToken))") // DEBUG
-            SignInHelper.getOAuthToken(completionHandler: { (token, error) in
-                if let err = error {
-                    print(err.localizedDescription)
-                } else {
-                    if let oauthToken = token {
-                        print("authorization: \(oauthToken.authorization())")
-                    }
-                }
-            })
+            // TODO: get OAuth token
             
             //SignInHelper.setUserProfile(fullName: user.profile.name,
                                         //firstName: user.profile.givenName,
