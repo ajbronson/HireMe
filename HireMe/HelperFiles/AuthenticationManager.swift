@@ -79,18 +79,10 @@ class AuthenticationManager {
         httpBody["backend"] = signIn.rawValue
         httpBody["token"] = token
         
-//        let httpBody = [
-//            "grant_type": CONVERT_TOKEN,
-//            "client_id": CLIENT_ID,
-//            "client_secret": CLIENT_SECRET,
-//            "backend": signIn.rawValue,
-//            "token": token
-//        ]
-        
         print(httpBody) // DEBUG
         let data = try? JSONSerialization.data(withJSONObject: httpBody)
         
-        let url = NetworkConroller.url(withBase: AUTH_BASE_URL, pathParameters: [CONVERT_TOKEN])
+        let url = NetworkConroller.url(withBase: AUTH_BASE_URL, pathParameters: ["convert-token"])
         
         var request = NetworkConroller.request(url, method: .Post, body: data)
         let bearerToken = "Bearer \(signIn.rawValue) \(token)"
@@ -108,9 +100,9 @@ class AuthenticationManager {
         print("refreshing token...") // DEBUG
         var httpBody = NetworkConroller.httpBody(withGrantType: REFRESH_TOKEN)
         httpBody[REFRESH_TOKEN] = token.refreshToken
-        let data = try? JSONSerialization.data(withJSONObject: httpBody, options: .prettyPrinted)
+        let data = try? JSONSerialization.data(withJSONObject: httpBody)
         
-        let url = NetworkConroller.url(withBase: AUTH_BASE_URL, pathParameters: [REFRESH_TOKEN])
+        let url = NetworkConroller.url(withBase: AUTH_BASE_URL, pathParameters: ["token"])
         
         var request = NetworkConroller.request(url, method: .Post, body: data)
         
@@ -145,33 +137,15 @@ class AuthenticationManager {
                     return
                 }
                 
-                do {
-                    let json = try JSONSerialization.jsonObject(with: responseData, options: [])
-                    print("It's working!")
-                } catch let jsonError {
-                    print("Error: \(jsonError.localizedDescription)")
-                    return
+                guard let json = try? JSONSerialization.jsonObject(with: responseData, options: []),
+                    let jsonDict = json as? [String: Any] else {
+                        // TODO: handle error
+                        print("Error: Failed to deserialize JSON")
+                        return
                 }
-                
-                guard let json = try? JSONSerialization.jsonObject(with: responseData, options: []) else {
-                    print("Error: Failed to deserialize JSON")
-                    return
-                }
-                
-                guard let jsonDict = json as? [String: Any] else {
-                    print("Error: Response JSON is not a dictionary")
-                    return
-                }
-                
-//                guard let json = try? JSONSerialization.jsonObject(with: responseData, options: []),
-//                    let jsonDict = json as? [String: Any] else {
-//                        // TODO: handle error
-//                        print("Error: Failed to deserialize JSON")
-//                        return
-//                }
-//                print(jsonDict) // DEBUG
+                print(jsonDict) // DEBUG
                 self.oAuthToken = OAuthToken(json: jsonDict)
-                print(self.oAuthToken!.authorization()) // DEBUG
+                print("\(String(describing: self.oAuthToken?.description))") // DEBUG
             }
         }
     }
@@ -181,7 +155,7 @@ class AuthenticationManager {
             return SignInMethod.facebook
         } else if GIDSignIn.sharedInstance().currentUser != nil {
             return SignInMethod.google
-        } else if oAuthToken?.accessToken != nil {
+        } else if oAuthToken != nil {
             return SignInMethod.limitedHire
         } else {
             return SignInMethod.notSignedIn
