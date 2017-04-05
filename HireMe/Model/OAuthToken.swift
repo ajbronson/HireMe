@@ -24,8 +24,18 @@ class OAuthToken : CustomStringConvertible {
         guard let accessToken = json["access_token"] as? String,
             let refreshToken = json["refresh_token"] as? String,
             let scope = json["scope"] as? String,
-            let tokenType = json["token_type"] as? String,
-            let expiresIn = json["expires_in"] as? Double else {
+            let tokenType = json["token_type"] as? String else {
+            return nil
+        }
+        
+        if let creationDate = json["creation_date"] as? Date,
+            let expirationDate = json["expiration_date"] as? Date {
+            self.creationDate = creationDate
+            self.expirationDate = expirationDate
+        } else if let expiresIn = json["expires_in"] as? Double {
+            self.creationDate = Date()
+            self.expirationDate = creationDate.addingTimeInterval(expiresIn)
+        } else {
             return nil
         }
         
@@ -33,13 +43,24 @@ class OAuthToken : CustomStringConvertible {
         self.refreshToken = refreshToken
         self.scope = scope
         self.tokenType = tokenType
-        self.creationDate = Date()
-        self.expirationDate = creationDate.addingTimeInterval(expiresIn)
     }
     
     func authorization() -> String {
         return "\(tokenType) \(accessToken)"
     }
+    
+    func toJSON() -> [String: Any] {
+        return [
+            "access_token": accessToken,
+            "refresh_token": refreshToken,
+            "scope": scope,
+            "token_type": tokenType,
+            "creation_date": creationDate,
+            "expiration_date": expirationDate
+        ]
+    }
+    
+    // MARK: - CustomStringConvertible
     
     var description: String {
         let dateFormatter = DateFormatter()
