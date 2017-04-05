@@ -21,6 +21,11 @@ class OAuthToken : CustomStringConvertible {
     }
     
     init?(json: [String: Any]) {
+        if let error = json["error"] as? String {
+            print("Error: \(error)")
+            return nil
+        }
+        
         guard let accessToken = json["access_token"] as? String,
             let refreshToken = json["refresh_token"] as? String,
             let scope = json["scope"] as? String,
