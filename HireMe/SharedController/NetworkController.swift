@@ -70,7 +70,7 @@ class NetworkConroller {
 		}
 	}
     
-    static func url(withBase base: String, pathParameters: [String]) -> URL {
+    static func url(base: String, pathParameters: [String]) -> URL {
         let encodedPathParameters = pathParameters.map({ "\($0.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!)" }).joined(separator: "/")
         let urlString = "\(base)/\(encodedPathParameters)"
         print("url: \(urlString)") // DEBUG

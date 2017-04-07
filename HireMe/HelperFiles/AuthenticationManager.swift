@@ -50,7 +50,12 @@ class AuthenticationManager {
     
     func token() -> OAuthToken? {
         if let token = oAuthToken {
-            return token
+            if token.isExpired {
+                //refresh token
+                return nil
+            } else {
+                return token
+            }
         } else if let json = UserDefaults.standard.object(forKey: OAUTH_TOKEN_KEY) as? [String: Any] {
             oAuthToken = OAuthToken(json: json)
             return oAuthToken
@@ -82,7 +87,7 @@ class AuthenticationManager {
         print(httpBody) // DEBUG
         let data = try? JSONSerialization.data(withJSONObject: httpBody)
         
-        let url = NetworkConroller.url(withBase: AUTH_BASE_URL, pathParameters: ["convert-token"])
+        let url = NetworkConroller.url(base: AUTH_BASE_URL, pathParameters: ["convert-token"])
         
         var request = NetworkConroller.request(url, method: .Post, body: data)
         let bearerToken = "Bearer \(signIn.rawValue) \(token)"
@@ -102,7 +107,7 @@ class AuthenticationManager {
         httpBody[REFRESH_TOKEN] = token.refreshToken
         let data = try? JSONSerialization.data(withJSONObject: httpBody)
         
-        let url = NetworkConroller.url(withBase: AUTH_BASE_URL, pathParameters: ["token"])
+        let url = NetworkConroller.url(base: AUTH_BASE_URL, pathParameters: ["token"])
         
         var request = NetworkConroller.request(url, method: .Post, body: data)
         
