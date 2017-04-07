@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OAuthToken : CustomStringConvertible {
+struct OAuthToken: CustomStringConvertible {
     var accessToken: String
     var refreshToken: String
     var scope: String
