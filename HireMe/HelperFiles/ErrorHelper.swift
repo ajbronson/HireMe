@@ -8,23 +8,21 @@
 
 import Foundation
 
-enum LimitedHireError: Error {
-    case noOAuthToken
-    case deserializeJSON
-    case oAuthTokenInitialization
+enum LimitedHireError: String, Error {
+    case noOAuthToken = "An OAuth token has not been obtained."
+    case deserializeJSON = "Failed to deserialize JSON."
+    case oAuthTokenInitialization = "Failed to initialize OAuthToken."
+    case notAuthenticated = "Not authenticated."
+    case oAuthTokenAlreadyObtained = "An OAuth token has already been obtained."
 }
 
 class ErrorHelper {
-    static func print(_ error: Error) {
+    static func describe(_ error: Error) {
         let prefix = "Error: "
         var message: String
         
         if let limitedHireError = error as? LimitedHireError {
-            switch limitedHireError {
-            case .deserializeJSON: message = "Failed to deserialize JSON."
-            case .noOAuthToken: message = "An OAuth token has not been obtained."
-            case .oAuthTokenInitialization: message = "Failed to initialize OAuthToken."
-            }
+            message = limitedHireError.rawValue
         } else {
             message = error.localizedDescription
         }
