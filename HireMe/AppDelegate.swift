@@ -40,13 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             print("Already signed in with Facebook") // DEBUG
         }
         
-        if let token = AuthenticationManager.shared.token() {
-            if token.isExpired {
-                AuthenticationManager.shared.refreshToken()
-            } else {
-                // Sync data with latest on the server; i.e., /user/<user's ID>
-                print("Already signed in")
-            }
+        if AuthenticationManager.shared.token() != nil {
+            // Sync data with latest on the server; i.e., /user/<user's ID>
+            print("Already signed in")
         } else {
             print("Signed out; no token")
         }
