@@ -26,18 +26,6 @@ class SelectedBidController {
 	}
 
 	func refresh(completion: @escaping (_ selectedBids: [SelectedBid]?) -> Void) {
-		let params = ["token" : "abcdefg"]
-		if let url = URL(string: "") {
-			NetworkConroller.performURLRequest(url, method: .Get, urlParams: params, body: nil, completion: { (data, error) in
-				if let error = error {
-					print("An error has occured: \(error.localizedDescription)")
-				} else if let data = data,
-					let rawJSON = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
-					let json = rawJSON as? [String: AnyObject],
-					let resultDict = json["results"] as? [[String: AnyObject]] {
-					completion(self.selectedBids)
-				}
-			})
-		}
+		// TODO: implement
 	}
 }

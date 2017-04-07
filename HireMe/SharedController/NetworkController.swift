@@ -21,21 +21,6 @@ class NetworkConroller {
     enum MIMEType: String {
         case JSON = "application/json"
     }
-
-	static func performURLRequest(_ url: URL, method: HTTPMethod, urlParams: [String: String]? = nil, body: Data? = nil, completion: ((_ data: Data?, _ error: Error?) -> Void)?) {
-		let requestURL = urlFromURLParameters(url, urlParameters: urlParams)
-		let request = NSMutableURLRequest(url: requestURL)
-		request.httpBody = body
-		request.httpMethod = method.rawValue
-
-		let session = URLSession.shared
-		let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) in
-			if let completion = completion {
-				completion(data, error)
-			}
-		})
-		dataTask.resume()
-	}
     
     static func performURLRequest(_ request: URLRequest, completion: @escaping ((Data?, Error?) -> Void)) {
         print("request headers: \(String(describing: request.allHTTPHeaderFields))") // DEBUG
@@ -57,18 +42,6 @@ class NetworkConroller {
         
         return request
     }
-
-	static func urlFromURLParameters(_ url: URL, urlParameters: [String: String]?) -> URL {
-
-		var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
-		components?.queryItems = urlParameters?.flatMap({URLQueryItem(name: $0.0, value: $0.1)})
-
-		if let url = components?.url {
-			return url
-		} else {
-			fatalError("URL optional is nil")
-		}
-	}
     
     static func url(base: String, pathParameters: [String]? = nil, queryParameters: [String: String]? = nil) -> URL {
         let encodedPathParameters = pathParameters?.map({ "\($0.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!)" }).joined(separator: "/")
@@ -77,7 +50,7 @@ class NetworkConroller {
         guard let url = URL(string: urlString) else {
             fatalError("URL optional is nil")
         }
-        
+
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
         components?.queryItems = queryParameters?.flatMap({ URLQueryItem(name: $0.0, value: $0.1) })
         
@@ -103,12 +76,16 @@ class NetworkConroller {
         ]
     }
 
-	static func fetchImage(_ url: URL, completion: @escaping (_ image: UIImage?) -> Void) {
-		self.performURLRequest(url, method: .Get) { (data, error) in
-			if let data = data {
-				let image = UIImage(data: data)
-				completion(image)
-			}
-		}
+	static func fetchImage(_ url: URL, completion: @escaping (UIImage?, Error?) -> Void) {
+        let request = self.request(url, method: .Get)
+        self.performURLRequest(request) { (data, error) in
+            var image: UIImage?
+            
+            if let data = data {
+                image = UIImage(data: data)
+            }
+            
+            completion(image, error)
+        }
 	}
 }
