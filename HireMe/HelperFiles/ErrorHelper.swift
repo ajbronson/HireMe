@@ -15,7 +15,7 @@ enum LimitedHireError: Error {
 }
 
 class ErrorHelper {
-    static func handle(_ error: Error) {
+    static func print(_ error: Error) {
         let prefix = "Error: "
         var message: String
         
