@@ -10,6 +10,8 @@ import Foundation
 import GoogleSignIn
 import FBSDKLoginKit
 
+typealias OAuthTokenHandler = (OAuthToken?, Error?) -> Void
+
 class AuthenticationManager {
     
     // MARK: - Type properties
@@ -48,24 +50,31 @@ class AuthenticationManager {
     
     // MARK: - Methods
     
-    func token() -> OAuthToken? {
-        if let token = oAuthToken {
-            if token.isExpired {
-                //refresh token
-                return nil
-            } else {
-                return token
+    func token(completionHandler: @escaping OAuthTokenHandler) {
+        refreshTokenIfExpired { (token, error) in
+            guard let err = error else {
+                completionHandler(token, nil)
+                return
             }
-        } else if let json = UserDefaults.standard.object(forKey: OAUTH_TOKEN_KEY) as? [String: Any] {
-            oAuthToken = OAuthToken(json: json)
-            return oAuthToken
-        } else {
-            return nil
+            
+            guard let limitedHireError = err as? LimitedHireError,
+                limitedHireError == .noOAuthToken else {
+                completionHandler(nil, err)
+                return
+            }
+            
+            guard let json = UserDefaults.standard.object(forKey: self.OAUTH_TOKEN_KEY) as? [String: Any],
+                let oAuthToken = OAuthToken(json: json) else {
+                completionHandler(nil, LimitedHireError.oAuthTokenInitialization)
+                return
+            }
+            
+            completionHandler(oAuthToken, nil)
         }
     }
     
     /// Makes a request to get a valid OAuth token
-    func getOAuthToken() {
+    func getOAuthToken(completionHandler: @escaping OAuthTokenHandler) {
         var token: String
         let signIn = signInMethod()
         
@@ -93,13 +102,14 @@ class AuthenticationManager {
         let bearerToken = "Bearer \(signIn.rawValue) \(token)"
         request.addValue(bearerToken, forHTTPHeaderField: "Authorization")
         
-        performTokenURLRequest(&request)
+        performTokenURLRequest(&request) { (token, error) in
+            completionHandler(token, error)
+        }
     }
     
-    func refreshToken() {
+    func refreshToken(completionHandler: @escaping OAuthTokenHandler) {
         guard let token = oAuthToken else {
-            // TODO: handle error
-            print("Error: Failed to refresh acces token, because an access token does not exist.")
+            completionHandler(nil, LimitedHireError.noOAuthToken)
             return
         }
         print("refreshing token...") // DEBUG
@@ -111,7 +121,9 @@ class AuthenticationManager {
         
         var request = NetworkConroller.request(url, method: .Post, body: data)
         
-        performTokenURLRequest(&request)
+        performTokenURLRequest(&request) { (token, error) in
+            completionHandler(token, error)
+        }
     }
     
     func signOut() {
@@ -128,28 +140,37 @@ class AuthenticationManager {
     
     // MARK: - Private methods
     
+    private func refreshTokenIfExpired(completionHandler: @escaping OAuthTokenHandler) {
+        if let token = oAuthToken {
+            if token.isExpired {
+                refreshToken { (token, error) in
+                    completionHandler(token, error)
+                }
+            } else {
+                completionHandler(token, nil)
+            }
+        } else {
+            completionHandler(nil, LimitedHireError.noOAuthToken)
+        }
+    }
+    
     /// Makes the request with a header specifying the content type as JSON to get an access token
-    private func performTokenURLRequest(_ request: inout URLRequest) {
+    private func performTokenURLRequest(_ request: inout URLRequest, completionHandler: @escaping OAuthTokenHandler) {
         request.addContentTypeHeader(mimeType: .JSON)
 
         NetworkConroller.performURLRequest(request) { (data, error) in
             if let err = error {
-                // TODO: handle error
-                print("Error: \(err.localizedDescription)")
+                completionHandler(nil, err)
             } else {
-                guard let responseData = data else {
-                    // TODO: handle error
-                    return
-                }
-                
-                guard let json = try? JSONSerialization.jsonObject(with: responseData, options: []),
+                guard let responseData = data,
+                    let json = try? JSONSerialization.jsonObject(with: responseData, options: []),
                     let jsonDict = json as? [String: Any] else {
-                        // TODO: handle error
-                        print("Error: Failed to deserialize JSON")
+                        completionHandler(nil, LimitedHireError.deserializeJSON)
                         return
                 }
                 print(jsonDict) // DEBUG
                 self.oAuthToken = OAuthToken(json: jsonDict)
+                completionHandler(self.oAuthToken, nil)
                 print("\(String(describing: self.oAuthToken?.description))") // DEBUG
             }
         }

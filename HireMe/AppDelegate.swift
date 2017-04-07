@@ -40,12 +40,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             print("Already signed in with Facebook") // DEBUG
         }
         
-        if AuthenticationManager.shared.token() != nil {
-            // Sync data with latest on the server; i.e., /user/<user's ID>
-            print("Already signed in")
-        } else {
-            print("Signed out; no token")
-        }
+//        if AuthenticationManager.shared.token() != nil {
+//            // Sync data with latest on the server; i.e., /user/<user's ID>
+//            print("Already signed in")
+//        } else {
+//            print("Signed out; no token")
+//        }
         
         // TODO: remove for prod
         SignInHelper.resetAuthAlertUserDefaultsKey()
@@ -71,7 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 //            let userId = user.userID                  // For client-side use only!
             let idToken = user.authentication.idToken
             print("Google token: \(String(describing: idToken))") // DEBUG
-            AuthenticationManager.shared.getOAuthToken()
+//            AuthenticationManager.shared.getOAuthToken()
             
             //SignInHelper.setUserProfile(fullName: user.profile.name,
                                         //firstName: user.profile.givenName,
