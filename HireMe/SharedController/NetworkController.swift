@@ -70,12 +70,19 @@ class NetworkConroller {
 		}
 	}
     
-    static func url(base: String, pathParameters: [String]) -> URL {
-        let encodedPathParameters = pathParameters.map({ "\($0.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!)" }).joined(separator: "/")
-        let urlString = "\(base)/\(encodedPathParameters)"
-        print("url: \(urlString)") // DEBUG
+    static func url(base: String, pathParameters: [String]? = nil, queryParameters: [String: String]? = nil) -> URL {
+        let encodedPathParameters = pathParameters?.map({ "\($0.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!)" }).joined(separator: "/")
+        let urlString = "\(base)/\(encodedPathParameters ?? "")"
         
-        if let url = URL(string: urlString) {
+        guard let url = URL(string: urlString) else {
+            fatalError("URL optional is nil")
+        }
+        
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        components?.queryItems = queryParameters?.flatMap({ URLQueryItem(name: $0.0, value: $0.1) })
+        
+        if let url = components?.url {
+            print("url: \(url.absoluteString)") // DEBUG
             return url
         } else {
             fatalError("URL optional is nil")
