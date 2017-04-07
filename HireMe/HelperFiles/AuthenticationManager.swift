@@ -98,12 +98,18 @@ class AuthenticationManager {
         
         let url = NetworkConroller.url(base: AUTH_BASE_URL, pathParameters: ["convert-token"])
         
-        var request = NetworkConroller.request(url, method: .Post, body: data)
-        let bearerToken = "Bearer \(signIn.rawValue) \(token)"
-        request.addValue(bearerToken, forHTTPHeaderField: "Authorization")
-        
-        performTokenURLRequest(&request) { (token, error) in
-            completionHandler(token, error)
+        NetworkConroller.request(url, method: .Post, addAuthorizationHeader: false, body: data) { (request, error) in
+            // TODO: use guard instead
+            if let err = error {
+                completionHandler(nil, err)
+            } else if var urlRequest = request {
+                let bearerToken = "Bearer \(signIn.rawValue) \(token)"
+                urlRequest.addValue(bearerToken, forHTTPHeaderField: "Authorization")
+                
+                self.performTokenURLRequest(&urlRequest) { (token, error) in
+                    completionHandler(token, error)
+                }
+            }
         }
     }
     
