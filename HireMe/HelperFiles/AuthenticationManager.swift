@@ -82,10 +82,10 @@ class AuthenticationManager {
         case .facebook: token = FBSDKAccessToken.current().tokenString
         case .google: token = GIDSignIn.sharedInstance().currentUser.authentication.accessToken
         case .limitedHire:
-            print("Error: Attempting to get an OAuth token when a token has already been given")
+            completionHandler(nil, LimitedHireError.oAuthTokenAlreadyObtained)
             return
         case .notSignedIn:
-            print("Error: Attempting to get an OAuth token when not signed in")
+            completionHandler(nil, nil)
             return
         }
         
