@@ -102,9 +102,10 @@ class AuthenticationManager {
             // TODO: use guard instead
             if let err = error {
                 completionHandler(nil, err)
-            } else if var urlRequest = request {
+            } else {
                 let bearerToken = "Bearer \(signIn.rawValue) \(token)"
-                urlRequest.addValue(bearerToken, forHTTPHeaderField: "Authorization")
+                var urlRequest = request
+                urlRequest?.addValue(bearerToken, forHTTPHeaderField: "Authorization")
                 
                 self.performTokenURLRequest(&urlRequest) { (token, error) in
                     completionHandler(token, error)
@@ -125,10 +126,12 @@ class AuthenticationManager {
         
         let url = NetworkConroller.url(base: AUTH_BASE_URL, pathParameters: ["token"])
         
-        var request = NetworkConroller.request(url, method: .Post, body: data)
-        
-        performTokenURLRequest(&request) { (token, error) in
-            completionHandler(token, error)
+        NetworkConroller.request(url, method: .Post, body: data) { (request, error) in
+            var urlRequest = request
+            
+            self.performTokenURLRequest(&urlRequest) { (token, error) in
+                completionHandler(token, error)
+            }
         }
     }
     
@@ -161,10 +164,15 @@ class AuthenticationManager {
     }
     
     /// Makes the request with a header specifying the content type as JSON to get an access token
-    private func performTokenURLRequest(_ request: inout URLRequest, completionHandler: @escaping OAuthTokenHandler) {
-        request.addContentTypeHeader(mimeType: .JSON)
+    private func performTokenURLRequest(_ request: inout URLRequest?, completionHandler: @escaping OAuthTokenHandler) {
+        guard var urlRequest = request else {
+            completionHandler(nil, LimitedHireError.noURLRequest)
+            return
+        }
+        
+        urlRequest.addContentTypeHeader(mimeType: .JSON)
 
-        NetworkConroller.performURLRequest(request) { (data, error) in
+        NetworkConroller.performURLRequest(urlRequest) { (data, error) in
             if let err = error {
                 completionHandler(nil, err)
             } else {

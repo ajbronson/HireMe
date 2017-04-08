@@ -14,6 +14,7 @@ enum LimitedHireError: String, Error {
     case oAuthTokenInitialization = "Failed to initialize OAuthToken."
     case notAuthenticated = "Not authenticated."
     case oAuthTokenAlreadyObtained = "An OAuth token has already been obtained."
+    case noURLRequest = "URLRequest is nil."
 }
 
 class ErrorHelper {

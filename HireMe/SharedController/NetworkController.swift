@@ -58,11 +58,14 @@ class NetworkConroller {
             AuthenticationManager.shared.token { (token, error) in
                 guard let oAuthToken = token else {
                     completionHandler(nil, error)
+                    return
                 }
                 
                 request.addValue(oAuthToken.authorization(), forHTTPHeaderField: "Authorization")
                 completionHandler(request, nil)
             }
+        } else {
+            completionHandler(request, nil)
         }
     }
     
@@ -100,15 +103,18 @@ class NetworkConroller {
     }
 
 	static func fetchImage(_ url: URL, completion: @escaping (UIImage?, Error?) -> Void) {
-        let request = self.request(url, method: .Get)
-        self.performURLRequest(request) { (data, error) in
-            var image: UIImage?
-            
-            if let data = data {
-                image = UIImage(data: data)
+        self.request(url, method: .Get) { (request, error) in
+            if let err = error {
+                completion(nil, err)
+            } else if let urlRequest = request {
+                self.performURLRequest(urlRequest) { (data, error) in
+                    if let data = data {
+                        completion(UIImage(data: data), nil)
+                    } else {
+                        completion(nil, error)
+                    }
+                }
             }
-            
-            completion(image, error)
         }
 	}
 }
