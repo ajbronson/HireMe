@@ -16,8 +16,8 @@ struct OAuthToken: CustomStringConvertible {
     var creationDate: Date
     var expirationDate: Date
     var isExpired: Bool {
-        // If ordered ascending, creation date is earlier than expiration date
-        return creationDate.compare(expirationDate) != .orderedAscending
+        // If ordered ascending, current date is earlier than expiration date
+        return Date().compare(expirationDate) != .orderedAscending
     }
     
     init?(json: [String: Any]) {

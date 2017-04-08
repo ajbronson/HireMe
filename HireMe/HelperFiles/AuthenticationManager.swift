@@ -63,13 +63,19 @@ class AuthenticationManager {
                 return
             }
             
-            guard let json = UserDefaults.standard.object(forKey: self.OAUTH_TOKEN_KEY) as? [String: Any],
-                let oAuthToken = OAuthToken(json: json) else {
+            guard let json = UserDefaults.standard.object(forKey: self.OAUTH_TOKEN_KEY) as? [String: Any] else {
                 completionHandler(nil, LimitedHireError.oAuthTokenInitialization)
                 return
             }
             
-            completionHandler(oAuthToken, nil)
+            self.oAuthToken = OAuthToken(json: json)
+            self.refreshTokenIfExpired { (token2, error2) in
+                if let err2 = error2 {
+                    completionHandler(nil, err2)
+                } else {
+                    completionHandler(token2, nil)
+                }
+            }
         }
     }
     
@@ -127,6 +133,7 @@ class AuthenticationManager {
         let url = NetworkConroller.url(base: AUTH_BASE_URL, pathParameters: ["token"])
         
         NetworkConroller.request(url, method: .Post, body: data) { (request, error) in
+            print("refreshToken: sucessfully initialized request")
             var urlRequest = request
             
             self.performTokenURLRequest(&urlRequest) { (token, error) in
@@ -151,14 +158,22 @@ class AuthenticationManager {
     
     private func refreshTokenIfExpired(completionHandler: @escaping OAuthTokenHandler) {
         if let token = oAuthToken {
+            print("refreshTokenIfExpired: \(token)")
             if token.isExpired {
-                refreshToken { (token, error) in
-                    completionHandler(token, error)
+                print("token is expired")
+                refreshToken { (token2, error) in
+                    print("refreshTokenIfExpired-refreshToken: \(token2)")
+                    if let err = error {
+                        completionHandler(nil, err)
+                    } else {
+                        completionHandler(token2, nil)
+                    }
                 }
             } else {
                 completionHandler(token, nil)
             }
         } else {
+            print("no token")
             completionHandler(nil, LimitedHireError.noOAuthToken)
         }
     }
@@ -183,8 +198,8 @@ class AuthenticationManager {
                 }
                 print(jsonDict) // DEBUG
                 self.oAuthToken = OAuthToken(json: jsonDict)
+                print("performTokenURLRequest: \(String(describing: self.oAuthToken))") // DEBUG
                 completionHandler(self.oAuthToken, nil)
-                print("\(String(describing: self.oAuthToken?.description))") // DEBUG
             }
         }
     }
