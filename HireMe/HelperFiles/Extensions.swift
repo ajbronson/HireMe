@@ -8,6 +8,12 @@
 
 import UIKit
 
+extension Data {
+    func toJSON() -> Any? {
+        return try? JSONSerialization.jsonObject(with: self, options: [])
+    }
+}
+
 extension Double {
     func convertToCurrency(includeDollarSign: Bool = true, truncateZeros: Bool = true) -> String? {
 		let formatter = NumberFormatter()

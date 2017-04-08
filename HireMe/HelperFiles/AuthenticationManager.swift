@@ -176,8 +176,7 @@ class AuthenticationManager {
             if let err = error {
                 completionHandler(nil, err)
             } else {
-                guard let responseData = data,
-                    let json = try? JSONSerialization.jsonObject(with: responseData, options: []),
+                guard let json = data?.toJSON(),
                     let jsonDict = json as? [String: Any] else {
                         completionHandler(nil, LimitedHireError.deserializeJSON)
                         return
