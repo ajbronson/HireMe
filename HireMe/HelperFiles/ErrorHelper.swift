@@ -68,21 +68,21 @@ class ErrorHelper {
     /**
      Checks for an error returned in the response JSON of the request.
      
-     - Parameter inResponseDictionary: The dictionary object of the response.
+     - Parameter in: The dictionary to check errors in, usually the dictionary of the request response JSON.
      - Returns: The error message if an error was returned from the service.
      */
-    static func checkForError(inResponseDictionary dict: [String: Any]) -> String? {
-        if let error = dict["error"] as? String {
+    static func checkForError(in dictionary: [String: Any]) -> String? {
+        if let error = dictionary["error"] as? String {
             var message = error
             
-            if let description = dict["error_description"] as? String {
+            if let description = dictionary["error_description"] as? String {
                 message += ". \(description)"
             }
             
             return message
         }
         
-        if let detail = dict["detail"] as? String {
+        if let detail = dictionary["detail"] as? String {
             return detail
         }
         

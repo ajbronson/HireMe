@@ -21,7 +21,7 @@ struct OAuthToken: CustomStringConvertible {
     }
     
     init(dictionary: [String: Any]) throws {
-        if let error = dictionary["error"] as? String {
+        if let error = ErrorHelper.checkForError(in: dictionary) {
             throw InitializationError.service(error)
         }
         
