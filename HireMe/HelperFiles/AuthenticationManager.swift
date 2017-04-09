@@ -27,6 +27,7 @@ class AuthenticationManager {
     
     private var oAuthToken: OAuthToken? {
         didSet {
+//            print("didSet oAuthToken") // DEBUG
             UserDefaults.standard.set(oAuthToken?.toJSON(), forKey: OAUTH_TOKEN_KEY)
         }
     }
@@ -51,28 +52,36 @@ class AuthenticationManager {
     // MARK: - Methods
     
     func token(completionHandler: @escaping OAuthTokenHandler) {
+//        print("token(completionHandler:)") // DEBUG
         refreshTokenIfExpired { (token, error) in
+//            print("token-refreshTokenIfExpired") // DEBUG
             guard let err = error else {
+//                print("token-refreshTokenIfExpired: \(String(describing: token))") // DEBUG
                 completionHandler(token, nil)
                 return
             }
             
             guard let limitedHireError = err as? LimitedHireError,
                 limitedHireError == .noOAuthToken else {
+//                print("token-refreshTokenIfExpired: error") // DEBUG
                 completionHandler(nil, err)
                 return
             }
             
             guard let json = UserDefaults.standard.object(forKey: self.OAUTH_TOKEN_KEY) as? [String: Any] else {
+//                print("token-refreshTokenIfExpired: failed to get token from user defaults") // DEBUG
                 completionHandler(nil, LimitedHireError.oAuthTokenInitialization)
                 return
             }
             
             self.oAuthToken = OAuthToken(json: json)
             self.refreshTokenIfExpired { (token2, error2) in
+//                print("token-refreshTokenIfExpired-refreshTokenIfExpired") // DEBUG
                 if let err2 = error2 {
+//                    print("token-refreshTokenIfExpired-refreshTokenIfExpired: error") // DEBUG
                     completionHandler(nil, err2)
                 } else {
+//                    print("token-refreshTokenIfExpired-refreshTokenIfExpired: \(String(describing: token2))") // DEBUG
                     completionHandler(token2, nil)
                 }
             }
@@ -121,22 +130,25 @@ class AuthenticationManager {
     }
     
     func refreshToken(completionHandler: @escaping OAuthTokenHandler) {
+//        print("refreshToken(completionHandler:)") // DEBUG
         guard let token = oAuthToken else {
+//            print("refreshToken: no token") // DEBUG
             completionHandler(nil, LimitedHireError.noOAuthToken)
             return
         }
-        print("refreshing token...") // DEBUG
+        
         var httpBody = NetworkConroller.httpBody(withGrantType: REFRESH_TOKEN)
         httpBody[REFRESH_TOKEN] = token.refreshToken
         let data = try? JSONSerialization.data(withJSONObject: httpBody)
         
         let url = NetworkConroller.url(base: AUTH_BASE_URL, pathParameters: ["token"])
         
-        NetworkConroller.request(url, method: .Post, body: data) { (request, error) in
-            print("refreshToken: sucessfully initialized request")
+        NetworkConroller.request(url, method: .Post, addAuthorizationHeader: false, body: data) { (request, error) in
+//            print("refreshToken: sucessfully initialized request") // DEBUG
             var urlRequest = request
             
             self.performTokenURLRequest(&urlRequest) { (token, error) in
+//                print("refreshToken-request-performTokenURLRequest") // DEBUG
                 completionHandler(token, error)
             }
         }
@@ -157,23 +169,27 @@ class AuthenticationManager {
     // MARK: - Private methods
     
     private func refreshTokenIfExpired(completionHandler: @escaping OAuthTokenHandler) {
+//        print("refreshTokenIfExpired") // DEBUG
         if let token = oAuthToken {
-            print("refreshTokenIfExpired: \(token)")
+//            print("refreshTokenIfExpired: \(token)") // DEBUG
             if token.isExpired {
-                print("token is expired")
+//                print("token is expired") // DEBUG
                 refreshToken { (token2, error) in
-                    print("refreshTokenIfExpired-refreshToken: \(token2)")
+//                    print("refreshTokenIfExpired-refreshToken") // DEBUG
                     if let err = error {
+//                        print("refreshTokenIfExpired-refreshToken: error") // DEBUG
                         completionHandler(nil, err)
                     } else {
+//                        print("refreshTokenIfExpired-refreshToken: \(String(describing: token2))") // DEBUG
                         completionHandler(token2, nil)
                     }
                 }
             } else {
+//                print("token is not expired") // DEBUG
                 completionHandler(token, nil)
             }
         } else {
-            print("no token")
+//            print("refreshTokenIfExpired: no token") // DEBUG
             completionHandler(nil, LimitedHireError.noOAuthToken)
         }
     }
@@ -196,9 +212,9 @@ class AuthenticationManager {
                         completionHandler(nil, LimitedHireError.deserializeJSON)
                         return
                 }
-                print(jsonDict) // DEBUG
+//                print(jsonDict) // DEBUG
                 self.oAuthToken = OAuthToken(json: jsonDict)
-                print("performTokenURLRequest: \(String(describing: self.oAuthToken))") // DEBUG
+//                print("performTokenURLRequest: \(String(describing: self.oAuthToken))") // DEBUG
                 completionHandler(self.oAuthToken, nil)
             }
         }

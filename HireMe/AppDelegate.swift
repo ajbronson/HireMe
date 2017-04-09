@@ -41,14 +41,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         }
         
         AuthenticationManager.shared.token { (token, error) in
+//            print("AppDelegate-token") // DEBUG
             if let err = error {
                 ErrorHelper.describe(err)
             } else if let oAuthToken = token {
                 // Sync data with latest on the server; i.e., /user/<user's ID>
-                print("Already signed in")
-                print(oAuthToken)
+                print("AppDelegate: Already signed in \(oAuthToken)")
             } else {
-                print("Not signed in; no token")
+                print("AppDelegate: Not signed in; no token")
             }
         }
         
