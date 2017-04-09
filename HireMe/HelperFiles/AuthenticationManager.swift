@@ -91,7 +91,11 @@ class AuthenticationManager {
         }
     }
     
-    /// Makes a request to get a valid OAuth token
+    /**
+     Makes a request to get a valid access token
+     
+     - Parameter completionHandler: An OAuthToken and an Error will never be returned simultaneously. Either one will be returned or the other.
+     */
     func getOAuthToken(completionHandler: @escaping OAuthTokenHandler) {
         var token: String
         let signIn = signInMethod()
@@ -111,23 +115,21 @@ class AuthenticationManager {
         httpBody["backend"] = signIn.rawValue
         httpBody["token"] = token
         
-        print(httpBody) // DEBUG
         let data = try? JSONSerialization.data(withJSONObject: httpBody)
         
         let url = NetworkConroller.url(base: AUTH_BASE_URL, pathParameters: ["convert-token"])
         
         NetworkConroller.request(url, method: .Post, addAuthorizationHeader: false, body: data) { (request, error) in
-            // TODO: use guard instead
-            if let err = error {
-                completionHandler(nil, err)
-            } else {
-                let bearerToken = "Bearer \(signIn.rawValue) \(token)"
-                var urlRequest = request
-                urlRequest?.addValue(bearerToken, forHTTPHeaderField: "Authorization")
-                
-                self.performTokenURLRequest(&urlRequest) { (token, error) in
-                    completionHandler(token, error)
-                }
+            guard var urlRequest = request else {
+                completionHandler(nil, error)
+                return
+            }
+            
+            let bearerToken = "Bearer \(signIn.rawValue) \(token)"
+            urlRequest.addValue(bearerToken, forHTTPHeaderField: "Authorization")
+            
+            self.performTokenURLRequest(&urlRequest) { (token, error) in
+                completionHandler(token, error)
             }
         }
     }
@@ -135,7 +137,7 @@ class AuthenticationManager {
     /**
      Makes a request to get a new access token using a valid refresh token.
      
-     - Parameter completionHandler: An OAuthToken and an Error will never be returned simultaneously. Either one will be returned or the other.
+     - Parameter completionHandler: An OAuthToken and an Error will never be returned simultaneously. Either one will be returned or the other; i.e., at least one will always be nil.
      */
     func refreshToken(completionHandler: @escaping OAuthTokenHandler) {
         guard let token = oAuthToken else {
@@ -150,7 +152,11 @@ class AuthenticationManager {
         let url = NetworkConroller.url(base: AUTH_BASE_URL, pathParameters: ["token"])
         
         NetworkConroller.request(url, method: .Post, addAuthorizationHeader: false, body: data) { (request, error) in
-            var urlRequest = request
+            guard var urlRequest = request else {
+                completionHandler(nil, error)
+                return
+            }
+            
             self.performTokenURLRequest(&urlRequest) { (token, error) in
                 completionHandler(token, error)
             }
@@ -202,15 +208,10 @@ class AuthenticationManager {
      - Parameter request: The URL request to perform.
      - Parameter completionHandler: An OAuthToken and an Error will never be returned simultaneously. Either one will be returned or the other.
      */
-    private func performTokenURLRequest(_ request: inout URLRequest?, completionHandler: @escaping OAuthTokenHandler) {
-        guard var urlRequest = request else {
-            completionHandler(nil, NetworkError.noURLRequest)
-            return
-        }
-        
-        urlRequest.addContentTypeHeader(mimeType: .JSON)
+    private func performTokenURLRequest(_ request: inout URLRequest, completionHandler: @escaping OAuthTokenHandler) {
+        request.addContentTypeHeader(mimeType: .JSON)
 
-        NetworkConroller.performURLRequest(urlRequest) { (data, error) in
+        NetworkConroller.performURLRequest(request) { (data, error) in
             if let err = error {
                 completionHandler(nil, err)
             } else {
