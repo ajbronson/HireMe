@@ -51,10 +51,15 @@ class ErrorHelper {
     static func describe(_ error: Error) {
         var message: String
         
-        if let limitedHireError = error as? LimitedHireError {
-            message = limitedHireError.rawValue
-        } else {
-            message = error.localizedDescription
+        switch error {
+        case let authError as AuthenticationError: message = authError.rawValue
+        case let initError as InitializationError:
+            switch initError {
+            case .service(let serviceMessage): message = serviceMessage
+            case .invalidDataType: message = "Failed to retrieve key value. Unexpected data type provided."
+            }
+        case let netError as NetworkError: message = netError.rawValue
+        default: message = error.localizedDescription
         }
         
         print("Error: \(message)")
