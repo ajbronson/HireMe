@@ -70,7 +70,8 @@ struct OAuthToken: CustomStringConvertible {
     var description: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MMM-yyyy h:mm:ss a" // 02-Apr-2017 3:45:21 PM
+        let expireTextSuffix = isExpired ? "d" : "s"
         
-        return "<\(authorization())> expires at \(dateFormatter.string(from: expirationDate))"
+        return "<\(authorization())> expire\(expireTextSuffix) at \(dateFormatter.string(from: expirationDate))"
     }
 }
