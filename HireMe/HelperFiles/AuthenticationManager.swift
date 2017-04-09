@@ -74,7 +74,7 @@ class AuthenticationManager {
                 return
             }
             
-            self.oAuthToken = OAuthToken(dictionary: json)
+            self.oAuthToken = try? OAuthToken(dictionary: json)
             self.refreshTokenIfExpired { (token2, error2) in
 //                print("token-refreshTokenIfExpired-refreshTokenIfExpired") // DEBUG
                 if let err2 = error2 {
@@ -197,7 +197,7 @@ class AuthenticationManager {
     /// Makes the request with a header specifying the content type as JSON to get an access token
     private func performTokenURLRequest(_ request: inout URLRequest?, completionHandler: @escaping OAuthTokenHandler) {
         guard var urlRequest = request else {
-            completionHandler(nil, LimitedHireError.noURLRequest)
+            completionHandler(nil, NetworkError.noURLRequest)
             return
         }
         
@@ -209,13 +209,16 @@ class AuthenticationManager {
             } else {
                 guard let json = data?.toJSON(),
                     let jsonDict = json as? [String: Any] else {
-                        completionHandler(nil, LimitedHireError.deserializeJSON)
+                        completionHandler(nil, NetworkError.deserializeJSON)
                         return
                 }
-//                print(jsonDict) // DEBUG
-                self.oAuthToken = OAuthToken(dictionary: jsonDict)
-//                print("performTokenURLRequest: \(String(describing: self.oAuthToken))") // DEBUG
-                completionHandler(self.oAuthToken, nil)
+                
+                do {
+                    self.oAuthToken = try OAuthToken(dictionary: jsonDict)
+                    completionHandler(self.oAuthToken, nil)
+                } catch let initError {
+                    completionHandler(nil, initError)
+                }
             }
         }
     }

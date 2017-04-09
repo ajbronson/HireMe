@@ -13,6 +13,9 @@ import Foundation
      "detail": "Invalid token header. No credentials provided."
  }
  
+ 
+ convert-token error messages
+ 
  {
      "detail": "Invalid token header. Invalid backend."
  }
@@ -34,9 +37,14 @@ enum AuthenticationError: String, Error {
     case oAuthTokenInitialization = "Failed to initialize OAuthToken."
 }
 
-enum LimitedHireError: String, Error {
+enum InitializationError: Error {
+    case service(String) // Error returned from the web service in the JSON
+    case invalidDataType
+}
+
+enum NetworkError: String, Error {
     case deserializeJSON = "Failed to deserialize JSON."
-    case noURLRequest = "URLRequest is nil."
+    case noURLRequest = "A URLRequest was not provided."
 }
 
 class ErrorHelper {

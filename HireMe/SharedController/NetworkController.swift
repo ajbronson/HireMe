@@ -29,20 +29,6 @@ class NetworkConroller {
         }.resume()
     }
     
-//    static func request(_ url: URL, method: HTTPMethod, headers: [String: String]? = nil, body: Data? = nil) -> URLRequest {
-//        var request = URLRequest(url: url)
-//        request.httpMethod = method.rawValue
-//        request.httpBody = body
-//        
-//        if let headersDict = headers {
-//            for (key, value) in headersDict {
-//                request.addValue(value, forHTTPHeaderField: key)
-//            }
-//        }
-//        
-//        return request
-//    }
-    
     static func request(_ url: URL, method: HTTPMethod, addAuthorizationHeader: Bool = true, headers: [String: String]? = nil, body: Data? = nil, completionHandler: @escaping (URLRequest?, Error?) -> Void) {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
