@@ -8,18 +8,39 @@
 
 import Foundation
 
-enum LimitedHireError: String, Error {
-    case noOAuthToken = "An OAuth token has not been obtained."
-    case deserializeJSON = "Failed to deserialize JSON."
-    case oAuthTokenInitialization = "Failed to initialize OAuthToken."
+/*
+ {
+     "detail": "Invalid token header. No credentials provided."
+ }
+ 
+ {
+     "detail": "Invalid token header. Invalid backend."
+ }
+ 
+ {
+     "error_description": "Invalid backend parameter.",
+     "error": "invalid_request"
+ }
+ 
+ {
+     "error": "unsupported_grant_type"
+ }
+ */
+
+enum AuthenticationError: String, Error {
     case notAuthenticated = "Not authenticated."
-    case oAuthTokenAlreadyObtained = "An OAuth token has already been obtained."
+    case noAccessToken = "An access token has not been issued."
+    case accessTokenAlreadyIssued = "An access token has already been issued."
+    case oAuthTokenInitialization = "Failed to initialize OAuthToken."
+}
+
+enum LimitedHireError: String, Error {
+    case deserializeJSON = "Failed to deserialize JSON."
     case noURLRequest = "URLRequest is nil."
 }
 
 class ErrorHelper {
     static func describe(_ error: Error) {
-        let prefix = "Error: "
         var message: String
         
         if let limitedHireError = error as? LimitedHireError {
@@ -28,6 +49,6 @@ class ErrorHelper {
             message = error.localizedDescription
         }
         
-        print("\(prefix)\(message)")
+        print("Error: \(message)")
     }
 }

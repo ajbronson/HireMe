@@ -61,8 +61,8 @@ class AuthenticationManager {
                 return
             }
             
-            guard let limitedHireError = err as? LimitedHireError,
-                limitedHireError == .noOAuthToken else {
+            guard let authError = err as? AuthenticationError,
+                authError == .noAccessToken else {
 //                print("token-refreshTokenIfExpired: error") // DEBUG
                 completionHandler(nil, err)
                 return
@@ -70,7 +70,7 @@ class AuthenticationManager {
             
             guard let json = UserDefaults.standard.object(forKey: self.OAUTH_TOKEN_KEY) as? [String: Any] else {
 //                print("token-refreshTokenIfExpired: failed to get token from user defaults") // DEBUG
-                completionHandler(nil, LimitedHireError.oAuthTokenInitialization)
+                completionHandler(nil, AuthenticationError.oAuthTokenInitialization)
                 return
             }
             
@@ -97,10 +97,10 @@ class AuthenticationManager {
         case .facebook: token = FBSDKAccessToken.current().tokenString
         case .google: token = GIDSignIn.sharedInstance().currentUser.authentication.accessToken
         case .limitedHire:
-            completionHandler(nil, LimitedHireError.oAuthTokenAlreadyObtained)
+            completionHandler(nil, AuthenticationError.accessTokenAlreadyIssued)
             return
         case .notSignedIn:
-            completionHandler(nil, nil)
+            completionHandler(nil, AuthenticationError.notAuthenticated)
             return
         }
         
@@ -133,7 +133,7 @@ class AuthenticationManager {
 //        print("refreshToken(completionHandler:)") // DEBUG
         guard let token = oAuthToken else {
 //            print("refreshToken: no token") // DEBUG
-            completionHandler(nil, LimitedHireError.noOAuthToken)
+            completionHandler(nil, AuthenticationError.noAccessToken)
             return
         }
         
@@ -190,7 +190,7 @@ class AuthenticationManager {
             }
         } else {
 //            print("refreshTokenIfExpired: no token") // DEBUG
-            completionHandler(nil, LimitedHireError.noOAuthToken)
+            completionHandler(nil, AuthenticationError.noAccessToken)
         }
     }
     
