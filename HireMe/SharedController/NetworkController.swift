@@ -29,6 +29,13 @@ class NetworkConroller {
         }.resume()
     }
     
+    /**
+     Initializes a request.
+     
+     - Note: Requires a completion handler in case when adding the authorization header the access token needs to make a request to be refreshed.
+     
+     - Parameter completionHandler: A URLRequest and an Error will never be returned simultaneously. Either one will be returned or the other.
+     */
     static func request(_ url: URL, method: HTTPMethod, addAuthorizationHeader: Bool = true, headers: [String: String]? = nil, body: Data? = nil, completionHandler: @escaping (URLRequest?, Error?) -> Void) {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue

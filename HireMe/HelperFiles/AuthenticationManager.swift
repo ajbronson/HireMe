@@ -51,37 +51,40 @@ class AuthenticationManager {
     
     // MARK: - Methods
     
+    /**
+     Provides a valid access token.
+     
+     - Note: Requires a completion handler in case the access token is expired and a request needs to be made in order to refresh it.
+     
+     - Parameter completionHandler: An OAuthToken and an Error will never be returned simultaneously. Either one will be returned or the other.
+     */
     func token(completionHandler: @escaping OAuthTokenHandler) {
-//        print("token(completionHandler:)") // DEBUG
         refreshTokenIfExpired { (token, error) in
-//            print("token-refreshTokenIfExpired") // DEBUG
             guard let err = error else {
-//                print("token-refreshTokenIfExpired: \(String(describing: token))") // DEBUG
                 completionHandler(token, nil)
                 return
             }
             
-            guard let authError = err as? AuthenticationError,
-                authError == .noAccessToken else {
-//                print("token-refreshTokenIfExpired: error") // DEBUG
+            guard let authError = err as? AuthenticationError, authError == .noAccessToken else {
                 completionHandler(nil, err)
                 return
             }
             
-            guard let json = UserDefaults.standard.object(forKey: self.OAUTH_TOKEN_KEY) as? [String: Any] else {
-//                print("token-refreshTokenIfExpired: failed to get token from user defaults") // DEBUG
+            guard let tokenDict = UserDefaults.standard.object(forKey: self.OAUTH_TOKEN_KEY) as? [String: Any] else {
                 completionHandler(nil, AuthenticationError.oAuthTokenInitialization)
                 return
             }
             
-            self.oAuthToken = try? OAuthToken(dictionary: json)
+            do {
+                self.oAuthToken = try OAuthToken(dictionary: tokenDict)
+            } catch let initError {
+                completionHandler(nil, initError)
+            }
+            
             self.refreshTokenIfExpired { (token2, error2) in
-//                print("token-refreshTokenIfExpired-refreshTokenIfExpired") // DEBUG
                 if let err2 = error2 {
-//                    print("token-refreshTokenIfExpired-refreshTokenIfExpired: error") // DEBUG
                     completionHandler(nil, err2)
                 } else {
-//                    print("token-refreshTokenIfExpired-refreshTokenIfExpired: \(String(describing: token2))") // DEBUG
                     completionHandler(token2, nil)
                 }
             }
@@ -129,10 +132,13 @@ class AuthenticationManager {
         }
     }
     
+    /**
+     Makes a request to get a new access token using a valid refresh token.
+     
+     - Parameter completionHandler: An OAuthToken and an Error will never be returned simultaneously. Either one will be returned or the other.
+     */
     func refreshToken(completionHandler: @escaping OAuthTokenHandler) {
-//        print("refreshToken(completionHandler:)") // DEBUG
         guard let token = oAuthToken else {
-//            print("refreshToken: no token") // DEBUG
             completionHandler(nil, AuthenticationError.noAccessToken)
             return
         }
@@ -144,11 +150,8 @@ class AuthenticationManager {
         let url = NetworkConroller.url(base: AUTH_BASE_URL, pathParameters: ["token"])
         
         NetworkConroller.request(url, method: .Post, addAuthorizationHeader: false, body: data) { (request, error) in
-//            print("refreshToken: sucessfully initialized request") // DEBUG
             var urlRequest = request
-            
             self.performTokenURLRequest(&urlRequest) { (token, error) in
-//                print("refreshToken-request-performTokenURLRequest") // DEBUG
                 completionHandler(token, error)
             }
         }
@@ -168,33 +171,37 @@ class AuthenticationManager {
     
     // MARK: - Private methods
     
+    /**
+     Provides a valid access token. Refreshes an expired token if necessary.
+     
+     - Note: Requires a completion handler in case the access token is expired and a request needs to be made in order to refresh it.
+     
+     - Parameter completionHandler: An OAuthToken and an Error will never be returned simultaneously. Either one will be returned or the other.
+     */
     private func refreshTokenIfExpired(completionHandler: @escaping OAuthTokenHandler) {
-//        print("refreshTokenIfExpired") // DEBUG
         if let token = oAuthToken {
-//            print("refreshTokenIfExpired: \(token)") // DEBUG
             if token.isExpired {
-//                print("token is expired") // DEBUG
                 refreshToken { (token2, error) in
-//                    print("refreshTokenIfExpired-refreshToken") // DEBUG
                     if let err = error {
-//                        print("refreshTokenIfExpired-refreshToken: error") // DEBUG
                         completionHandler(nil, err)
                     } else {
-//                        print("refreshTokenIfExpired-refreshToken: \(String(describing: token2))") // DEBUG
                         completionHandler(token2, nil)
                     }
                 }
             } else {
-//                print("token is not expired") // DEBUG
                 completionHandler(token, nil)
             }
         } else {
-//            print("refreshTokenIfExpired: no token") // DEBUG
             completionHandler(nil, AuthenticationError.noAccessToken)
         }
     }
     
-    /// Makes the request with a header specifying the content type as JSON to get an access token
+    /**
+     Makes the request with a header specifying the content type as JSON to get an access token
+     
+     - Parameter request: The URL request to perform.
+     - Parameter completionHandler: An OAuthToken and an Error will never be returned simultaneously. Either one will be returned or the other.
+     */
     private func performTokenURLRequest(_ request: inout URLRequest?, completionHandler: @escaping OAuthTokenHandler) {
         guard var urlRequest = request else {
             completionHandler(nil, NetworkError.noURLRequest)
@@ -207,10 +214,9 @@ class AuthenticationManager {
             if let err = error {
                 completionHandler(nil, err)
             } else {
-                guard let json = data?.toJSON(),
-                    let jsonDict = json as? [String: Any] else {
-                        completionHandler(nil, NetworkError.deserializeJSON)
-                        return
+                guard let json = data?.toJSON(), let jsonDict = json as? [String: Any] else {
+                    completionHandler(nil, NetworkError.deserializeJSON)
+                    return
                 }
                 
                 do {
