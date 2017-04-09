@@ -28,7 +28,7 @@ class AuthenticationManager {
     private var oAuthToken: OAuthToken? {
         didSet {
 //            print("didSet oAuthToken") // DEBUG
-            UserDefaults.standard.set(oAuthToken?.toJSON(), forKey: OAUTH_TOKEN_KEY)
+            UserDefaults.standard.set(oAuthToken?.toDictionary(), forKey: OAUTH_TOKEN_KEY)
         }
     }
     

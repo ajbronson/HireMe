@@ -54,7 +54,7 @@ struct OAuthToken: CustomStringConvertible {
         return "\(tokenType) \(accessToken)"
     }
     
-    func toJSON() -> [String: Any] {
+    func toDictionary() -> [String: Any] {
         return [
             "access_token": accessToken,
             "refresh_token": refreshToken,
