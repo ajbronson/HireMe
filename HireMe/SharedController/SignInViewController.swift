@@ -66,22 +66,13 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     @IBAction func facebookTapped(_ sender: UIButton) {
         FBSDKLoginManager().logIn(withReadPermissions: ["public_profile", "email"], from: self) { (loginResult, error) in
             if let err = error {
-                print(err)
+                // TODO: handle error
+                print(err.localizedDescription)
             } else {
                 print("Facebook token: \(FBSDKAccessToken.current().tokenString)")
-                AuthenticationManager.shared.getOAuthToken { (token, error) in
-                    if let err = error {
-                        ErrorHelper.describe(err)
-                    }
-                    
-                    print(token?.description)
-                }
+                self.getUser()
                 
-                guard let result = loginResult else {
-                    return
-                }
-                
-                if result.grantedPermissions != nil {
+                if loginResult?.grantedPermissions != nil {
                     // https://developers.facebook.com/docs/graph-api/reference/user for a list of available fields
                     FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, first_name, last_name, email, cover"]).start { (connection, result, error) in
                         if error == nil {
@@ -138,14 +129,33 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     }
     
 
-    // MARK: - Custom functions
+    // MARK: - Private methods
     
     private func customizeButton() {
         let verticalInset: CGFloat = 10.0
         self.fbButton.imageEdgeInsets = UIEdgeInsets(top: verticalInset, left: verticalInset, bottom: verticalInset, right: 0)
     }
     
-    func userDidSignInWithGoogle() {
+    private func getUser() {
+        AuthenticationManager.shared.getOAuthToken { (token, error) in
+            guard token != nil else {
+                ErrorHelper.describe(error!)
+                return
+            }
+            
+            APIClient.getUser { (user, error) in
+                guard let usr = user else {
+                    ErrorHelper.describe(error!)
+                    return
+                }
+                
+                print(usr)
+                // TODO: save user to singleton
+            }
+        }
+    }
+    
+    @objc private func userDidSignInWithGoogle() {
         self.dismiss(animated: true, completion: nil)
     }
 
