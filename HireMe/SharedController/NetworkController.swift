@@ -34,6 +34,7 @@ class NetworkConroller {
      
      - Note: Requires a completion handler in case when adding the authorization header the access token needs to make a request to be refreshed.
      
+     - Parameter addAuthorizationHeader: If true, adds an authorization header with 'Bearer <access token>', the access token issued from LimitedHire
      - Parameter completionHandler: A URLRequest and an Error will never be returned simultaneously. Either one will be returned or the other.
      */
     static func request(_ url: URL, method: HTTPMethod, addAuthorizationHeader: Bool = true, headers: [String: String]? = nil, body: Data? = nil, completionHandler: @escaping (URLRequest?, Error?) -> Void) {
@@ -110,4 +111,14 @@ class NetworkConroller {
             }
         }
 	}
+    
+    /**
+     Returns the value for "results" in a response dictionary.
+     
+     - Parameter dict: The dictionary to get the results from.
+     - Returns: An array of dictionaries.
+     */
+    static func getResults(from dict: [String: Any]) -> [[String: Any]]? {
+        return dict["results"] as? [[String: Any]]
+    }
 }
