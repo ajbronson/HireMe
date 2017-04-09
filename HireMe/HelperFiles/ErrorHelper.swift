@@ -61,7 +61,31 @@ class ErrorHelper {
         case let netError as NetworkError: message = netError.rawValue
         default: message = error.localizedDescription
         }
-        
+
         print("Error: \(message)")
+    }
+    
+    /**
+     Checks for an error returned in the response JSON of the request.
+     
+     - Parameter inResponseDictionary: The dictionary object of the response.
+     - Returns: The error message if an error was returned from the service.
+     */
+    static func checkForError(inResponseDictionary dict: [String: Any]) -> String? {
+        if let error = dict["error"] as? String {
+            var message = error
+            
+            if let description = dict["error_description"] as? String {
+                message += ". \(description)"
+            }
+            
+            return message
+        }
+        
+        if let detail = dict["detail"] as? String {
+            return detail
+        }
+        
+        return nil
     }
 }
