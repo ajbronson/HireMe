@@ -74,7 +74,7 @@ class AuthenticationManager {
                 return
             }
             
-            self.oAuthToken = OAuthToken(json: json)
+            self.oAuthToken = OAuthToken(dictionary: json)
             self.refreshTokenIfExpired { (token2, error2) in
 //                print("token-refreshTokenIfExpired-refreshTokenIfExpired") // DEBUG
                 if let err2 = error2 {
@@ -213,7 +213,7 @@ class AuthenticationManager {
                         return
                 }
 //                print(jsonDict) // DEBUG
-                self.oAuthToken = OAuthToken(json: jsonDict)
+                self.oAuthToken = OAuthToken(dictionary: jsonDict)
 //                print("performTokenURLRequest: \(String(describing: self.oAuthToken))") // DEBUG
                 completionHandler(self.oAuthToken, nil)
             }

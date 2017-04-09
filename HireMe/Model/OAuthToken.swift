@@ -20,24 +20,24 @@ struct OAuthToken: CustomStringConvertible {
         return Date().compare(expirationDate) != .orderedAscending
     }
     
-    init?(json: [String: Any]) {
-        if let error = json["error"] as? String {
+    init?(dictionary: [String: Any]) {
+        if let error = dictionary["error"] as? String {
             print("Error: \(error)")
             return nil
         }
         
-        guard let accessToken = json["access_token"] as? String,
-            let refreshToken = json["refresh_token"] as? String,
-            let scope = json["scope"] as? String,
-            let tokenType = json["token_type"] as? String else {
+        guard let accessToken = dictionary["access_token"] as? String,
+            let refreshToken = dictionary["refresh_token"] as? String,
+            let scope = dictionary["scope"] as? String,
+            let tokenType = dictionary["token_type"] as? String else {
             return nil
         }
         
-        if let creationDate = json["creation_date"] as? Date,
-            let expirationDate = json["expiration_date"] as? Date {
+        if let creationDate = dictionary["creation_date"] as? Date,
+            let expirationDate = dictionary["expiration_date"] as? Date {
             self.creationDate = creationDate
             self.expirationDate = expirationDate
-        } else if let expiresIn = json["expires_in"] as? Double {
+        } else if let expiresIn = dictionary["expires_in"] as? Double {
             self.creationDate = Date()
             self.expirationDate = creationDate.addingTimeInterval(expiresIn)
         } else {
