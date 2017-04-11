@@ -10,8 +10,12 @@ import UIKit
 
 class BidderDescriptionCell: UITableViewCell {
 
+	//MARK: - Outlets
+
 	@IBOutlet weak var descriptionTextView: UITextView!
 
+	//MARK: - Helper Functions
+	
 	func updateWith(description: String) {
 		descriptionTextView.text = description
 

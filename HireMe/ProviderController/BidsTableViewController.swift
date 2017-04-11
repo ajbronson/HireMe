@@ -9,9 +9,12 @@
 import UIKit
 
 class BidsTableViewController: UITableViewController {
-	
-    // MARK: - View controller life cycle
+
+	//MARK: - Properties
+
 	var bids: [Bid]?
+
+    // MARK: - View controller life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

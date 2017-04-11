@@ -9,7 +9,9 @@
 import UIKit
 
 class NewJobTableViewController: UITableViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
-	
+
+	//MARK: - Outlets
+
 	@IBOutlet weak var titleTextField: UITextField!
 	@IBOutlet weak var typeTextField: UITextField!
 	@IBOutlet weak var timeStartTextField: UITextField!
@@ -28,9 +30,13 @@ class NewJobTableViewController: UITableViewController, UICollectionViewDataSour
 	@IBOutlet weak var myLocationButton: UIButton!
 	@IBOutlet weak var locationIndicator: UIActivityIndicatorView!
 
+	//MARK: - Properties
+
 	var job: Job?
 	var images: [UIImage] = []
 
+	//MARK: - View Controller Lifecycle
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 

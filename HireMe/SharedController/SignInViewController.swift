@@ -11,12 +11,13 @@ import GoogleSignIn
 import FBSDKLoginKit
 
 class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
-    
+
+	//MARK: - Outlets
+
     @IBOutlet weak var emailTextField: NextPrevControlTextField!
     @IBOutlet weak var passwordTextField: NextPrevControlTextField!
     @IBOutlet weak var fbButton: UIButton!
 
-    
     // MARK: - View controller life cycle
     
     override func viewDidLoad() {
@@ -30,7 +31,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
         self.passwordTextField.bottomBorder()
     }
     
-    
     // TODO: This probably won't be needed once it can actually sign in. When users sign out, they won't be directed to this screen
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -41,7 +41,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
     
     // MARK: - IBActions
     
@@ -101,7 +100,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
         GIDSignIn.sharedInstance().signIn()
     }
     
-    
     // MARK: - UITextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -116,7 +114,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
         return false
     }
 
-    
     // MARK: - UIResponder
     
     // Hides keyboard when user taps anywhere outside of keyboard

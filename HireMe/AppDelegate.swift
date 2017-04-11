@@ -74,7 +74,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         return fbHandled || googleHandled
     }
     
-    
     // MARK: GIDSignInDelegate callbacks
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {

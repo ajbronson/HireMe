@@ -33,5 +33,4 @@ class RatingStarsHelper {
             stars[i]?.image = numberOfStars > i ? UIImage(named: "Star") : UIImage(named: "BlankStar")
         }
     }
-    
 }

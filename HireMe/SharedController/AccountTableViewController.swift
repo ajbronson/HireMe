@@ -10,13 +10,14 @@ import UIKit
 
 class AccountTableViewController: UITableViewController, UITextFieldDelegate {
 
+	//MARK: - Outlets
+
     @IBOutlet weak var usernameTextField: NextPrevControlTextField!
     @IBOutlet weak var firstNameTextField: NextPrevControlTextField!
     @IBOutlet weak var lastNameTextField: NextPrevControlTextField!
     @IBOutlet weak var phoneTextField: NextPrevControlTextField!
     @IBOutlet weak var zipCodeTextField: NextPrevControlTextField!
     @IBOutlet weak var emailTextField: NextPrevControlTextField!
-    
     
 	// MARK: - View controller life cycle
 	
@@ -32,8 +33,7 @@ class AccountTableViewController: UITableViewController, UITextFieldDelegate {
             self.tableView.deselectRow(at: indexpath, animated: true)
         }
     }
-    
-    
+
     // MARK: - UITableViewDelegate
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
@@ -44,8 +44,7 @@ class AccountTableViewController: UITableViewController, UITextFieldDelegate {
         
         return indexPath
     }
-    
-    
+
     // MARK: - UITextFieldDelegate
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -64,7 +63,6 @@ class AccountTableViewController: UITableViewController, UITextFieldDelegate {
         return false // Do not add a line break
     }
     
-    
     // MARK: - IBActions
     
     @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
@@ -75,7 +73,6 @@ class AccountTableViewController: UITableViewController, UITextFieldDelegate {
     @IBAction func saveTapped(_ sender: UIBarButtonItem) {
         print("Save profile")
     }
-    
     
     // MARK: - Custom functions
     

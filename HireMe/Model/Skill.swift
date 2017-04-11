@@ -15,7 +15,6 @@ class Skill {
 	let dateCreated: Date
 	var dateUpdated: Date
 
-
 	init(id: Int, name: String, dateCreated: Date = Date(), dateUpdated: Date = Date()) {
 		self.name = name
 		self.id = id

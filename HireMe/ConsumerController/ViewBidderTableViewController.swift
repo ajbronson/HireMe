@@ -10,11 +10,15 @@ import UIKit
 
 class ViewBidderTableViewController: UITableViewController {
 
+	//MARK: - Properties
+
 	var bid: Bid?
 	var skills: [Skill]?
 	var bidder: Bidder?
 	var descriptionHeight: CGFloat?
 	var job: Job?
+
+	//MARK: - View Controller Lifecycle
 
 	override func viewDidLoad() {
 		skills = SkillController.shared.skills

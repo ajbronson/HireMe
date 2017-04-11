@@ -15,10 +15,12 @@ class NewBidViewController: UIViewController, UITextViewDelegate, UITextFieldDel
 	@IBOutlet weak var priceField: UITextField!
 	@IBOutlet weak var descriptionTextView: UITextView!
 
+	//MARK: - Properties
+
 	var bid: Bid?
 	var job: Job?
-
 	static let defaultBorderColor = UIColor(colorLiteralRed: 199/255.0, green: 199/255.0, blue: 205/255.0, alpha: 0.8)
+
 	//MARK: - View Controller Lifecycle
 	
 	override func viewDidLoad() {
@@ -78,6 +80,7 @@ class NewBidViewController: UIViewController, UITextViewDelegate, UITextFieldDel
 			textField.text = price?.convertToCurrency()
 		}
 	}
+
 	//MARK: - Actions
 	
 	@IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
@@ -96,5 +99,4 @@ class NewBidViewController: UIViewController, UITextViewDelegate, UITextFieldDel
 	@IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
 		_ = navigationController?.popViewController(animated: true)
 	}
-	
 }

@@ -18,7 +18,6 @@ class SearchTableViewController: UITableViewController {
 		navigationController?.navigationBar.tintColor = UIColor.white
     }
     
-    
     // MARK: - UITableViewDataSource methods
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,7 +29,6 @@ class SearchTableViewController: UITableViewController {
 		cell.textLabel?.text = AppInfo.industries[indexPath.row]
 		return cell
 	}
-	
     
 	// MARK: - Navigation
 	

@@ -10,6 +10,8 @@ import UIKit
 
 class BidderImageCell: UITableViewCell {
 
+	//MARK: - Outlets
+
 	@IBOutlet weak var priceLabel: UILabel!
 	@IBOutlet weak var bidderImageView: UIImageView!
 	@IBOutlet weak var starImage1: UIImageView!
@@ -21,8 +23,12 @@ class BidderImageCell: UITableViewCell {
 	@IBOutlet weak var acceptButton: UIButton!
 	@IBOutlet weak var statusLabel: UILabel!
 
+	//MARK: - Properties
+
 	var view: UIViewController = UIViewController()
 	var bid: Bid?
+
+	//MARK: - Helper Functions
 
 	func updateWith(bid: Bid, bidder: Bidder, job: Job, view: UIViewController) {
 
@@ -80,6 +86,8 @@ class BidderImageCell: UITableViewCell {
             bid.job.status = .pending
 		}
 	}
+
+	//MARK: - Actions
 	
 	@IBAction func declineButtonTapped(_ sender: UIButton) {
 		let alert = UIAlertController(title: "Confirmation Required", message: "Are you sure you want to decline this bid? \n\nThe bidder will be sent a notification that this bid was declined.", preferredStyle: .alert)

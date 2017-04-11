@@ -9,11 +9,15 @@
 import UIKit
 
 class ProviderJobsViewController: UIViewController, UITableViewDataSource {
-    
+
+	//MARK: - Outlets
+
     @IBOutlet weak var noDataLabel: UILabel!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
-    
+
+	//MARK: - Properties 
+	
     private var jobs: [Job]?
     private var completedJobs: [Job]?
     private var cancelledJobs: [Job]?
