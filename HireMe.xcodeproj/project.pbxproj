@@ -339,6 +339,7 @@
 		D0797CB01E49796000BA7B19 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D09D8E451E988EBC006C14CB /* APIClient.swift */,
 				D0797CB11E49796000BA7B19 /* Bid.swift */,
 				D0797CB31E49796000BA7B19 /* Bidder.swift */,
 				D0797CB51E49796000BA7B19 /* Job.swift */,
@@ -385,7 +386,6 @@
 				D0797CD51E497B1A00BA7B19 /* Extensions.swift */,
 				21103D9A1E4A99370097F595 /* Constants.swift */,
 				D03481841E90297C0062687E /* AuthenticationManager.swift */,
-				D09D8E451E988EBC006C14CB /* APIClient.swift */,
 			);
 			path = HelperFiles;
 			sourceTree = "<group>";
