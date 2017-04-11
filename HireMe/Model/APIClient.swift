@@ -9,6 +9,22 @@
 import Foundation
 
 struct APIClient {
+    static func getAllJobs(completionHandler: @escaping ([Job]?, Error?) -> Void) {
+        performURLRequest(forEndpoint: "job") { (responseDict, error) in
+            guard let _ = responseDict else {
+                completionHandler(nil, error)
+                return
+            }
+            
+            // TODO: implement creating the list of jobs from the response dictionary
+        }
+    }
+    
+    /**
+     Gets the user's profile.
+     
+     - Parameter completionHandler: A User and an Error will never be returned simultaneously. Either one will be returned or the other.
+     */
     static func getUser(completionHandler: @escaping (User?, Error?) -> Void) {
         performURLRequest(forEndpoint: "whoami/") { (responseDict, error) in
             guard let dict = responseDict else {
@@ -25,11 +41,10 @@ struct APIClient {
     }
     
     /**
-     Performs a GET request.
+     Performs a GET request that provides a dictionary of the response JSON.
      
      - Parameter endpoint: The API endpoint to hit
      - Parameter completionHandler: A Dictionary and an Error will never be returned simultaneously. Either one will be returned or the other.
-     - Returns: A dictionary of the response JSON
      */
     private static func performURLRequest(forEndpoint endpoint: String, completionHandler: @escaping ([String: Any]?, Error?) -> Void) {
         let url = NetworkConroller.url(base: BASE_URL, pathParameters: [endpoint])
