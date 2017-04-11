@@ -78,9 +78,9 @@ class ProviderJobsViewController: UIViewController, UITableViewDataSource {
     private func initializeTableViewData() {
         let me = BidController.shared.bids[0].bidder
         let myjobs = JobController.shared.jobs.filter{ $0.selectedBid?.bidder == me }
-        jobs = myjobs.filter {$0.status == JobStatus.open.rawValue}
-        completedJobs = myjobs.filter { $0.status == JobStatus.completed.rawValue }
-        cancelledJobs = myjobs.filter { $0.status == JobStatus.cancelled.rawValue }
+        jobs = myjobs.filter {$0.status == .open}
+        completedJobs = myjobs.filter { $0.status == .completed }
+        cancelledJobs = myjobs.filter { $0.status == .cancelled }
         
         if let jobs = jobs {
             tableViewData[0] = jobs

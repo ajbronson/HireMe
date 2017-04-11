@@ -36,9 +36,9 @@ class ProviderTabBarController: UITabBarController, UITabBarControllerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if SignInHelper.isSignedIn() {
+        if AuthenticationManager.shared.isSignedIn {
             self.enableTabBarItems()
-        } else if SignInHelper.authAlertHasDisplayed() {
+        } else if AuthenticationManager.authAlertHasDisplayed() {
             self.disableTabBarItems()
         }
     }
@@ -51,7 +51,7 @@ class ProviderTabBarController: UITabBarController, UITabBarControllerDelegate {
     // MARK: - UITabBarControllerDelegate
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        if SignInHelper.isSignedIn() == false && (viewController.restorationIdentifier == "ProviderJobsNavigationController" || viewController.restorationIdentifier == "BidsNavigationController") {
+        if AuthenticationManager.shared.isSignedIn == false && (viewController.restorationIdentifier == "ProviderJobsNavigationController" || viewController.restorationIdentifier == "BidsNavigationController") {
             guard let jobsTitle = self.tabBarItemJobs?.title, let bidsTitle = self.tabBarItemBids?.title else {
                 return false
             }

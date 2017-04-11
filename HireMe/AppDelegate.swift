@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Initialize Google sign-in
         var configureError: NSError?
         GGLContext.sharedInstance().configureWithError(&configureError)
-        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        assert(configureError == nil, "Error configuring Google services: \(String(describing: configureError))")
         
         GIDSignIn.sharedInstance().delegate = self
         
@@ -36,10 +36,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             // Signed in with Google
             print("Already signed in with Google") // DEBUG
             GIDSignIn.sharedInstance().signInSilently()
+        } else if FBSDKAccessToken.current() != nil {
+            print("Already signed in with Facebook") // DEBUG
+        }
+        
+        AuthenticationManager.shared.token { (token, error) in
+            if let err = error {
+                ErrorHelper.describe(err)
+            } else if let oAuthToken = token {
+                print("AppDelegate: Already signed in \(oAuthToken)")
+                APIClient.getUser { (user, error2) in
+                    guard let usr = user else {
+                        ErrorHelper.describe(error2!)
+                        return
+                    }
+                    
+                    print(usr)
+                    // TODO: save user to singleton
+                }
+            } else {
+                print("AppDelegate: Not signed in; no token")
+            }
         }
         
         // TODO: remove for prod
-        SignInHelper.resetAuthAlertUserDefaultsKey()
+        AuthenticationManager.resetAuthAlertUserDefaultsKey()
         
 		return true
 	}
@@ -60,13 +81,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         if error == nil {
             print("Signed in with Google") // DEBUG
 //            let userId = user.userID                  // For client-side use only!
-//            let idToken = user.authentication.idToken // Safe to send to the server
-//            print("Google token: \(idToken)") // DEBUG
-            
-            SignInHelper.setUserProfile(fullName: user.profile.name,
-                                        firstName: user.profile.givenName,
-                                        lastName: user.profile.familyName,
-                                        email: user.profile.email)
+            let idToken = user.authentication.idToken
+            print("Google token: \(String(describing: idToken))") // DEBUG
+            // TODO: get OAuth token
+            // TODO: get user
+            // TODO: save user info
             NotificationCenter.default.post(name: gSignInNotificationName, object: nil)
         } else {
             print("\(error.localizedDescription)")

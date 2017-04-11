@@ -31,49 +31,24 @@ class JobInfoCell: UITableViewCell {
 	func updateWith(job: Job, view: UIViewController) {
 		locationLabel.text = job.locationCity
 		industryLabel.text = job.industry
-
-		if let timeStart = job.timeFrameStart,
-			let timeEnd = job.timeFrameEnd {
-			if timeStart.characters.count > 0 && timeEnd.characters.count > 0 {
-				timeFrameLabel.text = "\(timeStart) - \(timeEnd)"
-			}
-		} else if let timeStart = job.timeFrameStart,
-			timeStart.characters.count > 0 {
-			timeFrameLabel.text = timeStart
-		} else if let timeEnd = job.timeFrameEnd,
-			timeEnd.characters.count > 0 {
-			timeFrameLabel.text = timeEnd
-		} else {
-			timeFrameLabel.text = "No Time Frame"
-		}
-
-		if let priceStartDouble = job.priceRangeStart,
-			let priceEndSDouble = job.priceRangeEnd,
-			let priceStart = priceStartDouble.convertToCurrency(includeDollarSign: true),
-			let priceEnd = priceEndSDouble.convertToCurrency(includeDollarSign: true) {
-			if priceStart == priceEnd {
-				priceRangeLabel.text = priceStart
-			} else {
-				priceRangeLabel.text = "\(priceStart) - \(priceEnd)"
-			}
-		} else if let priceStartDouble = job.priceRangeStart,
-			let priceStart = priceStartDouble.convertToCurrency(includeDollarSign: true) {
-			priceRangeLabel.text = priceStart
-		}else if let priceEndSDouble = job.priceRangeEnd,
-			let priceEnd = priceEndSDouble.convertToCurrency(includeDollarSign: true) {
-			priceRangeLabel.text = priceEnd
-		}
-
-		statusLabel.text = job.status
-
-		if job.status == JobStatus.cancelled.rawValue {
-			statusLabel.textColor = UIColor.red
-		} else if job.status == JobStatus.completed.rawValue {
-			statusLabel.textColor = AppColors.greenColor
-		} else if job.status == JobStatus.open.rawValue {
-			statusLabel.textColor = AppColors.yellowColor
-		}
-
+        
+        let timeFrame = job.timeFrame(dateFormat: "EEE MMM d")
+        timeFrameLabel.text = timeFrame == "" ? "No time frame" : timeFrame
+        priceRangeLabel.text = job.priceRange()
+		statusLabel.text = job.status.rawValue
+        
+        var color: UIColor
+        
+        switch job.status {
+        case .open: color = AppColors.yellowColor
+        case .completed: color = AppColors.greenColor
+        case .cancelled: color = UIColor.red
+        case .pending: color = UIColor.purple
+            // TODO: implement awarded
+        default: color = UIColor.black
+        }
+        
+        statusLabel.textColor = color
 		self.job = job
 		self.view = view
 

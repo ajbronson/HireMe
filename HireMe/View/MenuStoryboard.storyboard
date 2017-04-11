@@ -18,9 +18,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="ZkC-m5-zCA" userLabel="Header View">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="161"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jose" translatesAutoresizingMaskIntoConstraints="NO" id="RM0-W8-TyZ">
+                                    <rect key="frame" x="137" y="20" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="BPB-xA-nbH"/>
+                                        <constraint firstAttribute="height" constant="100" id="WYQ-AW-CaU"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nathan Johnson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhT-46-LHE">
+                                    <rect key="frame" x="125" y="128" width="125" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="jhT-46-LHE" firstAttribute="top" secondItem="RM0-W8-TyZ" secondAttribute="bottom" constant="8" id="7ZH-ch-Rvh"/>
+                                <constraint firstItem="jhT-46-LHE" firstAttribute="centerX" secondItem="ZkC-m5-zCA" secondAttribute="centerX" id="FpC-fA-IaF"/>
+                                <constraint firstItem="RM0-W8-TyZ" firstAttribute="centerX" secondItem="ZkC-m5-zCA" secondAttribute="centerX" id="XKB-pW-A9s"/>
+                                <constraint firstAttribute="bottom" secondItem="jhT-46-LHE" secondAttribute="bottom" constant="12" id="acn-SD-KWs"/>
+                                <constraint firstItem="RM0-W8-TyZ" firstAttribute="top" secondItem="ZkC-m5-zCA" secondAttribute="top" constant="20" id="i3q-r4-A5y"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" textLabel="2Pq-w9-6AB" style="IBUITableViewCellStyleDefault" id="fLK-jg-9YK" userLabel="Settings">
-                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="217" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fLK-jg-9YK" id="bGM-II-fMX">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -45,10 +71,14 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="6fm-ni-rfe"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableHeaderImageView" destination="RM0-W8-TyZ" id="dnx-NG-saD"/>
+                        <outlet property="tableHeaderNameLabel" destination="jhT-46-LHE" id="abT-6D-9fO"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MtD-km-ZgI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2394" y="-1773"/>
+            <point key="canvasLocation" x="2391.1999999999998" y="-1774.3628185907048"/>
         </scene>
         <!--Edit Account-->
         <scene sceneID="Clk-fa-nJR">
@@ -918,5 +948,6 @@
     </scenes>
     <resources>
         <image name="Account" width="22" height="22"/>
+        <image name="Jose" width="131" height="200"/>
     </resources>
 </document>

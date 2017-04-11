@@ -8,20 +8,44 @@
 
 import UIKit
 
-class User {
+class User: CustomStringConvertible {
     
-    var id: Int
+    var id: UInt
+    var username: String
+    var email: String
+//    var jobs: [Job]?
     var firstName: String
     var lastName: String
     var fullName: String
-//    var email: String
 //    var phoneNumber: String
     var image: UIImage?
     var numberOfStars: Int
     var numberOfRatings: Int
 //    var ZIPCode: Int
     
-    init(id: Int, firstName: String, lastName: String, fullName: String? = nil, image: UIImage? = nil, numberOfStars: Int = 0, numberOfRatings: Int = 0) {
+    init(dictionary: [String: Any]) throws {
+        if let error = ErrorHelper.checkForError(in: dictionary) {
+            throw InitializationError.service(error)
+        }
+        
+        guard let result = NetworkConroller.getResults(from: dictionary)?.first,
+            let id = result["id"] as? UInt,
+            let username = result["username"] as? String,
+            let email = result["email"] as? String else {
+                throw InitializationError.invalidDataType
+        }
+        
+        self.id = id
+        self.username = username
+        self.email = email
+        self.firstName = ""
+        self.lastName = ""
+        self.fullName = ""
+        self.numberOfStars = 0
+        self.numberOfRatings = 0
+    }
+    
+    init(id: UInt, firstName: String, lastName: String, fullName: String? = nil, image: UIImage? = nil, numberOfStars: Int = 0, numberOfRatings: Int = 0) {
         self.id = id
         self.firstName = firstName
         self.lastName = lastName
@@ -29,6 +53,15 @@ class User {
         self.image = image
         self.numberOfStars = numberOfStars
         self.numberOfRatings = numberOfRatings
+        
+        self.username = ""
+        self.email = ""
+    }
+    
+    // MARK: - CustomStringConvertible
+    
+    var description: String {
+        return "\(id): \(username) \(email)"
     }
 
 }

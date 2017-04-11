@@ -66,27 +66,30 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     @IBAction func facebookTapped(_ sender: UIButton) {
         FBSDKLoginManager().logIn(withReadPermissions: ["public_profile", "email"], from: self) { (loginResult, error) in
             if let err = error {
-                print(err)
+                // TODO: handle error
+                print(err.localizedDescription)
             } else {
-                print("Signed in with Facebook")
-                guard let result = loginResult else {
-                    return
-                }
+                print("Facebook token: \(FBSDKAccessToken.current().tokenString)")
+                self.getUser()
                 
-                if result.grantedPermissions != nil {
-                    FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, first_name, last_name, email"]).start { (connection, result, error) in
+                if loginResult?.grantedPermissions != nil {
+                    // https://developers.facebook.com/docs/graph-api/reference/user for a list of available fields
+                    FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, first_name, last_name, email, cover"]).start { (connection, result, error) in
                         if error == nil {
                             guard let profile = result as? [String: Any] else {
                                 return
                             }
                             
-                            SignInHelper.setUserProfile(fullName: profile["name"] as? String,
-                                                        firstName: profile["first_name"] as? String,
-                                                        lastName: profile["last_name"] as? String,
-                                                        email: profile["email"] as? String)
+                            var coverPhotoSource: String?
+                            
+                            if let cover = profile["cover"] as? [String: Any] {
+                                coverPhotoSource = cover["source"] as? String
+                            }
+                            
+                            // TODO: update user info
                             self.dismiss(animated: true, completion: nil)
                         } else {
-                            print("\(error?.localizedDescription)")
+                            print("\(String(describing: error?.localizedDescription))")
                         }
                     }
                 }
@@ -122,14 +125,33 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     }
     
 
-    // MARK: - Custom functions
+    // MARK: - Private methods
     
     private func customizeButton() {
         let verticalInset: CGFloat = 10.0
         self.fbButton.imageEdgeInsets = UIEdgeInsets(top: verticalInset, left: verticalInset, bottom: verticalInset, right: 0)
     }
     
-    func userDidSignInWithGoogle() {
+    private func getUser() {
+        AuthenticationManager.shared.getOAuthToken { (token, error) in
+            guard token != nil else {
+                ErrorHelper.describe(error!)
+                return
+            }
+            
+            APIClient.getUser { (user, error) in
+                guard let usr = user else {
+                    ErrorHelper.describe(error!)
+                    return
+                }
+                
+                print(usr)
+                // TODO: save user to singleton
+            }
+        }
+    }
+    
+    @objc private func userDidSignInWithGoogle() {
         self.dismiss(animated: true, completion: nil)
     }
 

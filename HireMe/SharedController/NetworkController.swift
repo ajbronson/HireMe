@@ -17,40 +17,108 @@ class NetworkConroller {
 		case Patch = "PATCH"
 		case Delete = "DELETE"
 	}
+    
+    enum MIMEType: String {
+        case JSON = "application/json"
+    }
+    
+    static func performURLRequest(_ request: URLRequest, completion: @escaping ((Data?, Error?) -> Void)) {
+        print("request headers: \(String(describing: request.allHTTPHeaderFields))") // DEBUG
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            completion(data, error)
+        }.resume()
+    }
+    
+    /**
+     Initializes a request.
+     
+     - Note: Requires a completion handler in case when adding the authorization header the access token needs to make a request to be refreshed.
+     
+     - Parameter addAuthorizationHeader: If true, adds an authorization header with 'Bearer <access token>', the access token issued from LimitedHire
+     - Parameter completionHandler: A URLRequest and an Error will never be returned simultaneously. Either one will be returned or the other.
+     */
+    static func request(_ url: URL, method: HTTPMethod, addAuthorizationHeader: Bool = true, headers: [String: String]? = nil, body: Data? = nil, completionHandler: @escaping (URLRequest?, Error?) -> Void) {
+        var request = URLRequest(url: url)
+        request.httpMethod = method.rawValue
+        request.httpBody = body
+        
+        if let headersDict = headers {
+            for (key, value) in headersDict {
+                request.addValue(value, forHTTPHeaderField: key)
+            }
+        }
+        
+        if addAuthorizationHeader {
+            AuthenticationManager.shared.token { (token, error) in
+                guard let oAuthToken = token else {
+                    completionHandler(nil, error)
+                    return
+                }
+                
+                request.addValue(oAuthToken.authorization(), forHTTPHeaderField: "Authorization")
+                completionHandler(request, nil)
+            }
+        } else {
+            completionHandler(request, nil)
+        }
+    }
+    
+    static func url(base: String, pathParameters: [String]? = nil, queryParameters: [String: String]? = nil) -> URL {
+        let encodedPathParameters = pathParameters?.map({ "\($0.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!)" }).joined(separator: "/")
+        let urlString = "\(base)/\(encodedPathParameters ?? "")"
+        
+        guard let url = URL(string: urlString) else {
+            fatalError("URL optional is nil")
+        }
 
-	static func performURLRequest(_ url: URL, method: HTTPMethod, urlParams: [String: String]? = nil, body: Data? = nil, completion: ((_ data: Data?, _ error: Error?) -> Void)?) {
-		let requestURL = urlFromURLParameters(url, urlParameters: urlParams)
-		let request = NSMutableURLRequest(url: requestURL)
-		request.httpBody = body
-		request.httpMethod = method.rawValue
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        components?.queryItems = queryParameters?.flatMap({ URLQueryItem(name: $0.0, value: $0.1) })
+        
+        if let url = components?.url {
+            print("url: \(url.absoluteString)") // DEBUG
+            return url
+        } else {
+            fatalError("URL optional is nil")
+        }
+    }
+    
+    /**
+     Creates a dictionary with the values for the keys "grant_type", "client_id", and "client_secret"
+     
+     - Parameter grantType: E.g., "convert_token", "refresh_token"
+     - Returns: A dictionary
+     */
+    static func httpBody(withGrantType grantType: String) -> [String: String] {
+        return [
+            "grant_type": grantType,
+            "client_id": CLIENT_ID,
+            "client_secret": CLIENT_SECRET
+        ]
+    }
 
-		let session = URLSession.shared
-		let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) in
-			if let completion = completion {
-				completion(data, error)
-			}
-		})
-		dataTask.resume()
+	static func fetchImage(_ url: URL, completion: @escaping (UIImage?, Error?) -> Void) {
+        self.request(url, method: .Get) { (request, error) in
+            if let err = error {
+                completion(nil, err)
+            } else if let urlRequest = request {
+                self.performURLRequest(urlRequest) { (data, error) in
+                    if let data = data {
+                        completion(UIImage(data: data), nil)
+                    } else {
+                        completion(nil, error)
+                    }
+                }
+            }
+        }
 	}
-
-	static func urlFromURLParameters(_ url: URL, urlParameters: [String: String]?) -> URL {
-
-		var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
-		components?.queryItems = urlParameters?.flatMap({URLQueryItem(name: $0.0, value: $0.1)})
-
-		if let url = components?.url {
-			return url
-		} else {
-			fatalError("URL optional is nil")
-		}
-	}
-
-	static func fetchImage(_ url: URL, completion: @escaping (_ image: UIImage?) -> Void) {
-		self.performURLRequest(url, method: .Get) { (data, error) in
-			if let data = data {
-				let image = UIImage(data: data)
-				completion(image)
-			}
-		}
-	}
+    
+    /**
+     Returns the value for "results" in a response dictionary.
+     
+     - Parameter dict: The dictionary to get the results from.
+     - Returns: An array of dictionaries.
+     */
+    static func getResults(from dict: [String: Any]) -> [[String: Any]]? {
+        return dict["results"] as? [[String: Any]]
+    }
 }

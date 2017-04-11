@@ -20,13 +20,13 @@ class JobController {
         let user3 = User(id: 2, firstName: "Wonder", lastName: "Woman", numberOfStars: 3, numberOfRatings: 199)
         let user4 = User(id: 3, firstName: "Clark", lastName: "Kent")
         
-        let job = Job(id: 0, name: "Wifi Issue", timeFrameStart: "Jan 23, 2017", timeFrameEnd: "Jan 24, 2017", priceRangeStart: 10, priceRangeEnd: 100, industry: "Remodeling/Home Repairs", locationCity: "South Jordan", locationState: "UT", locationZip: nil, description: "This is an example of a description.", status: JobStatus.awarded.rawValue, images: nil, advertiser: user1)
+        let job = Job(id: 0, name: "I couldn't think of a good name for this job so it's going to be really long", timeFrameStart: "Jan 23, 2017", timeFrameEnd: "Jan 24, 2017", priceRangeStart: 10, priceRangeEnd: 100, industry: "Remodeling/Home Repairs", locationCity: "Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch", locationState: "WA", locationZip: nil, description: "This is an example of a description.", status: .awarded, images: nil, advertiser: user1)
 
-		let job2 = Job(id: 1, name: "Lawn Mowing", timeFrameStart: "Feb 14, 2017", timeFrameEnd: "Feb 21, 2017", priceRangeStart: 200, priceRangeEnd: 200, industry: "Technical Support", locationCity: "Provo", locationState: "UT", locationZip: "84604", description: "This is an example of a description.", status: JobStatus.cancelled.rawValue, images: nil, advertiser: user2)
+		let job2 = Job(id: 1, name: "Lawn Mowing", timeFrameStart: "Feb 14, 2017", timeFrameEnd: "Feb 21, 2017", priceRangeStart: 200, priceRangeEnd: 200, industry: "Technical Support", locationCity: "Provo", locationState: "UT", locationZip: "84604", description: "This is an example of a description.", status: .cancelled, images: nil, advertiser: user2)
 
-		let job3 = Job(id: 2, name: "Test", timeFrameStart: "May 1, 2017", timeFrameEnd: "Aug 31, 2017", priceRangeStart: 750, priceRangeEnd: 1200, industry: "House Cleaning", locationCity: "Salt Lake City", locationState: "UT", locationZip: nil, description: "This is an example of a description.", status: JobStatus.awarded.rawValue, images: nil, advertiser: user3)
+		let job3 = Job(id: 2, name: "Test", timeFrameStart: "May 1, 2017", timeFrameEnd: "Aug 31, 2017", priceRangeStart: 750, priceRangeEnd: 1200, industry: "Automtive", locationCity: "Salt Lake City", locationState: "UT", locationZip: nil, description: "This is an example of a description.", status: .awarded, images: nil, advertiser: user3)
 
-		let job4 = Job(id: 3, name: "I couldn't think of a good name for this job so it's going to be really long", timeFrameStart: "Sep 23, 2017", timeFrameEnd: "Oct 9, 2017", priceRangeStart: 1500, priceRangeEnd: 4000, industry: "Automotive", locationCity: "Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch", locationState: "WA", locationZip: "84604", description: "Lorem ipsum dolor sit amet, laoreet proin mauris dui hymenaeos mi dictumst, etiam consectetuer lectus morbi turpis vulputate, lectus rutrum a landit, eu tincidunt ridiculus. Inceptos feugiat justo vitae pellentesque congue, diam non nam, pulvinar eu, pharetra torquent. Sollicitudin proin arcu vestibulum ac, a tristique ante vel. Aliquam sit eros scelerisque, ut adipiscing fermentum fusce felis suspendisse aenean.", status: JobStatus.open.rawValue, images: nil, advertiser: user4)
+		let job4 = Job(id: 3, name: "Deep House Clean", timeFrameStart: "Apr 27, 2017", timeFrameEnd: "Apr 28, 2017", priceRangeStart: 1500, priceRangeEnd: 4000, industry: "House Cleaning", locationCity: "Orem", locationState: "UT", locationZip: "84097", description: "Lorem ipsum dolor sit amet, laoreet proin mauris dui hymenaeos mi dictumst, etiam consectetuer lectus morbi turpis vulputate, lectus rutrum a landit, eu tincidunt ridiculus. Inceptos feugiat justo vitae pellentesque congue, diam non nam, pulvinar eu, pharetra torquent. Sollicitudin proin arcu vestibulum ac, a tristique ante vel. Aliquam sit eros scelerisque, ut adipiscing fermentum fusce felis suspendisse aenean.", images: nil, advertiser: user4)
         
         let job5 = Job(id: 4, name: "Fence Painting", timeFrameStart: "Jun 12, 2017", timeFrameEnd: "Jun 12, 2017", priceRangeStart: 50, priceRangeEnd: 150, industry: "Yardwork", locationCity: "Springville", locationState: "UT", locationZip: "83713", description: "Lorem ipsum dolor sit amet, laoreet proin mauris dui hymenaeos mi dictumst, etiam consectetuer lectus morbi turpis vulputate, lectus rutrum a landit, eu tincidunt ridiculus.", images: nil, advertiser: user3)
 
@@ -58,30 +58,24 @@ class JobController {
 	}
 
 	func updateJobStatus(job: Job, status: JobStatus) {
-		switch status {
+		job.status = status
+        job.dateUpdated = Date()
+        
+        switch status {
 		case .open:
-			job.status = JobStatus.open.rawValue
 			job.reopenDate = Date()
-			job.dateUpdated = Date()
-			job.dateCancelled = nil
-			job.dateCompleted = nil
 			let bids = BidController.shared.bids.filter {$0.job == job}
 			BidController.shared.removeBids(passedBids: bids)
 		case .cancelled:
-			job.status = JobStatus.cancelled.rawValue
 			job.dateCancelled = Date()
-			job.dateUpdated = Date()
-			job.reopenDate = nil
-			job.dateCompleted = nil
 		case .completed:
-			job.status = JobStatus.completed.rawValue
 			job.dateCompleted = Date()
-			job.dateUpdated = Date()
-			job.dateCancelled = nil
-			job.reopenDate = nil
 		case .awarded:
-			//TODO implement awarded
+			// TODO: implement awarded
 			break
+        case .pending:
+            // TODO: implement pending status
+            break
 		}
 	}
 
@@ -99,19 +93,6 @@ class JobController {
 	}
 
 	func refresh(completion: @escaping (_ jobs: [Job]?) -> Void) {
-		let params = ["token" : "abcdefg"]
-		if let url = URL(string: "") {
-			NetworkConroller.performURLRequest(url, method: .Get, urlParams: params, body: nil, completion: { (data, error) in
-				if let error = error {
-					print("An error has occured: \(error.localizedDescription)")
-				} else if let data = data,
-					let rawJSON = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
-					let json = rawJSON as? [String: AnyObject],
-					let resultDict = json["data"] as? [[String: AnyObject]] {
-					
-					completion(self.jobs)
-				}
-			})
-		}
+		// TODO: implement
 	}
 }
