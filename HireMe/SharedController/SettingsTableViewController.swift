@@ -33,7 +33,6 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     
-    
     // MARK: - IBActions
 
     @IBAction func doneTapped(_ sender: UIBarButtonItem) {

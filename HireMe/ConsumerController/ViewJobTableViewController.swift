@@ -10,13 +10,19 @@ import UIKit
 
 class ViewJobTableViewController: UITableViewController {
 
+	//MARK: - Outlets
+
 	@IBOutlet weak var editButton: UIBarButtonItem!
+
+	//MARK: - Properties
 
 	var reopenButton: UIBarButtonItem?
 	var completeButton: UIBarButtonItem?
 	var cancelButton: UIBarButtonItem?
 	var bids: [Bid]?
 	var job: Job?
+
+	//MARK: - View Controller Lifecycle
 
 	override func viewDidLoad() {
 		super.viewDidLoad()

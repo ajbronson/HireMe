@@ -10,6 +10,8 @@ import UIKit
 
 class JobInfoCell: UITableViewCell {
 
+	//MARK: - Outlets
+
 	@IBOutlet weak var locationLabel: UILabel!
 	@IBOutlet weak var industryLabel: UILabel!
 	@IBOutlet weak var timeFrameLabel: UILabel!
@@ -17,9 +19,13 @@ class JobInfoCell: UITableViewCell {
 	@IBOutlet weak var statusLabel: UILabel!
 	@IBOutlet weak var viewPhotosButton: UIButton!
 
+	//MARK: - Properties
+
 	var job: Job?
 	var view: UIViewController = UIViewController()
 
+	//MARK: - View Controller Lifecycle
+	
 	override func awakeFromNib() {
 		super.awakeFromNib()
 

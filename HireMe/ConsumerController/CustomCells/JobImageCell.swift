@@ -10,8 +10,12 @@ import UIKit
 
 class JobImageCell: UICollectionViewCell {
 
+	//MARK: - Outlets
+
 	@IBOutlet weak var jobImage: UIImageView!
 
+	//MARK: - Helper Functions
+	
 	func updateWith(image: UIImage) {
 		jobImage.image = image
 		jobImage.roundCornersForAspectFit(radius: 5.0)

@@ -10,13 +10,11 @@ import FBSDKLoginKit
 
 // TODO: show an alert before signing in with Google and Facebook informing the user of what data we'll be accessingf
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
-    
-    
+
     // MARK: - Outlets
     
     @IBOutlet weak var fbLoginButton: FBSDKLoginButton!
-    
-    
+
     // MARK: - View controller life cycle
     
     override func viewDidLoad() {
@@ -50,7 +48,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     // Required by protocol
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) { /* do nothing */ }
-    
     
     // MARK: - IBActions
     

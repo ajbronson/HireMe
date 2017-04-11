@@ -11,7 +11,6 @@ import SideMenu
 class ProviderTabBarController: UITabBarController, UITabBarControllerDelegate {
     var tabBarItemJobs, tabBarItemBids: UITabBarItem?
     
-    
     // MARK: View controller life cycle
     
     override func viewDidLoad() {

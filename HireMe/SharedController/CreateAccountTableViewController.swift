@@ -38,13 +38,11 @@ class CreateAccountTableViewController: UITableViewController, UITextFieldDelega
         NotificationCenter.default.removeObserver(self)
     }
     
-    
     // MARK: - UITableViewDelegate
     
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         AlertHelper.showAlert(view: self, title: "Why is my ZIP code needed?", message: "We use your ZIP code to match you with providers near you.", closeButtonText: "Got it")
     }
-    
     
     // MARK: - UITextFieldDelegate
     
@@ -69,7 +67,6 @@ class CreateAccountTableViewController: UITableViewController, UITextFieldDelega
         return false // Do not add a line break
     }
     
-    
     // MARK: - IBActions
     
     @IBAction func saveTapped(_ sender: UIBarButtonItem) {
@@ -80,7 +77,6 @@ class CreateAccountTableViewController: UITableViewController, UITextFieldDelega
         // TODO: create and save their account
         self.printAccountDetails()
     }
-    
     
     // MARK: - Custom functions
     

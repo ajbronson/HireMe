@@ -8,6 +8,8 @@
 
 import UIKit
 
+//MARK: - Static Properties
+
 fileprivate let NAME_KEY = "name"
 fileprivate let TITLE_KEY = "title"
 fileprivate let INFO_KEY = "info"
@@ -16,13 +18,18 @@ fileprivate let INFO_REUSE_ID = "infoCell"
 fileprivate let PERSON_REUSE_ID = "personCell"
 
 class ProviderJobDetailTableViewController: UITableViewController {
-    var job: Job!
+
+	//MARK: - Outlets
+
+	@IBOutlet weak var bidButton: UIBarButtonItem!
+
+	//MARK: - Properties
+
+	var job: Job!
 	var bid: Bid?
 	var hideBidButton = false
-    var seguedFromMyJobs = false
-    private var tableViewData = [[String: String]]()
-    
-	@IBOutlet weak var bidButton: UIBarButtonItem!
+	var seguedFromMyJobs = false
+	private var tableViewData = [[String: String]]()
 
     // MARK: - View controller life cycle
     

@@ -10,6 +10,8 @@ import UIKit
 
 class BidderInfoCell: UITableViewCell {
 
+	//MARK: - Outlets
+
 	@IBOutlet weak var statusIndicator: UIImageView!
 	@IBOutlet weak var nameLabel: UILabel!
 	@IBOutlet weak var priceLabel: UILabel!
@@ -19,6 +21,8 @@ class BidderInfoCell: UITableViewCell {
 	@IBOutlet weak var starImage4: UIImageView!
 	@IBOutlet weak var starImage5: UIImageView!
 
+	//MARK: - Helper Functions
+	
 	func updateWith(bid: Bid) {
 		nameLabel.text = "\(bid.bidder.firstName) \(bid.bidder.lastName)"
 

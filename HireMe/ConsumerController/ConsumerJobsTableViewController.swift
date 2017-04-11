@@ -10,11 +10,15 @@ import UIKit
 
 class ConsumerJobTableViewController: UITableViewController {
 
+	//MARK: - Properties
+
 	var jobs: [Job]?
 	var completedJobs: [Job]?
 	var cancelledJobs: [Job]?
 	var types: [JobStatus]?
 
+	//MARK: - View Conroller Lifecycle
+	
 	override func viewWillAppear(_ animated: Bool) {
 		let allJobs = JobController.shared.jobs
 		jobs = allJobs.filter {$0.status == .open}

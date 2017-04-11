@@ -56,7 +56,6 @@ class MenuTableViewController: UITableViewController {
         appDelegate?.window?.rootViewController = viewController
     }
     
-    
     // MARK: - View controller life cycle
     
     override func viewDidLoad() {
@@ -114,8 +113,8 @@ class MenuTableViewController: UITableViewController {
         guard let userMode = userMode() else { return nil }
         
         switch (userMode) {
-        case .consumer: return tableViewData[section][SECTION_FOOTER_TEXT_CONSUMER_KEY] as? String
-        case .provider: return tableViewData[section][SECTION_FOOTER_TEXT_PROVIDER_KEY] as? String
+			case .consumer: return tableViewData[section][SECTION_FOOTER_TEXT_CONSUMER_KEY] as? String
+			case .provider: return tableViewData[section][SECTION_FOOTER_TEXT_PROVIDER_KEY] as? String
         }
     }
     
@@ -150,7 +149,6 @@ class MenuTableViewController: UITableViewController {
             })
         }
     }
-    
     
     // MARK: - Custom functions
     
