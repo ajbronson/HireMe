@@ -80,13 +80,11 @@ class AccountTableViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - Custom functions
     
     private func populateTextFields() {
-        if let profile = SignInHelper.userProfile(),
-            let firstName = profile["firstName"],
-            let lastName = profile["lastName"],
-            let email = profile["email"] {
-            self.firstNameTextField.text = firstName
-            self.lastNameTextField.text = lastName
-            self.emailTextField.text = email
-        }
+        // TODO: get user
+//        let user = UserController.shared.user
+//        
+//        self.firstNameTextField.text = user.firstName
+//        self.lastNameTextField.text = user.lastName
+//        self.emailTextField.text = user.email
     }
 }

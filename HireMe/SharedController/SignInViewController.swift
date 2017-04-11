@@ -86,11 +86,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
                                 coverPhotoSource = cover["source"] as? String
                             }
                             
-//                            SignInHelper.setUserProfile(fullName: profile["name"] as? String,
-//                                                        firstName: profile["first_name"] as? String,
-//                                                        lastName: profile["last_name"] as? String,
-//                                                        email: profile["email"] as? String,
-//                                                        imageURL: coverPhotoSource)
+                            // TODO: update user info
                             self.dismiss(animated: true, completion: nil)
                         } else {
                             print("\(String(describing: error?.localizedDescription))")

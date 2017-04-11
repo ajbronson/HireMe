@@ -77,23 +77,22 @@ class MenuTableViewController: UITableViewController {
             tableView.deselectRow(at: indexPath, animated: true)
         }
         
-        if SignInHelper.isSignedIn(),
-            let profile = SignInHelper.userProfile(),
-            let fullName = profile["fullName"] {
-            tableHeaderNameLabel.text = fullName
-            
-            if let imageURLStr = profile["imageURL"],
-                let urlStr = imageURLStr,
-                let url = URL(string: urlStr) {
-                DispatchQueue.global().async {
-                    if let data = try? Data(contentsOf: url) {
-                        DispatchQueue.main.async {
-                            self.tableHeaderImageView.image = UIImage(data: data)
-                        }
-                    }
-                }
-            }
-        }
+        // TODO: get user info
+//        if AuthenticationManager.shared.isSignedIn {
+//            let user = UserController.shared.user
+//            
+//            tableHeaderNameLabel.text = user.fullName
+//            
+//            if let urlStr = user.imageURL, let url = URL(string: urlStr) {
+//                DispatchQueue.global().async {
+//                    if let data = try? Data(contentsOf: url) {
+//                        DispatchQueue.main.async {
+//                            self.tableHeaderImageView.image = UIImage(data: data)
+//                        }
+//                    }
+//                }
+//            }
+//        }
     }
     
     
@@ -158,7 +157,7 @@ class MenuTableViewController: UITableViewController {
     private func initalizeTableViewData() {
         // NOTE: segueID must be the same in both the consumer and provider storyboards
         
-        if SignInHelper.isSignedIn() {
+        if AuthenticationManager.shared.isSignedIn {
             self.tableViewData = [
                 [SECTION_TITLE_KEY: "",
                  ROWS_KEY: [

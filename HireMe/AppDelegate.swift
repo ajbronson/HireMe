@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         if GIDSignIn.sharedInstance().hasAuthInKeychain() {
             // Signed in with Google
             print("Already signed in with Google") // DEBUG
-//            GIDSignIn.sharedInstance().signInSilently()
+            GIDSignIn.sharedInstance().signInSilently()
         } else if FBSDKAccessToken.current() != nil {
             print("Already signed in with Facebook") // DEBUG
         }
@@ -44,7 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             if let err = error {
                 ErrorHelper.describe(err)
             } else if let oAuthToken = token {
-                // Sync data with latest on the server; i.e., /user/<user's ID>
                 print("AppDelegate: Already signed in \(oAuthToken)")
                 APIClient.getUser { (user, error2) in
                     guard let usr = user else {
@@ -61,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         }
         
         // TODO: remove for prod
-        SignInHelper.resetAuthAlertUserDefaultsKey()
+        AuthenticationManager.resetAuthAlertUserDefaultsKey()
         
 		return true
 	}
@@ -84,13 +83,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 //            let userId = user.userID                  // For client-side use only!
             let idToken = user.authentication.idToken
             print("Google token: \(String(describing: idToken))") // DEBUG
-//            AuthenticationManager.shared.getOAuthToken()
-            
-            //SignInHelper.setUserProfile(fullName: user.profile.name,
-                                        //firstName: user.profile.givenName,
-                                        //lastName: user.profile.familyName,
-                                        //email: user.profile.email,
-                                        //imageURL: "")
+            // TODO: get OAuth token
+            // TODO: get user
+            // TODO: save user info
             NotificationCenter.default.post(name: gSignInNotificationName, object: nil)
         } else {
             print("\(error.localizedDescription)")
