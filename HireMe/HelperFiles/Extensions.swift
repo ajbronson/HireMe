@@ -20,7 +20,7 @@ extension Double {
 		formatter.numberStyle = .currency
         
         if truncateZeros {
-            formatter.maximumFractionDigits = 0
+            formatter.maximumFractionDigits = 2
         }
         
 		let money = formatter.string(from: NSNumber(value: self))
@@ -252,4 +252,5 @@ extension UserDefaults {
         }
     }
 }
+
 

@@ -17,9 +17,13 @@ fileprivate let PERSON_REUSE_ID = "personCell"
 
 class ProviderJobDetailTableViewController: UITableViewController {
     var job: Job!
+	var bid: Bid?
+	var hideBidButton = false
     var seguedFromMyJobs = false
     private var tableViewData = [[String: String]]()
     
+	@IBOutlet weak var bidButton: UIBarButtonItem!
+
     // MARK: - View controller life cycle
     
     override func viewDidLoad() {
@@ -33,6 +37,13 @@ class ProviderJobDetailTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setToolbarHidden(false, animated: false)
+		if let _ = bid {
+			bidButton.title = "View My Bid"
+		} else {
+			bidButton.title = "Make A Bid"
+		}
+		bidButton.isEnabled = false
+		bidButton.tintColor = .clear
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -46,7 +57,10 @@ class ProviderJobDetailTableViewController: UITableViewController {
         if segue.identifier == "presentPhotos" {
             guard let images = job.images, let vc = segue.destination as? ViewPhotosViewController else { return }
             vc.images = images
-        }
+		} else if segue.identifier == "toBid" {
+			guard let destination = segue.destination as? NewBidViewController else { return }
+			destination.updateWtihBid(bid: bid, job: job)
+		}
     }
 
     // MARK: - UITableViewDataSource
@@ -95,17 +109,16 @@ class ProviderJobDetailTableViewController: UITableViewController {
     @IBAction func didTapDone(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    @IBAction func didTapViewPhotos(_ sender: UIBarButtonItem) {
-        guard job.images != nil else {
-            AlertHelper.showAlert(view: self, title: "No Images", message: nil, closeButtonText: "OK")
-            return
-        }
-        
-        self.performSegue(withIdentifier: "presentPhotos", sender: nil)
-    }
-    
-    
+
+	@IBAction func viewPhotosTapped(_ sender: UIBarButtonItem) {
+		guard job.images != nil else {
+			AlertHelper.showAlert(view: self, title: "No Images", message: nil, closeButtonText: "OK")
+			return
+		}
+
+		self.performSegue(withIdentifier: "presentPhotos", sender: nil)
+	}
+
     // MARK: - Private functions
     
     private func initializeTableViewData() {

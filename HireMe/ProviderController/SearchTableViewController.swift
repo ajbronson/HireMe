@@ -15,6 +15,7 @@ class SearchTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.hideEmptyCells()
+		navigationController?.navigationBar.tintColor = UIColor.white
     }
     
     
