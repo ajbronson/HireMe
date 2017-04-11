@@ -10,7 +10,7 @@ import Foundation
 
 class Bid: Equatable {
 
-	var id: Int
+	var id: String
 	var price: Double?
 	var description: String
 	var status: String
@@ -19,7 +19,7 @@ class Bid: Equatable {
 	let dateCreated: Date
 	var dateUpdated: Date
 
-	init(id: Int, bidder: Bidder, job: Job, price: Double?, description: String, status: String = BidStatus.PendingResponse.rawValue, dateCreated: Date = Date(), dateUpdated: Date = Date()) {
+	init(id: String, bidder: Bidder, job: Job, price: Double?, description: String, status: String = BidStatus.PendingResponse.rawValue, dateCreated: Date = Date(), dateUpdated: Date = Date()) {
 		self.id = id
 		self.bidder = bidder
 		self.job = job
