@@ -40,9 +40,19 @@ class User: CustomStringConvertible {
         self.id = id
         self.username = username
         self.email = email
-        self.firstName = result["firstName"] as? String
-        self.lastName = result["lastName"] as? String
-        self.fullName = result["fullName"] as? String
+        
+        if let firstName = result["firstName"] as? String {
+            self.firstName = firstName.isEmpty ? nil : firstName
+        }
+        
+        if let lastName = result["lastName"] as? String {
+            self.lastName = lastName.isEmpty ? nil : lastName
+        }
+        
+        if let fullName = result["fullName"] as? String {
+            self.fullName = fullName.isEmpty ? nil : fullName
+        }
+
         self.numberOfStars = result["numberOfStars"] as? Int ?? 0
         self.numberOfRatings = result["numberOfRatings"] as? Int ?? 0
     }
@@ -74,11 +84,27 @@ class User: CustomStringConvertible {
 
         for property in mirror.children {
             if let propertyName = property.label {
-                temp[propertyName] = property.value
+                temp[propertyName] = getValue(property.value) == nil ? "" : property.value
             }
         }
         
         return temp
+    }
+    
+    /**
+     Tests if Any has nil in it.
+     
+     - Parameter unknownValue: The Any value to test if it has nil
+     - Returns: Optional Any
+     */
+    private func getValue(_ unknownValue: Any) -> Any? {
+        let mirror = Mirror(reflecting: unknownValue)
+        
+        if mirror.displayStyle == .optional && mirror.children.count == 0 {
+            return nil
+        } else {
+            return unknownValue
+        }
     }
     
     // MARK: - CustomStringConvertible
