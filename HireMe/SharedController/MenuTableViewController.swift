@@ -75,13 +75,14 @@ class MenuTableViewController: UITableViewController {
         if let indexPath = self.tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: indexPath, animated: true)
         }
-        
-        // TODO: get user info
-//        if AuthenticationManager.shared.isSignedIn {
-//            let user = UserController.shared.user
-//            
-//            tableHeaderNameLabel.text = user.fullName
-//            
+
+        if AuthenticationManager.shared.isSignedIn {
+            tableHeaderNameLabel.isHidden = false
+            tableHeaderImageView.isHidden = false
+            let user = UserController.shared.currentUser()
+            print("\(String(describing: user?.fullName))")
+            tableHeaderNameLabel.text = user?.fullName
+            
 //            if let urlStr = user.imageURL, let url = URL(string: urlStr) {
 //                DispatchQueue.global().async {
 //                    if let data = try? Data(contentsOf: url) {
@@ -91,7 +92,10 @@ class MenuTableViewController: UITableViewController {
 //                    }
 //                }
 //            }
-//        }
+        } else {
+            tableHeaderNameLabel.isHidden = true
+            tableHeaderImageView.isHidden = true
+        }
     }
     
     
