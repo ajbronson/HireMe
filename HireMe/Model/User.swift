@@ -14,14 +14,16 @@ class User: CustomStringConvertible {
     var username: String
     var email: String
 //    var jobs: [Job]?
-    var firstName: String
-    var lastName: String
-    var fullName: String
+    var firstName: String?
+    var lastName: String?
+    var fullName: String?
 //    var phoneNumber: String
     var image: UIImage?
     var numberOfStars: Int
     var numberOfRatings: Int
 //    var ZIPCode: Int
+    
+    // MARK: - Object life cycle
     
     init(dictionary: [String: Any]) throws {
         if let error = ErrorHelper.checkForError(in: dictionary) {
@@ -38,9 +40,6 @@ class User: CustomStringConvertible {
         self.id = id
         self.username = username
         self.email = email
-        self.firstName = ""
-        self.lastName = ""
-        self.fullName = ""
         self.numberOfStars = 0
         self.numberOfRatings = 0
     }
@@ -56,6 +55,14 @@ class User: CustomStringConvertible {
         
         self.username = ""
         self.email = ""
+    }
+    
+    // MAKR: - Methods
+    
+    func update(firstName: String, lastName: String, fullName: String? = nil) {
+        self.firstName = firstName
+        self.lastName = lastName
+        self.fullName = fullName ?? "\(firstName) \(lastName)"
     }
     
     // MARK: - CustomStringConvertible

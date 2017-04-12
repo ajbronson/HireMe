@@ -73,17 +73,12 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
                 
                 if loginResult?.grantedPermissions != nil {
                     // https://developers.facebook.com/docs/graph-api/reference/user for a list of available fields
-                    FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, first_name, last_name, email, cover"]).start { (connection, result, error) in
+                    FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, first_name, last_name, email"]).start { (connection, result, error) in
                         if error == nil {
                             guard let profile = result as? [String: Any] else {
                                 return
                             }
                             
-                            var coverPhotoSource: String?
-                            
-                            if let cover = profile["cover"] as? [String: Any] {
-                                coverPhotoSource = cover["source"] as? String
-                            }
                             
                             // TODO: update user info
                             self.dismiss(animated: true, completion: nil)

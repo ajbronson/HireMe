@@ -30,6 +30,7 @@
 		D0327F521E84BF5E002E391E /* ProviderJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0327F511E84BF5E002E391E /* ProviderJobsViewController.swift */; };
 		D03481851E90297C0062687E /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03481841E90297C0062687E /* AuthenticationManager.swift */; };
 		D03711351E8F608E009B75C0 /* OAuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03711341E8F608E009B75C0 /* OAuthToken.swift */; };
+		D03ECC201E9E119E008734DC /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03ECC1F1E9E119E008734DC /* UserController.swift */; };
 		D03EEFA31E4C28BE006D18B1 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03EEFA21E4C28BE006D18B1 /* AdSupport.framework */; };
 		D05A24A21E69481500DB6268 /* MenuStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D05A24A11E69481500DB6268 /* MenuStoryboard.storyboard */; };
 		D05A24A91E694E3500DB6268 /* ClosureBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A24A61E694E3500DB6268 /* ClosureBarButtonItem.swift */; };
@@ -127,6 +128,7 @@
 		D0327F511E84BF5E002E391E /* ProviderJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderJobsViewController.swift; sourceTree = "<group>"; };
 		D03481841E90297C0062687E /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		D03711341E8F608E009B75C0 /* OAuthToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthToken.swift; sourceTree = "<group>"; };
+		D03ECC1F1E9E119E008734DC /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		D03EEFA21E4C28BE006D18B1 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		D05A24A11E69481500DB6268 /* MenuStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuStoryboard.storyboard; sourceTree = "<group>"; };
 		D05A24A61E694E3500DB6268 /* ClosureBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosureBarButtonItem.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				D0797CB61E49796000BA7B19 /* JobController.swift */,
 				21C3C3341E5E957D00836477 /* SelectedBidController.swift */,
 				D0797CB81E49796000BA7B19 /* SkillController.swift */,
+				D03ECC1F1E9E119E008734DC /* UserController.swift */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -718,6 +721,7 @@
 				D02E74361E7E36C00066DC99 /* RatingStarsHelper.swift in Sources */,
 				D0797C9E1E49701A00BA7B19 /* SearchTableViewController.swift in Sources */,
 				D0797CAB1E49778600BA7B19 /* ViewPhotosViewController.swift in Sources */,
+				D03ECC201E9E119E008734DC /* UserController.swift in Sources */,
 				D0797CCD1E4979FC00BA7B19 /* BidderImageCell.swift in Sources */,
 				21103D9E1E4AB7900097F595 /* JobImageCell.swift in Sources */,
 				D0797CA91E49778600BA7B19 /* LoginViewController.swift in Sources */,
