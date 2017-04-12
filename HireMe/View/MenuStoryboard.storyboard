@@ -23,7 +23,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jose" translatesAutoresizingMaskIntoConstraints="NO" id="RM0-W8-TyZ">
-                                    <rect key="frame" x="137" y="20" width="100" height="100"/>
+                                    <rect key="frame" x="137.5" y="20" width="100" height="100"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="BPB-xA-nbH"/>
                                         <constraint firstAttribute="height" constant="100" id="WYQ-AW-CaU"/>
@@ -721,7 +721,7 @@
             </objects>
             <point key="canvasLocation" x="5169" y="-591"/>
         </scene>
-        <!--Sign In-->
+        <!--Sign in-->
         <scene sceneID="Opr-gt-QGb">
             <objects>
                 <viewController id="Xkg-OQ-ekd" customClass="SignInViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -776,8 +776,8 @@
                                                     <constraint firstAttribute="height" constant="50" id="VgK-k9-frR"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                                <state key="normal" title="Sign In">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" title="Sign in">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="signInTapped:" destination="Xkg-OQ-ekd" eventType="touchUpInside" id="qoK-zL-5Zx"/>
@@ -871,9 +871,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="kig-RP-PWd" secondAttribute="trailing" constant="15" id="zIJ-UX-JlO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Sign In" id="Q0i-9I-R2L">
+                    <navigationItem key="navigationItem" title="Sign in" id="Q0i-9I-R2L">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="3nW-bH-ibt">
-                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                             <connections>
                                 <action selector="cancelTapped:" destination="Xkg-OQ-ekd" id="HJD-3b-7lZ"/>
                             </connections>
@@ -898,6 +897,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="J8C-4h-seo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -917,6 +920,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jeG-iA-4Yx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -935,6 +942,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GWv-RC-kSn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
