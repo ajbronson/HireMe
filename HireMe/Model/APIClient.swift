@@ -25,17 +25,19 @@ struct APIClient {
      
      - Parameter completionHandler: A User and an Error will never be returned simultaneously. Either one will be returned or the other.
      */
-    static func getUser(completionHandler: @escaping (User?, Error?) -> Void) {
+    static func getUser(completionHandler: @escaping (Error?) -> Void) {
         performURLRequest(forEndpoint: "whoami/") { (responseDict, error) in
             guard let dict = responseDict else {
-                completionHandler(nil, error)
+                completionHandler(error)
                 return
             }
             
             do {
-                completionHandler(try User(dictionary: dict), nil)
+                let user = try User(dictionary: dict)
+                UserController.shared.setCurrentUser(user)
+                completionHandler(nil)
             } catch let initError {
-                completionHandler(nil, initError)
+                completionHandler(initError)
             }
         }
     }
