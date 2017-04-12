@@ -40,23 +40,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             print("Already signed in with Facebook") // DEBUG
         }
         
-        AuthenticationManager.shared.token { (token, error) in
-            if let err = error {
-                ErrorHelper.describe(err)
-            } else if let oAuthToken = token {
-                print("AppDelegate: Already signed in \(oAuthToken)")
-                APIClient.getUser { (user, error2) in
-                    guard let usr = user else {
-                        ErrorHelper.describe(error2!)
-                        return
-                    }
-                    
-                    print(usr)
-                    // TODO: save user to singleton
-                }
-            } else {
-                print("AppDelegate: Not signed in; no token")
+        APIClient.getUser { (error2) in
+            if let error2 = error2 {
+                ErrorHelper.describe(error2)
+                return
             }
+            
+            print("\(String(describing: UserController.shared.currentUser()))")
         }
         
         // TODO: remove for prod
