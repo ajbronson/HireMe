@@ -29,8 +29,9 @@ class CategoryTableViewController: UITableViewController {
         if let navController = segue.destination as? UINavigationController,
             let vc = navController.childViewControllers.first as? ProviderJobDetailTableViewController,
             let cell = sender as? UITableViewCell,
-            let indexPath = tableView.indexPath(for: cell) {
-            vc.job = JobController.shared.jobs[indexPath.row]
+            let indexPath = tableView.indexPath(for: cell),
+			let jobs = jobs {
+            vc.job = jobs[indexPath.row]
         }
     }
 	

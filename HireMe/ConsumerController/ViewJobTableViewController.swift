@@ -32,10 +32,8 @@ class ViewJobTableViewController: UITableViewController {
 		title = job.name
 
 		configureBottomButtons(onLoad: true)
-        
-        // TODO: decide on tint color of nav bar
-		navigationController?.navigationBar.tintColor = UIColor.black // temporary for screen shot
-        navigationItem.rightBarButtonItem?.tintColor = UIColor.black // temporary for screen shot
+
+        navigationItem.backBarButtonItem?.tintColor = UIColor.white
         tableView.hideEmptyCells()
 	}
 
