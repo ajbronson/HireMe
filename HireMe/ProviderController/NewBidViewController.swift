@@ -85,8 +85,7 @@ class NewBidViewController: UIViewController, UITextViewDelegate, UITextFieldDel
 	
 	@IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
 		guard let job = job,
-			let priceText = priceField.text,
-			let price = Double(priceText) else { AlertHelper.showAlert(view: self, title: "Error", message: "There was an error retrieving a job. Force Quit the app and try again.", closeButtonText: "OK"); return }
+			let price = priceField.text?.toDouble(from: .currency) else { AlertHelper.showAlert(view: self, title: "Error", message: "There was an error retrieving a job. Force Quit the app and try again.", closeButtonText: "OK"); return }
 		if let bid = bid {
 			BidController.shared.updateBid(bid: bid, price: price, description: descriptionTextView.text)
 		} else {

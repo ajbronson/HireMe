@@ -27,7 +27,7 @@ class ProviderJobDetailTableViewController: UITableViewController {
 
 	var job: Job!
 	var bid: Bid?
-	var hideBidButton = false
+	var enableBidButton = true
 	var seguedFromMyJobs = false
 	private var tableViewData = [[String: String]]()
 
@@ -49,8 +49,7 @@ class ProviderJobDetailTableViewController: UITableViewController {
 		} else {
 			bidButton.title = "Make A Bid"
 		}
-		bidButton.isEnabled = false
-		bidButton.tintColor = .clear
+		bidButton.isEnabled = enableBidButton
     }
     
     override func viewWillDisappear(_ animated: Bool) {

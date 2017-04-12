@@ -45,6 +45,7 @@ class BidderImageCell: UITableViewCell {
 		declineButton.layer.borderColor = UIColor.black.cgColor
 		declineButton.layer.borderWidth = 0.2
 
+		//bidderImageView.image = UIImage(named: bidder.firstName)
 		bidderImageView.roundCornersForAspectFit(radius: 10.0)
 
 		if let price = bid.price {
