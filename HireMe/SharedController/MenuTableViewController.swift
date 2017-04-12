@@ -80,18 +80,17 @@ class MenuTableViewController: UITableViewController {
             tableHeaderNameLabel.isHidden = false
             tableHeaderImageView.isHidden = false
             let user = UserController.shared.currentUser()
-            print("\(String(describing: user?.fullName))")
             tableHeaderNameLabel.text = user?.fullName
             
-//            if let urlStr = user.imageURL, let url = URL(string: urlStr) {
-//                DispatchQueue.global().async {
-//                    if let data = try? Data(contentsOf: url) {
-//                        DispatchQueue.main.async {
-//                            self.tableHeaderImageView.image = UIImage(data: data)
-//                        }
-//                    }
-//                }
-//            }
+            if let url = user?.imageURL {
+                DispatchQueue.global().async {
+                    if let data = try? Data(contentsOf: url) {
+                        DispatchQueue.main.async {
+                            self.tableHeaderImageView.image = UIImage(data: data)
+                        }
+                    }
+                }
+            }
         } else {
             tableHeaderNameLabel.isHidden = true
             tableHeaderImageView.isHidden = true

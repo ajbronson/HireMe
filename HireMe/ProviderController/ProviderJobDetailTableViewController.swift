@@ -94,7 +94,7 @@ class ProviderJobDetailTableViewController: UITableViewController {
                 cell.noRatingsLabel.isHidden = false
             }
             
-            cell.personImageView.image = job.advertiser.image ?? UIImage(named: "Person")
+//            cell.personImageView.image = job.advertiser.imageURL ?? UIImage(named: "Person")
             
             // Turns image view into a circle
             cell.personImageView.layer.cornerRadius = cell.personImageView.frame.size.width / 2

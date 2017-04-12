@@ -18,7 +18,7 @@ class User: CustomStringConvertible {
     var lastName: String?
     var fullName: String?
 //    var phoneNumber: String
-    var image: UIImage?
+    var imageURL: URL?
     var numberOfStars: Int
     var numberOfRatings: Int
 //    var ZIPCode: Int
@@ -57,12 +57,12 @@ class User: CustomStringConvertible {
         self.numberOfRatings = result["numberOfRatings"] as? Int ?? 0
     }
     
-    init(id: UInt, firstName: String, lastName: String, fullName: String? = nil, image: UIImage? = nil, numberOfStars: Int = 0, numberOfRatings: Int = 0) {
+    init(id: UInt, firstName: String, lastName: String, fullName: String? = nil, imageURL: URL? = nil, numberOfStars: Int = 0, numberOfRatings: Int = 0) {
         self.id = id
         self.firstName = firstName
         self.lastName = lastName
         self.fullName = fullName ?? "\(firstName) \(lastName)"
-        self.image = image
+        self.imageURL = imageURL
         self.numberOfStars = numberOfStars
         self.numberOfRatings = numberOfRatings
         

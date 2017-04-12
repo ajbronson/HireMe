@@ -77,11 +77,21 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
                     
                     if loginResult?.grantedPermissions != nil {
                         // https://developers.facebook.com/docs/graph-api/reference/user for a list of available fields
-                        FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, first_name, last_name, email"]).start { (connection, result, error) in
+                        FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, first_name, last_name, email, picture.type(square)"]).start { (connection, result, error) in
                             if error == nil {
                                 if let profile = result as? [String: Any] {
-                                    UserController.shared.currentUser()?.update(firstName: profile["first_name"] as? String, lastName: profile["last_name"] as? String, fullName: profile["name"] as? String)
-//                                    print("FBGraphRequest: \(String(describing: UserController.shared.currentUser()?.toDictionary()))") // DEBUG
+                                    let user = UserController.shared.currentUser()
+                                    
+                                    if let picture = profile["picture"] as? [String: Any],
+                                        let data = picture["data"] as? [String: Any],
+                                        let urlString = data["url"] as? String {
+                                        user?.imageURL = URL(string: urlString)
+                                    }
+                                    
+//                                    print(profile) // DEBUG
+                                    user?.firstName = profile["first_name"] as? String
+                                    user?.lastName = profile["last_name"] as? String
+                                    user?.fullName = profile["name"] as? String
                                 }
                                 
                                 self.dismiss(animated: true, completion: nil)
