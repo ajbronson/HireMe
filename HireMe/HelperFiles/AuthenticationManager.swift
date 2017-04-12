@@ -208,7 +208,13 @@ final class AuthenticationManager {
                 completionHandler(token, nil)
             }
         } else {
-            completionHandler(nil, AuthenticationError.noAccessToken)
+            getOAuthToken { (token3, error2) in
+                if let err2 = error2 {
+                    completionHandler(nil, err2)
+                } else {
+                    completionHandler(token3, nil)
+                }
+            }
         }
     }
     
