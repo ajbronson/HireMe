@@ -9,11 +9,17 @@
 import UIKit
 
 class CategoryTableViewController: UITableViewController {
+
+	//MARK: - Properties
+
+	var industry = ""
+	var jobs: [Job]?
 	
 	//MARK: - View controller life cycle
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		jobs = JobController.shared.jobs.filter {$0.industry == industry}
         self.tableView.hideEmptyCells()
     }
     
@@ -31,12 +37,13 @@ class CategoryTableViewController: UITableViewController {
 	//MARK: - UITableViewDataSource
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return JobController.shared.jobs.count
+		return jobs?.count ?? 0
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		guard let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell") as? SearchJobTableViewCell else { return UITableViewCell() }
-		let job = JobController.shared.jobs[indexPath.row]
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell") as? SearchJobTableViewCell,
+			let jobs = jobs else { return UITableViewCell() }
+		let job = jobs[indexPath.row]
         cell.nameLabel.text = job.name
         cell.cityLabel.text = job.cityState()
         cell.priceRangeLabel.text = job.priceRange()

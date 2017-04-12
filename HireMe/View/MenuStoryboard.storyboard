@@ -46,7 +46,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" textLabel="2Pq-w9-6AB" style="IBUITableViewCellStyleDefault" id="fLK-jg-9YK" userLabel="Settings">
-                                <rect key="frame" x="0.0" y="217" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="216.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fLK-jg-9YK" id="bGM-II-fMX">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>

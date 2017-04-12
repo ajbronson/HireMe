@@ -15,31 +15,168 @@ class BidController {
 	var bids: [Bid] = []
 
 	init() {
-		var bidder = Bidder(id: 0, firstName: "AJ", lastName: "Bronson", numberOfStars: 4)
-		var job = JobController.shared.jobs[0]
-		let bid = Bid(id: "0", bidder: bidder, job: job, price: 225, description: "Lorem ipsum dolor sit amet, laoreet proin mauris dui hymenaeos mi dictumst, etiam consectetuer lectus morbi turpis vulputate, lectus rutrum a landit, eu tincidunt ridiculus. Inceptos feugiat justo vitae pellentesque congue, diam non nam, pulvinar eu, pharetra torquent. Sollicitudin proin arcu vestibulum ac, a tristique ante vel. Aliquam sit eros scelerisque, ut adipiscing fermentum fusce felis suspendisse aenean. Luctus nisl libero wisi odio porttitor, sit nulla, lectus tristique turpis augue eleifend, sed dictum dui ut orci cras, est neque convallis imperdiet suscipit auctor morbi. Luctus dignissim vulputate, venenatis ultrices wisi ultrices pellentesque faucibus leo, odio vitae sed sociosqu quis est. Orci in sagittis nunc mi, nec lacinia, magnis commodo pede vitae rutrum. Conubia vivamus ut orci lectus nulla. Quis ridiculus consectetuer mollis aliquam mauris, non laoreet tortor hendrerit gravida sed arcu, tellus ligula. Integer nulla scelerisque fusce vulputate, porttitor blandit faucibus tortor, ut non dolor sagittis cursus, ad amet urna eget, ad sollicitudin consectetuer imperdiet magna sem.Dolor phasellus lectus nibh nisl, suspendisse orci, pellentesque in eu condimentum suscipit lorem temporibus. Turpis tempor velit vel a et eros, sit accumsan eu, duis lectus aenean nisl rutrum diam sociosqu, odio blandit id arcu, eleifend mattis et a phasellus vestibulum lacus. Ullamcorper porta elementum nec tempor nibh imperdiet, sagittis consectetuer et wisi vestibulum, justo nec placerat a est proin. Molestie ullamcorper aenean eget a dui bibendum, orci viverra mi enim tristique ligula, eu ut sed suspendisse, posuere integer, tellus vel quam donec. Libero risus nullam orci aliquet, imperdiet in imperdiet aute et. Luctus bibendum nunc lobortis sed velit. Aenean quisque lobortis duis quis vestibulum, sit faucibus sed pulvinar praesent dui. Laoreet libero mauris nibh vestibulum purus sed, sagittis nec sed bibendum, nam elit aliquam. END", status: BidStatus.PendingResponse.rawValue)
 
-		bidder = Bidder(id: 0, firstName: "Tom", lastName: "Meservy", numberOfStars: 3)
+		//--------------------------------
+		var job = JobController.shared.jobs[0]
+
+		var bidder = BidderController.shared.bidders[0]
+
+		let bid = Bid(id: "0", bidder: bidder, job: job, price: 25, description: "I've always been pretty good at anything that I set my mind to. I'd like to place a bid on this job for consideration given my extensive backgorund and such. Price point seemed okay to me, although I would like to see if you could negotiate at all on the price. One time I purchased this vehicle from KSL classifieds, and I got a pretty good deal because I simply was willing to negotiate on the price, and I wanted to know if you would be interested in giving me a good deal. At this point I'm just rambling on, because I'm not quite sure what else to say. I like cooking, cleaning, vacuuming especailly is a favorite of mine. Please consider my services and what I can offer you, because I will do such a great job. I've lived in Utah basically my entire life, and I'm positive that I'll provide you with great success in whatever it is that you're trying to do.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[1]
+
+		let bid1 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "I can do this pretty well, please check out my list of skills and my ratings. People have hired me for much less.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[2]
+
+		let bid2 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "Price seemed right, I'm your person. Hook me up, and I hook you up, that's what my mother always taught me. I'm good for the job, if you're good for the money. Reach out to me ASAP or check out my profile to continue. You can always give me a ring-a-ling and I'll come by to check out your place. Thx for the consideration and all.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[3]
+
+		let bid3 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "I'm good for the job, if you're good for the money. Reach out to me ASAP or check out my profile to continue. You can always give me a ring-a-ling and I'll come by to check out your place. Thx for the consideration and all.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[4]
+
+		let bid4 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "Listen, I've got skills, and that's what this job is going to take. Check out my star rating for more, there's nothing more to add to it, and my friend, you won't be disappointed in the work that I provide.", status: BidStatus.PendingResponse.rawValue)
+
+		//--------------------------------
 		job = JobController.shared.jobs[1]
 
-		let bid2 = Bid(id: "0", bidder: bidder, job: job, price: 235, description: "Lorem ipsum dolor sit amet, laoreet proin mauris dui hymenaeos mi dictumst, etiam consectetuer lectus morbi turpis vulputate, lectus rutrum a landit, eu tincidunt ridiculus. Inceptos feugi END")
+		bidder = BidderController.shared.bidders[0]
 
-		bidder = Bidder(id: 0, firstName: "David", lastName: "Payne", numberOfStars: 1)
+		let bid5 = Bid(id: "0", bidder: bidder, job: job, price: 25, description: "I've always been pretty good at anything that I set my mind to. I'd like to place a bid on this job for consideration given my extensive backgorund and such. Price point seemed okay to me, although I would like to see if you could negotiate at all on the price. One time I purchased this vehicle from KSL classifieds, and I got a pretty good deal because I simply was willing to negotiate on the price, and I wanted to know if you would be interested in giving me a good deal. At this point I'm just rambling on, because I'm not quite sure what else to say. I like cooking, cleaning, vacuuming especailly is a favorite of mine. Please consider my services and what I can offer you, because I will do such a great job. I've lived in Utah basically my entire life, and I'm positive that I'll provide you with great success in whatever it is that you're trying to do.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[1]
+
+		let bid6 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "I can do this pretty well, please check out my list of skills and my ratings. People have hired me for much less.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[2]
+
+		let bid7 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "Price seemed right, I'm your person. Hook me up, and I hook you up, that's what my mother always taught me. I'm good for the job, if you're good for the money. Reach out to me ASAP or check out my profile to continue. You can always give me a ring-a-ling and I'll come by to check out your place. Thx for the consideration and all.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[3]
+
+		let bid8 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "I'm good for the job, if you're good for the money. Reach out to me ASAP or check out my profile to continue. You can always give me a ring-a-ling and I'll come by to check out your place. Thx for the consideration and all.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[4]
+
+		let bid9 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "Listen, I've got skills, and that's what this job is going to take. Check out my star rating for more, there's nothing more to add to it, and my friend, you won't be disappointed in the work that I provide.", status: BidStatus.PendingResponse.rawValue)
+
+		//--------------------------------
 		job = JobController.shared.jobs[2]
 
-		let bid3 = Bid(id: "0", bidder: bidder, job: job, price: 2425.889, description: "Lorem ipsum dolor sit amet, laoreet proin mauris dui hymenaeos mi dictumst, etiam consectetuer lectus morbi turpis vulputate, lectus rutrum a landit, eu tincidunt ridiculus. Inceptos feugiat justo vitae pellentesque congue, diam non nam, pulvinar eu, pharetra torquent. Sollicitudin proin arcu vestibulum ac, a tristique ante vel. Aliquam sit eros scelerisque, ut adipiscing fermentum fusce felis suspendisse aenean. Luctus nisl libero wisi odio porttitor, sit nulla, lectus tristique turpis augue eleifend, sed dictum dui ut orci cras, est neque convallis imperdiet suscipit auctor morbi. Luctus dignissim vulputate, venenatis ultrices wisi ultrices pellentesque faucibus leo, odio vitae sed sociosqu quis est. Orci in sagittis nunc mi, nec lacinia, magnis commodo pede vitae rutrum. Con END")
+		bidder = BidderController.shared.bidders[0]
 
-		bidder = Bidder(id: 0, firstName: "Nate", lastName: "Johnson", numberOfStars: 5)
+		let bid10 = Bid(id: "0", bidder: bidder, job: job, price: 25, description: "I've always been pretty good at anything that I set my mind to. I'd like to place a bid on this job for consideration given my extensive backgorund and such. Price point seemed okay to me, although I would like to see if you could negotiate at all on the price. One time I purchased this vehicle from KSL classifieds, and I got a pretty good deal because I simply was willing to negotiate on the price, and I wanted to know if you would be interested in giving me a good deal. At this point I'm just rambling on, because I'm not quite sure what else to say. I like cooking, cleaning, vacuuming especailly is a favorite of mine. Please consider my services and what I can offer you, because I will do such a great job. I've lived in Utah basically my entire life, and I'm positive that I'll provide you with great success in whatever it is that you're trying to do.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[1]
+
+		let bid11 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "I can do this pretty well, please check out my list of skills and my ratings. People have hired me for much less.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[2]
+
+		let bid12 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "Price seemed right, I'm your person. Hook me up, and I hook you up, that's what my mother always taught me. I'm good for the job, if you're good for the money. Reach out to me ASAP or check out my profile to continue. You can always give me a ring-a-ling and I'll come by to check out your place. Thx for the consideration and all.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[3]
+
+		let bid13 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "I'm good for the job, if you're good for the money. Reach out to me ASAP or check out my profile to continue. You can always give me a ring-a-ling and I'll come by to check out your place. Thx for the consideration and all.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[4]
+
+		let bid14 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "Listen, I've got skills, and that's what this job is going to take. Check out my star rating for more, there's nothing more to add to it, and my friend, you won't be disappointed in the work that I provide.", status: BidStatus.PendingResponse.rawValue)
+
+		//--------------------------------
 		job = JobController.shared.jobs[3]
 
-		let bid4 = Bid(id: "0", bidder: bidder, job: job, price: 2225.99, description: "Lorem ipsum dolor sit amet, laoreet proin mauris dui hymenaeos mi dictumst, etiam consectetuer lectus morbi turpis vulputate, lectus rutrum a landit, eu tincidunt ridiculus. Inceptos feugiat justo vitae pellentesque congue, diam non nam, pulvinar eu, pharetra torquent. Sollicitudin proin arcu vestibulum ac, a tristique ante vel. Aliquam sit eros scelerisque, ut adipiscing fermentum fusce felis suspendisse aenean. Luctus nisl libero wisi odio porttitor, sit nulla, lectus tristique turpis augue eleifend, sed dictum dui ut orci cras, est neque convallis imperdiet suscipit auctor morbi. Luctus dignissim vulputate, venenatis ultrices wisi ultrices pellentesque faucibus leo, odio vitae sed sociosqu quis est. Orci in sagittis nunc mi, nec lacinia, magnis commodo pede vitae rutrum. Conubia vivamus ut orci lectus nulla. Quis ridiculus consectetuer mollis aliquam mauris, non laoreet tortor hendrerit gravida sed arcu, tellus ligula. Integer nulla scelerisque fusce vulputate, porttitor blandit faucibus tortor, ut non dolor sagittis cursus, ad amet urna eget, ad sollicitudin consectetuer imperdiet magna sem.Dolor phasellus lectus nibh nisl, suspendisse orci, pellentesque in eu condimentum suscipit lorem temporibus. Turpis tempor velit vel a et eros, sit accumsan eu, duis lectus aenean nisl rutrum diam sociosqu, odio blandit id arcu, eleifend mattis et a phasellus vestibulum lacus. Ullamcorper po END")
+		bidder = BidderController.shared.bidders[0]
 
-		bidder = Bidder(id: 0, firstName: "Rob", lastName: "Bryan", numberOfStars: 2)
+		let bid15 = Bid(id: "0", bidder: bidder, job: job, price: 25, description: "I've always been pretty good at anything that I set my mind to. I'd like to place a bid on this job for consideration given my extensive backgorund and such. Price point seemed okay to me, although I would like to see if you could negotiate at all on the price. One time I purchased this vehicle from KSL classifieds, and I got a pretty good deal because I simply was willing to negotiate on the price, and I wanted to know if you would be interested in giving me a good deal. At this point I'm just rambling on, because I'm not quite sure what else to say. I like cooking, cleaning, vacuuming especailly is a favorite of mine. Please consider my services and what I can offer you, because I will do such a great job. I've lived in Utah basically my entire life, and I'm positive that I'll provide you with great success in whatever it is that you're trying to do.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[1]
+
+		let bid16 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "I can do this pretty well, please check out my list of skills and my ratings. People have hired me for much less.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[2]
+
+		let bid17 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "Price seemed right, I'm your person. Hook me up, and I hook you up, that's what my mother always taught me. I'm good for the job, if you're good for the money. Reach out to me ASAP or check out my profile to continue. You can always give me a ring-a-ling and I'll come by to check out your place. Thx for the consideration and all.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[3]
+
+		let bid18 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "I'm good for the job, if you're good for the money. Reach out to me ASAP or check out my profile to continue. You can always give me a ring-a-ling and I'll come by to check out your place. Thx for the consideration and all.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[4]
+
+		let bid19 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "Listen, I've got skills, and that's what this job is going to take. Check out my star rating for more, there's nothing more to add to it, and my friend, you won't be disappointed in the work that I provide.", status: BidStatus.PendingResponse.rawValue)
+
+		//--------------------------------
 		job = JobController.shared.jobs[3]
 
-		let bid5 = Bid(id: "0", bidder: bidder, job: job, price: 2225.35, description: "I can do this pretty well END", status: BidStatus.PendingResponse.rawValue)
+		bidder = BidderController.shared.bidders[0]
 
-		bids = [bid, bid2, bid3, bid4, bid5]
+		let bid20 = Bid(id: "0", bidder: bidder, job: job, price: 25, description: "I've always been pretty good at anything that I set my mind to. I'd like to place a bid on this job for consideration given my extensive backgorund and such. Price point seemed okay to me, although I would like to see if you could negotiate at all on the price. One time I purchased this vehicle from KSL classifieds, and I got a pretty good deal because I simply was willing to negotiate on the price, and I wanted to know if you would be interested in giving me a good deal. At this point I'm just rambling on, because I'm not quite sure what else to say. I like cooking, cleaning, vacuuming especailly is a favorite of mine. Please consider my services and what I can offer you, because I will do such a great job. I've lived in Utah basically my entire life, and I'm positive that I'll provide you with great success in whatever it is that you're trying to do.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[1]
+
+		let bid21 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "I can do this pretty well, please check out my list of skills and my ratings. People have hired me for much less.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[2]
+
+		let bid22 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "Price seemed right, I'm your person. Hook me up, and I hook you up, that's what my mother always taught me. I'm good for the job, if you're good for the money. Reach out to me ASAP or check out my profile to continue. You can always give me a ring-a-ling and I'll come by to check out your place. Thx for the consideration and all.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[3]
+
+		let bid23 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "I'm good for the job, if you're good for the money. Reach out to me ASAP or check out my profile to continue. You can always give me a ring-a-ling and I'll come by to check out your place. Thx for the consideration and all.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[4]
+
+		let bid24 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "Listen, I've got skills, and that's what this job is going to take. Check out my star rating for more, there's nothing more to add to it, and my friend, you won't be disappointed in the work that I provide.", status: BidStatus.PendingResponse.rawValue)
+
+		//--------------------------------
+		job = JobController.shared.jobs[5]
+
+		bidder = BidderController.shared.bidders[0]
+
+		let bid25 = Bid(id: "0", bidder: bidder, job: job, price: 25, description: "I've always been pretty good at anything that I set my mind to. I'd like to place a bid on this job for consideration given my extensive backgorund and such. Price point seemed okay to me, although I would like to see if you could negotiate at all on the price. One time I purchased this vehicle from KSL classifieds, and I got a pretty good deal because I simply was willing to negotiate on the price, and I wanted to know if you would be interested in giving me a good deal. At this point I'm just rambling on, because I'm not quite sure what else to say. I like cooking, cleaning, vacuuming especailly is a favorite of mine. Please consider my services and what I can offer you, because I will do such a great job. I've lived in Utah basically my entire life, and I'm positive that I'll provide you with great success in whatever it is that you're trying to do.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[1]
+
+		let bid26 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "I can do this pretty well, please check out my list of skills and my ratings. People have hired me for much less.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[2]
+
+		let bid27 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "Price seemed right, I'm your person. Hook me up, and I hook you up, that's what my mother always taught me. I'm good for the job, if you're good for the money. Reach out to me ASAP or check out my profile to continue. You can always give me a ring-a-ling and I'll come by to check out your place. Thx for the consideration and all.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[3]
+
+		let bid28 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "I'm good for the job, if you're good for the money. Reach out to me ASAP or check out my profile to continue. You can always give me a ring-a-ling and I'll come by to check out your place. Thx for the consideration and all.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[4]
+
+		let bid29 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "Listen, I've got skills, and that's what this job is going to take. Check out my star rating for more, there's nothing more to add to it, and my friend, you won't be disappointed in the work that I provide.", status: BidStatus.PendingResponse.rawValue)
+		//--------------------------------
+		job = JobController.shared.jobs[4]
+
+		bidder = BidderController.shared.bidders[0]
+
+		let bid30 = Bid(id: "0", bidder: bidder, job: job, price: 25, description: "I've always been pretty good at anything that I set my mind to. I'd like to place a bid on this job for consideration given my extensive backgorund and such. Price point seemed okay to me, although I would like to see if you could negotiate at all on the price. One time I purchased this vehicle from KSL classifieds, and I got a pretty good deal because I simply was willing to negotiate on the price, and I wanted to know if you would be interested in giving me a good deal. At this point I'm just rambling on, because I'm not quite sure what else to say. I like cooking, cleaning, vacuuming especailly is a favorite of mine. Please consider my services and what I can offer you, because I will do such a great job. I've lived in Utah basically my entire life, and I'm positive that I'll provide you with great success in whatever it is that you're trying to do.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[1]
+
+		let bid31 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "I can do this pretty well, please check out my list of skills and my ratings. People have hired me for much less.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[2]
+
+		let bid32 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "Price seemed right, I'm your person. Hook me up, and I hook you up, that's what my mother always taught me. I'm good for the job, if you're good for the money. Reach out to me ASAP or check out my profile to continue. You can always give me a ring-a-ling and I'll come by to check out your place. Thx for the consideration and all.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[3]
+
+		let bid33 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "I'm good for the job, if you're good for the money. Reach out to me ASAP or check out my profile to continue. You can always give me a ring-a-ling and I'll come by to check out your place. Thx for the consideration and all.", status: BidStatus.PendingResponse.rawValue)
+
+		bidder = BidderController.shared.bidders[4]
+
+		let bid34 = Bid(id: "0", bidder: bidder, job: job, price: 2260, description: "Listen, I've got skills, and that's what this job is going to take. Check out my star rating for more, there's nothing more to add to it, and my friend, you won't be disappointed in the work that I provide.", status: BidStatus.PendingResponse.rawValue)
+
+		bids = [bid, bid1, bid2, bid3, bid4, bid5, bid6, bid7, bid8, bid9, bid10, bid11, bid12, bid13, bid14, bid15, bid16, bid17, bid18, bid19, bid20, bid21, bid22, bid23, bid24, bid25, bid26, bid27, bid28, bid29, bid30, bid31, bid32, bid33, bid34]
         
         for job in JobController.shared.jobs {
             job.selectedBid = bid

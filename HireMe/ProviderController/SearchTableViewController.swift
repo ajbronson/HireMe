@@ -38,6 +38,7 @@ class SearchTableViewController: UITableViewController {
 				let indexPath = tableView.indexPathForSelectedRow,
 				let cell = tableView.cellForRow(at: indexPath) {
 				destinationVC.title = cell.textLabel?.text
+				destinationVC.industry = AppInfo.industries[indexPath.row]
 			}
 		}
 	}

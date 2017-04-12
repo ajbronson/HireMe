@@ -487,7 +487,7 @@
 				TargetAttributes = {
 					21B38EF71DCC21A4000A5CB1 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = E5QLQ9VDQN;
+						DevelopmentTeam = D8BVW7B3PF;
 						ProvisioningStyle = Automatic;
 					};
 					21B38F0B1DCC21A4000A5CB1 = {
@@ -886,7 +886,7 @@
 			baseConfigurationReference = D674E8CF36C0F147120D6D4A /* Pods-HireMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E5QLQ9VDQN;
+				DEVELOPMENT_TEAM = D8BVW7B3PF;
 				INFOPLIST_FILE = HireMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.precisioncodes.HireMe;
@@ -900,7 +900,7 @@
 			baseConfigurationReference = 1A1925A3082FD6438C80712C /* Pods-HireMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E5QLQ9VDQN;
+				DEVELOPMENT_TEAM = D8BVW7B3PF;
 				INFOPLIST_FILE = HireMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.precisioncodes.HireMe;

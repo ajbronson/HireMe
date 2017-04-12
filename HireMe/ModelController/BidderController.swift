@@ -15,12 +15,13 @@ class BidderController {
 	var bidders: [Bidder] = []
 
 	init() {
-		let bidder = Bidder(id: 1, firstName: "Joe", lastName: "Moe", numberOfStars: 1)
-		let bidder2 = Bidder(id: 12, firstName: "Matt", lastName: "Schmidt", numberOfStars: 1)
-		let bidder3 = Bidder(id: 13, firstName: "Hillary", lastName: "Prison", numberOfStars: 1)
-		let bidder4 = Bidder(id: 14, firstName: "Trumpty", lastName: "Dumpty", numberOfStars: 1)
+		let bidder = Bidder(id: 1, firstName: "Tim", lastName: "Richardson", numberOfStars: 2)
+		let bidder2 = Bidder(id: 12, firstName: "Sheridan", lastName: "Lee", numberOfStars: 4)
+		let bidder3 = Bidder(id: 13, firstName: "Joseph", lastName: "Galbraith", numberOfStars: 3)
+		let bidder4 = Bidder(id: 14, firstName: "Nick", lastName: "Johnson", numberOfStars: 1)
+		let bidder5 = Bidder(id: 14, firstName: "Elizabeth", lastName: "Rickenson", numberOfStars: 5)
 
-		bidders = [bidder, bidder2, bidder3, bidder4]
+		bidders = [bidder, bidder2, bidder3, bidder4, bidder5]
 	}
 
 	func refresh(completion: @escaping (_ bidders: [Bidder]?) -> Void) {
