@@ -65,6 +65,19 @@ class User: CustomStringConvertible {
         self.fullName = fullName ?? "\(firstName) \(lastName)"
     }
     
+    func toDictionary() -> [String: Any] {
+        var temp = [String: Any]()
+        let mirror = Mirror(reflecting: self)
+
+        for property in mirror.children {
+            if let propertyName = property.label {
+                temp[propertyName] = property.value
+            }
+        }
+        
+        return temp
+    }
+    
     // MARK: - CustomStringConvertible
     
     var description: String {
