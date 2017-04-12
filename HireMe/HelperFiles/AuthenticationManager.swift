@@ -12,7 +12,7 @@ import FBSDKLoginKit
 
 typealias OAuthTokenHandler = (OAuthToken?, Error?) -> Void
 
-class AuthenticationManager {
+final class AuthenticationManager {
     
     // MARK: - Type properties
     
