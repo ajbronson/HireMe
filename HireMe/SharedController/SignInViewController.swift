@@ -77,7 +77,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
                     
                     if loginResult?.grantedPermissions != nil {
                         // https://developers.facebook.com/docs/graph-api/reference/user for a list of available fields
-                        FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, first_name, last_name, email, picture.type(square)"]).start { (connection, result, error) in
+                        FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, first_name, last_name, email, picture.type(large)"]).start { (connection, result, error) in
                             if error == nil {
                                 if let profile = result as? [String: Any] {
                                     let user = UserController.shared.currentUser()
