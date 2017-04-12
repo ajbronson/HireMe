@@ -10,17 +10,27 @@ import Foundation
 
 final class UserController {
     static let shared = UserController()
-    private static let CURRENT_USER_KEY = "LH_CurrentUser"
+    private let CURRENT_USER_KEY = "LH_CurrentUser"
     
-//    private var user: User? {
-//        get {
-//            return UserDefaults.standard.dictionary(forKey: "blah")
-//        }
-//        
-//        set {
-//            UserDefaults.standard.dictionary(forKey: "blah")
-//        }
-//    }
+    // MARK: - Properties
+    
+    private var user: User?
     
     private init() {}
+    
+    // MARK: - Methods
+    
+    func currentUser() -> User? {
+        if let currentUser = user {
+            return currentUser
+        } else {
+            guard let userDict = UserDefaults.standard.dictionary(forKey: CURRENT_USER_KEY) else { return nil }
+            return try? User(dictionary: userDict)
+        }
+    }
+    
+    func setCurrentUser(_ user: User) {
+        self.user = user
+        UserDefaults.standard.set(user.toDictionary(), forKey: CURRENT_USER_KEY)
+    }
 }

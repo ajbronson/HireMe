@@ -40,8 +40,11 @@ class User: CustomStringConvertible {
         self.id = id
         self.username = username
         self.email = email
-        self.numberOfStars = 0
-        self.numberOfRatings = 0
+        self.firstName = result["firstName"] as? String
+        self.lastName = result["lastName"] as? String
+        self.fullName = result["fullName"] as? String
+        self.numberOfStars = result["numberOfStars"] as? Int ?? 0
+        self.numberOfRatings = result["numberOfRatings"] as? Int ?? 0
     }
     
     init(id: UInt, firstName: String, lastName: String, fullName: String? = nil, image: UIImage? = nil, numberOfStars: Int = 0, numberOfRatings: Int = 0) {
