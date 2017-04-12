@@ -64,7 +64,7 @@ struct APIClient {
                         completionHandler(nil, NetworkError.deserializeJSON)
                         return
                     }
-                    print(responseDict) // DEBUG
+//                    print(responseDict) // DEBUG
                     completionHandler(responseDict, nil)
                 }
             })

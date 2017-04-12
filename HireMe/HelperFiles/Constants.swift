@@ -14,6 +14,7 @@ let CLIENT_ID = "1CgTrJsB5uCOI34YJ93SdDcbsdtOu83L0ajax7NC"
 let CLIENT_SECRET = "Ja7goH80w7mIXjQ9iQZzkQoyYyohmtoUUNgSdXZj65raJHxy8iRtEkCLmlgixvZ69T30feD9nJBMaWaYZkNNgFfAExN6oeuSGsvk0sYkM9mMJ1w73FK7GIsCtyRRn2l9"
 let BASE_URL = "http://limitedhire-dev.us-west-2.elasticbeanstalk.com"
 let AUTH_ALERT_KEY = "LH_AuthAlertHasDisplayed"
+let CURRENT_USER_KEY = "LH_CurrentUser"
 let gSignInNotificationName = Notification.Name(rawValue: "didSignInWithGoogle")
 let signOutNotificationName = Notification.Name(rawValue: "didSignOut")
 

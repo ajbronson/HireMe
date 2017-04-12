@@ -10,7 +10,6 @@ import Foundation
 
 final class UserController {
     static let shared = UserController()
-    private let CURRENT_USER_KEY = "LH_CurrentUser"
     
     // MARK: - Properties
     
@@ -31,6 +30,6 @@ final class UserController {
     
     func setCurrentUser(_ user: User) {
         self.user = user
-        UserDefaults.standard.set(user.toDictionary(), forKey: CURRENT_USER_KEY)
+        user.cache()
     }
 }

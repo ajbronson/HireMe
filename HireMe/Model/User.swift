@@ -18,7 +18,7 @@ class User: CustomStringConvertible {
     var lastName: String?
     var fullName: String?
 //    var phoneNumber: String
-    var imageURL: URL?
+    var imageURL: String?
     var numberOfStars: Int
     var numberOfRatings: Int
 //    var ZIPCode: Int
@@ -57,7 +57,7 @@ class User: CustomStringConvertible {
         self.numberOfRatings = result["numberOfRatings"] as? Int ?? 0
     }
     
-    init(id: UInt, firstName: String, lastName: String, fullName: String? = nil, imageURL: URL? = nil, numberOfStars: Int = 0, numberOfRatings: Int = 0) {
+    init(id: UInt, firstName: String, lastName: String, fullName: String? = nil, imageURL: String? = nil, numberOfStars: Int = 0, numberOfRatings: Int = 0) {
         self.id = id
         self.firstName = firstName
         self.lastName = lastName
@@ -75,7 +75,11 @@ class User: CustomStringConvertible {
     func update(firstName: String?, lastName: String?, fullName: String? = nil) {
         self.firstName = firstName
         self.lastName = lastName
-        self.fullName = fullName ?? "\(firstName) \(lastName)"
+        self.fullName = fullName
+        
+        if fullName == nil, let fName = firstName, let lName = lastName {
+            self.fullName = "\(fName) \(lName)"
+        }
     }
     
     func toDictionary() -> [String: Any] {
@@ -89,6 +93,10 @@ class User: CustomStringConvertible {
         }
         
         return temp
+    }
+    
+    func cache() {
+        UserDefaults.standard.set(toDictionary(), forKey: CURRENT_USER_KEY)
     }
     
     /**

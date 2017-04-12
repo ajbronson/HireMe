@@ -82,7 +82,7 @@ class MenuTableViewController: UITableViewController {
             let user = UserController.shared.currentUser()
             tableHeaderNameLabel.text = user?.fullName
             
-            if let url = user?.imageURL {
+            if let urlString = user?.imageURL, let url = URL(string: urlString) {
                 DispatchQueue.global().async {
                     if let data = try? Data(contentsOf: url) {
                         DispatchQueue.main.async {

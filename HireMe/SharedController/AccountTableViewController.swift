@@ -38,9 +38,7 @@ class AccountTableViewController: UITableViewController, UITextFieldDelegate {
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         // Allow user to select only the skills and change password cells
-        if indexPath.section == 0 {
-            return nil
-        }
+        if indexPath.section == 0 { return nil }
         
         return indexPath
     }
@@ -77,11 +75,11 @@ class AccountTableViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - Custom functions
     
     private func populateTextFields() {
-        // TODO: get user
-//        let user = UserController.shared.user
-//        
-//        self.firstNameTextField.text = user.firstName
-//        self.lastNameTextField.text = user.lastName
-//        self.emailTextField.text = user.email
+        let user = UserController.shared.currentUser()
+        
+        self.usernameTextField.text = user?.username
+        self.firstNameTextField.text = user?.firstName
+        self.lastNameTextField.text = user?.lastName
+        self.emailTextField.text = user?.email
     }
 }

@@ -83,15 +83,15 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
                                     let user = UserController.shared.currentUser()
                                     
                                     if let picture = profile["picture"] as? [String: Any],
-                                        let data = picture["data"] as? [String: Any],
-                                        let urlString = data["url"] as? String {
-                                        user?.imageURL = URL(string: urlString)
+                                        let data = picture["data"] as? [String: Any] {
+                                        user?.imageURL = data["url"] as? String
                                     }
                                     
 //                                    print(profile) // DEBUG
                                     user?.firstName = profile["first_name"] as? String
                                     user?.lastName = profile["last_name"] as? String
                                     user?.fullName = profile["name"] as? String
+                                    user?.cache()
                                 }
                                 
                                 self.dismiss(animated: true, completion: nil)

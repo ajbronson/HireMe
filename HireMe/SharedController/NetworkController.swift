@@ -23,7 +23,7 @@ class NetworkConroller {
     }
     
     static func performURLRequest(_ request: URLRequest, completion: @escaping ((Data?, Error?) -> Void)) {
-        print("request headers: \(String(describing: request.allHTTPHeaderFields))") // DEBUG
+//        print("request headers: \(String(describing: request.allHTTPHeaderFields))") // DEBUG
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             completion(data, error)
         }.resume()
