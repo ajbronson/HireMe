@@ -47,7 +47,7 @@ class ProviderJobDetailTableViewController: UITableViewController {
 		if let _ = bid {
 			bidButton.title = "View My Bid"
 		} else {
-			bidButton.title = "Make A Bid"
+			bidButton.title = "Place A Bid"
 		}
 		bidButton.isEnabled = enableBidButton
     }
