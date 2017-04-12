@@ -170,7 +170,7 @@
                         <barButtonItem title="Place a Bid" id="28m-3k-JDZ">
                             <color key="tintColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="6y4-dI-qTG" kind="show" identifier="toBid" id="eNh-rn-RvT"/>
+                                <action selector="didTapPlaceBid:" destination="2NK-eR-wYY" id="b1s-g5-C8z"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="ZJZ-ca-CTG"/>
@@ -187,11 +187,21 @@
                     <connections>
                         <outlet property="bidButton" destination="28m-3k-JDZ" id="PhM-7v-pPd"/>
                         <segue destination="fzc-Ep-HOm" kind="presentation" identifier="presentPhotos" modalPresentationStyle="overCurrentContext" id="5uP-In-EGl"/>
+                        <segue destination="6y4-dI-qTG" kind="show" identifier="toBid" id="Io2-gz-Xr9"/>
+                        <segue destination="GtN-Ts-Uat" kind="presentation" identifier="presentSignIn" id="GFi-0s-X8J"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1l9-27-r4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5066" y="3340"/>
+        </scene>
+        <!--SignInNavigationController-->
+        <scene sceneID="tN3-wo-NJh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MenuStoryboard" referencedIdentifier="SignInNavigationController" id="GtN-Ts-Uat" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kdf-YM-zff" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5064" y="3840"/>
         </scene>
         <!--LargeImageController-->
         <scene sceneID="eVp-eC-kub">
