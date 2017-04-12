@@ -79,12 +79,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
                         // https://developers.facebook.com/docs/graph-api/reference/user for a list of available fields
                         FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, first_name, last_name, email"]).start { (connection, result, error) in
                             if error == nil {
-                                guard let profile = result as? [String: Any] else {
-                                    return
+                                if let profile = result as? [String: Any] {
+                                    UserController.shared.currentUser()?.update(firstName: profile["first_name"] as? String, lastName: profile["last_name"] as? String, fullName: profile["name"] as? String)
+//                                    print("FBGraphRequest: \(String(describing: UserController.shared.currentUser()?.toDictionary()))") // DEBUG
                                 }
                                 
-                                
-                                // TODO: update user info
                                 self.dismiss(animated: true, completion: nil)
                             } else {
                                 print("\(String(describing: error?.localizedDescription))")

@@ -72,7 +72,7 @@ class User: CustomStringConvertible {
     
     // MAKR: - Methods
     
-    func update(firstName: String, lastName: String, fullName: String? = nil) {
+    func update(firstName: String?, lastName: String?, fullName: String? = nil) {
         self.firstName = firstName
         self.lastName = lastName
         self.fullName = fullName ?? "\(firstName) \(lastName)"
