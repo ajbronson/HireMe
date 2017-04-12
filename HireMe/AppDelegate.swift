@@ -39,14 +39,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         } else if FBSDKAccessToken.current() != nil {
             print("Already signed in with Facebook") // DEBUG
         }
-        
-        APIClient.getUser { (error2) in
-            if let error2 = error2 {
-                ErrorHelper.describe(error2)
-                return
+//        UserDefaults.standard.printKeys() // DEBUG
+        if let user = UserController.shared.currentUser() {
+            print("currentUser") // DEBUG
+            user.fetchImage()
+        } else {
+            print("getUser") // DEBUG
+            APIClient.getUser { (error2) in
+                if let error2 = error2 {
+                    ErrorHelper.describe(error2)
+                    return
+                }
+                
+                print("\(String(describing: UserController.shared.currentUser()))")
+                UserController.shared.currentUser()?.fetchImage()
             }
-            
-            print("\(String(describing: UserController.shared.currentUser()))")
         }
         
         // TODO: remove for prod

@@ -77,23 +77,12 @@ class MenuTableViewController: UITableViewController {
         }
 
         if AuthenticationManager.shared.isSignedIn {
-            tableHeaderNameLabel.isHidden = false
-            tableHeaderImageView.isHidden = false
             let user = UserController.shared.currentUser()
+//            print("\(String(describing: user?.fullName))") // DEBUG
             tableHeaderNameLabel.text = user?.fullName
-            
-            if let urlString = user?.imageURL, let url = URL(string: urlString) {
-                DispatchQueue.global().async {
-                    if let data = try? Data(contentsOf: url) {
-                        DispatchQueue.main.async {
-                            self.tableHeaderImageView.image = UIImage(data: data)
-                        }
-                    }
-                }
-            }
+            tableHeaderImageView.image = user?.image
         } else {
-            tableHeaderNameLabel.isHidden = true
-            tableHeaderImageView.isHidden = true
+            tableView.tableHeaderView = nil
         }
     }
     

@@ -13,7 +13,9 @@ final class UserController {
     
     // MARK: - Properties
     
-    private var user: User?
+    private var user: User? {
+        didSet { user?.cache() }
+    }
     
     private init() {}
     
@@ -24,12 +26,14 @@ final class UserController {
             return currentUser
         } else {
             guard let userDict = UserDefaults.standard.dictionary(forKey: CURRENT_USER_KEY) else { return nil }
-            return try? User(dictionary: userDict)
+            print("currentUser(): \(userDict)") // DEBUG
+            user = try? User(dictionary: userDict)
+            
+            return user
         }
     }
     
     func setCurrentUser(_ user: User) {
         self.user = user
-        user.cache()
     }
 }
