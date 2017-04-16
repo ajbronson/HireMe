@@ -10,13 +10,16 @@ import Foundation
 
 struct APIClient {
     static func getAllJobs(completionHandler: @escaping ([Job]?, Error?) -> Void) {
-        performURLRequest(forEndpoint: "job") { (responseDict, error) in
-            guard let _ = responseDict else {
+        performURLRequest(forEndpoint: "job") { (responseDictionary, error) in
+            guard let responseDict = responseDictionary else {
                 completionHandler(nil, error)
                 return
             }
             
-            // TODO: implement creating the list of jobs from the response dictionary
+            guard let results = NetworkConroller.getResults(from: responseDict) else {
+                completionHandler(nil, NetworkError.noResults)
+                return
+            }
         }
     }
     
