@@ -47,8 +47,10 @@ class Job: Equatable {
             let title = dictionary["title"] as? String,
             let created = dictionary["created"] as? String,
             let owner = dictionary["owner"] as? String,
-            let priceLow = dictionary["priceLow"] as? Double,
-            let priceHigh = dictionary["priceHigh"] as? Double,
+            let priceLow = dictionary["priceLow"] as? String,
+            let priceHigh = dictionary["priceHigh"] as? String,
+            let priceRangeStart = Double(priceLow),
+            let priceRangeEnd = Double(priceHigh),
             let location = dictionary["location"] as? String else {
                 throw InitializationError.invalidDataType
         }
@@ -57,8 +59,8 @@ class Job: Equatable {
         self.name = title
         self.timeFrameStart = dictionary["startTime"] as? String
         self.timeFrameEnd = dictionary["endTime"] as? String
-        self.priceRangeStart = priceLow
-        self.priceRangeEnd = priceHigh
+        self.priceRangeStart = priceRangeStart
+        self.priceRangeEnd = priceRangeEnd
         self.industry = "Other"
         self.locationCity = location
         self.locationState = "UT"
