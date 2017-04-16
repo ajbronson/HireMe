@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 	var window: UIWindow?
 
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
-//        UserDefaults.standard.printKeys() // DEBUG
+        UserDefaults.standard.printKeys() // DEBUG
         if let user = UserController.shared.currentUser() {
             print("currentUser") // DEBUG
             user.fetchImage()
@@ -60,9 +60,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         } else if FBSDKAccessToken.current() != nil {
             print("Already signed in with Facebook") // DEBUG
         }
-        
-        // TODO: remove for prod
-        AuthenticationManager.resetAuthAlertUserDefaultsKey()
         
 		return true
 	}

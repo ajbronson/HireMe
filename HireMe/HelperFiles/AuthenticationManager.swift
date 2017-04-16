@@ -49,16 +49,6 @@ final class AuthenticationManager {
     
     private init() {}
     
-    // MARK: - Static methods
-    
-    static func authAlertHasDisplayed() -> Bool {
-        return UserDefaults.standard.bool(forKey: AUTH_ALERT_KEY)
-    }
-    
-    static func resetAuthAlertUserDefaultsKey() {
-        UserDefaults.standard.removeObject(forKey: AUTH_ALERT_KEY)
-    }
-    
     // MARK: - Methods
     
     /**
