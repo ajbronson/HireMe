@@ -65,12 +65,16 @@ struct APIClient {
                 if let err = error2 {
                     completionHandler(nil, err)
                 } else {
-                    guard let responseDict = data?.toDictionary() else {
-                        completionHandler(nil, NetworkError.deserializeJSON)
+                    guard let responseData = data else {
+                        completionHandler(nil, NetworkError.noData)
                         return
                     }
-//                    print(responseDict) // DEBUG
-                    completionHandler(responseDict, nil)
+                    
+                    do {
+                        completionHandler(try responseData.toDictionary(), nil)
+                    } catch let deserializeError {
+                        completionHandler(nil, deserializeError)
+                    }
                 }
             })
         }

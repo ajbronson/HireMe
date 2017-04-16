@@ -13,8 +13,16 @@ extension Data {
         return try? JSONSerialization.jsonObject(with: self, options: [])
     }
     
-    func toDictionary() -> [String: Any]? {
-        return self.toJSON() as? [String: Any]
+    func toDictionary() throws -> [String: Any] {
+        do {
+            let json = try JSONSerialization.jsonObject(with: self, options: [])
+            
+            guard let dict = json as? [String: Any] else { throw NetworkError.deserializeJSON }
+            
+            return dict
+        } catch {
+            throw error
+        }
     }
 }
 
