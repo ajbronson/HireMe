@@ -47,7 +47,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             } else {
                 print("AppDelegate: \(token!)") // DEBUG
                 if let user = UserController.shared.currentUser() {
-                    print("currentUser") // DEBUG
                     user.fetchImage()
                 } else {
                     print("getUser") // DEBUG

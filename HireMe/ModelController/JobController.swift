@@ -35,7 +35,7 @@ class JobController {
 		jobs = [job, job2, job3, job4, job5, job6]
 	}
 
-	func addJob(name: String, timeFrameStart: String?, timeFrameEnd: String?, priceRangeStart: Double?, priceRangeEnd: Double?, industry: String?, locationCity: String, locationState: String, locationZip: String?, description: String?, images: [UIImage]?) -> Bool {
+	func addJob(name: String, timeFrameStart: String?, timeFrameEnd: String?, priceRangeStart: Double, priceRangeEnd: Double, industry: String, locationCity: String, locationState: String, locationZip: String?, description: String?, images: [UIImage]?) -> Bool {
         // TODO: Get user's profile
         let user = User(id: 0, firstName: "Julie", lastName: "Harris", numberOfStars: 5, numberOfRatings: 45)
         let job = Job(id: 4, name: name, timeFrameStart: timeFrameStart, timeFrameEnd: timeFrameEnd, priceRangeStart: priceRangeStart, priceRangeEnd: priceRangeEnd, industry: industry, locationCity: locationCity, locationState: locationState, locationZip: locationZip, description: description, images: images, advertiser: user)
@@ -43,13 +43,13 @@ class JobController {
 		return true
 	}
 
-	func updateJob(job: Job, name: String, timeFrameStart: String?, timeFrameEnd: String?, priceRangeStart: Double?, priceRangeEnd: Double?, industry: String?, locationCity: String, locationState: String, locationZip: String?, description: String?, images: [UIImage]?) -> Bool {
+	func updateJob(job: Job, name: String, timeFrameStart: String?, timeFrameEnd: String?, priceRangeStart: Double, priceRangeEnd: Double, industry: String, locationCity: String, locationState: String, locationZip: String?, description: String?, images: [UIImage]?) -> Bool {
 		job.name = name
 		job.timeFrameStart = timeFrameStart == "" ? nil : timeFrameStart
 		job.timeFrameEnd = timeFrameEnd == "" ? nil : timeFrameEnd
 		job.priceRangeEnd = priceRangeEnd
 		job.priceRangeStart = priceRangeStart
-		job.industry = industry == "" ? nil : industry
+		job.industry = industry
 		job.locationCity = locationCity
 		job.locationState = locationState
 		job.locationZip = locationZip == "" ? nil : locationZip
@@ -65,7 +65,7 @@ class JobController {
         
         switch status {
 		case .open:
-			job.reopenDate = Date()
+			job.dateReopened = Date()
 			let bids = BidController.shared.bids.filter {$0.job == job}
 			BidController.shared.removeBids(passedBids: bids)
 		case .cancelled:
