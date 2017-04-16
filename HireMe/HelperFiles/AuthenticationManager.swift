@@ -224,16 +224,16 @@ final class AuthenticationManager {
             if let err = error {
                 completionHandler(nil, err)
             } else {
-                guard let json = data?.toJSON(), let jsonDict = json as? [String: Any] else {
-                    completionHandler(nil, NetworkError.deserializeJSON)
+                guard let responseData = data else {
+                    completionHandler(nil, NetworkError.noData)
                     return
                 }
                 
                 do {
-                    self.oAuthToken = try OAuthToken(dictionary: jsonDict)
+                    self.oAuthToken = try OAuthToken(dictionary: try responseData.toDictionary())
                     completionHandler(self.oAuthToken, nil)
-                } catch let initError {
-                    completionHandler(nil, initError)
+                } catch let error2 {
+                    completionHandler(nil, error2)
                 }
             }
         }

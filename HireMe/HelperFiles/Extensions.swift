@@ -9,10 +9,6 @@
 import UIKit
 
 extension Data {
-    func toJSON() -> Any? {
-        return try? JSONSerialization.jsonObject(with: self, options: [])
-    }
-    
     func toDictionary() throws -> [String: Any] {
         do {
             let json = try JSONSerialization.jsonObject(with: self, options: [])
