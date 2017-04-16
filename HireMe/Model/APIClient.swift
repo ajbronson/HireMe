@@ -20,6 +20,13 @@ struct APIClient {
                 completionHandler(nil, NetworkError.noResults)
                 return
             }
+            
+            do {
+                let jobs = try results.map { try Job(dictionary: $0) }
+                completionHandler(jobs, nil)
+            } catch let error2 {
+                completionHandler(nil, error2)
+            }
         }
     }
     
