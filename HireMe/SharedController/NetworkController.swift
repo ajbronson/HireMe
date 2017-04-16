@@ -54,7 +54,7 @@ class NetworkConroller {
                     completionHandler(nil, error)
                     return
                 }
-                
+                print("request(_:method:addAuthorizationHeader:headers:) \(oAuthToken)") // DEBUG
                 request.addValue(oAuthToken.authorization(), forHTTPHeaderField: "Authorization")
                 completionHandler(request, nil)
             }
@@ -75,7 +75,7 @@ class NetworkConroller {
         components?.queryItems = queryParameters?.flatMap({ URLQueryItem(name: $0.0, value: $0.1) })
         
         if let url = components?.url {
-            print("url: \(url.absoluteString)") // DEBUG
+//            print("url: \(url.absoluteString)") // DEBUG
             return url
         } else {
             fatalError("URL optional is nil")

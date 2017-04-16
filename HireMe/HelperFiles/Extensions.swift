@@ -12,6 +12,10 @@ extension Data {
     func toJSON() -> Any? {
         return try? JSONSerialization.jsonObject(with: self, options: [])
     }
+    
+    func toDictionary() -> [String: Any]? {
+        return self.toJSON() as? [String: Any]
+    }
 }
 
 extension Double {
