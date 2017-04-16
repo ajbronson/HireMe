@@ -26,9 +26,14 @@ struct APIClient {
      - Parameter completionHandler: A User and an Error will never be returned simultaneously. Either one will be returned or the other.
      */
     static func getUser(completionHandler: @escaping (Error?) -> Void) {
-        performURLRequest(forEndpoint: "whoami/") { (responseDict, error) in
-            guard let dict = responseDict else {
+        performURLRequest(forEndpoint: "whoami/") { (responseDictionary, error) in
+            guard let responseDict = responseDictionary else {
                 completionHandler(error)
+                return
+            }
+            
+            guard let dict = NetworkConroller.getResults(from: responseDict)?.first else {
+                completionHandler(NetworkError.noResults)
                 return
             }
             
@@ -60,7 +65,7 @@ struct APIClient {
                 if let err = error2 {
                     completionHandler(nil, err)
                 } else {
-                    guard let json = data?.toJSON(), let responseDict = json as? [String: Any] else {
+                    guard let responseDict = data?.toDictionary() else {
                         completionHandler(nil, NetworkError.deserializeJSON)
                         return
                     }

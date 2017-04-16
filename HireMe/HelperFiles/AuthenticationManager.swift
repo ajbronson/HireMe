@@ -38,6 +38,8 @@ final class AuthenticationManager {
         return oAuthToken?.accessToken != nil
     }
     
+    // MARK: - Types
+    
     private enum SignInMethod: String {
         case facebook
         case google
@@ -77,6 +79,7 @@ final class AuthenticationManager {
             
             do {
                 self.oAuthToken = try OAuthToken(dictionary: tokenDict)
+                print("token(completionHandler:) \(String(describing: self.oAuthToken))")
             } catch let initError {
                 completionHandler(nil, initError)
             }

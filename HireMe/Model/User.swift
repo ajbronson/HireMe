@@ -33,10 +33,9 @@ class User: CustomStringConvertible {
             throw InitializationError.service(error)
         }
         
-        guard let result = NetworkConroller.getResults(from: dictionary)?.first,
-            let id = result["id"] as? UInt,
-            let username = result["username"] as? String,
-            let email = result["email"] as? String else {
+        guard let id = dictionary["id"] as? UInt,
+            let username = dictionary["username"] as? String,
+            let email = dictionary["email"] as? String else {
                 throw InitializationError.invalidDataType
         }
         
@@ -44,24 +43,24 @@ class User: CustomStringConvertible {
         self.username = username
         self.email = email
         
-        if let firstName = result["firstName"] as? String {
+        if let firstName = dictionary["firstName"] as? String {
             self.firstName = firstName.isEmpty ? nil : firstName
         }
         
-        if let lastName = result["lastName"] as? String {
+        if let lastName = dictionary["lastName"] as? String {
             self.lastName = lastName.isEmpty ? nil : lastName
         }
         
-        if let fullName = result["fullName"] as? String {
+        if let fullName = dictionary["fullName"] as? String {
             self.fullName = fullName.isEmpty ? nil : fullName
         }
         
-        if let imageURL = result["imageURL"] as? String {
+        if let imageURL = dictionary["imageURL"] as? String {
             self.imageURL = imageURL.isEmpty ? nil : imageURL
         }
 
-        self.numberOfStars = result["numberOfStars"] as? Int ?? 0
-        self.numberOfRatings = result["numberOfRatings"] as? Int ?? 0
+        self.numberOfStars = dictionary["numberOfStars"] as? Int ?? 0
+        self.numberOfRatings = dictionary["numberOfRatings"] as? Int ?? 0
     }
     
     init(id: UInt, firstName: String, lastName: String, fullName: String? = nil, imageURL: String? = nil, numberOfStars: Int = 0, numberOfRatings: Int = 0) {
@@ -103,10 +102,10 @@ class User: CustomStringConvertible {
     }
     
     func cache() {
-        print(toDictionary())
+//        print("cache()-what will be cached: \(toDictionary())") // DEBUG
         UserDefaults.standard.set(toDictionary(), forKey: CURRENT_USER_KEY)
-        print("cache(): \(String(describing: UserDefaults.standard.dictionary(forKey: CURRENT_USER_KEY)))")
-        print("cached")
+        print("cache()-what was cached: \(String(describing: UserDefaults.standard.dictionary(forKey: CURRENT_USER_KEY)))") // DEBUG
+//        print("user cached") // DEBUG
     }
     
     func fetchImage() {
@@ -145,7 +144,7 @@ class User: CustomStringConvertible {
     // MARK: - CustomStringConvertible
     
     var description: String {
-        return "\(id): \(username) \(email)"
+        return "ID:\(id) username: \(username) email:\(email)"
     }
 
 }
