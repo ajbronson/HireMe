@@ -14,6 +14,7 @@ class JobController {
 
 	var jobs: [Job] = []
 
+    // TODO: make request to get all jobs
 	init() {
         let user1 = User(id: 0, firstName: "Julie", lastName: "Harrison", numberOfStars: 5, numberOfRatings: 45)
         let user2 = User(id: 1, firstName: "Amanda", lastName: "Clarkson", numberOfStars: 4, numberOfRatings: 22)
