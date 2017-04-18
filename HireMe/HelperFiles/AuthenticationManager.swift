@@ -12,7 +12,7 @@ import FBSDKLoginKit
 
 typealias OAuthTokenHandler = (OAuthToken?, Error?) -> Void
 
-class AuthenticationManager {
+final class AuthenticationManager {
     
     // MARK: - Type properties
     
@@ -38,6 +38,8 @@ class AuthenticationManager {
         return oAuthToken?.accessToken != nil
     }
     
+    // MARK: - Types
+    
     private enum SignInMethod: String {
         case facebook
         case google
@@ -48,16 +50,6 @@ class AuthenticationManager {
     // MARK: - Object life cycle
     
     private init() {}
-    
-    // MARK: - Static methods
-    
-    static func authAlertHasDisplayed() -> Bool {
-        return UserDefaults.standard.bool(forKey: AUTH_ALERT_KEY)
-    }
-    
-    static func resetAuthAlertUserDefaultsKey() {
-        UserDefaults.standard.removeObject(forKey: AUTH_ALERT_KEY)
-    }
     
     // MARK: - Methods
     
@@ -87,6 +79,7 @@ class AuthenticationManager {
             
             do {
                 self.oAuthToken = try OAuthToken(dictionary: tokenDict)
+                print("token(completionHandler:) \(String(describing: self.oAuthToken))")
             } catch let initError {
                 completionHandler(nil, initError)
             }
@@ -208,7 +201,13 @@ class AuthenticationManager {
                 completionHandler(token, nil)
             }
         } else {
-            completionHandler(nil, AuthenticationError.noAccessToken)
+            getOAuthToken { (token3, error2) in
+                if let err2 = error2 {
+                    completionHandler(nil, err2)
+                } else {
+                    completionHandler(token3, nil)
+                }
+            }
         }
     }
     
@@ -225,16 +224,16 @@ class AuthenticationManager {
             if let err = error {
                 completionHandler(nil, err)
             } else {
-                guard let json = data?.toJSON(), let jsonDict = json as? [String: Any] else {
-                    completionHandler(nil, NetworkError.deserializeJSON)
+                guard let responseData = data else {
+                    completionHandler(nil, NetworkError.noData)
                     return
                 }
                 
                 do {
-                    self.oAuthToken = try OAuthToken(dictionary: jsonDict)
+                    self.oAuthToken = try OAuthToken(dictionary: try responseData.toDictionary())
                     completionHandler(self.oAuthToken, nil)
-                } catch let initError {
-                    completionHandler(nil, initError)
+                } catch let error2 {
+                    completionHandler(nil, error2)
                 }
             }
         }

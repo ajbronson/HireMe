@@ -19,8 +19,8 @@ class CategoryTableViewController: UITableViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		jobs = JobController.shared.jobs.filter {$0.industry == industry}
-        self.tableView.hideEmptyCells()
+        tableView.hideEmptyCells()
+        getAllJobs()
     }
     
     // MARK: - Navigation
@@ -52,4 +52,20 @@ class CategoryTableViewController: UITableViewController {
 		
 		return cell
 	}
+    
+    // MARK: - Private methods
+    
+    private func getAllJobs() {
+        APIClient.getAllJobs { (jobs, error) in
+            if let err = error {
+                ErrorHelper.describe(err)
+            } else {
+                if let allJobs = jobs {
+                    JobController.shared.jobs = allJobs
+                    self.jobs = JobController.shared.jobs.filter { $0.industry == self.industry }
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
 }

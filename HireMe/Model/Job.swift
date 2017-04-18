@@ -8,15 +8,19 @@
 
 import UIKit
 
+private let API_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z"
+
 class Job: Equatable {
 
+    // MARK: - Properties
+    
 	var id: Int
 	var name: String
 	var timeFrameStart: String?
 	var timeFrameEnd: String?
-	var priceRangeStart: Double?
-	var priceRangeEnd: Double?
-	var industry: String?
+	var priceRangeStart: Double
+	var priceRangeEnd: Double
+	var industry: String
 	var locationCity: String
 	var locationState: String
 	var locationZip: String?
@@ -27,18 +31,64 @@ class Job: Equatable {
 	var dateUpdated: Date
 	var dateCancelled: Date?
 	var dateCompleted: Date?
-	var reopenDate: Date?
+	var dateReopened: Date?
 	var selectedBid: Bid?
     var advertiser: User
+    
+    // MARK: - Initializers
+    
+    // TODO: get all property values from the service once the service is finished
+    init(dictionary: [String: Any]) throws {
+        if let error = ErrorHelper.checkForError(in: dictionary) {
+            throw InitializationError.service(error)
+        }
+        
+        guard let id = dictionary["id"] as? Int,
+            let title = dictionary["title"] as? String,
+            let created = dictionary["created"] as? String,
+            let owner = dictionary["owner"] as? String,
+            let priceLow = dictionary["priceLow"] as? String,
+            let priceHigh = dictionary["priceHigh"] as? String,
+            let priceRangeStart = Double(priceLow),
+            let priceRangeEnd = Double(priceHigh),
+            let location = dictionary["location"] as? String else {
+                throw InitializationError.invalidDataType
+        }
+        
+        self.id = id
+        self.name = title
+        self.timeFrameStart = dictionary["startTime"] as? String
+        self.timeFrameEnd = dictionary["endTime"] as? String
+        self.priceRangeStart = priceRangeStart
+        self.priceRangeEnd = priceRangeEnd
+        self.industry = "Other"
+        self.locationCity = location
+        self.locationState = "UT"
+        self.locationZip = nil
+        self.description = dictionary["description"] as? String
+        self.status = .open
+        self.images = nil
+        
+        // TODO: make a singleton date formatter
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = API_DATE_FORMAT
+        self.dateCreated = dateFormatter.date(from: created) ?? Date()
+        self.dateUpdated = self.dateCreated
+        self.dateCancelled = nil
+        self.dateCompleted = nil
+        self.dateReopened = nil
+        self.selectedBid = nil
+        self.advertiser = User(id: 2, firstName: "David", lastName: "Payne")
+    }
 
-    init(id: Int, name: String, timeFrameStart: String?, timeFrameEnd: String?, priceRangeStart: Double?, priceRangeEnd: Double?, industry: String?, locationCity: String, locationState: String, locationZip: String?, description: String?, status: JobStatus = .open, images: [UIImage]?, dateCreated: Date = Date(), dateUpdated: Date = Date(), advertiser: User) {
+    init(id: Int, name: String, timeFrameStart: String?, timeFrameEnd: String?, priceRangeStart: Double, priceRangeEnd: Double, industry: String, locationCity: String, locationState: String, locationZip: String?, description: String?, status: JobStatus = .open, images: [UIImage]?, dateCreated: Date = Date(), dateUpdated: Date = Date(), advertiser: User) {
 		self.id = id
 		self.name = name
 		self.timeFrameStart = timeFrameStart == "" ? nil : timeFrameStart
 		self.timeFrameEnd = timeFrameEnd == "" ? nil : timeFrameEnd
 		self.priceRangeStart = priceRangeStart
 		self.priceRangeEnd = priceRangeEnd
-		self.industry = industry == "" ? nil : industry
+		self.industry = industry
 		self.locationCity = locationCity
 		self.locationState = locationState
 		self.locationZip = locationZip == "" ? nil : locationZip
@@ -49,10 +99,12 @@ class Job: Equatable {
 		self.dateCreated = dateCreated
 		self.dateCancelled = nil
 		self.dateCompleted = nil
-		self.reopenDate = nil
+		self.dateReopened = nil
 		self.selectedBid = nil
         self.advertiser = advertiser
 	}
+    
+    // MARK: - Methods
     
     func timeFrame(dateFormat: String) -> String {
         let startDate = timeFrameStart?.dateFromString()
@@ -79,9 +131,9 @@ class Job: Equatable {
     }
     
     func priceRange() -> String {
-        var priceRange = priceRangeStart?.convertToCurrency() ?? ""
+        var priceRange = priceRangeStart.convertToCurrency() ?? ""
         
-        if let endingPrice = priceRangeEnd?.convertToCurrency() {
+        if let endingPrice = priceRangeEnd.convertToCurrency() {
             if priceRange.characters.count > 0 {
                 // A starting price exists
                 if endingPrice != priceRange {
@@ -109,7 +161,15 @@ class Job: Equatable {
         
         return location
     }
+    
+    // MARK: - Private methods
+    
+    func advertiserID(from url: String) -> Int {
+        return 2
+    }
 }
+
+// MARK: - Equatable
 
 func ==(lhs: Job, rhs: Job) -> Bool {
 	return lhs.id == rhs.id

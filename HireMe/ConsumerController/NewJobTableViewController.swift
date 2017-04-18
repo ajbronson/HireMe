@@ -83,8 +83,8 @@ class NewJobTableViewController: UITableViewController, UICollectionViewDataSour
 		typeTextField.text = job.industry
 		timeStartTextField.text = job.timeFrameStart
 		timeEndTextField.text = job.timeFrameEnd
-        priceLowerTextField.text = job.priceRangeStart?.convertToCurrency()
-        priceUpperTextField.text = job.priceRangeEnd?.convertToCurrency()
+        priceLowerTextField.text = job.priceRangeStart.convertToCurrency()
+        priceUpperTextField.text = job.priceRangeEnd.convertToCurrency()
 		descriptionTextView.text = job.description
 		cityTextField.text = job.locationCity
 		stateTextField.text = job.locationState
@@ -138,8 +138,10 @@ class NewJobTableViewController: UITableViewController, UICollectionViewDataSour
             let city = cityTextField.text,
             city.characters.count > 0,
             let state = stateTextField.text,
-            state.characters.count > 0 else {
-                AlertHelper.showAlert(view: self, title: "Error", message: "Must supply Title, Upper and Lower Price, City, and State fields.", closeButtonText: "OK")
+            state.characters.count > 0,
+            let industry = typeTextField.text,
+            industry.characters.count > 0 else {
+                AlertHelper.showAlert(view: self, title: "Error", message: "Must supply Title, Industry, Upper and Lower Price, City, and State fields.", closeButtonText: "OK")
                 return
         }
         
@@ -160,13 +162,13 @@ class NewJobTableViewController: UITableViewController, UICollectionViewDataSour
 		}
 
 		if let job = job {
-			if (!JobController.shared.updateJob(job: job, name: title, timeFrameStart: timeStartTextField.text, timeFrameEnd: timeEndTextField.text, priceRangeStart: priceLower, priceRangeEnd: priceUpper, industry: typeTextField.text, locationCity: city, locationState: state, locationZip: zipTextField.text, description: descriptionTextView.text, images: images.count > 0 ? images : nil)) {
+			if (!JobController.shared.updateJob(job: job, name: title, timeFrameStart: timeStartTextField.text, timeFrameEnd: timeEndTextField.text, priceRangeStart: priceLower, priceRangeEnd: priceUpper, industry: industry, locationCity: city, locationState: state, locationZip: zipTextField.text, description: descriptionTextView.text, images: images.count > 0 ? images : nil)) {
 
 			} else {
 				_ = navigationController?.popViewController(animated: true)
 			}
 		} else {
-			if (!JobController.shared.addJob(name: title, timeFrameStart: timeStartTextField.text, timeFrameEnd: timeEndTextField.text, priceRangeStart: priceLower, priceRangeEnd: priceUpper, industry: typeTextField.text, locationCity: city, locationState: state, locationZip: zipTextField.text, description: descriptionTextView.text, images: images.count > 0 ? images : nil)) {
+			if (!JobController.shared.addJob(name: title, timeFrameStart: timeStartTextField.text, timeFrameEnd: timeEndTextField.text, priceRangeStart: priceLower, priceRangeEnd: priceUpper, industry: industry, locationCity: city, locationState: state, locationZip: zipTextField.text, description: descriptionTextView.text, images: images.count > 0 ? images : nil)) {
 				AlertHelper.showAlert(view: self, title: "Error Saving", message: "An error occured while attempting to save this job. Please try again.", closeButtonText: "Dismiss")
 			} else {
 				_ = navigationController?.popViewController(animated: true)

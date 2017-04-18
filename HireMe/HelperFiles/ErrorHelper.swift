@@ -45,6 +45,8 @@ enum InitializationError: Error {
 enum NetworkError: String, Error {
     case deserializeJSON = "Failed to deserialize JSON."
     case noURLRequest = "A URLRequest was not provided."
+    case noResults = "Web service returned no results"
+    case noData = "Web service returned no data"
 }
 
 class ErrorHelper {

@@ -115,6 +115,11 @@ class ProviderJobDetailTableViewController: UITableViewController {
     @IBAction func didTapDone(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func didTapPlaceBid(_ sender: UIBarButtonItem) {
+        let segueID = AuthenticationManager.shared.isSignedIn ? "toBid" : "presentSignIn"
+        performSegue(withIdentifier: segueID, sender: nil)
+    }
 
 	@IBAction func viewPhotosTapped(_ sender: UIBarButtonItem) {
 		guard job.images != nil else {

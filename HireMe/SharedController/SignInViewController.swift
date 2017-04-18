@@ -69,26 +69,35 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
                 print(err.localizedDescription)
             } else {
                 print("Facebook token: \(FBSDKAccessToken.current().tokenString)")
-                self.getUser()
-                
-                if loginResult?.grantedPermissions != nil {
-                    // https://developers.facebook.com/docs/graph-api/reference/user for a list of available fields
-                    FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, first_name, last_name, email, cover"]).start { (connection, result, error) in
-                        if error == nil {
-                            guard let profile = result as? [String: Any] else {
-                                return
+                APIClient.getUser { (error2) in
+                    if let err2 = error2 {
+                        ErrorHelper.describe(err2)
+                        return
+                    }
+                    
+                    if loginResult?.grantedPermissions != nil {
+                        // https://developers.facebook.com/docs/graph-api/reference/user for a list of available fields
+                        FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, first_name, last_name, email, picture.type(large)"]).start { (connection, result, error) in
+                            if error == nil {
+                                if let profile = result as? [String: Any] {
+                                    let user = UserController.shared.currentUser()
+                                    
+                                    if let picture = profile["picture"] as? [String: Any],
+                                        let data = picture["data"] as? [String: Any] {
+                                        user?.imageURL = data["url"] as? String
+                                    }
+                                    
+//                                    print(profile) // DEBUG
+                                    user?.firstName = profile["first_name"] as? String
+                                    user?.lastName = profile["last_name"] as? String
+                                    user?.fullName = profile["name"] as? String
+                                    user?.cache()
+                                }
+                                
+                                self.dismiss(animated: true, completion: nil)
+                            } else {
+                                print("\(String(describing: error?.localizedDescription))")
                             }
-                            
-                            var coverPhotoSource: String?
-                            
-                            if let cover = profile["cover"] as? [String: Any] {
-                                coverPhotoSource = cover["source"] as? String
-                            }
-                            
-                            // TODO: update user info
-                            self.dismiss(animated: true, completion: nil)
-                        } else {
-                            print("\(String(describing: error?.localizedDescription))")
                         }
                     }
                 }
@@ -127,25 +136,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     private func customizeButton() {
         let verticalInset: CGFloat = 10.0
         self.fbButton.imageEdgeInsets = UIEdgeInsets(top: verticalInset, left: verticalInset, bottom: verticalInset, right: 0)
-    }
-    
-    private func getUser() {
-        AuthenticationManager.shared.getOAuthToken { (token, error) in
-            guard token != nil else {
-                ErrorHelper.describe(error!)
-                return
-            }
-            
-            APIClient.getUser { (user, error) in
-                guard let usr = user else {
-                    ErrorHelper.describe(error!)
-                    return
-                }
-                
-                print(usr)
-                // TODO: save user to singleton
-            }
-        }
     }
     
     @objc private func userDidSignInWithGoogle() {

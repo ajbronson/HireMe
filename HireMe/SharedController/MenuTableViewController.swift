@@ -75,23 +75,15 @@ class MenuTableViewController: UITableViewController {
         if let indexPath = self.tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: indexPath, animated: true)
         }
-        
-        // TODO: get user info
-//        if AuthenticationManager.shared.isSignedIn {
-//            let user = UserController.shared.user
-//            
-//            tableHeaderNameLabel.text = user.fullName
-//            
-//            if let urlStr = user.imageURL, let url = URL(string: urlStr) {
-//                DispatchQueue.global().async {
-//                    if let data = try? Data(contentsOf: url) {
-//                        DispatchQueue.main.async {
-//                            self.tableHeaderImageView.image = UIImage(data: data)
-//                        }
-//                    }
-//                }
-//            }
-//        }
+
+        if AuthenticationManager.shared.isSignedIn {
+            let user = UserController.shared.currentUser()
+//            print("\(String(describing: user?.fullName))") // DEBUG
+            tableHeaderNameLabel.text = user?.fullName
+            tableHeaderImageView.image = user?.image
+        } else {
+            tableView.tableHeaderView = nil
+        }
     }
     
     

@@ -15,7 +15,7 @@ import GoogleSignIn
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
 	var window: UIWindow?
-
+    
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		
         UINavigationBar.appearance().barTintColor = defaultColor
@@ -40,27 +40,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             print("Already signed in with Facebook") // DEBUG
         }
         
+//        UserDefaults.standard.printKeys() // DEBUG
         AuthenticationManager.shared.token { (token, error) in
             if let err = error {
                 ErrorHelper.describe(err)
-            } else if let oAuthToken = token {
-                print("AppDelegate: Already signed in \(oAuthToken)")
-                APIClient.getUser { (user, error2) in
-                    guard let usr = user else {
-                        ErrorHelper.describe(error2!)
-                        return
-                    }
-                    
-                    print(usr)
-                    // TODO: save user to singleton
-                }
             } else {
-                print("AppDelegate: Not signed in; no token")
+                print("AppDelegate: \(token!)") // DEBUG
+                if let user = UserController.shared.currentUser() {
+                    user.fetchImage()
+                } else {
+                    print("getUser") // DEBUG
+                    APIClient.getUser { (error2) in
+                        if let error2 = error2 {
+                            ErrorHelper.describe(error2)
+                            return
+                        }
+                        
+                        print("AppDelegate->getUser(completionHandler:): \(String(describing: UserController.shared.currentUser()))")
+                        UserController.shared.currentUser()?.fetchImage()
+                    }
+                }
             }
         }
-        
-        // TODO: remove for prod
-        AuthenticationManager.resetAuthAlertUserDefaultsKey()
         
 		return true
 	}

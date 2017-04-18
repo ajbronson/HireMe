@@ -13,17 +13,18 @@ PODS:
     - FacebookCore (~> 0.2)
     - FBSDKCoreKit (~> 4.15)
     - FBSDKLoginKit (~> 4.15)
-  - FBSDKCoreKit (4.20.2):
+  - FBSDKCoreKit (4.21.0):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.20.2):
+  - FBSDKLoginKit (4.21.0):
     - FBSDKCoreKit
-  - FirebaseAnalytics (3.7.0):
-    - FirebaseCore (~> 3.5)
+  - FirebaseAnalytics (3.8.0):
+    - FirebaseCore (~> 3.6)
     - FirebaseInstanceID (~> 1.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseCore (3.5.2):
+  - FirebaseCore (3.6.0):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseInstanceID (1.0.9)
+  - FirebaseInstanceID (1.0.10):
+    - FirebaseCore (~> 3.6)
   - Google/Core (3.0.3):
     - FirebaseAnalytics (~> 3.2)
   - Google/SignIn (3.0.3):
@@ -51,7 +52,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.9)
   - GTMSessionFetcher/Full (1.1.9):
     - GTMSessionFetcher/Core (= 1.1.9)
-  - SideMenu (2.3.0)
+  - SideMenu (2.3.1)
 
 DEPENDENCIES:
   - FacebookLogin
@@ -62,17 +63,17 @@ SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
-  FBSDKCoreKit: 82eac696eb6157da5f4266c3a241f00e9bd72471
-  FBSDKLoginKit: 2211bede07c83391349eacc1fd86cf6d9289ce38
-  FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
-  FirebaseCore: a024587e43778508700af8c6b1209f7c4516ba02
-  FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
+  FBSDKCoreKit: 8a372ab194b5c7c26355c1920ef52dbeb44bc222
+  FBSDKLoginKit: a1a5f4b4ac445823a020fbeeaf5f03714a67ff9c
+  FirebaseAnalytics: 920e46455f27b0a52a80907a6d9b73ee4bd1c635
+  FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
+  FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
   Google: 813c467362eabc11385f5a5cc9ad0cb651a58f4e
   GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
-  SideMenu: 43d092cf615cf472f105c5b9867a21beff9fc269
+  SideMenu: 2a3c3da0b3d5f78a047b2271bb7398260fcd7e3d
 
 PODFILE CHECKSUM: cf1b7c2fd2f2e1c63f3cd10491fdb1acb3fd4409
 
