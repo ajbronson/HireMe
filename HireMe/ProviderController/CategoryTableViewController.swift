@@ -8,6 +8,7 @@
 
 import UIKit
 
+// TODO: rename to IndustryTableViewController
 class CategoryTableViewController: UITableViewController {
 
 	//MARK: - Properties

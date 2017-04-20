@@ -397,7 +397,7 @@
             </objects>
             <point key="canvasLocation" x="4219" y="2834"/>
         </scene>
-        <!--Categories-->
+        <!--Industries-->
         <scene sceneID="Iod-e4-rA0">
             <objects>
                 <tableViewController id="CQq-F2-T7F" customClass="SearchTableViewController" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -432,7 +432,7 @@
                             <outlet property="delegate" destination="CQq-F2-T7F" id="wN3-ie-sPx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Categories" id="RLx-yj-xvI">
+                    <navigationItem key="navigationItem" title="Industries" id="RLx-yj-xvI">
                         <barButtonItem key="leftBarButtonItem" image="Menu" id="6Fq-mv-Vk8">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -723,7 +723,7 @@
         <image name="Star" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uPR-Du-0OG"/>
         <segue reference="Cm3-VV-UuI"/>
+        <segue reference="jkM-Ly-1T8"/>
     </inferredMetricsTieBreakers>
 </document>
